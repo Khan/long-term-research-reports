@@ -1,6 +1,7 @@
 import { StyleSheet, css } from "aphrodite";
 import React from "react";
 import globalStyles from "webapp/shared-styles-package/global-styles";
+import mediaQueries from "webapp/shared-styles-package/media-queries";
 
 import Forest from "./forest";
 
@@ -72,18 +73,26 @@ const HeroHeader = () =>
         the realm of early empowerment?{" "}
       </h2>
     </div>
-</div>;
-
+  </div>;
 
 const Hairline = () => <div className={css(styles.hairline)} />;
 
-const Body = ({ children, noBottomMargin, noTopMargin, wide}) =>
-  <p className={css(styles.body, noBottomMargin ? styles.noBottomMargin : undefined, noTopMargin ? styles.noTopMargin : undefined, wide ? styles.wideParagraph : undefined)}>
+const Body = ({ children, noBottomMargin, noTopMargin, wide }) =>
+  <p
+    className={css(
+      styles.body,
+      noBottomMargin ? styles.noBottomMargin : undefined,
+      noTopMargin ? styles.noTopMargin : undefined,
+      wide ? styles.wideParagraph : undefined,
+    )}
+  >
     {children}
-</p>;
+  </p>;
 
 const Heading = ({ children }) =>
-<h2 className={css(styles.heading)}>{children}</h2>
+  <h2 className={css(styles.heading)}>
+    {children}
+  </h2>;
 
 const Subheading = ({ children, noTopMargin }) =>
   <h3
@@ -123,10 +132,15 @@ const PrototypeExample = ({ heading, children }) =>
 const StoryboardElement = ({ storyboardElementNumber, children }) =>
   <div className={css(styles.storyboardElement)}>
     <div className={css(styles.storyboardFigure)}>
-      <div className={css(styles.placeholder)} style={{ height: 450, width: "100%" }} />
+      <div
+        className={css(styles.placeholder)}
+        style={{ height: 450, width: "100%" }}
+      />
     </div>
     <div className={css(styles.storyboardBody)}>
-      <span className={css(styles.storyboardElementNumber)}>{storyboardElementNumber}.</span>
+      <span className={css(styles.storyboardElementNumber)}>
+        {storyboardElementNumber}.
+      </span>
       {children}
     </div>
   </div>;
@@ -134,10 +148,12 @@ const StoryboardElement = ({ storyboardElementNumber, children }) =>
 const Principle = ({ children }) =>
   <span className={css(styles.principleTitle)}>
     {children}
-</span>;
+  </span>;
 
-const FurtherReadingItem = ({children}) => 
-<li className={css(styles.furtherReadingItem, styles.wideParagraph)}>{children}</li>
+const FurtherReadingItem = ({ children }) =>
+  <li className={css(styles.furtherReadingItem, styles.wideParagraph)}>
+    {children}
+  </li>;
 
 const Report = () =>
   <div className={css(styles.container)}>
@@ -183,9 +199,7 @@ const Report = () =>
           multi-touches into a musical instrument.
         </Body>
       </PrototypeExample>
-      <PrototypeExample
-        heading="Altering the world using handwritten numbers"
-      >
+      <PrototypeExample heading="Altering the world using handwritten numbers">
         <Body>
           Handwriting was another natural input method. This, alongside our
           observations that many kids don’t yet feel in control of their
@@ -228,11 +242,11 @@ const Report = () =>
         </Body>
       </PrototypeExample>
       <Subheading>And more!</Subheading>
-        <Body wide>
-          We brainstormed, sketched, and prototyped. Some experiments focused on
-          specific interactions; others refined our principles or broader
-          architecture. Here’s a peek at other sketches and process.
-        </Body>
+      <Body wide>
+        We brainstormed, sketched, and prototyped. Some experiments focused on
+        specific interactions; others refined our principles or broader
+        architecture. Here’s a peek at other sketches and process.
+      </Body>
       <div
         className={css(styles.placeholder)}
         style={{ width: "100%", height: 388, marginTop: 32 }}
@@ -240,7 +254,7 @@ const Report = () =>
         [carousel here]
       </div>
       <Hairline />
-        <Heading>Design principles</Heading>
+      <Heading>Design principles</Heading>
       <BodyAndSidebar>
         <Body>
           Our investigations gave rise to deeper ideas that we used to challenge
@@ -370,84 +384,210 @@ const Report = () =>
       <Hairline />
       <Heading>Weaving it all together</Heading>
       <StoryboardElement storyboardElementNumber={1}>
-        <Body>We start in a scene that deliberately evokes depth and leaves space for the child’s imagination to participate. What’s hiding among the trees? Does the character live inside a tree?</Body>
-        <Body>A coordinate indicator trails the character. If the child explores walks left from the red-door-tree, they’ll discover negative x-coordinates.</Body>
+        <Body>
+          We start in a scene that deliberately evokes depth and leaves space
+          for the child’s imagination to participate. What’s hiding among the
+          trees? Does the character live inside a tree?
+        </Body>
+        <Body>
+          A coordinate indicator trails the character. If the child explores
+          walks left from the red-door-tree, they’ll discover negative
+          x-coordinates.
+        </Body>
       </StoryboardElement>
 
       <StoryboardElement storyboardElementNumber={2}>
-        <Body>The coordinate system expresses the character's position in a way that children can naturally relate to their own experience of their body in the world.</Body>
-        <Body>New items that spark curiosity appear throughout the journey—like this yellow door just out of reach, partway up a tree.</Body>
+        <Body>
+          The coordinate system expresses the character's position in a way that
+          children can naturally relate to their own experience of their body in
+          the world.
+        </Body>
+        <Body>
+          New items that spark curiosity appear throughout the journey—like this
+          yellow door just out of reach, partway up a tree.
+        </Body>
       </StoryboardElement>
 
       <StoryboardElement storyboardElementNumber={3}>
-        <Body>Tapping something that’s out of reach reveals its distance from the player. In this case, the yellow door’s y-distance from the ground is shown as being “7”. The concept of distance is introduced because the learner has shown us, through interaction, that they’re curious.</Body>
+        <Body>
+          Tapping something that’s out of reach reveals its distance from the
+          player. In this case, the yellow door’s y-distance from the ground is
+          shown as being “7”. The concept of distance is introduced because the
+          learner has shown us, through interaction, that they’re curious.
+        </Body>
       </StoryboardElement>
 
       <StoryboardElement storyboardElementNumber={4}>
-<Body>The character can’t yet reach the yellow door, so they continue on and befriend a little basket with its own coordinates. The basket will help the character by being the holding place for things that the character can collect: “quantity-bricks”, operators, and tools. These are mathematical properties with which to build or mold the world.</Body>
-</StoryboardElement>
+        <Body>
+          The character can’t yet reach the yellow door, so they continue on and
+          befriend a little basket with its own coordinates. The basket will
+          help the character by being the holding place for things that the
+          character can collect: “quantity-bricks”, operators, and tools. These
+          are mathematical properties with which to build or mold the world.
+        </Body>
+      </StoryboardElement>
 
       <StoryboardElement storyboardElementNumber={5}>
-        <Body>Children can “harvest” flowering plants for quantities. For example, tapping three flowers on a single stem allows our character to fill and collect a “3” quantity-brick. Each flower blooms when tapped, a gentle feedback that provides scaffolding towards <a href="https://www.educateiowa.gov/sites/files/ed/documents/8017g%20Elem%20CLP%20with%20descriptors.pdf">one-to-one correspondence counting</a> and keeping track of what's been counted and what hasn't.</Body>
+        <Body>
+          Children can “harvest” flowering plants for quantities. For example,
+          tapping three flowers on a single stem allows our character to fill
+          and collect a “3” quantity-brick. Each flower blooms when tapped, a
+          gentle feedback that provides scaffolding towards{" "}
+          <a href="https://www.educateiowa.gov/sites/files/ed/documents/8017g%20Elem%20CLP%20with%20descriptors.pdf">
+            one-to-one correspondence counting
+          </a>{" "}
+          and keeping track of what's been counted and what hasn't.
+        </Body>
       </StoryboardElement>
 
       <StoryboardElement storyboardElementNumber={6}>
-<Body>This child discovered that they can build themselves a staircase of quantity-bricks. To sort the bricks by length, they compared quantities.</Body>
-<Body>Now our character can reach the yellow door. What's inside the tree?</Body>
-<Body>There were many solutions the student could have used to reach the door. Can you, the reader, think of others?</Body>
-</StoryboardElement>
+        <Body>
+          This child discovered that they can build themselves a staircase of
+          quantity-bricks. To sort the bricks by length, they compared
+          quantities.
+        </Body>
+        <Body>
+          Now our character can reach the yellow door. What's inside the tree?
+        </Body>
+        <Body>
+          There were many solutions the student could have used to reach the
+          door. Can you, the reader, think of others?
+        </Body>
+      </StoryboardElement>
 
-<StoryboardElement storyboardElementNumber={7}>
-  <Body>We reward curiosity with more opportunity for exploration. Inside the tree, children can play with the relationship between numbers and sound; pitches correspond to quantities.</Body>
-  <Body><em>Computer graphics and computer generation of music are outstanding opportunities to experience the link between beauty and math.</em> This is because computers are great at translating in realtime between alternate representations.</Body>
-</StoryboardElement>
+      <StoryboardElement storyboardElementNumber={7}>
+        <Body>
+          We reward curiosity with more opportunity for exploration. Inside the
+          tree, children can play with the relationship between numbers and
+          sound; pitches correspond to quantities.
+        </Body>
+        <Body>
+          <em>
+            Computer graphics and computer generation of music are outstanding
+            opportunities to experience the link between beauty and math.
+          </em>{" "}
+          This is because computers are great at translating in realtime between
+          alternate representations.
+        </Body>
+      </StoryboardElement>
 
-<StoryboardElement storyboardElementNumber={8}><Body>The world is packed with these kinds of creative activities. For example, computationally generated flowers can be altered with quantity-bricks.</Body>
-<Body>Over time, more “tools”, or properties, are revealed: control over color, size, angle—as well as operators on those numbers.</Body>
-<Body>At any time, learners can choose to “look behind” an activity to see its underlying mechanics. This could take the form of source code.</Body></StoryboardElement>
+      <StoryboardElement storyboardElementNumber={8}>
+        <Body>
+          The world is packed with these kinds of creative activities. For
+          example, computationally generated flowers can be altered with
+          quantity-bricks.
+        </Body>
+        <Body>
+          Over time, more “tools”, or properties, are revealed: control over
+          color, size, angle—as well as operators on those numbers.
+        </Body>
+        <Body>
+          At any time, learners can choose to “look behind” an activity to see
+          its underlying mechanics. This could take the form of source code.
+        </Body>
+      </StoryboardElement>
 
-<StoryboardElement storyboardElementNumber={9}>
-  <Body>Operators and tools can be combined in powerful ways with other properties of objects in the world. For example, if the character happens upon a ladder, they can manipulate its height attribute, or its number of rungs.</Body>
-</StoryboardElement>
+      <StoryboardElement storyboardElementNumber={9}>
+        <Body>
+          Operators and tools can be combined in powerful ways with other
+          properties of objects in the world. For example, if the character
+          happens upon a ladder, they can manipulate its height attribute, or
+          its number of rungs.
+        </Body>
+      </StoryboardElement>
 
-<StoryboardElement storyboardElementNumber={10}>
-  <Body>We embrace curiosity and the urge to push limits even further by embracing that kind of intellectual need as it arises. If a child is curious what might exist up far above the trees, they may try and get there but setting the ladder’s height to a huge number. They wouldn’t be able to collect a quantity large enough by counting, which would inspire the need for repetition or scaling, bases for the concepts of multiplication and exponentiation. </Body>
-  <Body>In this case, the child has discovered the power of exponential growth and discovered a whole new world.</Body>
-</StoryboardElement>
-<Hairline />
-<Heading>Conclusion</Heading>
-<Body wide>
-  We’ve taken a few steps down this road, but we know that as a human race we’re just barely getting started on this journey. We believe educational technology has the potential to be so much more empowering than it is today. We reject a future in which children robotically compute answers to arithmetic worksheets. We dream of a future filled with curious explorers and lifelong learners, solving important human problems. We’ll continue to experiment in this space as part of our long-term research, but we hope that these sketches and design principles inspire others to join us in pushing toward a humane future of learning technology.
-</Body>
+      <StoryboardElement storyboardElementNumber={10}>
+        <Body>
+          We embrace curiosity and the urge to push limits even further by
+          embracing that kind of intellectual need as it arises. If a child is
+          curious what might exist up far above the trees, they may try and get
+          there but setting the ladder’s height to a huge number. They wouldn’t
+          be able to collect a quantity large enough by counting, which would
+          inspire the need for repetition or scaling, bases for the concepts of
+          multiplication and exponentiation.{" "}
+        </Body>
+        <Body>
+          In this case, the child has discovered the power of exponential growth
+          and discovered a whole new world.
+        </Body>
+      </StoryboardElement>
+      <Hairline />
+      <Heading>Conclusion</Heading>
+      <Body wide>
+        We’ve taken a few steps down this road, but we know that as a human race
+        we’re just barely getting started on this journey. We believe
+        educational technology has the potential to be so much more empowering
+        than it is today. We reject a future in which children robotically
+        compute answers to arithmetic worksheets. We dream of a future filled
+        with curious explorers and lifelong learners, solving important human
+        problems. We’ll continue to experiment in this space as part of our
+        long-term research, but we hope that these sketches and design
+        principles inspire others to join us in pushing toward a humane future
+        of learning technology.
+      </Body>
 
-<Heading>Acknowledgements</Heading>
-<Body wide>This report was written by May-Li Khoe, Andy Matuschak, and Scott Farrar, documenting research primarily conducted in 2015 by May-Li Khoe, Andy Matuschak, and Jason Brennan. Illustrations by May-Li Khoe and Natalie Fitzgerald.</Body>
-<Body wide>We'd like to thank these people for their valuable thoughts along the way: {[
-  "Bret Victor",
-  "Chaim Gingold",
-  "Sonia Cho",
-  "Bill McCullum",
-  "Kristin Umland",
-  "Mitch Resnick",
-  "Carol Dweck",
-  "Orly Friedman",
-  "Paula Te",
-  "Corinna Liew",
-  "Federico Ardila",
-  "Natalia Ardila Mantilla",
-  "Dania Cabello",
-  "Monica Tran"
-  ].map((name) => name.split(" ")).sort(([firstA, lastA], [firstB, lastB]) => lastA < lastB ? -1 : (lastB < lastA ? 1 : 0)).map((names) => names.join(" ")).join(", ")}.</Body>
+      <Heading>Acknowledgements</Heading>
+      <Body wide>
+        This report was written by May-Li Khoe, Andy Matuschak, and Scott
+        Farrar, documenting research primarily conducted in 2015 by May-Li Khoe,
+        Andy Matuschak, and Jason Brennan. Illustrations by May-Li Khoe and
+        Natalie Fitzgerald.
+      </Body>
+      <Body wide>
+        We'd like to thank these people for their valuable thoughts along the
+        way:{" "}
+        {[
+          "Bret Victor",
+          "Chaim Gingold",
+          "Sonia Cho",
+          "Bill McCullum",
+          "Kristin Umland",
+          "Mitch Resnick",
+          "Carol Dweck",
+          "Orly Friedman",
+          "Paula Te",
+          "Corinna Liew",
+          "Federico Ardila",
+          "Natalia Ardila Mantilla",
+          "Dania Cabello",
+          "Monica Tran",
+        ]
+          .map(name => name.split(" "))
+          .sort(
+            ([firstA, lastA], [firstB, lastB]) =>
+              lastA < lastB ? -1 : lastB < lastA ? 1 : 0,
+          )
+          .map(names => names.join(" "))
+          .join(", ")}.
+      </Body>
 
-  <Heading>Further reading</Heading>
-  <Body wide>If you're interested in reading more about the topics in this report, our top recommendations are:</Body>
-  <ul className={css(styles.furtherReadingList)}>
-    <FurtherReadingItem>Papert, Seymour. 1980. <em>Mindstorms</em>. Harvester Press.</FurtherReadingItem>
-    <FurtherReadingItem>Holt, John. 1964. <em>How children fail</em>. Pitman Publishing Company.</FurtherReadingItem>
-    <FurtherReadingItem>Dewey, John. 1938. <em>Experience and education</em>. Kappa Delta Pi.</FurtherReadingItem>
-    <FurtherReadingItem>Montessori, Maria. 1912. <em>The Montessori method</em>. Frederick A. Stokes Company.</FurtherReadingItem>
-    <FurtherReadingItem>Kamii, Constance. 1985. <em>Young children reinvent arithmetic: implications of Piaget's theory</em>. Teachers College Press.</FurtherReadingItem>
-    </ul>
+      <Heading>Further reading</Heading>
+      <Body wide>
+        If you're interested in reading more about the topics in this report,
+        our top recommendations are:
+      </Body>
+      <ul className={css(styles.furtherReadingList)}>
+        <FurtherReadingItem>
+          Papert, Seymour. 1980. <em>Mindstorms</em>. Harvester Press.
+        </FurtherReadingItem>
+        <FurtherReadingItem>
+          Holt, John. 1964. <em>How children fail</em>. Pitman Publishing
+          Company.
+        </FurtherReadingItem>
+        <FurtherReadingItem>
+          Dewey, John. 1938. <em>Experience and education</em>. Kappa Delta Pi.
+        </FurtherReadingItem>
+        <FurtherReadingItem>
+          Montessori, Maria. 1912. <em>The Montessori method</em>. Frederick A.
+          Stokes Company.
+        </FurtherReadingItem>
+        <FurtherReadingItem>
+          Kamii, Constance. 1985.{" "}
+          <em>
+            Young children reinvent arithmetic: implications of Piaget's theory
+          </em>. Teachers College Press.
+        </FurtherReadingItem>
+      </ul>
     </div>
   </div>;
 export default Report;
@@ -457,22 +597,35 @@ const styles = StyleSheet.create({
     marginLeft: "auto",
     marginRight: "auto",
     marginBottom: 96,
-    width: 1366,
+
+    [mediaQueries.lgOrLarger]: {
+      width: 984,
+    },
+    [mediaQueries.xlOrLarger]: {
+      width: 1166,
+    }
   },
 
   reportBodyContainer: {
     marginLeft: "auto",
     marginRight: "auto",
     marginBottom: 128,
-    width: 1166,
+
+    [mediaQueries.lgOrLarger]: {
+      width: 984,
+    },
+    [mediaQueries.xlOrLarger]: {
+      width: 1166,
+    }
   },
 
   lede: {
     fontSize: 20,
     lineHeight: 1.5,
-    width: 722,
     margin: "40px auto",
     display: "block",
+
+    width: 722,
   },
 
   heading: {
@@ -509,11 +662,16 @@ const styles = StyleSheet.create({
     ...globalStyles.typography.bodyLarge,
     [":first-of-type"]: {
       marginTop: 0,
-    }
+    },
   },
 
   wideParagraph: {
-    width: 945,
+    [mediaQueries.lgOrLarger]: {
+      width: 781
+    },
+    [mediaQueries.xlOrLarger]: {
+      width: 945,
+    }
   },
 
   prototypeExample: {
@@ -525,12 +683,22 @@ const styles = StyleSheet.create({
   },
 
   leftColumn: {
-    width: 564,
+    [mediaQueries.lgOrLarger]: {
+      width: 478
+    },
+    [mediaQueries.xlOrLarger]: {
+      width: 568,
+    }
   },
 
   prototypeVideo: {
     marginLeft: "auto",
-    width: 568,
+    [mediaQueries.lgOrLarger]: {
+      width: 478,
+    },
+    [mediaQueries.xlOrLarger]: {
+      width: 568,
+    }
   },
 
   bodyAndSidebar: {
@@ -540,8 +708,14 @@ const styles = StyleSheet.create({
 
   sidebarItem: {
     position: "absolute",
-    left: 721,
-    width: 446,
+    [mediaQueries.lgOrLarger]: {
+      left: 608,
+      width: 376,
+    },
+    [mediaQueries.xlOrLarger]: {
+      left: 721,
+      width: 446,
+    }
   },
 
   principleTitle: {
@@ -558,14 +732,20 @@ const styles = StyleSheet.create({
   },
 
   storyboardFigure: {
-    width: 600,
-    marginRight: 78,
+    [mediaQueries.lgOrLarger]: {
+      width: 505,
+      marginRight: 64,
+    },
+    [mediaQueries.xlOrLarger]: {
+      width: 600,
+      marginRight: 78,
+    },
     flex: "none",
   },
 
   storyboardBody: {
     flex: "1 1",
-    position: "relative"
+    position: "relative",
   },
 
   storyboardElementNumber: {
@@ -598,5 +778,5 @@ const styles = StyleSheet.create({
 
   furtherReadingItem: {
     ...globalStyles.typography.bodyLarge,
-  }
+  },
 });
