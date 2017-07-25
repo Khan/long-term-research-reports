@@ -598,6 +598,9 @@ const styles = StyleSheet.create({
     marginRight: "auto",
     marginBottom: 96,
 
+    [mediaQueries.mdOrLarger]: {
+      width: 728,
+    },
     [mediaQueries.lgOrLarger]: {
       width: 984,
     },
@@ -606,17 +609,11 @@ const styles = StyleSheet.create({
     }
   },
 
+  // TODO: remove?
   reportBodyContainer: {
     marginLeft: "auto",
     marginRight: "auto",
     marginBottom: 128,
-
-    [mediaQueries.lgOrLarger]: {
-      width: 984,
-    },
-    [mediaQueries.xlOrLarger]: {
-      width: 1166,
-    }
   },
 
   lede: {
@@ -625,7 +622,12 @@ const styles = StyleSheet.create({
     margin: "40px auto",
     display: "block",
 
-    width: 722,
+    [mediaQueries.mdOrLarger]: {
+      width: 512,
+    },
+    [mediaQueries.lgOrLarger]: {
+      width: 722,
+    }
   },
 
   heading: {
@@ -683,6 +685,9 @@ const styles = StyleSheet.create({
   },
 
   leftColumn: {
+    [mediaQueries.mdOrLarger]: {
+      width: 352,
+    },
     [mediaQueries.lgOrLarger]: {
       width: 478
     },
@@ -693,6 +698,9 @@ const styles = StyleSheet.create({
 
   prototypeVideo: {
     marginLeft: "auto",
+    [mediaQueries.mdOrLarger]: {
+      width: 352,
+    },
     [mediaQueries.lgOrLarger]: {
       width: 478,
     },
@@ -708,6 +716,10 @@ const styles = StyleSheet.create({
 
   sidebarItem: {
     position: "absolute",
+    [mediaQueries.mdOrLarger]: {
+      left: 375,
+      width: 352,
+    },
     [mediaQueries.lgOrLarger]: {
       left: 608,
       width: 376,
@@ -732,6 +744,10 @@ const styles = StyleSheet.create({
   },
 
   storyboardFigure: {
+    [mediaQueries.mdOrLarger]: {
+      width: 352,
+      marginRight: 46,
+    },
     [mediaQueries.lgOrLarger]: {
       width: 505,
       marginRight: 64,
@@ -774,6 +790,9 @@ const styles = StyleSheet.create({
 
   furtherReadingList: {
     listStyle: "disc outside",
+    [mediaQueries.mdOrSmaller]: {
+      listStyle: "disc inside",      
+    }
   },
 
   furtherReadingItem: {
