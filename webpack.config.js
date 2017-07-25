@@ -1,3 +1,4 @@
+const express = require("express");
 const path = require("path");
 const webpack = require("webpack");
 
@@ -19,21 +20,27 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
-    publicPath: "static",
+    publicPath: "/static/",
   },
   module: {
     rules: [
       {
         test: /\.jsx?$/,
         loader: "babel-loader",
-        include: [
-          path.resolve(__dirname, "../webapp/javascript"),
-          path.resolve(__dirname, "src"),
-        ],
+        include: [path.resolve(__dirname, "src")],
         exclude: /node_modules/,
         options: {
-          presets: [["es2015", { modules: false }], "stage-3", "react"],
+          presets: [["es2015", { modules: false }], "stage-2", "react", "flow"],
           plugins: ["react-hot-loader/babel"],
+        },
+      },
+      {
+        test: /\.jsx?$/,
+        loader: "babel-loader",
+        include: [path.resolve(__dirname, "../webapp/javascript")],
+        exclude: /node_modules/,
+        options: {
+          presets: [["es2015", { modules: false }], "stage-2", "react"],
         },
       },
     ],
@@ -58,6 +65,17 @@ module.exports = {
   devServer: {
     host: "localhost",
     port: 3100,
+    setup: function(app) {
+      app.use(
+        "/images/long-term-research/",
+        express.static(path.join(__dirname, "public"))
+      );
+      app.use(
+        "/fonts",
+        express.static(path.join(__dirname, "../webapp/fonts"))
+      );
+
+    },
 
     historyApiFallback: true,
     // respond to 404s with index.html

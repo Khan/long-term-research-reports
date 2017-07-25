@@ -14,7 +14,7 @@ module.exports = {
         include: [path.resolve(__dirname, "../webapp/javascript")],
         exclude: /node_modules/,
         options: {
-          presets: [["es2015", { modules: false }], "stage-3", "react"],
+          presets: [["es2015", { modules: false }], "stage-2", "react", "flow"],
         },
       },
     ],
