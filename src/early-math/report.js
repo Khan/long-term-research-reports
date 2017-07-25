@@ -107,7 +107,7 @@ const SidebarItem = ({ children, top }) =>
     {children}
   </div>;
 
-const PrototypeExample = ({ heading, videoCaption, children }) =>
+const PrototypeExample = ({ heading, children }) =>
   <div className={css(styles.prototypeExample)}>
     <div className={css(styles.leftColumn)}>
       <Subheading noTopMargin>
@@ -117,18 +117,13 @@ const PrototypeExample = ({ heading, videoCaption, children }) =>
     </div>
     <div className={css(styles.prototypeVideo)}>
       <div className={css(styles.placeholder)} style={{ height: 438 }} />
-      {videoCaption
-        ? <p className={css(styles.figureCaption, styles.noBottomMargin)}>
-            {videoCaption}
-          </p>
-        : null}
     </div>
   </div>;
 
 const StoryboardElement = ({ storyboardElementNumber, children }) =>
   <div className={css(styles.storyboardElement)}>
     <div className={css(styles.storyboardFigure)}>
-      <div className={css(styles.placeholder)} style={{ height: 337, width: "100%" }} />
+      <div className={css(styles.placeholder)} style={{ height: 450, width: "100%" }} />
     </div>
     <div className={css(styles.storyboardBody)}>
       <span className={css(styles.storyboardElementNumber)}>{storyboardElementNumber}.</span>
@@ -142,7 +137,7 @@ const Principle = ({ children }) =>
 </span>;
 
 const FurtherReadingItem = ({children}) => 
-<li className={css(styles.furtherReadingItem)}>{children}</li>
+<li className={css(styles.furtherReadingItem, styles.wideParagraph)}>{children}</li>
 
 const Report = () =>
   <div className={css(styles.container)}>
@@ -162,7 +157,7 @@ const Report = () =>
       <Heading>Early sketches and prototypes</Heading>
       <div
         className={css(styles.placeholder)}
-        style={{ width: "100%", height: 874 }}
+        style={{ width: "100%", height: 584 }}
       />
       <p className={css(styles.figureCaption)}>TODO: figure caption.</p>
       <p className={css(styles.body, styles.wideParagraph)}>
@@ -190,12 +185,6 @@ const Report = () =>
       </PrototypeExample>
       <PrototypeExample
         heading="Altering the world using handwritten numbers"
-        videoCaption={
-          <span>
-            {/* TODO: Add links. */}
-            Inspired by Scribblenauts, Harold and the Purple Crayon and more.
-          </span>
-        }
       >
         <Body>
           Handwriting was another natural input method. This, alongside our
@@ -238,13 +227,12 @@ const Report = () =>
           like these birds.
         </Body>
       </PrototypeExample>
-      <PrototypeExample heading="And more!">
-        <Body>
+      <Subheading>And more!</Subheading>
+        <Body wide>
           We brainstormed, sketched, and prototyped. Some experiments focused on
           specific interactions; others refined our principles or broader
           architecture. Here’s a peek at other sketches and process.
         </Body>
-      </PrototypeExample>
       <div
         className={css(styles.placeholder)}
         style={{ width: "100%", height: 388, marginTop: 32 }}
@@ -433,7 +421,7 @@ const Report = () =>
 </Body>
 
 <Heading>Acknowledgements</Heading>
-<Body wide>This report was written by May-Li Khoe, Andy Matuschak, and Scott Farrar, documenting research primarily conducted in 2015 by May-Li Khoe, Andy Matuschak, and Jason Brennan.</Body>
+<Body wide>This report was written by May-Li Khoe, Andy Matuschak, and Scott Farrar, documenting research primarily conducted in 2015 by May-Li Khoe, Andy Matuschak, and Jason Brennan. Illustrations by May-Li Khoe and Natalie Fitzgerald.</Body>
 <Body wide>We'd like to thank these people for their valuable thoughts along the way: {[
   "Bret Victor",
   "Chaim Gingold",
@@ -542,7 +530,7 @@ const styles = StyleSheet.create({
 
   prototypeVideo: {
     marginLeft: "auto",
-    width: 584,
+    width: 568,
   },
 
   bodyAndSidebar: {
@@ -570,7 +558,7 @@ const styles = StyleSheet.create({
   },
 
   storyboardFigure: {
-    width: 450,
+    width: 600,
     marginRight: 78,
     flex: "none",
   },
