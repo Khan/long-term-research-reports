@@ -94,11 +94,18 @@ const Heading = ({ children }) =>
     {children}
   </h2>;
 
-const Subheading = ({ children, noTopMargin }) =>
+const Subheading = ({
+  children,
+  noTopMargin,
+  hideOnMobile,
+  hideUnlessMobile,
+}) =>
   <h3
     className={css(
       styles.subheading,
       noTopMargin ? styles.noTopMargin : undefined,
+      hideOnMobile ? styles.hideOnMobile : undefined,
+      hideUnlessMobile ? styles.hideUnlessMobile : undefined,
     )}
   >
     {children}
@@ -118,8 +125,11 @@ const SidebarItem = ({ children, top }) =>
 
 const PrototypeExample = ({ heading, children }) =>
   <div className={css(styles.prototypeExample)}>
+    <Subheading noTopMargin hideUnlessMobile>
+      {heading}
+    </Subheading>
     <div className={css(styles.leftColumn)}>
-      <Subheading noTopMargin>
+      <Subheading noTopMargin hideOnMobile>
         {heading}
       </Subheading>
       {children}
@@ -598,6 +608,10 @@ const styles = StyleSheet.create({
     marginRight: "auto",
     marginBottom: 96,
 
+    [mediaQueries.smOrSmaller]: {
+      marginLeft: 16,
+      marginRight: 16,
+    },
     [mediaQueries.mdOrLarger]: {
       width: 728,
     },
@@ -606,7 +620,7 @@ const styles = StyleSheet.create({
     },
     [mediaQueries.xlOrLarger]: {
       width: 1166,
-    }
+    },
   },
 
   // TODO: remove?
@@ -627,7 +641,7 @@ const styles = StyleSheet.create({
     },
     [mediaQueries.lgOrLarger]: {
       width: 722,
-    }
+    },
   },
 
   heading: {
@@ -635,6 +649,9 @@ const styles = StyleSheet.create({
     marginBottom: 26,
     color: globalStyles.colors.gray17,
     ...globalStyles.typography.conceptHeadingDesktop,
+    [mediaQueries.smOrSmaller]: {
+      ...globalStyles.typography.conceptHeadingMobile,
+    },
   },
 
   subheading: {
@@ -669,11 +686,11 @@ const styles = StyleSheet.create({
 
   wideParagraph: {
     [mediaQueries.lgOrLarger]: {
-      width: 781
+      width: 781,
     },
     [mediaQueries.xlOrLarger]: {
       width: 945,
-    }
+    },
   },
 
   prototypeExample: {
@@ -682,22 +699,15 @@ const styles = StyleSheet.create({
       marginTop: 50,
     },
     display: "flex",
+    [mediaQueries.smOrSmaller]: {
+      flexDirection: "column",
+    },
   },
 
   leftColumn: {
-    [mediaQueries.mdOrLarger]: {
-      width: 352,
+    [mediaQueries.smOrSmaller]: {
+      order: 1,
     },
-    [mediaQueries.lgOrLarger]: {
-      width: 478
-    },
-    [mediaQueries.xlOrLarger]: {
-      width: 568,
-    }
-  },
-
-  prototypeVideo: {
-    marginLeft: "auto",
     [mediaQueries.mdOrLarger]: {
       width: 352,
     },
@@ -706,7 +716,25 @@ const styles = StyleSheet.create({
     },
     [mediaQueries.xlOrLarger]: {
       width: 568,
-    }
+    },
+  },
+
+  prototypeVideo: {
+    [mediaQueries.smOrSmaller]: {
+      order: 0,
+      width: "100%",
+      marginBottom: 22,
+    },
+    [mediaQueries.mdOrLarger]: {
+      marginLeft: "auto",
+      width: 352,
+    },
+    [mediaQueries.lgOrLarger]: {
+      width: 478,
+    },
+    [mediaQueries.xlOrLarger]: {
+      width: 568,
+    },
   },
 
   bodyAndSidebar: {
@@ -715,8 +743,8 @@ const styles = StyleSheet.create({
   },
 
   sidebarItem: {
-    position: "absolute",
     [mediaQueries.mdOrLarger]: {
+      position: "absolute",
       left: 375,
       width: 352,
     },
@@ -727,7 +755,7 @@ const styles = StyleSheet.create({
     [mediaQueries.xlOrLarger]: {
       left: 721,
       width: 446,
-    }
+    },
   },
 
   principleTitle: {
@@ -741,9 +769,15 @@ const styles = StyleSheet.create({
   storyboardElement: {
     marginTop: 32,
     display: "flex",
+    [mediaQueries.smOrSmaller]: {
+      flexDirection: "column",
+    },
   },
 
   storyboardFigure: {
+    [mediaQueries.smOrSmaller]: {
+      marginBottom: 24,
+    },
     [mediaQueries.mdOrLarger]: {
       width: 352,
       marginRight: 46,
@@ -765,7 +799,11 @@ const styles = StyleSheet.create({
   },
 
   storyboardElementNumber: {
+    [mediaQueries.smOrSmaller]: {
+      display: "none",
+    },
     ...globalStyles.typography.bodyLarge,
+    // TODO: fix on mobile
     position: "absolute",
     width: 100,
     textAlign: "right",
@@ -791,11 +829,23 @@ const styles = StyleSheet.create({
   furtherReadingList: {
     listStyle: "disc outside",
     [mediaQueries.mdOrSmaller]: {
-      listStyle: "disc inside",      
-    }
+      listStyle: "disc inside",
+    },
   },
 
   furtherReadingItem: {
     ...globalStyles.typography.bodyLarge,
+  },
+
+  hideOnMobile: {
+    [mediaQueries.smOrSmaller]: {
+      display: "none",
+    },
+  },
+
+  hideUnlessMobile: {
+    [mediaQueries.mdOrLarger]: {
+      display: "none",
+    },
   },
 });
