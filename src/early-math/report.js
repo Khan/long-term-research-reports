@@ -5,25 +5,30 @@ import mediaQueries from "webapp/shared-styles-package/media-queries";
 
 import Forest from "./forest";
 
-const HeroHeader = () =>
-  <div className={css(styles.heroContainer)}>
-    <div
-      style={{
-        backgroundColor: "#c7e9f1",
-        position: "absolute",
-        left: 0,
-        height: 615,
-        width: "100%",
-      }}
-    />
+const Authors = () =>
+  <h2 className={css(styles.authors)}>
+    <div className={css(styles.authorLine)}>
+      <strong>Report:</strong> May-Li Khoe, Andy Matuschak, Scott Farrar.{" "}
+    </div>
+    <div className={css(styles.authorLine)}>
+      <strong>Research:</strong> May-Li Khoe, Andy Matuschak, Jason Brennan.{" "}
+    </div>
+    <div className={css(styles.authorLine)}>
+      <strong>Illustrations:</strong> Natalie Fitzgerald, May-Li Khoe.
+    </div>
+  </h2>;
 
+const HeroHeader = () =>
+<div>
+  <div className={css(styles.heroContainer)}>
+    <div className={css(styles.forestFlatBackground)} />
     <div className={css(styles.forestContainer)}>
       <Forest />
     </div>
     <div className={css(styles.heroGradient)} />
     <div
       style={{
-        position: "relative",
+        position: "relative", 
         pointerEvents: "none",
         userSelect: "none",
       }}
@@ -31,14 +36,15 @@ const HeroHeader = () =>
       <h1 className={css(styles.title)}>
         Empowering children through mathematical concepts
       </h1>
-      <h2 className={css(styles.authors)}>
-        We envision a future filled with curious explorers who have passion and
-        preparedness to solve important problems for our planet. How might
-        educational technology move beyond fancily animated quizzes, and into
-        the realm of early empowerment?
-      </h2>
+      <div className={css(styles.hideOnMobile)}>
+        <Authors />
+      </div>
     </div>
-  </div>;
+  </div>
+      <div className={css(styles.hideUnlessMobile)}>
+      <Authors />
+    </div>
+</div>
 
 const Hairline = () => <div className={css(styles.hairline)} />;
 
@@ -583,6 +589,9 @@ const styles = StyleSheet.create({
     margin: "40px auto",
     display: "block",
 
+    [mediaQueries.smOrSmaller]: {
+      marginTop: 20,
+    },
     [mediaQueries.mdOrLarger]: {
       width: 512,
     },
@@ -797,15 +806,33 @@ const styles = StyleSheet.create({
   },
 
   heroContainer: {
-    // margin: "0 auto",
-    // position: "relative",
     height: 615,
+    [mediaQueries.smOrSmaller]: {
+      height: 322,
+      marginBottom: 8,
+      maxHeight: "100vh",
+    },
+  },
+
+  forestFlatBackground: {
+    backgroundColor: "#c7e9f1",
+    position: "absolute",
+    left: 0,
+    height: 615,
+    [mediaQueries.smOrSmaller]: {
+      height: 322,
+      maxHeight: "100vh",
+    },
+    width: "100%",
   },
 
   forestContainer: {
     transform: "scale(0.8)",
     transformOrigin: "0 0",
     marginLeft: -24,
+    [mediaQueries.smOrSmaller]: {
+      transform: "scale(0.42)",
+    },
   },
 
   heroGradient: {
@@ -815,7 +842,11 @@ const styles = StyleSheet.create({
     bottom: 0,
     right: 0,
     width: "100%",
-    height: 622,
+    height: 615,
+    [mediaQueries.smOrSmaller]: {
+      height: 322,
+      maxHeight: "100vh",
+    },
     background:
       "linear-gradient(-179deg, rgba(21,89,104,0.27) 41%, rgba(21,89,104,0.00) 76%)",
     pointerEvents: "none",
@@ -829,7 +860,7 @@ const styles = StyleSheet.create({
     lineHeight: "50px",
     paddingTop: 108,
     [mediaQueries.smOrSmaller]: {
-      paddingTop: 88,
+      paddingTop: 82,
       ...globalStyles.typography.subjectHeadingMobile,
     },
     maxWidth: 700,
@@ -837,11 +868,22 @@ const styles = StyleSheet.create({
 
   authors: {
     ...globalStyles.typography.smallHeading,
+    fontWeight: "normal",
     color: "white",
-    fontSize: 17,
-    fontWeight: 600,
-    lineHeight: "20px",
-    textAlign: "left",
-    maxWidth: 665,
+    [mediaQueries.smOrSmaller]: {
+      color: globalStyles.colors.gray41,
+      ...globalStyles.typography.caption,
+      fontWeight: "normal",
+    },
+    maxWidth: 600,
+  },
+
+  authorLine: {
+    [mediaQueries.smOrSmaller]: {
+      display: "inline",
+    },
+    [mediaQueries.mdOrLarger]: {
+      display: "block",
+    },
   },
 });
