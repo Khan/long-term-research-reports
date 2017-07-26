@@ -201,7 +201,6 @@ export default class Forest extends React.Component {
           position: "absolute",
           height: 768,
           width: containerWidth,
-          overflow: "hidden",
         }}
         onMouseDown={this.onMove}
       >
