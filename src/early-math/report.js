@@ -843,6 +843,7 @@ const styles = StyleSheet.create({
     transform: "scale(0.8)",
     transformOrigin: "0 0",
     marginLeft: -24,
+    userSelect: "none",
     [mediaQueries.smOrSmaller]: {
       transform: "scale(0.42)",
     },

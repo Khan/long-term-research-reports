@@ -5,6 +5,76 @@ const numCharFrames = 60;
 const startingX = 420;
 const imageSize = 125;
 
+// Polyfill adapted from https://gist.github.com/Yaffle/1145197.
+const { convertPointFromPageToNode, convertPointFromNodeToPage } = (() => {
+  var I = new WebKitCSSMatrix();
+
+  function Point(x, y, z) {
+    this.x = x;
+    this.y = y;
+    this.z = z;
+  }
+
+  Point.prototype.transformBy = function(matrix) {
+    var tmp = matrix.multiply(I.translate(this.x, this.y, this.z));
+    return new Point(tmp.m41, tmp.m42, tmp.m43);
+  };
+
+  function getTransformationMatrix(element) {
+    var transformationMatrix = I;
+    var x = element;
+
+    while (x != undefined && x !== x.ownerDocument.documentElement) {
+      var computedStyle = window.getComputedStyle(x, undefined);
+      var transform = computedStyle.transform || "none";
+      var c = transform === "none" ? I : new WebKitCSSMatrix(transform);
+      transformationMatrix = c.multiply(transformationMatrix);
+      x = x.parentNode;
+    }
+
+    var w = element.offsetWidth;
+    var h = element.offsetHeight;
+    var i = 4;
+    var left = +Infinity;
+    var top = +Infinity;
+    while (--i >= 0) {
+      var p = new Point(
+        i === 0 || i === 1 ? 0 : w,
+        i === 0 || i === 3 ? 0 : h,
+        0,
+      ).transformBy(transformationMatrix);
+      if (p.x < left) {
+        left = p.x;
+      }
+      if (p.y < top) {
+        top = p.y;
+      }
+    }
+    var rect = element.getBoundingClientRect();
+    transformationMatrix = I.translate(
+      window.pageXOffset + rect.left - left,
+      window.pageYOffset + rect.top - top,
+      0,
+    ).multiply(transformationMatrix);
+
+    return transformationMatrix;
+  }
+
+  const convertPointFromPageToNode = function(element, pageX, pageY) {
+    return new Point(pageX, pageY, 0).transformBy(
+      getTransformationMatrix(element).inverse(),
+    );
+  };
+
+  const convertPointFromNodeToPage = function(element, offsetX, offsetY) {
+    return new Point(offsetX, offsetY, 0).transformBy(
+      getTransformationMatrix(element),
+    );
+  };
+
+  return { convertPointFromPageToNode, convertPointFromNodeToPage };
+})();
+
 const imageStyle = {
   position: "absolute",
   pointerEvents: "none",
@@ -63,17 +133,21 @@ export default class Forest extends React.Component {
     if (this.animationRequest) {
       window.cancelAnimationFrame(this.animationRequest);
       this.animationRequest = 0;
+      this.lastTimestamp = 0;
     }
   };
 
   animate = (timestamp: number) => {
+    const numFrames = (timestamp - (this.lastTimestamp || (timestamp - 1000/60))) / (1000 / 60)
+    this.lastTimestamp = timestamp;
+    
     this.animationRequest = window.requestAnimationFrame(this.animate);
 
     const availableWidthFraction = 0.45; // the fraction of the header width unobscured by other content
     const cameraEdgeLeftFraction = 0.45; // in unit screen space, how far along the screen is the line where the camera moves at the same speed as the player?
     const cameraEdgeRightFraction = 0.8; // in unit screen space, how far along the screen is the line where the camera moves at the same speed as the player?
     const cameraEdgeSmoothingSizeFraction = 0.07; // in unit screen space, how wide is the region before cameraEdgeFraction where the camera accelerates?
-    const maximumStepSize = 3; // the maximum speed (pts/frame) at which the player can move
+    const maximumStepSize = 3 * numFrames; // the maximum speed (pts/frame) at which the player can move
     const maximumCameraSpeed = maximumStepSize; // pts/frame
     const minimumCameraSpeed = 0; // pts/frame
 
@@ -142,7 +216,7 @@ export default class Forest extends React.Component {
     const dx = this.state.targetPlayerX - this.state.playerX;
     if (Math.abs(dx) > maximumStepSize) {
       const playerStepSize = clip(
-        this.state.playerStepSize + Math.sign(dx) / 7,
+        this.state.playerStepSize + Math.sign(dx) / (7 / numFrames),
         Math.sign(dx) === 1 ? 0 : -maximumStepSize,
         Math.sign(dx) === 1 ? maximumStepSize : 0,
       );
@@ -151,7 +225,7 @@ export default class Forest extends React.Component {
         playerX: this.state.playerX + playerStepSize,
         playerDirection: dx > 0 ? "right" : "left",
         playerStepSize,
-        playerCel: (this.state.playerCel + 1) % numCharFrames,
+        playerCel: (this.state.playerCel + Math.round(numFrames)) % numCharFrames,
       };
     } else {
       newState = {
@@ -164,13 +238,25 @@ export default class Forest extends React.Component {
     this.setState(newState);
   };
 
-  onMove = (event: MouseEvent) => {
+  setMovementTarget = (x: number) => {
     this.setState({
       targetPlayerX:
-        event.nativeEvent.offsetX -
-        this.state.backgroundOriginXs[this.state.backgroundOriginXs.length - 1],
+        x - this.state.backgroundOriginXs[this.state.backgroundOriginXs.length - 1],
     });
     this.startAnimation();
+  };
+
+  onMove = (event: MouseEvent) => {
+    this.setMovementTarget(event.nativeEvent.offsetX);
+  };
+
+  onTouch = (event: TouchEvent) => {
+    const { x } = convertPointFromPageToNode(
+      event.target,
+      event.changedTouches.item(0).pageX,
+      event.changedTouches.item(0).pageY,
+    );
+    this.setMovementTarget(x);
   };
 
   componentWillUnmount = () => {
@@ -203,6 +289,8 @@ export default class Forest extends React.Component {
           width: containerWidth,
         }}
         onMouseDown={this.onMove}
+        onTouchStart={this.onTouch}
+        onTouchMove={this.onTouch}
       >
         {this.state.backgroundOriginXs.map((origin, index) =>
           <div
