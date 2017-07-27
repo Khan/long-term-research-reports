@@ -329,7 +329,7 @@ export default class Report extends React.Component {
               settings: {
                 centerMode: false,
                 autoplay: true,
-                dots: true,
+                autoplaySpeed: 5000,
               },
             },
           ]}
@@ -1047,13 +1047,13 @@ const styles = StyleSheet.create({
       top: "calc(100vw * 3 / 4 / 2)",
     },
     [mediaQueries.mdOrLarger]: {
-    top: 131,
+      top: 131,
     },
     [mediaQueries.lgOrLarger]: {
-    top: 216,
+      top: 216,
     },
     [mediaQueries.xlOrLarger]: {
-    top: 258,
+      top: 258,
     }
   },
 });
