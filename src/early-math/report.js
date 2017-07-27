@@ -246,21 +246,44 @@ export default class Report extends React.Component {
           infinite
           slidesToShow={1}
           centerMode
-          centerPadding="100px"
+          centerPadding="223px"
+          responsive={[
+            {
+              breakpoint: 1200,
+              settings: {
+                centerPadding: "188px",
+              },
+            },
+            {
+              breakpoint: 1024,
+              settings: {
+                centerPadding: "176px",
+              },
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                centerMode: false,
+                autoplay: true,
+              },
+            },
+          ]}
         >
-          {["green", "blue", "yellow", "red"].map((color) =>           <div
-            style={{
-              padding: "0 10px",
-              height: 100,
-            }}
-          >
-          <div style={{
-            width: "100%",
-            height: 100,
-            backgroundColor: color,
-          }} />
-          </div>
-)}
+          {["green", "blue", "yellow", "red"].map(color =>
+            <div
+              style={{
+                padding: "0 15px",
+              }}
+            >
+              <div
+                style={{
+                  width: "100%",
+                  height: 517,
+                  backgroundColor: color,
+                }}
+              />
+            </div>,
+          )}
         </Slider>
         <Hairline />
         <Heading>Design principles</Heading>
