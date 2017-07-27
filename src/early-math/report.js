@@ -4,10 +4,54 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import angleBracketLeftIcon from "webapp/shared-styles-package/icon.angleBracketLeft.js";
 import globalStyles from "webapp/shared-styles-package/global-styles";
 import mediaQueries from "webapp/shared-styles-package/media-queries";
 
 import Forest from "./forest";
+
+const Icon = props => {
+  const { color, pathClassName, className } = props;
+  let { icon, size } = props;
+  let units = "";
+
+  // If the raw path was passed in, wrap it in the format that we expect.
+  if (typeof icon === "string") {
+    icon = {
+      path: icon,
+      width: 10,
+      height: 10,
+    };
+  }
+
+  // `size` defaults to 1em to mirror the behavior of Font Awesome.
+  if (typeof size !== "number") {
+    size = 1;
+    units = "em";
+  }
+
+  const height = size;
+  const width = height / icon.height * icon.width;
+
+  // NOTE: We assume that the viewBox is cropped and aligned to (0, 0),
+  //       but icons can be defined differently. At some point we might
+  //       want to add these attributes to icon-paths.js, but for now
+  //       this is a fairly safe assumption.
+  const xMin = 0;
+  const yMin = 0;
+
+  return (
+    <svg
+      className={className}
+      focusable={!!props.focusable}
+      width={width + units}
+      height={height + units}
+      viewBox={`${xMin} ${yMin} ${icon.width} ${icon.height}`}
+    >
+      <path className={pathClassName} fill={color} d={icon.path} />
+    </svg>
+  );
+};
 
 const Authors = () =>
   <h2 className={css(styles.authors)}>
@@ -140,6 +184,23 @@ const FurtherReadingItem = ({ children }) =>
     {children}
   </li>;
 
+const CarouselArrow = ({ className, style, onClick, isNext }) =>
+  <div
+    className={css(styles.carouselArrow)}
+    style={{
+      transform: `translate(0, -50%)${isNext ? " scaleX(-1)" : ""}`,
+      right: isNext ? 10 : undefined,
+      left: isNext ? undefined : 10,
+    }}
+    onClick={onClick}
+  >
+    <Icon icon={angleBracketLeftIcon} size={20} color="#fff" />
+  </div>;
+
+const CarouselNextArrow = props => <CarouselArrow {...props} isNext />;
+
+const CarouselPrevArrow = props => <CarouselArrow {...props} />;
+
 export default class Report extends React.Component {
   componentDidMount = () => {
     // Aphrodite interferes with the initial sizing of our carousel. This is a hack to work around that.
@@ -248,6 +309,8 @@ export default class Report extends React.Component {
           centerMode
           centerPadding="223px"
           dots={false}
+          nextArrow={<CarouselNextArrow />}
+          prevArrow={<CarouselPrevArrow />}
           responsive={[
             {
               breakpoint: 1200,
@@ -286,7 +349,9 @@ export default class Report extends React.Component {
                 }}
               />
               <Body noBottomMargin>
-                This is a caption for the figure in the carousel above. This is a caption for the figure in the carousel above. This is a caption for the figure in the carousel above.
+                This is a caption for the figure in the carousel above. This is
+                a caption for the figure in the carousel above. This is a
+                caption for the figure in the carousel above.
               </Body>
             </div>,
           )}
@@ -961,5 +1026,34 @@ const styles = StyleSheet.create({
     [mediaQueries.mdOrLarger]: {
       display: "block",
     },
+  },
+
+  carouselArrow: {
+    position: "absolute",
+    cursor: "pointer",
+    outline: "none",
+    zIndex: 10,
+    opacity: 0.7,
+    transition: `opacity ${globalStyles.standardTransition}`,
+    ":hover": {
+      opacity: 1,
+      textDecoration: "none",
+    },
+    ":focus": {
+      opacity: 1,
+    },
+    height: 20,
+    [mediaQueries.smOrSmaller]: {
+      top: "calc(100vw * 3 / 4 / 2)",
+    },
+    [mediaQueries.mdOrLarger]: {
+    top: 131,
+    },
+    [mediaQueries.lgOrLarger]: {
+    top: 216,
+    },
+    [mediaQueries.xlOrLarger]: {
+    top: 258,
+    }
   },
 });
