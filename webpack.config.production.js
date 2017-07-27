@@ -17,6 +17,11 @@ module.exports = {
           presets: [["es2015", { modules: false }], "stage-2", "react", "flow"],
         },
       },
+      {
+        test: /\.css$/,
+        use: [ 'style-loader', 'css-loader' ]
+      },
+      { test: /\.(png|woff|woff2|eot|ttf|svg|gif)$/, loader: 'url-loader?limit=100000' }
     ],
   },
   resolve: {
