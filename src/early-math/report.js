@@ -247,6 +247,7 @@ export default class Report extends React.Component {
           slidesToShow={1}
           centerMode
           centerPadding="223px"
+          dots={false}
           responsive={[
             {
               breakpoint: 1200,
@@ -265,6 +266,7 @@ export default class Report extends React.Component {
               settings: {
                 centerMode: false,
                 autoplay: true,
+                dots: true,
               },
             },
           ]}
@@ -280,8 +282,12 @@ export default class Report extends React.Component {
                   width: "100%",
                   height: 517,
                   backgroundColor: color,
+                  marginBottom: 8,
                 }}
               />
+              <Body noBottomMargin>
+                This is a caption for the figure in the carousel above. This is a caption for the figure in the carousel above. This is a caption for the figure in the carousel above.
+              </Body>
             </div>,
           )}
         </Slider>
