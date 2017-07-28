@@ -15,11 +15,11 @@ module.exports = {
     // bundle the client for hot reloading
     // only- means to only hot reload for successful updates
 
-    "./src/early-math/index.js",
+    "./src/index.js",
   ],
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
+    filename: "dev-bundle.js",
     publicPath: "/static/",
   },
   module: {
@@ -68,7 +68,8 @@ module.exports = {
   },
 
   devServer: {
-    host: "localhost",
+    host: "0.0.0.0",
+    disableHostCheck: true,
     port: 3100,
     setup: function(app) {
       app.use(
