@@ -16,6 +16,8 @@
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "coffee-loader": "^0.7.3",
+    "coffee-script": "^1.12.7",
     "copyfiles": "^1.2.0",
     "css-loader": "^0.28.4",
     "file-loader": "^1.0.0",

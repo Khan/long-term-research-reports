@@ -3,23 +3,28 @@ const path = require("path");
 const webpack = require("webpack");
 
 module.exports = {
-  entry: [
-    "react-hot-loader/patch",
-    // activate HMR for React
+  entry: {
+    dev: [
+      "react-hot-loader/patch",
+      // activate HMR for React
 
-    "webpack-dev-server/client?http://localhost:3100",
-    // bundle the client for webpack-dev-server
-    // and connect to the provided endpoint
+      "webpack-dev-server/client?http://localhost:3100",
+      // bundle the client for webpack-dev-server
+      // and connect to the provided endpoint
 
-    "webpack/hot/only-dev-server",
-    // bundle the client for hot reloading
-    // only- means to only hot reload for successful updates
+      "webpack/hot/only-dev-server",
+      // bundle the client for hot reloading
+      // only- means to only hot reload for successful updates
 
-    "./src/index.js",
-  ],
+      "./src/index.js",
+    ],
+    cantor: [
+      "./src/cantor/cantor.js",
+    ]
+  },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "dev-bundle.js",
+    filename: "[name]-bundle.js",
     publicPath: "/static/",
   },
   module: {
@@ -48,6 +53,10 @@ module.exports = {
         use: [ 'style-loader', 'css-loader' ]
       },
       { test: /\.(png|woff|woff2|eot|ttf|svg|gif)$/, loader: 'url-loader?limit=100000' },
+      {
+        test: /\.coffee$/,
+        use: [ 'coffee-loader' ]
+      }
     ],
   },
   plugins: [
@@ -64,7 +73,9 @@ module.exports = {
   resolve: {
     alias: {
       webapp: path.resolve(__dirname, "../webapp/javascript"),
+      "cantor-images": path.resolve(__dirname, "src/cantor/Cantor/Cantor.framer/images")
     },
+    modules: [path.resolve(__dirname, "src/cantor/Cantor/Cantor.framer/modules"), "node_modules"]
   },
 
   devServer: {

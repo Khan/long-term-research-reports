@@ -1,0 +1,3 @@
+[submodule "src/cantor/Cantor"]
+	path = src/cantor/Cantor
+	url = git@github.com:Khan/Cantor.git

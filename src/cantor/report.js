@@ -57,13 +57,25 @@ const Authors = () =>
     <div className={css(styles.authorLine)}>
       Andy Matuschak, May-Li Khoe, Scott Farrar
     </div>
-  </h2>;
+</h2>;
+
+class CantorPrototype extends React.Component {
+  componentDidMount = () => {
+    this.iframe.contentWindow.document.open();
+    this.iframe.contentWindow.document.write(`<html><head><base href="${document.location.origin}" /></head><body><script src="/static/cantor-bundle.js"></script></body></html>`);
+    this.iframe.contentWindow.document.close();
+  }
+
+  render = () => (
+    <iframe ref={(element) => this.iframe = element} className={css(styles.heroInteractiveContainer)} />
+  )
+}
 
 const HeroHeader = () =>
   <div>
     <div className={css(styles.heroContainer)}>
-      <div className={css(styles.forestFlatBackground)} />
-      <div className={css(styles.heroGradient)} />
+      <CantorPrototype />
+      <div className={css(styles.topBar)} />
       <div
         style={{
           position: "relative",
@@ -1019,16 +1031,25 @@ const styles = StyleSheet.create({
     },
   },
 
-  forestFlatBackground: {
-    backgroundColor: "#c7e9f1",
+  topBar: {
+    backgroundColor: globalStyles.domainColors("default").domain1,
     position: "absolute",
+    top: 0,
     left: 0,
+    height: 61,
+    width: "100%",
+  },
+
+  heroInteractiveContainer: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
     height: 615,
     [mediaQueries.smOrSmaller]: {
       height: 322,
       maxHeight: "100vh",
-    },
-    width: "100%",
+    }
   },
 
   forestContainer: {
@@ -1041,26 +1062,8 @@ const styles = StyleSheet.create({
     },
   },
 
-  heroGradient: {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    bottom: 0,
-    right: 0,
-    width: "100%",
-    height: 615,
-    [mediaQueries.smOrSmaller]: {
-      height: 322,
-      maxHeight: "100vh",
-    },
-    background:
-      "linear-gradient(-179deg, rgba(21,89,104,0.27) 41%, rgba(21,89,104,0.00) 76%)",
-    pointerEvents: "none",
-    userSelect: "none",
-  },
-
   title: {
-    color: "white",
+    color: globalStyles.domainColors("default").domain3,
     marginBottom: 20,
     ...globalStyles.typography.subjectHeadingDesktop,
     lineHeight: "50px",
@@ -1075,9 +1078,9 @@ const styles = StyleSheet.create({
   authors: {
     ...globalStyles.typography.smallHeading,
     fontWeight: "normal",
-    color: "white",
+    color: globalStyles.domainColors("default").domain3,
     [mediaQueries.smOrSmaller]: {
-      color: globalStyles.colors.gray41,
+      color: globalStyles.domainColors("default").domain2,
       ...globalStyles.typography.caption,
       fontWeight: "normal",
     },
