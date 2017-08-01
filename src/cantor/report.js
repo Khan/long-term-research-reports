@@ -9,8 +9,6 @@ import angleBracketLeftIcon from "webapp/shared-styles-package/icon.angleBracket
 import globalStyles from "webapp/shared-styles-package/global-styles";
 import mediaQueries from "webapp/shared-styles-package/media-queries";
 
-import Forest from "./forest";
-
 const Icon = props => {
   const { color, pathClassName, className } = props;
   let { icon, size } = props;
