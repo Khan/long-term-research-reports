@@ -2,7 +2,8 @@
 import React from "react";
 
 const numCharFrames = 60;
-const startingX = 420;
+const startingX = 1460;
+const cameraOffset = -1000;
 const imageSize = 125;
 
 // Polyfill adapted from https://gist.github.com/Yaffle/1145197.
@@ -119,7 +120,7 @@ export default class Forest extends React.Component {
       targetPlayerX: startingX,
       playerStepSize: 0,
       playerCel: 0,
-      backgroundOriginXs: new Array(4).fill(0),
+      backgroundOriginXs: new Array(4).fill(cameraOffset),
     };
   }
 
