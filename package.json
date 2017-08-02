@@ -32,11 +32,13 @@
   },
   "dependencies": {
     "@types/aphrodite": "^0.5.6",
+    "@types/deep-equal": "^1.0.0",
     "@types/pako": "^1.0.0",
     "@types/react": "^15.0.38",
     "@types/react-dom": "^15.5.1",
     "@types/react-slick": "^0.14.1",
     "aphrodite": "^1.2.3",
+    "deep-equal": "^1.0.1",
     "pako": "^1.0.5",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",

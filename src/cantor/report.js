@@ -57,22 +57,30 @@ const Authors = () =>
     <div className={css(styles.authorLine)}>
       Andy Matuschak, May-Li Khoe, Scott Farrar
     </div>
-</h2>;
+  </h2>;
 
-import headerCanvasGZ from "./canvases/1-header.gz"
+import headerCanvasGZ from "./canvases/1-header.gz";
 
 class CantorPrototype extends React.Component {
   componentDidMount = () => {
     this.iframe.contentWindow.document.open();
-    this.iframe.contentWindow.document.write(`<html><head><base href="${document.location.origin}" /></head><body><script src="/static/cantor-bundle.js"></script><script type="text/javascript"s>
+    this.iframe.contentWindow.document.write(`<html><head><base href="${document
+      .location
+      .origin}" /></head><body><script src="/static/cantor-bundle.js"></script><script type="text/javascript"s>
     var data = window.pako.inflate(atob('${headerCanvasGZ}'), {to: "string"});
-    window.cantorRecorder.playRecordedData(data);</script></body></html>`);
+   window.cantorRecorder.playRecordedData(data);
+   var updateRootLayerPosition = function() { if (window.innerWidth >= 768) { window.rootLayer.x = window.innerWidth / 2 - 100; window.rootLayer.y = 0 } else { window.rootLayer.x = window.innerWidth / 2 - 300; window.rootLayer.y = 40} }
+   window.onresize = updateRootLayerPosition
+   updateRootLayerPosition();
+   </script></body></html>`);
     this.iframe.contentWindow.document.close();
-  }
+  };
 
-  render = () => (
-    <iframe ref={(element) => this.iframe = element} className={css(styles.heroInteractiveContainer)} />
-  )
+  render = () =>
+    <iframe
+      ref={element => (this.iframe = element)}
+      className={css(styles.heroInteractiveContainer)}
+    />;
 }
 
 const HeroHeader = () =>
@@ -706,8 +714,9 @@ export default class Report extends React.Component {
             "We’ve sketched ideas for exploring fractions, negative numbers, and algebraic expressions with related digital manipulatives.",
             "We first investigated digital number manipulatives in the context of an early numeracy environment. In that system, these number blocks could be used to modify the child’s world.",
             "Unlike physical blocks, digital number blocks could represent arbitrarily high place values by continuously zooming out, or by representing higher place values by higher-dimensional rotations.",
-          ].map(text =>
+          ].map((text, index) =>
             <div
+              key={index}
               style={{
                 padding: "0 15px",
               }}
@@ -736,7 +745,11 @@ export default class Report extends React.Component {
             allow students to explore others’ strategies for tackling a given
             problem.
           </Body>
-          <Body>We haven’t yet found “Mathland,” but we believe that dynamic representations like these help point the way—not just in math, but across all domains of thought.</Body>
+          <Body>
+            We haven’t yet found “Mathland,” but we believe that dynamic
+            representations like these help point the way—not just in math, but
+            across all domains of thought.
+          </Body>
           <SidebarItem top={0}>
             <p className={css(styles.sidebarBody)}>
               <a href="http://www.nctm.org/">
@@ -751,13 +764,10 @@ export default class Report extends React.Component {
         </BodyAndSidebar>
 
         <Heading>Acknowledgements</Heading>
-        <Body wide>
-TODO
-        </Body>
+        <Body wide>TODO</Body>
 
         <Heading>Further reading</Heading>
-        <Body wide>
-TODO        </Body>
+        <Body wide>TODO </Body>
         <ul className={css(styles.furtherReadingList)}>
           <FurtherReadingItem>
             Papert, Seymour. 1980. <em>Mindstorms</em>. Harvester Press.
@@ -1027,9 +1037,9 @@ const styles = StyleSheet.create({
   },
 
   heroContainer: {
-    height: 615,
+    height: 300,
     [mediaQueries.smOrSmaller]: {
-      height: 322,
+      height: 350,
       marginBottom: 8,
       maxHeight: "100vh",
     },
@@ -1049,11 +1059,23 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     width: "100%",
-    height: 615,
+    height: 300,
     [mediaQueries.smOrSmaller]: {
-      height: 322,
+      height: 350,
       maxHeight: "100vh",
-    }
+    },
+
+    paddingBottom: 1,
+    borderBottomWidth: 1,
+    borderBottomStyle: "solid",
+    borderBottomColor: globalStyles.colors.gray76, // TODO: Maybe we want a lighter color here for non-retina users?
+
+    "@media (-webkit-min-device-pixel-ratio: 2.0)": {
+      // Unfortunately, only Safari respects fractional border
+      // widths. Chrome is still working on it.
+      // https://bugs.chromium.org/p/chromium/issues/detail?id=623495
+      borderBottomWidth: 0.5,
+    },
   },
 
   forestContainer: {
