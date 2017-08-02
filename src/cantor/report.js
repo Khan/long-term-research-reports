@@ -59,19 +59,28 @@ const Authors = () =>
     </div>
   </h2>;
 
-import headerCanvasGZ from "./canvases/1-header.gz";
+import headerCanvasGZ from "./canvases/0-header.gz";
+import reflowCanvasGZ from "./canvases/2-37-and-15.gz";
 
 class CantorPrototype extends React.Component {
   componentDidMount = () => {
     this.iframe.contentWindow.document.open();
     this.iframe.contentWindow.document.write(`<html><head><base href="${document
       .location
-      .origin}" /></head><body><script src="/static/cantor-bundle.js"></script><script type="text/javascript">${this.props.recording ? `
-    var data = window.pako.inflate(atob('${this.props.recording}'), {to: "string"});
+      .origin}" /></head><body><script src="/static/cantor-bundle.js"></script><script type="text/javascript">${this
+      .props.recording
+      ? `
+    var data = window.pako.inflate(atob('${this.props
+      .recording}'), {to: "string"});
    window.cantorRecorder.playRecordedData(data);
-   var updateRootLayerPosition = function() { if (window.innerWidth >= 768) { window.rootLayer.x = window.innerWidth - 200; window.rootLayer.y = 20 } else { window.rootLayer.x = window.innerWidth - 600; window.rootLayer.y = 80} }
+   var updateRootLayerPosition = function() { if (window.innerWidth >= 768) { window.rootLayer.x = window.innerWidth + ${this
+     .props.xOffset || 0}; window.rootLayer.y = ${this.props.yOffset ||
+          0} } else { window.rootLayer.x = window.innerWidth + ${this.props
+          .mobileXOffset || 0}; window.rootLayer.y = ${this.props
+          .mobileYOffset || 0}} }
    window.onresize = updateRootLayerPosition
-   updateRootLayerPosition();` : ""}
+   updateRootLayerPosition();`
+      : "window.rootLayer.x = 100; window.rootLayer.y = 150"}
    </script></body></html>`);
     this.iframe.contentWindow.document.close();
   };
@@ -79,7 +88,7 @@ class CantorPrototype extends React.Component {
   render = () =>
     <iframe
       ref={element => (this.iframe = element)}
-      style={{width: "100%", height: "100%"}}
+      style={{ width: "100%", height: "100%" }}
     />;
 }
 
@@ -87,7 +96,13 @@ const HeroHeader = () =>
   <div>
     <div className={css(styles.heroContainer)}>
       <div className={css(styles.heroInteractiveContainer)}>
-        <CantorPrototype recording={headerCanvasGZ} />
+        <CantorPrototype
+          recording={headerCanvasGZ}
+          xOffset={-200}
+          yOffset={20}
+          mobileXOffset={-600}
+          mobileYOffset={80}
+        />
       </div>
       <div className={css(styles.topBar)} />
       <div
@@ -500,15 +515,25 @@ export default class Report extends React.Component {
           Examples loop below. Feel free to interrupt any of them: you can
           manipulate the objects yourself!
         </Body>
-        <div
-          className={css(styles.placeholder)}
-          style={{ height: 300, marginBottom: 24 }}
-        >
-          [Full-width embedded Cantor: 37 and 15 on the canvas. 15 is reflowed
-          to 3 + 10 + 2, then is moved up to “fit inside” 37]
-          <br />This “reflow” interaction emphasizes the <em>negative space</em>{" "}
-          in base ten numbers (“number partners”): 37 is “3 away” from 40.
+        <Subheading>Exploring number complements</Subheading>
+        <div className={css(styles.figure)} style={{ height: 240 }}>
+          <CantorPrototype
+            recording={reflowCanvasGZ}
+            xOffset={-200}
+            yOffset={100}
+            mobileXOffset={-200}
+            mobileYOffset={100}
+          />
+          <div className={css(styles.figureBorder)} />
         </div>
+        <Body wide>
+          This “reflow” interaction makes the <em>negative space</em> in
+          base ten numbers feel visceral: 37 is clearly “3 away” from 40, and we “feel” that interactively as we try to fit the two together.
+          </Body>
+          <Body wide>Fluent addition and subtraction of numbers up to 20 relies on an intuitive grasp of these relationships (also
+          called complements or number partners).
+        </Body>
+
         <div
           className={css(styles.placeholder)}
           style={{ height: 300, marginBottom: 24 }}
@@ -526,7 +551,7 @@ export default class Report extends React.Component {
           [Full-width embedded Cantor: 12 and 13 on the canvas. Each is slowly
           resized down to 2 and back to 10]<br />
           Note how 12 forms lots of rectangles as it’s resized. 13 doesn’t form
-          any. With this interaction, primality becomes visceral.
+          any. With this interaction, primality becomes an obvious property of the number block.
         </div>
         <Body wide>
           In each case, the student directly manipulates the number—they’re not
@@ -834,6 +859,25 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     lineHeight: 1.5,
     marginTop: 47,
+  },
+
+  figure: {
+    borderRadius: 4,
+    overflow: "hidden",
+    position: "relative",
+    marginBottom: 24,
+  },
+
+  figureBorder: {
+    borderRadius: 4,
+    borderWidth: 1,
+    borderStyle: "solid",
+    borderColor: "rgba(0, 0, 0, 0.1)",
+    overflow: "hidden",
+    position: "absolute",
+    width: "100%",
+    height: "100%",
+    top: 0,
   },
 
   figureCaption: {
