@@ -69,7 +69,7 @@ class CantorPrototype extends React.Component {
       .origin}" /></head><body><script src="/static/cantor-bundle.js"></script><script type="text/javascript"s>
     var data = window.pako.inflate(atob('${headerCanvasGZ}'), {to: "string"});
    window.cantorRecorder.playRecordedData(data);
-   var updateRootLayerPosition = function() { if (window.innerWidth >= 768) { window.rootLayer.x = window.innerWidth / 2 - 100; window.rootLayer.y = 0 } else { window.rootLayer.x = window.innerWidth / 2 - 300; window.rootLayer.y = 40} }
+   var updateRootLayerPosition = function() { if (window.innerWidth >= 768) { window.rootLayer.x = window.innerWidth - 200; window.rootLayer.y = 20 } else { window.rootLayer.x = window.innerWidth - 600; window.rootLayer.y = 80} }
    window.onresize = updateRootLayerPosition
    updateRootLayerPosition();
    </script></body></html>`);
