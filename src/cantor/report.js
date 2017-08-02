@@ -66,12 +66,12 @@ class CantorPrototype extends React.Component {
     this.iframe.contentWindow.document.open();
     this.iframe.contentWindow.document.write(`<html><head><base href="${document
       .location
-      .origin}" /></head><body><script src="/static/cantor-bundle.js"></script><script type="text/javascript"s>
-    var data = window.pako.inflate(atob('${headerCanvasGZ}'), {to: "string"});
+      .origin}" /></head><body><script src="/static/cantor-bundle.js"></script><script type="text/javascript">${this.props.recording ? `
+    var data = window.pako.inflate(atob('${this.props.recording}'), {to: "string"});
    window.cantorRecorder.playRecordedData(data);
    var updateRootLayerPosition = function() { if (window.innerWidth >= 768) { window.rootLayer.x = window.innerWidth - 200; window.rootLayer.y = 20 } else { window.rootLayer.x = window.innerWidth - 600; window.rootLayer.y = 80} }
    window.onresize = updateRootLayerPosition
-   updateRootLayerPosition();
+   updateRootLayerPosition();` : ""}
    </script></body></html>`);
     this.iframe.contentWindow.document.close();
   };
@@ -79,14 +79,16 @@ class CantorPrototype extends React.Component {
   render = () =>
     <iframe
       ref={element => (this.iframe = element)}
-      className={css(styles.heroInteractiveContainer)}
+      style={{width: "100%", height: "100%"}}
     />;
 }
 
 const HeroHeader = () =>
   <div>
     <div className={css(styles.heroContainer)}>
-      <CantorPrototype />
+      <div className={css(styles.heroInteractiveContainer)}>
+        <CantorPrototype recording={headerCanvasGZ} />
+      </div>
       <div className={css(styles.topBar)} />
       <div
         style={{
