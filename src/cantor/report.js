@@ -59,10 +59,14 @@ const Authors = () =>
     </div>
 </h2>;
 
+import headerCanvasGZ from "./canvases/1-header.gz"
+
 class CantorPrototype extends React.Component {
   componentDidMount = () => {
     this.iframe.contentWindow.document.open();
-    this.iframe.contentWindow.document.write(`<html><head><base href="${document.location.origin}" /></head><body><script src="/static/cantor-bundle.js"></script></body></html>`);
+    this.iframe.contentWindow.document.write(`<html><head><base href="${document.location.origin}" /></head><body><script src="/static/cantor-bundle.js"></script><script type="text/javascript"s>
+    var data = window.pako.inflate(atob('${headerCanvasGZ}'), {to: "string"});
+    window.cantorRecorder.playRecordedData(data);</script></body></html>`);
     this.iframe.contentWindow.document.close();
   }
 

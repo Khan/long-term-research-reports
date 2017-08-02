@@ -35,6 +35,14 @@ module.exports = {
         test: /\.(png|woff|woff2|eot|ttf|svg|gif)$/,
         loader: "url-loader?limit=100000",
       },
+      {
+        test: /\.coffee$/,
+        use: [ 'coffee-loader' ]
+      },
+      {
+        test: /\.gz$/,
+        use: 'base64-loader'
+      }
     ],
   },
   resolve: {

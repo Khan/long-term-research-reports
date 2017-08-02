@@ -52,10 +52,14 @@ module.exports = {
         test: /\.css$/,
         use: [ 'style-loader', 'css-loader' ]
       },
-      { test: /\.(png|woff|woff2|eot|ttf|svg|gif)$/, loader: 'url-loader?limit=100000' },
+      { test: /\.(png|woff|woff2|eot|ttf|svg|gif)$/, loader: 'url-loader?limit=1000000' },
       {
         test: /\.coffee$/,
         use: [ 'coffee-loader' ]
+      },
+      {
+        test: /\.gz$/,
+        use: 'base64-loader'
       }
     ],
   },
