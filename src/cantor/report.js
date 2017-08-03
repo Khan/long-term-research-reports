@@ -60,7 +60,9 @@ const Authors = () =>
   </h2>;
 
 import headerCanvasGZ from "./canvases/0-header.gz";
-import reflowCanvasGZ from "./canvases/2-37-and-15.gz";
+import negativeSpaceGZ from "./canvases/2-37-and-15.gz";
+import evenOddGZ from "./canvases/2-even-odd.gz";
+import primesGZ from "./canvases/2-primes.gz";
 
 class CantorPrototype extends React.Component {
   componentDidMount = () => {
@@ -512,13 +514,19 @@ export default class Report extends React.Component {
           </a>.
         </Body>
         <Body wide>
-          Examples loop below. Feel free to interrupt any of them: you can
-          manipulate the objects yourself!
+          Feel free to interrupt any of the examples below:{" "}
+          <strong>you can manipulate the objects yourself!</strong>
         </Body>
-        <Subheading>Exploring number complements</Subheading>
+        <Subheading>Exploring numbers' negative space</Subheading>
+        <Body wide>
+          Here's 37 + 15 again. This “reflow” interaction makes the{" "}
+          <em>negative space</em> in base ten numbers feel visceral: 37 is
+          clearly “3 away” from 40, and we “feel” that interactively as we try
+          to fit the two together.
+        </Body>
         <div className={css(styles.figure)} style={{ height: 240 }}>
           <CantorPrototype
-            recording={reflowCanvasGZ}
+            recording={negativeSpaceGZ}
             xOffset={-200}
             yOffset={100}
             mobileXOffset={-200}
@@ -527,32 +535,68 @@ export default class Report extends React.Component {
           <div className={css(styles.figureBorder)} />
         </div>
         <Body wide>
-          This “reflow” interaction makes the <em>negative space</em> in
-          base ten numbers feel visceral: 37 is clearly “3 away” from 40, and we “feel” that interactively as we try to fit the two together.
-          </Body>
-          <Body wide>Fluent addition and subtraction of numbers up to 20 relies on an intuitive grasp of these relationships (also
-          called complements or number partners).
+          Fluent addition and subtraction of numbers up to 20 relies on an
+          intuitive grasp of these relationships (also called complements or
+          number partners).
         </Body>
 
-        <div
-          className={css(styles.placeholder)}
-          style={{ height: 300, marginBottom: 24 }}
-        >
-          [Full-width embedded Cantor: 10, 11, 12, 13 on the canvas. Each is
-          resized to 2 wide]<br />
-          This “resize” interaction makes modular arithmetic and divisibility
-          immediately apparent. Even-ness and odd-ness emerge from casual play
-          as a clear pattern.
+        <Subheading>From modular arithmetic to even and odd</Subheading>
+        <Body wide>
+          Do you see a pattern? What's with the little “bumps” that stick out of
+          some of the numbers?
+        </Body>
+        <div className={css(styles.figure)} style={{ height: 240 }}>
+          <CantorPrototype
+            recording={evenOddGZ}
+            xOffset={-400}
+            yOffset={100}
+            mobileXOffset={-300}
+            mobileYOffset={100}
+          />
+          <div className={css(styles.figureBorder)} />
         </div>
-        <div
-          className={css(styles.placeholder)}
-          style={{ height: 300, marginBottom: 24 }}
-        >
-          [Full-width embedded Cantor: 12 and 13 on the canvas. Each is slowly
-          resized down to 2 and back to 10]<br />
-          Note how 12 forms lots of rectangles as it’s resized. 13 doesn’t form
-          any. With this interaction, primality becomes an obvious property of the number block.
+        <Body wide>
+          Cantor's “resize” interaction makes alternative bases easy to explore.
+          Along the way, divisibility relationships are immediately apparent.
+          Even-ness and odd-ness emerge from casual play here as a clear
+          pattern: some numbers are “smooth” when you put them into two columns,
+          and some are “bumpy.” What about three columns?
+        </Body>
+
+        <Subheading>Making primes vivid</Subheading>
+        <Body wide>
+          As we resize 12, it forms lots of precise rectangles. 13 doesn’t form
+          any at all! Why?
+        </Body>
+        <div className={css(styles.figure)} style={{ height: 240 }}>
+          <CantorPrototype
+            recording={primesGZ}
+            xOffset={-300}
+            yOffset={60}
+            mobileXOffset={-260}
+            mobileYOffset={60}
+          />
+          <div className={css(styles.figureBorder)} />
         </div>
+        <Body wide>
+          With this interaction, primality becomes an apparent property of a
+          number—something you'd notice naturally when playing with the blocks.
+        </Body>
+        <Body wide>
+          By making primality vivid through direct manipulation, we help create
+          authentic{" "}
+          <a href="http://math.ucsd.edu/~jrabin/publications/ProblemFreeActivity.pdf">
+            intellectual need
+          </a>{" "}
+          to understand this abstract number property. When students learn by
+          responding to a problem they've identified,{" "}
+          <a href="https://aaalab.stanford.edu/assets/papers/2011/Practicing_versus_inventing.pdf">
+            they're more able to transfer their new knowledge to other problems
+          </a>.
+        </Body>
+
+        <Subheading>And more</Subheading>
+
         <Body wide>
           In each case, the student directly manipulates the number—they’re not
           fiddling with some dissociated text field somewhere. The interactions
@@ -878,6 +922,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
     top: 0,
+    pointerEvents: "none",
   },
 
   figureCaption: {
