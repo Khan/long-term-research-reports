@@ -63,35 +63,54 @@ import headerCanvasGZ from "./canvases/0-header.gz";
 import negativeSpaceGZ from "./canvases/2-37-and-15.gz";
 import evenOddGZ from "./canvases/2-even-odd.gz";
 import primesGZ from "./canvases/2-primes.gz";
+import recordYourOwnGZ from "./canvases/3-record-your-own.gz";
 
 class CantorPrototype extends React.Component {
   componentDidMount = () => {
     this.iframe.contentWindow.document.open();
     this.iframe.contentWindow.document.write(`<html><head><base href="${document
-      .location
-      .origin}" /></head><body><script src="/static/cantor-bundle.js"></script><script type="text/javascript">${this
+      .location.origin}" /></head><body><script type="text/javascript">
+         window.addEventListener("cantor-play", function() { window.cantorRecorder.unpause() })
+   window.addEventListener("cantor-pause", function() { window.cantorRecorder.pause() })
+</script>
+<script src="/static/cantor-bundle.js"></script><script type="text/javascript">${this
       .props.recording
       ? `
     var data = window.pako.inflate(atob('${this.props
       .recording}'), {to: "string"});
    window.cantorRecorder.playRecordedData(data);
+   ${this.initialVisibility ? "" : "window.cantorRecorder.pause();"}
    var updateRootLayerPosition = function() { if (window.innerWidth >= 768) { window.rootLayer.x = window.innerWidth + ${this
      .props.xOffset || 0}; window.rootLayer.y = ${this.props.yOffset ||
           0} } else { window.rootLayer.x = window.innerWidth + ${this.props
           .mobileXOffset || 0}; window.rootLayer.y = ${this.props
           .mobileYOffset || 0}} }
-   window.onresize = updateRootLayerPosition
+   window.onresize = updateRootLayerPosition;
    updateRootLayerPosition();`
       : "window.rootLayer.x = 100; window.rootLayer.y = 150"}
+  ${this.props.mode ? `window.setCantorMode("${this.props.mode}");` : ""}
    </script></body></html>`);
     this.iframe.contentWindow.document.close();
   };
 
+  onVisibilityChange = newVisibility => {
+    this.initialVisibility = newVisibility;
+    this.iframe.contentWindow.dispatchEvent(
+      new Event(newVisibility ? "cantor-play" : "cantor-pause"),
+    );
+  };
+
   render = () =>
-    <iframe
-      ref={element => (this.iframe = element)}
-      style={{ width: "100%", height: "100%" }}
-    />;
+    <VisibilitySensor
+      partialVisibility
+      onChange={this.onVisibilityChange}
+      delayedCall={false}
+    >
+      <iframe
+        ref={element => (this.iframe = element)}
+        style={{ width: "100%", height: "100%" }}
+      />
+    </VisibilitySensor>;
 }
 
 const HeroHeader = () =>
@@ -680,7 +699,7 @@ export default class Report extends React.Component {
           </SidebarItem>
         </BodyAndSidebar>
         <Subheading>
-          Recording and replaying spoke explanations within Cantor
+          Recording and replaying explanations within Cantor
         </Subheading>
         <BodyAndSidebar>
           <Body noBottomMargin>
@@ -692,9 +711,14 @@ export default class Report extends React.Component {
             representations.
           </Body>
           <SidebarItem top={0}>
-            <div className={css(styles.placeholder)} style={{ height: 200 }}>
-              little Cantor canvas with a number block and a record and play
-              button, inviting the reader to record their own little snippet
+            <div className={css(styles.figure)} style={{ height: 200 }}>
+              <CantorPrototype
+                mode="recordYourOwn"
+                recording={recordYourOwnGZ}
+                mobileXOffset={-200}
+                mobileYOffset={100}
+              />
+              <div className={css(styles.figureBorder)} />
             </div>
           </SidebarItem>
         </BodyAndSidebar>
