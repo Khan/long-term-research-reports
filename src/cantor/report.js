@@ -540,12 +540,20 @@ export default class Report extends React.Component {
             </a>{" "}
             through morphing, distorting, multiplying, linking, communicating,
             abstracting, and so on. New forms can render ordinarily-invisible
-            relationships more visible.{" "}
-            <a href="https://www.google.com/url?q=https://ka-hivemind.herokuapp.com/entry/KhkXuvBHnvEuHNomH&sa=D&ust=1497651659174000&usg=AFQjCNGot9ex_BKS1ii4Kd92V0T0MZrg_Q">
-              Physical manipulatives are highly dependent on instructors’
-              guidance
-            </a>, but digital manipulatives can more easily encode elements of
-            that guidance in their interactions via constraints and dynamism.
+            relationships more visible.
+          </Body>
+          <Body>
+            In{" "}
+            <a href="https://ka-hivemind.herokuapp.com/entry/KhkXuvBHnvEuHNomH">
+              <em>Magical Hopes</em>, Deborah Ball argues
+            </a>{" "}
+            that physical manipulatives depend on instructors’ guidance to
+            illustrate connections, facilitate discussion, and encourage
+            reflection. Digital manipulatives can improve the situation: they
+            can more easily encode elements of expert guidance in their
+            interactions via constraints and dynamism, they can display and
+            maintain the relationships between multiple representations, and
+            they can create a new expressive context for social interaction.
           </Body>
         </BodyAndSidebar>
         <Heading>Revealing hidden properties of numbers</Heading>
@@ -695,8 +703,8 @@ export default class Report extends React.Component {
           </Body>
           <Body noBottomMargin>
             We pushed hard for versatility as we explored and invented in this
-            space. You’ve already seen in this article how Cantor might be used
-            in an online textbook; now let’s look at some other ideas.
+            space. The examples above have already illustrated how Cantor might
+            be used in an online textbook; now let’s look at some other ideas.
           </Body>
         </BodyAndSidebar>
         <Subheading>
@@ -713,13 +721,24 @@ export default class Report extends React.Component {
             enhancing natural thought without awkward pauses.
           </Body>
           <SidebarItem top={0}>
-            <div className={css(styles.placeholder)} style={{ height: 200 }}>
+            <div
+              className={css(styles.placeholder)}
+              style={{ height: 200, marginBottom: 24 }}
+            >
               {" "}looping animation of two people in conversation drawing and
               resizing 12 and 13, noticing factors.<br />
               <br />Speaker icon floats on canvas. When you click it, you hear
               the conversation, narrating the actions on the canvas at the speed
               of speech. Maybe there’s a Facebook-video-style subtitle track?
             </div>
+            <p className={css(styles.sidebarBody)}>
+              <a href="https://ka-hivemind.herokuapp.com/entry/KhkXuvBHnvEuHNomH">
+                Deborah Ball, in <em>Magical Hopes:</em>
+              </a>{" "}
+              “If manipulatives are to find their place [...] there will have to
+              be more opportunities for individual reflection and professional
+              discourse.”
+            </p>
           </SidebarItem>
         </BodyAndSidebar>
         <Subheading>
@@ -779,9 +798,10 @@ export default class Report extends React.Component {
             This versatile canvas doesn’t have to be limited to the number block
             representation we’ve shown. We imagine a future version of this
             canvas that can support all kinds of dynamic representations:
-            physics simulations, geometric drawings, videos, drawings, and so
-            on. If we allow these representations to connect to each other,
-            students can create and discover ideas we didn’t anticipate.
+            physics simulations, geometric diagrams, videos, drawings, algebraic
+            and numeric symbols, and so on. If we allow these representations to
+            connect to each other, students can create and discover ideas we
+            didn’t anticipate.
           </Body>
           <SidebarItem top={0}>
             <Figure>
@@ -869,9 +889,9 @@ export default class Report extends React.Component {
             problem.
           </Body>
           <Body>
-            We haven’t yet found “Mathland,” but we believe that dynamic
-            representations like these help point the way—not just in math, but
-            across all domains of thought.
+            We haven’t yet found the “Mathland” Papert dreamed of, but we
+            believe that dynamic representations like these help point the
+            way—not just in math, but across all domains of thought.
           </Body>
           <SidebarItem top={0}>
             <p className={css(styles.sidebarBody)}>
