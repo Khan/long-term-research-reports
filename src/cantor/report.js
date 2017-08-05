@@ -79,7 +79,9 @@ class CantorPrototype extends React.Component {
       ? `
     var data = window.pako.inflate(atob('${this.props
       .recording}'), {to: "string"});
-   ${this.props.mode === "prompt" ? "" : "window.cantorRecorder.playRecordedData(data);"}
+   ${this.props.mode === "prompt"
+     ? ""
+     : "window.cantorRecorder.playRecordedData(data);"}
    window.recordingData = data;
    window.recordingAudioURL = "${this.props.audioURL}";
    ${this.initialVisibility ? "" : "window.cantorRecorder.pause();"}
@@ -149,7 +151,7 @@ const HeroHeader = () =>
 
 const Hairline = () => <div className={css(styles.hairline)} />;
 
-const Body = ({ children, noBottomMargin, noTopMargin, wide }) =>
+const Body = ({ children, noBottomMargin, noTopMargin, wide, style }) =>
   <p
     className={css(
       styles.body,
@@ -157,6 +159,7 @@ const Body = ({ children, noBottomMargin, noTopMargin, wide }) =>
       noTopMargin ? styles.noTopMargin : undefined,
       wide ? styles.wideParagraph : undefined,
     )}
+    style={style}
   >
     {children}
   </p>;
@@ -195,8 +198,14 @@ const SidebarItem = ({ children, top }) =>
     {children}
   </div>;
 
-const Figure = ({ children, style }) =>
-  <div className={css(styles.figure)} style={style}>
+const Figure = ({ children, style, noBottomMargin }) =>
+  <div
+    className={css(
+      styles.figure,
+      noBottomMargin ? styles.noBottomMargin : undefined,
+    )}
+    style={style}
+  >
     {children}
     <div className={css(styles.figureBorder)} />
   </div>;
@@ -480,25 +489,29 @@ export default class Report extends React.Component {
             number 1,776 if you only had tick marks!
           </Body>
           <SidebarItem top={0}>
-            <img
-              src="/images/long-term-research/cantor/tick-marks.png"
-              style={{ width: "100%" }}
-            />
+            <Figure>
+              <img
+                src="/images/long-term-research/cantor/tick-marks.png"
+                style={{ width: "100%" }}
+              />
+            </Figure>
           </SidebarItem>
           <Body>
             So: what new kinds of representations might make math even easier to
-            think? Seymour Papert, a pioneering voice in education technology,
-            paints the tantalizing possibilities:
+            think? Seymour Papert, a pioneering voice in education technology,{" "}
+            <a href="http://youtu.be/_l7TR6r8MK8">
+              paints the tantalizing possibilities
+            </a>:
           </Body>
         </BodyAndSidebar>
-        <Body wide noTopMargin>
-          “While it’s true that most people in math class don’t learn much math,
+        <Body wide noTopMargin style={{ marginLeft: 40 }}>
+          While it’s true that most people in math class don’t learn much math,
           most kids in French class don’t learn much French. But, we don’t say
           that they are not “French-ly minded.” We don’t say that they don’t
           have a head for French because we know that if they grew-up in France,
           they would learn French perfectly well. And I think that my image of
           learning mathematics is that if we all learned mathematics in
-          “Mathland,” we would all learn mathematics perfectly well.”
+          “Mathland,” we would all learn mathematics perfectly well.
         </Body>
         <BodyAndSidebar>
           <Body>
@@ -509,11 +522,13 @@ export default class Report extends React.Component {
             often-inconvenient laws of physics.
           </Body>
           <SidebarItem top={0}>
-            <FPO />
-            <img
-              src="/images/long-term-research/cantor/physical-blocks.jpg"
-              style={{ width: "100%" }}
-            />
+            <Figure style={{ height: 300 }} noBottomMargin>
+              <FPO />
+              <img
+                src="/images/long-term-research/cantor/physical-blocks.jpg"
+                style={{ width: "100%" }}
+              />
+            </Figure>
             <p className={css(styles.figureCaption)}>
               Try representing 1,684! Try showing 36 in base 7! Try checking if
               75 is odd! Try…
@@ -660,10 +675,12 @@ export default class Report extends React.Component {
             later.
           </Body>
           <SidebarItem top={0}>
-            <img
-              src="/images/long-term-research/cantor/function-carnival.gif"
-              style={{ width: "100%" }}
-            />
+            <Figure style={{ height: 209 }}>
+              <img
+                src="/images/long-term-research/cantor/function-carnival.gif"
+                style={{ width: "100%" }}
+              />
+            </Figure>
           </SidebarItem>
           <Body>
             By contrast, consider the graphing calculator (Desmos also makes one
@@ -767,11 +784,13 @@ export default class Report extends React.Component {
             students can create and discover ideas we didn’t anticipate.
           </Body>
           <SidebarItem top={0}>
-            <FPO />
-            <img
-              src="/images/long-term-research/cantor/linked-representations.png"
-              style={{ width: "100%" }}
-            />
+            <Figure>
+              <FPO />
+              <img
+                src="/images/long-term-research/cantor/linked-representations.png"
+                style={{ width: "100%" }}
+              />
+            </Figure>
           </SidebarItem>
         </BodyAndSidebar>
         <Heading>Further possibilities</Heading>
@@ -863,6 +882,13 @@ export default class Report extends React.Component {
               <a href="http://www.nctm.org/uploadedFiles/Standards_and_Positions/PtAExecutiveSummary.pdf">
                 its core mathematical teaching practices.
               </a>
+            </p>
+            <p className={css(styles.sidebarBody)}>
+              Separately,{" "}
+              <a href="http://klr.tumblr.com/post/163537969033/we-asked-khan-academy-learners-to-talk-to-each">
+                weʼve been working on a broader project
+              </a>{" "}
+              around supporting open-ended student work across subjects.
             </p>
           </SidebarItem>
         </BodyAndSidebar>
