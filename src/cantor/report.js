@@ -64,6 +64,7 @@ import negativeSpaceGZ from "./canvases/2-37-and-15.gz";
 import evenOddGZ from "./canvases/2-even-odd.gz";
 import primesGZ from "./canvases/2-primes.gz";
 import recordYourOwnGZ from "./canvases/3-record-your-own.gz";
+import promptGZ from "./canvases/3-prompt.gz";
 
 class CantorPrototype extends React.Component {
   componentDidMount = () => {
@@ -78,7 +79,9 @@ class CantorPrototype extends React.Component {
       ? `
     var data = window.pako.inflate(atob('${this.props
       .recording}'), {to: "string"});
-   window.cantorRecorder.playRecordedData(data);
+   ${this.props.mode === "prompt" ? "" : "window.cantorRecorder.playRecordedData(data);"}
+   window.recordingData = data;
+   window.recordingAudioURL = "${this.props.audioURL}";
    ${this.initialVisibility ? "" : "window.cantorRecorder.pause();"}
    var updateRootLayerPosition = function() { if (window.innerWidth >= 768) { window.rootLayer.x = window.innerWidth + ${this
      .props.xOffset || 0}; window.rootLayer.y = ${this.props.yOffset ||
@@ -190,6 +193,12 @@ const BodyAndSidebar = ({ children }) =>
 const SidebarItem = ({ children, top }) =>
   <div className={css(styles.sidebarItem)} style={{ top }}>
     {children}
+  </div>;
+
+const Figure = ({ children, style }) =>
+  <div className={css(styles.figure)} style={style}>
+    {children}
+    <div className={css(styles.figureBorder)} />
   </div>;
 
 class AudibleVideoPlayer extends React.Component {
@@ -543,7 +552,7 @@ export default class Report extends React.Component {
           clearly “3 away” from 40, and we “feel” that interactively as we try
           to fit the two together.
         </Body>
-        <div className={css(styles.figure)} style={{ height: 240 }}>
+        <Figure style={{ height: 240 }}>
           <CantorPrototype
             recording={negativeSpaceGZ}
             xOffset={-200}
@@ -552,7 +561,7 @@ export default class Report extends React.Component {
             mobileYOffset={100}
           />
           <div className={css(styles.figureBorder)} />
-        </div>
+        </Figure>
         <Body wide>
           Fluent addition and subtraction of numbers up to 20 relies on an
           intuitive grasp of these relationships (also called complements or
@@ -564,7 +573,7 @@ export default class Report extends React.Component {
           Do you see a pattern? What's with the little “bumps” that stick out of
           some of the numbers?
         </Body>
-        <div className={css(styles.figure)} style={{ height: 240 }}>
+        <Figure style={{ height: 240 }}>
           <CantorPrototype
             recording={evenOddGZ}
             xOffset={-400}
@@ -572,8 +581,7 @@ export default class Report extends React.Component {
             mobileXOffset={-300}
             mobileYOffset={100}
           />
-          <div className={css(styles.figureBorder)} />
-        </div>
+        </Figure>
         <Body wide>
           Cantor's “resize” interaction makes alternative bases easy to explore.
           Along the way, divisibility relationships are immediately apparent.
@@ -587,7 +595,7 @@ export default class Report extends React.Component {
           As we resize 12, it forms lots of precise rectangles. 13 doesn’t form
           any at all! Why?
         </Body>
-        <div className={css(styles.figure)} style={{ height: 240 }}>
+        <Figure style={{ height: 240 }}>
           <CantorPrototype
             recording={primesGZ}
             xOffset={-300}
@@ -595,8 +603,7 @@ export default class Report extends React.Component {
             mobileXOffset={-260}
             mobileYOffset={60}
           />
-          <div className={css(styles.figureBorder)} />
-        </div>
+        </Figure>
         <Body wide>
           With this interaction, primality becomes an apparent property of a
           number—something you'd notice naturally when playing with the blocks.
@@ -711,15 +718,14 @@ export default class Report extends React.Component {
             representations.
           </Body>
           <SidebarItem top={0}>
-            <div className={css(styles.figure)} style={{ height: 200 }}>
+            <Figure style={{ height: 200 }}>
               <CantorPrototype
                 mode="recordYourOwn"
                 recording={recordYourOwnGZ}
                 mobileXOffset={-200}
                 mobileYOffset={100}
               />
-              <div className={css(styles.figureBorder)} />
-            </div>
+            </Figure>
           </SidebarItem>
         </BodyAndSidebar>
         <Subheading>
@@ -737,12 +743,15 @@ export default class Report extends React.Component {
             provocation.
           </Body>
           <SidebarItem top={0}>
-            <div className={css(styles.placeholder)} style={{ height: 200 }}>
-              Cantor canvas with a waiting play button. Click it, and a
-              recording creates a “12” block and resizes it to 6, noting aloud
-              that it makes a rectangle. It asks (subtitled): “how many
-              rectangles can you make out of 12?”
-            </div>
+            <Figure style={{ height: 250 }}>
+              <CantorPrototype
+                mode="prompt"
+                recording={promptGZ}
+                audioURL="/sounds/long-term-research/cantor/3-prompt.mp3"
+                mobileXOffset={-200}
+                mobileYOffset={100}
+              />
+            </Figure>
           </SidebarItem>
         </BodyAndSidebar>
         <Subheading>

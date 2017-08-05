@@ -92,6 +92,10 @@ module.exports = {
         express.static(path.join(__dirname, "public"))
       );
       app.use(
+        "/sounds/long-term-research/",
+        express.static(path.join(__dirname, "public"))
+      );
+      app.use(
         "/fonts",
         express.static(path.join(__dirname, "../webapp/fonts"))
       );
