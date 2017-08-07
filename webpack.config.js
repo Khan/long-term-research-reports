@@ -18,8 +18,8 @@ module.exports = {
 
       "./src/index.js",
     ],
-    cantor-prototype: [
-      "./src/cantor/cantor.js",
+    "cantor-prototype": [
+      "./src/cantor/cantor.js"
     ]
   },
   output: {
