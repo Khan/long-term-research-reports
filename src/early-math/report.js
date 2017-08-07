@@ -9,7 +9,7 @@ import angleBracketLeftIcon from "webapp/shared-styles-package/icon.angleBracket
 import globalStyles from "webapp/shared-styles-package/global-styles";
 import mediaQueries from "webapp/shared-styles-package/media-queries";
 
-import Figure from "../components/figure"
+import Figure from "../components/figure";
 import Forest from "./forest";
 
 const Icon = props => {
@@ -170,9 +170,9 @@ class AudibleVideoPlayer extends React.Component {
 
   render = () =>
     <VisibilitySensor partialVisibility onChange={this.onVisibilityChange}>
-      <Figure>
+      <div>
         <video
-          ref={(videoRef) => this.videoRef = videoRef}
+          ref={videoRef => (this.videoRef = videoRef)}
           src="/images/long-term-research/early-math/2-early-sketch/sing-through-touch.mp4"
           muted={this.state.muted}
           loop
@@ -257,11 +257,11 @@ class AudibleVideoPlayer extends React.Component {
                 </g>
               </svg>}
         </button>
-      </Figure>
+      </div>
     </VisibilitySensor>;
 }
 
-const PrototypeExample = ({ heading, children }) =>
+const PrototypeExample = ({ heading, children, figure }) =>
   <div className={css(styles.prototypeExample)}>
     <Subheading noTopMargin hideUnlessMobile>
       {heading}
@@ -273,17 +273,21 @@ const PrototypeExample = ({ heading, children }) =>
       {children}
     </div>
     <div className={css(styles.prototypeVideo)}>
-      <AudibleVideoPlayer />
+      <Figure>
+        {figure}
+      </Figure>
     </div>
   </div>;
 
 const StoryboardElement = ({ storyboardElementNumber, children }) =>
   <div className={css(styles.storyboardElement)}>
     <div className={css(styles.storyboardFigure)}>
-      <div
-        className={css(styles.placeholder)}
-        style={{ height: 450, width: "100%" }}
-      />
+      <Figure>
+        <img
+          src={`/images/long-term-research/early-math/5-storyboard/${storyboardElementNumber}.png`}
+          style={{ width: "100%" }}
+        />
+      </Figure>
     </div>
     <div className={css(styles.storyboardBody)}>
       <span className={css(styles.storyboardElementNumber)}>
@@ -343,7 +347,14 @@ export default class Report extends React.Component {
         <Hairline />
         <Heading>Early sketches and prototypes</Heading>
         <Figure caption="A small taste of dozens of interaction sketches we completed.">
-          <video src="/images/long-term-research/early-math/1-small-multiples.mp4" muted autoPlay loop playsInline style={{width: "100%"}} />
+          <video
+            src="/images/long-term-research/early-math/1-small-multiples.mp4"
+            muted
+            autoPlay
+            loop
+            playsInline
+            style={{ width: "100%" }}
+          />
         </Figure>
         <p className={css(styles.body, styles.wideParagraph)}>
           We began the project by spending many weeks talking to experts,
@@ -353,7 +364,10 @@ export default class Report extends React.Component {
           explain shortly—but they’ll make more sense after we give you a taste
           of the sketches they inspired.
         </p>
-        <PrototypeExample heading="Singing through touch">
+        <PrototypeExample
+          heading="Singing through touch"
+          figure={<AudibleVideoPlayer />}
+        >
           <Body>
             Our very first idea explored: what are all the ways a child might
             input a number? If you ask a kid their age, they often hold up their
@@ -369,7 +383,15 @@ export default class Report extends React.Component {
             multi-touches into a musical instrument.
           </Body>
         </PrototypeExample>
-        <PrototypeExample heading="Altering the world using handwritten numbers">
+        <PrototypeExample
+          heading="Altering the world using handwritten numbers"
+          figure={
+            <div
+              className={css(styles.placeholder)}
+              style={{ width: "100%", height: 300 }}
+            />
+          }
+        >
           <Body>
             Handwriting was another natural input method. This, alongside our
             observations that many kids don’t yet feel in control of their
@@ -382,7 +404,15 @@ export default class Report extends React.Component {
           </Body>
           <Body>Want to see what a hundred birds looks like? Just ask.</Body>
         </PrototypeExample>
-        <PrototypeExample heading="Subtraction blocks">
+        <PrototypeExample
+          heading="Subtraction blocks"
+          figure={
+            <div
+              className={css(styles.placeholder)}
+              style={{ width: "100%", height: 300 }}
+            />
+          }
+        >
           <Body>
             We kept asking ourselves:{" "}
             <a href="http://klr.tumblr.com/post/153279790133/whats-so-great-about-the-digital-medium-again">
@@ -396,7 +426,15 @@ export default class Report extends React.Component {
             negative “ghost blocks.”
           </Body>
         </PrototypeExample>
-        <PrototypeExample heading="Place-value cards">
+        <PrototypeExample
+          heading="Place-value cards"
+          figure={
+            <div
+              className={css(styles.placeholder)}
+              style={{ width: "100%", height: 300 }}
+            />
+          }
+        >
           <Body>
             Our background research helped us get familiar with existing
             manipulatives for early learning, such as place-value cards. In the
