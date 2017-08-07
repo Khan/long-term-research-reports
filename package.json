@@ -3,7 +3,8 @@
     "start": "webpack-dev-server",
     "prebuild": "rimraf dist",
     "build": "NODE_ENV=production webpack -p --config webpack.config.production.js",
-    "postbuild": "copyfiles index.html dist"
+    "predeploy": "rimraf deploy && yarn build && mkdir -p deploy/static && cp -R dist/* deploy/static",
+    "deploy": "cp index.html deploy/cantor.html; sed -i '' 's/dev-bundle/cantor-bundle/g' deploy/cantor.html; cp index.html deploy/early-math.html; sed -i '' 's/dev-bundle/early-math-bundle/g' deploy/early-math.html; mkdir -p deploy/images/long-term-research; cp -R public/* deploy/images/long-term-research; ln -s images deploy/sounds"
   },
   "devDependencies": {
     "@types/babel-core": "^6.7.15",

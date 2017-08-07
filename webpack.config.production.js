@@ -1,7 +1,11 @@
 const path = require("path");
 
 module.exports = {
-  entry: {"early-math": "./src/early-math/report.js", cantor: "./src/cantor/report.js"},
+  entry: {
+    "early-math": "./src/early-math/index.js",
+    cantor: "./src/cantor/index.js",
+    "cantor-prototype": "./src/cantor/cantor.js",
+  },
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name]-bundle.js",
@@ -48,6 +52,8 @@ module.exports = {
   resolve: {
     alias: {
       webapp: path.resolve(__dirname, "../webapp/javascript"),
+      "cantor-images": path.resolve(__dirname, "src/cantor/Cantor/Cantor.framer/images")
     },
+    modules: [path.resolve(__dirname, "src/cantor/Cantor/Cantor.framer/modules"), "node_modules"]
   },
 };

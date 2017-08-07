@@ -18,7 +18,7 @@ module.exports = {
 
       "./src/index.js",
     ],
-    cantor: [
+    cantor-prototype: [
       "./src/cantor/cantor.js",
     ]
   },
