@@ -341,11 +341,10 @@ export default class Report extends React.Component {
         </p>
         <Hairline />
         <Heading>Early sketches and prototypes</Heading>
-        <div
-          className={css(styles.placeholder)}
-          style={{ width: "100%", height: 584 }}
-        />
-        <p className={css(styles.figureCaption)}>TODO: figure caption.</p>
+        <div>
+          <video src="/images/long-term-research/early-math/1-small-multiples.mp4" muted autoPlay loop playsInline style={{width: "100%"}} />
+        </div>
+        <p className={css(styles.figureCaption)}>A small taste of dozens of interaction sketches we completed.</p>
         <p className={css(styles.body, styles.wideParagraph)}>
           We began the project by spending many weeks talking to experts,
           surveying the product landscape, reading associated research, and
