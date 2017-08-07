@@ -9,6 +9,8 @@ import angleBracketLeftIcon from "webapp/shared-styles-package/icon.angleBracket
 import globalStyles from "webapp/shared-styles-package/global-styles";
 import mediaQueries from "webapp/shared-styles-package/media-queries";
 
+import Figure from "../components/figure"
+
 const Icon = props => {
   const { color, pathClassName, className } = props;
   let { icon, size } = props;
@@ -196,18 +198,6 @@ const BodyAndSidebar = ({ children }) =>
 const SidebarItem = ({ children, top }) =>
   <div className={css(styles.sidebarItem)} style={{ top }}>
     {children}
-  </div>;
-
-const Figure = ({ children, style, noBottomMargin }) =>
-  <div
-    className={css(
-      styles.figure,
-      noBottomMargin ? styles.noBottomMargin : undefined,
-    )}
-    style={style}
-  >
-    {children}
-    <div className={css(styles.figureBorder)} />
   </div>;
 
 class AudibleVideoPlayer extends React.Component {
@@ -522,17 +512,13 @@ export default class Report extends React.Component {
             often-inconvenient laws of physics.
           </Body>
           <SidebarItem top={0}>
-            <Figure style={{ height: 300 }} noBottomMargin>
+            <Figure caption="Try representing 1,684! Try showing 36 in base 7! Try checking if 75 is odd! Try…">
               <FPO />
               <img
                 src="/images/long-term-research/cantor/physical-blocks.jpg"
                 style={{ width: "100%" }}
               />
             </Figure>
-            <p className={css(styles.figureCaption)}>
-              Try representing 1,684! Try showing 36 in base 7! Try checking if
-              75 is odd! Try…
-            </p>
           </SidebarItem>
           <Body>
             <a href="http://klr.tumblr.com/post/153279790133/whats-so-great-about-the-digital-medium-again">
@@ -576,7 +562,7 @@ export default class Report extends React.Component {
           clearly “3 away” from 40, and we “feel” that interactively as we try
           to fit the two together.
         </Body>
-        <Figure style={{ height: 240 }}>
+        <Figure>
           <CantorPrototype
             recording={negativeSpaceGZ}
             xOffset={-200}
@@ -597,7 +583,7 @@ export default class Report extends React.Component {
           Do you see a pattern? What's with the little “bumps” that stick out of
           some of the numbers?
         </Body>
-        <Figure style={{ height: 240 }}>
+        <Figure>
           <CantorPrototype
             recording={evenOddGZ}
             xOffset={-400}
@@ -619,7 +605,7 @@ export default class Report extends React.Component {
           As we resize 12, it forms lots of precise rectangles. 13 doesn’t form
           any at all! Why?
         </Body>
-        <Figure style={{ height: 240 }}>
+        <Figure>
           <CantorPrototype
             recording={primesGZ}
             xOffset={-300}
@@ -684,7 +670,7 @@ export default class Report extends React.Component {
             later.
           </Body>
           <SidebarItem top={0}>
-            <Figure style={{ height: 209 }}>
+            <Figure>
               <img
                 src="/images/long-term-research/cantor/function-carnival.gif"
                 style={{ width: "100%" }}
@@ -755,7 +741,7 @@ export default class Report extends React.Component {
             representations.
           </Body>
           <SidebarItem top={0}>
-            <Figure style={{ height: 200 }}>
+            <Figure>
               <CantorPrototype
                 mode="recordYourOwn"
                 recording={recordYourOwnGZ}
@@ -780,7 +766,7 @@ export default class Report extends React.Component {
             provocation.
           </Body>
           <SidebarItem top={0}>
-            <Figure style={{ height: 250 }}>
+            <Figure>
               <CantorPrototype
                 mode="prompt"
                 recording={promptGZ}
@@ -983,26 +969,6 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     lineHeight: 1.5,
     marginTop: 47,
-  },
-
-  figure: {
-    borderRadius: 4,
-    overflow: "hidden",
-    position: "relative",
-    marginBottom: 24,
-  },
-
-  figureBorder: {
-    borderRadius: 4,
-    borderWidth: 1,
-    borderStyle: "solid",
-    borderColor: "rgba(0, 0, 0, 0.1)",
-    overflow: "hidden",
-    position: "absolute",
-    width: "100%",
-    height: "100%",
-    top: 0,
-    pointerEvents: "none",
   },
 
   figureCaption: {

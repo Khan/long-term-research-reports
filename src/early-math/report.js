@@ -9,6 +9,7 @@ import angleBracketLeftIcon from "webapp/shared-styles-package/icon.angleBracket
 import globalStyles from "webapp/shared-styles-package/global-styles";
 import mediaQueries from "webapp/shared-styles-package/media-queries";
 
+import Figure from "../components/figure"
 import Forest from "./forest";
 
 const Icon = props => {
@@ -169,7 +170,7 @@ class AudibleVideoPlayer extends React.Component {
 
   render = () =>
     <VisibilitySensor partialVisibility onChange={this.onVisibilityChange}>
-      <div style={{ position: "relative" }}>
+      <Figure>
         <video
           ref={(videoRef) => this.videoRef = videoRef}
           src="/images/long-term-research/early-math/2-early-sketch/sing-through-touch.mp4"
@@ -256,7 +257,7 @@ class AudibleVideoPlayer extends React.Component {
                 </g>
               </svg>}
         </button>
-      </div>
+      </Figure>
     </VisibilitySensor>;
 }
 
@@ -341,10 +342,9 @@ export default class Report extends React.Component {
         </p>
         <Hairline />
         <Heading>Early sketches and prototypes</Heading>
-        <div>
+        <Figure caption="A small taste of dozens of interaction sketches we completed.">
           <video src="/images/long-term-research/early-math/1-small-multiples.mp4" muted autoPlay loop playsInline style={{width: "100%"}} />
-        </div>
-        <p className={css(styles.figureCaption)}>A small taste of dozens of interaction sketches we completed.</p>
+        </Figure>
         <p className={css(styles.body, styles.wideParagraph)}>
           We began the project by spending many weeks talking to experts,
           surveying the product landscape, reading associated research, and
