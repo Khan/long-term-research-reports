@@ -120,7 +120,9 @@ export default class Forest extends React.Component {
       targetPlayerX: startingX,
       playerStepSize: 0,
       playerCel: 0,
-      backgroundOriginXs: new Array(4).fill(cameraOffset),
+      backgroundOriginXs: new Array(4).fill(cameraOffset).map((initial, i) => initial + i * -30),
+      hasTargetedYet: false,
+      lastFrameCameraSpeed: 0,
     };
   }
 
@@ -147,8 +149,8 @@ export default class Forest extends React.Component {
     const availableWidthFraction = 0.45; // the fraction of the header width unobscured by other content
     const cameraEdgeLeftFraction = 0.45; // in unit screen space, how far along the screen is the line where the camera moves at the same speed as the player?
     const cameraEdgeRightFraction = 0.8; // in unit screen space, how far along the screen is the line where the camera moves at the same speed as the player?
-    const cameraEdgeSmoothingSizeFraction = 0.07; // in unit screen space, how wide is the region before cameraEdgeFraction where the camera accelerates?
-    const maximumStepSize = 3 * numFrames; // the maximum speed (pts/frame) at which the player can move
+    const cameraEdgeSmoothingSizeFraction = 0.1; // in unit screen space, how wide is the region before cameraEdgeFraction where the camera accelerates?
+    const maximumStepSize = (this.state.hasTargetedYet ? 3 : 1.25) * numFrames; // the maximum speed (pts/frame) at which the player can move
     const maximumCameraSpeed = maximumStepSize; // pts/frame
     const minimumCameraSpeed = 0; // pts/frame
 
@@ -190,8 +192,14 @@ export default class Forest extends React.Component {
 
     let newState = {};
 
+    if (!this.hasTargetedYet) {
+      const alpha = 0.3
+      cameraSpeed = this.state.lastFrameCameraSpeed * alpha + cameraSpeed * (1 - alpha);
+      newState.lastFrameCameraSpeed = cameraSpeed;
+    }
+
     if (
-      Math.abs(cameraSpeed) >= 1 &&
+      Math.abs(cameraSpeed) >= 0.05 &&
       (cameraSpeed > 0 ||
         this.state.backgroundOriginXs[
           this.state.backgroundOriginXs.length - 1
@@ -200,14 +208,7 @@ export default class Forest extends React.Component {
       newState = {
         backgroundOriginXs: this.state.backgroundOriginXs.map(
           (oldOrigin, index) => {
-            const planeMovement = map(
-              index,
-              0,
-              this.state.backgroundOriginXs.length - 1,
-              Math.sign(cameraSpeed) * 1,
-              cameraSpeed,
-            );
-            return oldOrigin - planeMovement;
+            return oldOrigin - (index + 1) * cameraSpeed / this.state.backgroundOriginXs.length;
           },
         ),
       };
@@ -241,6 +242,7 @@ export default class Forest extends React.Component {
 
   setMovementTarget = (x: number) => {
     this.setState({
+      hasTargetedYet: true,
       targetPlayerX:
         x - this.state.backgroundOriginXs[this.state.backgroundOriginXs.length - 1],
     });
@@ -258,6 +260,14 @@ export default class Forest extends React.Component {
       event.changedTouches.item(0).pageY,
     );
     this.setMovementTarget(x);
+  };
+
+  componentDidMount = () => {
+    setTimeout(() => {
+      if (!this.state.hasTargetedYet) {
+        this.startAnimation();
+      }
+    }, 0);
   };
 
   componentWillUnmount = () => {
