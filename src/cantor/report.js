@@ -107,8 +107,8 @@ class CantorPrototype extends React.Component {
     );
   };
 
-  render = () =>
-    <div style={{ height: this.props.height || "100%" }}>
+  render = () => {
+    const inner = (
       <VisibilitySensor
         partialVisibility
         onChange={this.onVisibilityChange}
@@ -118,8 +118,18 @@ class CantorPrototype extends React.Component {
           ref={element => (this.iframe = element)}
           style={{ width: "100%", height: "100%" }}
         />
-      </VisibilitySensor>;
-    </div>;
+      </VisibilitySensor>
+    );
+    if (this.props.height) {
+      return (
+        <div style={{ height: this.props.height }}>
+          {inner}
+        </div>
+      );
+    } else {
+      return inner;
+    }
+  };
 }
 
 const HeroHeader = () =>
