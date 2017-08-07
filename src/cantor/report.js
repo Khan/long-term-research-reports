@@ -9,7 +9,7 @@ import angleBracketLeftIcon from "webapp/shared-styles-package/icon.angleBracket
 import globalStyles from "webapp/shared-styles-package/global-styles";
 import mediaQueries from "webapp/shared-styles-package/media-queries";
 
-import Figure from "../components/figure"
+import Figure from "../components/figure";
 
 const Icon = props => {
   const { color, pathClassName, className } = props;
@@ -108,16 +108,18 @@ class CantorPrototype extends React.Component {
   };
 
   render = () =>
-    <VisibilitySensor
-      partialVisibility
-      onChange={this.onVisibilityChange}
-      delayedCall={false}
-    >
-      <iframe
-        ref={element => (this.iframe = element)}
-        style={{ width: "100%", height: "100%" }}
-      />
-    </VisibilitySensor>;
+    <div style={{ height: this.props.height || "100%" }}>
+      <VisibilitySensor
+        partialVisibility
+        onChange={this.onVisibilityChange}
+        delayedCall={false}
+      >
+        <iframe
+          ref={element => (this.iframe = element)}
+          style={{ width: "100%", height: "100%" }}
+        />
+      </VisibilitySensor>;
+    </div>;
 }
 
 const HeroHeader = () =>
@@ -564,6 +566,7 @@ export default class Report extends React.Component {
         </Body>
         <Figure>
           <CantorPrototype
+            height={240}
             recording={negativeSpaceGZ}
             xOffset={-200}
             yOffset={100}
@@ -585,6 +588,7 @@ export default class Report extends React.Component {
         </Body>
         <Figure>
           <CantorPrototype
+            height={240}
             recording={evenOddGZ}
             xOffset={-400}
             yOffset={100}
@@ -607,6 +611,7 @@ export default class Report extends React.Component {
         </Body>
         <Figure>
           <CantorPrototype
+            height={240}
             recording={primesGZ}
             xOffset={-300}
             yOffset={60}
@@ -743,6 +748,7 @@ export default class Report extends React.Component {
           <SidebarItem top={0}>
             <Figure>
               <CantorPrototype
+                height={200}
                 mode="recordYourOwn"
                 recording={recordYourOwnGZ}
                 mobileXOffset={-200}
@@ -768,6 +774,7 @@ export default class Report extends React.Component {
           <SidebarItem top={0}>
             <Figure>
               <CantorPrototype
+                height={250}
                 mode="prompt"
                 recording={promptGZ}
                 audioURL="/sounds/long-term-research/cantor/3-prompt.mp3"
