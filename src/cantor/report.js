@@ -1277,6 +1277,7 @@ const styles = StyleSheet.create({
     zIndex: 10,
     opacity: 0.7,
     transition: `opacity ${globalStyles.standardTransition}`,
+    filter: "drop-shadow(0px 0px 2px black)",
     ":hover": {
       opacity: 1,
       textDecoration: "none",
