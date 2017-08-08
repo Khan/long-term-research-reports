@@ -789,12 +789,6 @@ export default class Report extends React.Component {
 
         <Heading>Acknowledgements</Heading>
         <Body wide>
-          This report was written by May-Li Khoe, Andy Matuschak, and Scott
-          Farrar, documenting research primarily conducted in 2015 by May-Li
-          Khoe, Andy Matuschak, and Jason Brennan. Illustrations by May-Li Khoe
-          and Natalie Fitzgerald.
-        </Body>
-        <Body wide>
           We'd like to thank these people for their valuable thoughts along the
           way:{" "}
           {[

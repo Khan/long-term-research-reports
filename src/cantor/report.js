@@ -138,10 +138,10 @@ const HeroHeader = () =>
       <div className={css(styles.heroInteractiveContainer)}>
         <CantorPrototype
           recording={headerCanvasGZ}
-          xOffset={-200}
+          xOffset={0}
           yOffset={20}
           mobileXOffset={-600}
-          mobileYOffset={80}
+          mobileYOffset={150}
         />
       </div>
       <div className={css(styles.topBar)} />
@@ -152,7 +152,7 @@ const HeroHeader = () =>
           userSelect: "none",
         }}
       >
-        <h1 className={css(styles.title)}>Cantor (title TBD)</h1>
+        <h1 className={css(styles.title)}>Numbers at play: dynamic toys make the invisible visible</h1>
         <div className={css(styles.hideOnMobile)}>
           <Authors />
         </div>
@@ -498,6 +498,8 @@ export default class Report extends React.Component {
               />
             </Figure>
           </SidebarItem>
+        </BodyAndSidebar>
+        <BodyAndSidebar>
           <Body>
             So: what new kinds of representations might make math even easier to
             think? Seymour Papert, a pioneering voice in education technology,{" "}
@@ -505,6 +507,14 @@ export default class Report extends React.Component {
               paints the tantalizing possibilities
             </a>:
           </Body>
+          <SidebarItem top={0}>
+            <p className={css(styles.sidebarBody)}>
+              Papert's 1980 manifesto on empowering children through technology,{" "}
+              <a href="https://mindstorms.media.mit.edu">Mindstorms</a>, remains
+              a key foundational text for anyone interested in learning and
+              technology.
+            </p>
+          </SidebarItem>
         </BodyAndSidebar>
         <Body wide noTopMargin style={{ marginLeft: 40 }}>
           While it’s true that most people in math class don’t learn much math,
@@ -521,7 +531,7 @@ export default class Report extends React.Component {
             depicted here as alternative representations for numbers. These can
             be powerful—particularly because they take advantage of our
             body-awareness—but physical objects are limited by
-            often-inconvenient laws of physics.
+            often-inconvenient laws of physics and practicalities of matter.
           </Body>
           <SidebarItem top={0}>
             <Figure caption="Try representing 1,684! Try showing 36 in base 7! Try checking if 75 is odd! Try…">
@@ -538,7 +548,7 @@ export default class Report extends React.Component {
             </a>{" "}
             through morphing, distorting, multiplying, linking, communicating,
             abstracting, and so on. New forms can render ordinarily-invisible
-            relationships more visible.
+            relationships suddenly visible.
           </Body>
           <Body>
             In{" "}
@@ -557,9 +567,10 @@ export default class Report extends React.Component {
         </BodyAndSidebar>
         <Heading>Revealing hidden properties of numbers</Heading>
         <Body wide>
-          To explore the possibilities in this space, we built “Cantor,” a
-          digital representation of quantity with some unusual interactions. Our
-          aim was to make ordinarily-subtle properties of numbers more visceral—<a href="http://worrydream.com/MediaForThinkingTheUnthinkable/">
+          To explore the possibilities in this space, we built <em>Cantor,</em>{" "}
+          a digital representation of quantity with some unusual interactions.
+          Our aim was to make typically-subtle properties of numbers more
+          visceral—<a href="http://worrydream.com/MediaForThinkingTheUnthinkable/">
             to make certain thoughts more thinkable
           </a>.
         </Body>
@@ -650,18 +661,19 @@ export default class Report extends React.Component {
 
         <Body wide>
           In each case, the student directly manipulates the number—they’re not
-          fiddling with some dissociated text field somewhere. The interactions
-          are deeply entangled with the mathematical operation at hand: for
-          instance, changing a number block’s width to some value is the same as
-          changing the number’s base to that value.
+          fiddling with some slider that has a hidden mathematical relationship to
+          the number. The interactions are <em>deeply entangled</em> with the
+          mathematical operation at hand: for instance, changing a number
+          block’s width to some value directly corresponds to changing the
+          number’s base to that value.
         </Body>
         <Body wide>
           These are just three examples. We can invent more interactions like
           the ones we’ve shown here—and alternative dynamic representations of
           quantities—to build bridges to many other attributes of numbers. When
           we implement these manipulatives, they tend to surprise us with
-          unanticipated possibilities: we stumbled on some of the interactions
-          we’ve shown by accident through play!
+          unanticipated possibilities: we stumbled on some of the examples we’ve
+          shown by accident, just through playing with the interactions!
         </Body>
         <Heading>One interactive representation, many contexts</Heading>
         <BodyAndSidebar>
@@ -859,21 +871,50 @@ export default class Report extends React.Component {
         >
           <div className={css(styles.carouselItem)}>
             <Figure height={300}>
-              <img style={{width: "100%"}} src="/images/long-term-research/cantor/fractions/fractions.gif" />
+              <img
+                style={{ width: "100%" }}
+                src="/images/long-term-research/cantor/fractions/fractions.gif"
+              />
             </Figure>
-            <Body><a href="http://klr.tumblr.com/post/152354637513/fraction-problems">We sketched many ideas for representations of fractions</a>. We learned that there are lots of ways to think about fractions: as ratios, as measures, as scaling operations, and so on. Playing with multiple representations might make it easier to understand how these conceptions relate.</Body>
+            <Body>
+              <a href="http://klr.tumblr.com/post/152354637513/fraction-problems">
+                We sketched many ideas for representations of fractions
+              </a>. We learned that there are lots of ways to think about
+              fractions: as ratios, as measures, as scaling operations, and so
+              on. Playing with multiple representations might make it easier to
+              understand how these conceptions relate.
+            </Body>
           </div>
           <div className={css(styles.carouselItem)}>
             <Figure>
-              <img style={{width: "100%"}} src="/images/long-term-research/cantor/carousel-early-math.png" />
+              <img
+                style={{ width: "100%" }}
+                src="/images/long-term-research/cantor/carousel-early-math.png"
+              />
             </Figure>
-            <Body>We first investigated digital number manipulatives <a href="early-math">in the context of an early numeracy environment</a>. In that system, these number blocks could be used to modify the child’s world.</Body>
+            <Body>
+              We first investigated digital number manipulatives{" "}
+              <a href="early-math">
+                in the context of an early numeracy environment
+              </a>. In that system, these number blocks could be used to modify
+              the child’s world.
+            </Body>
           </div>
           <div className={css(styles.carouselItem)}>
             <Figure>
-              <img style={{width: "100%"}} src="/images/long-term-research/cantor/carousel-cubes.gif" />
+              <img
+                style={{ width: "100%" }}
+                src="/images/long-term-research/cantor/carousel-cubes.gif"
+              />
             </Figure>
-            <Body>Unlike physical blocks, <a href="http://klr.tumblr.com/post/148763588468/base-ten-blocks-cyclic-dimensions-entangled-math">digital number blocks could represent arbitrarily high place values by continuously zooming out</a>, or by representing higher place values by higher-dimensional rotations.</Body>
+            <Body>
+              Unlike physical blocks,{" "}
+              <a href="http://klr.tumblr.com/post/148763588468/base-ten-blocks-cyclic-dimensions-entangled-math">
+                digital number blocks could represent arbitrarily high place
+                values by continuously zooming out
+              </a>, or by representing higher place values by higher-dimensional
+              rotations.
+            </Body>
           </div>
         </Slider>
         <BodyAndSidebar>
@@ -911,15 +952,20 @@ export default class Report extends React.Component {
           </SidebarItem>
         </BodyAndSidebar>
 
-        <Heading>Acknowledgements</Heading>
-        <Body wide>TODO</Body>
-
         <Heading>Further reading</Heading>
-        <Body wide>TODO </Body>
+        <Body wide>
+          If you're interested in reading more about the topics in this report,
+          our top recommendations are:
+        </Body>
         <ul className={css(styles.furtherReadingList)}>
           <FurtherReadingItem>
-            Papert, Seymour. 1980. <em>Mindstorms</em>. Harvester Press.
+            Seymour Papert's 1980 book, <a href="https://mindstorms.media.mit.edu"><em>Mindstorms</em></a>, remains essential reading for anyone interested in building digital contexts for learning.
           </FurtherReadingItem>
+          <FurtherReadingItem>
+            Deborah Ball's “<a href="https://ka-hivemind.herokuapp.com/entry/KhkXuvBHnvEuHNomH">Magical hopes: Manipulatives and the reform of math education</a>” outlined the key limitations of manipulatives in math education in 1992.
+          </FurtherReadingItem>
+          <FurtherReadingItem>One of the authors of this report, Scott Farrar, gives an academic survey of digital learning media in his 2016 thesis, “<a href="https://ka-hivemind.herokuapp.com/?entry=SSmwkKtGkKHbnJgTX">Students and Teachers Using a Digital Curriculum and Pedagogy in Secondary Mathematics</a>.”</FurtherReadingItem>
+          <FurtherReadingItem>For more recent work on the promise of the dynamic medium helping us see new things—not just for young learners—see Bret Victor's 2013 talk, “<a href="http://worrydream.com/MediaForThinkingTheUnthinkable/">Media for Thinking the Unthinkable</a>,” and Michael Nielsen's 2016 essay, “<a href="http://cognitivemedium.com/tat/index.html">Thought as a Technology</a>.”</FurtherReadingItem>
         </ul>
       </div>
     </div>;
@@ -1191,6 +1237,9 @@ const styles = StyleSheet.create({
       marginBottom: 8,
       maxHeight: "100vh",
     },
+    [mediaQueries.mdOrLarger]: {
+      height: 350,
+    }
   },
 
   topBar: {
@@ -1211,6 +1260,9 @@ const styles = StyleSheet.create({
     [mediaQueries.smOrSmaller]: {
       height: 350,
       maxHeight: "100vh",
+    },
+    [mediaQueries.mdOrLarger]: {
+      height: 350,
     },
 
     paddingBottom: 1,
@@ -1242,11 +1294,14 @@ const styles = StyleSheet.create({
     ...globalStyles.typography.subjectHeadingDesktop,
     lineHeight: "50px",
     paddingTop: 108,
+    maxWidth: 700,
+    [mediaQueries.lgOrSmaller]: {
+      maxWidth: 500,
+    },
     [mediaQueries.smOrSmaller]: {
       paddingTop: 82,
       ...globalStyles.typography.subjectHeadingMobile,
     },
-    maxWidth: 700,
   },
 
   authors: {
