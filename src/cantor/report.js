@@ -1216,6 +1216,7 @@ const styles = StyleSheet.create({
 
   furtherReadingItem: {
     ...globalStyles.typography.bodyLarge,
+    marginBottom: 24,
   },
 
   hideOnMobile: {
