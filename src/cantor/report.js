@@ -857,30 +857,24 @@ export default class Report extends React.Component {
             },
           ]}
         >
-          {[
-            "We’ve sketched ideas for exploring fractions, negative numbers, and algebraic expressions with related digital manipulatives.",
-            "We first investigated digital number manipulatives in the context of an early numeracy environment. In that system, these number blocks could be used to modify the child’s world.",
-            "Unlike physical blocks, digital number blocks could represent arbitrarily high place values by continuously zooming out, or by representing higher place values by higher-dimensional rotations.",
-          ].map((text, index) =>
-            <div
-              key={index}
-              style={{
-                padding: "0 15px",
-              }}
-            >
-              <div
-                className={css(styles.placeholder)}
-                style={{
-                  width: "100%",
-                  height: 517,
-                  marginBottom: 8,
-                }}
-              />
-              <Body>
-                {text}
-              </Body>
-            </div>,
-          )}
+          <div className={css(styles.carouselItem)}>
+            <Figure height={300}>
+              <img style={{width: "100%"}} src="/images/long-term-research/cantor/fractions/fractions.gif" />
+            </Figure>
+            <Body><a href="http://klr.tumblr.com/post/152354637513/fraction-problems">We sketched many ideas for representations of fractions</a>. We learned that there are lots of ways to think about fractions: as ratios, as measures, as scaling operations, and so on. Playing with multiple representations might make it easier to understand how these conceptions relate.</Body>
+          </div>
+          <div className={css(styles.carouselItem)}>
+            <Figure>
+              <img style={{width: "100%"}} src="/images/long-term-research/cantor/carousel-early-math.png" />
+            </Figure>
+            <Body>We first investigated digital number manipulatives <a href="early-math">in the context of an early numeracy environment</a>. In that system, these number blocks could be used to modify the child’s world.</Body>
+          </div>
+          <div className={css(styles.carouselItem)}>
+            <Figure>
+              <img style={{width: "100%"}} src="/images/long-term-research/cantor/carousel-cubes.gif" />
+            </Figure>
+            <Body>Unlike physical blocks, <a href="http://klr.tumblr.com/post/148763588468/base-ten-blocks-cyclic-dimensions-entangled-math">digital number blocks could represent arbitrarily high place values by continuously zooming out</a>, or by representing higher place values by higher-dimensional rotations.</Body>
+          </div>
         </Slider>
         <BodyAndSidebar>
           <Body>
@@ -1304,5 +1298,8 @@ const styles = StyleSheet.create({
       top: 258,
     },
   },
+
+  carouselItem: {
+    padding: "0px 15px",
+  },
 });
-``;
