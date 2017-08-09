@@ -513,20 +513,20 @@ export default class Report extends React.Component {
         </Slider>
         <Hairline />
         <Heading>Design principles</Heading>
-        <BodyAndSidebar>
-          <Body>
+          <Body wide>
             Our investigations gave rise to deeper ideas that we used to
             challenge ourselves when designing solutions in this space. They
             continue to drive our research today.
           </Body>
           <Subheading>Learning through discovery</Subheading>
+        <BodyAndSidebar>
           <Body>
             If you move to a new city where you don’t speak the language, you’ll
             pick it up. If you engage with your new city, your life becomes
             entangled with it. Interacting more deeply with your surroundings
             means interacting more deeply with the language and culture.
           </Body>
-          <SidebarItem top={300}>
+          <SidebarItem top={0}>
             <div className={css(styles.placeholder)} style={{ height: 298 }} />
           </SidebarItem>
           <Body>
