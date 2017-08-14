@@ -312,7 +312,7 @@ export default class Forest extends React.Component {
             key={index}
           >
             <img
-              src={`/images/long-term-research/early-math/trees${index}.png`}
+              src={`/images/long-term-research/reports/early-math/trees${index}.png`}
             />
             {index === this.state.backgroundOriginXs.length - 1
               ? <div>
@@ -320,7 +320,7 @@ export default class Forest extends React.Component {
                     style={{
                       ...imageStyle,
                       backgroundImage:
-                        "url('/images/long-term-research/early-math/character.png')",
+                        "url('/images/long-term-research/reports/early-math/character.png')",
                       backgroundSize: "1000px 1000px",
                       backgroundPosition: `${this.state.playerCel %
                         8 *
@@ -340,7 +340,7 @@ export default class Forest extends React.Component {
                   <div
                     style={{
                       backgroundImage:
-                        "url('/images/long-term-research/early-math/balloon@2x.png')",
+                        "url('/images/long-term-research/reports/early-math/balloon@2x.png')",
                       backgroundSize: "142px 48px",
                       position: "absolute",
                       top: 0,

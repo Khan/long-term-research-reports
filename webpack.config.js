@@ -88,12 +88,16 @@ module.exports = {
     port: 3100,
     setup: function(app) {
       app.use(
-        "/images/long-term-research/",
-        express.static(path.join(__dirname, "public"))
+        "/images/long-term-research/reports/",
+        express.static(path.join(__dirname, "images"))
       );
       app.use(
-        "/sounds/long-term-research/",
-        express.static(path.join(__dirname, "public"))
+        "/sounds/long-term-research/reports/",
+        express.static(path.join(__dirname, "sounds"))
+      );
+      app.use(
+        "/videos/long-term-research/reports/",
+        express.static(path.join(__dirname, "videos"))
       );
       app.use(
         "/fonts",

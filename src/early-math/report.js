@@ -173,7 +173,7 @@ class AudibleVideoPlayer extends React.Component {
       <div>
         <video
           ref={videoRef => (this.videoRef = videoRef)}
-          src="/images/long-term-research/early-math/2-early-sketch/sing-through-touch.mp4"
+          src="/videos/long-term-research/reports/early-math/2-sing-through-touch.mp4"
           muted={this.state.muted}
           loop
           playsInline
@@ -284,7 +284,7 @@ const StoryboardElement = ({ storyboardElementNumber, children }) =>
     <div className={css(styles.storyboardFigure)}>
       <Figure>
         <img
-          src={`/images/long-term-research/early-math/5-storyboard/${storyboardElementNumber}.png`}
+          src={`/images/long-term-research/reports/early-math/5-storyboard/${storyboardElementNumber}.png`}
           style={{ width: "100%" }}
         />
       </Figure>
@@ -348,7 +348,7 @@ export default class Report extends React.Component {
         <Heading>Early sketches and prototypes</Heading>
         <Figure caption="A small taste of dozens of interaction sketches we completed.">
           <video
-            src="/images/long-term-research/early-math/1-small-multiples.mp4"
+            src="/videos/long-term-research/reports/early-math/1-small-multiples.mp4"
             muted
             autoPlay
             loop

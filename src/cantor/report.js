@@ -241,7 +241,7 @@ class AudibleVideoPlayer extends React.Component {
       <div style={{ position: "relative" }}>
         <video
           ref={videoRef => (this.videoRef = videoRef)}
-          src="/images/long-term-research/early-math/2-early-sketch/sing-through-touch.mp4"
+          src="/images/long-term-research/reports/early-math/2-early-sketch/sing-through-touch.mp4"
           muted={this.state.muted}
           loop
           playsInline
@@ -447,7 +447,7 @@ export default class Report extends React.Component {
         </BodyAndSidebar>
         <FPO />
         <img
-          src="/images/long-term-research/cantor/37-and-15.png"
+          src="/images/long-term-research/reports/cantor/37-and-15.png"
           style={{ width: "100%", margin: "24px 0" }}
         />
         <BodyAndSidebar>
@@ -462,7 +462,7 @@ export default class Report extends React.Component {
         </BodyAndSidebar>
         <FPO />
         <img
-          src="/images/long-term-research/cantor/number-relationships.jpg"
+          src="/images/long-term-research/reports/cantor/number-relationships.jpg"
           style={{ width: "100%", marginBottom: 18 }}
         />
         <BodyAndSidebar>
@@ -493,7 +493,7 @@ export default class Report extends React.Component {
           <SidebarItem top={0}>
             <Figure>
               <img
-                src="/images/long-term-research/cantor/tick-marks.png"
+                src="/images/long-term-research/reports/cantor/tick-marks.png"
                 style={{ width: "100%" }}
               />
             </Figure>
@@ -537,7 +537,7 @@ export default class Report extends React.Component {
             <Figure caption="Try representing 1,684! Try showing 36 in base 7! Try checking if 75 is odd! Try…">
               <FPO />
               <img
-                src="/images/long-term-research/cantor/physical-blocks.jpg"
+                src="/images/long-term-research/reports/cantor/physical-blocks.jpg"
                 style={{ width: "100%" }}
               />
             </Figure>
@@ -699,7 +699,7 @@ export default class Report extends React.Component {
           <SidebarItem top={0}>
             <Figure>
               <img
-                src="/images/long-term-research/cantor/function-carnival.gif"
+                src="/images/long-term-research/reports/cantor/function-carnival.gif"
                 style={{ width: "100%" }}
               />
             </Figure>
@@ -799,7 +799,7 @@ export default class Report extends React.Component {
                 height={250}
                 mode="prompt"
                 recording={promptGZ}
-                audioURL="/sounds/long-term-research/cantor/3-prompt.mp3"
+                audioURL="/sounds/long-term-research/reports/cantor/3-prompt.mp3"
                 mobileXOffset={-200}
                 mobileYOffset={100}
               />
@@ -823,7 +823,7 @@ export default class Report extends React.Component {
             <Figure>
               <FPO />
               <img
-                src="/images/long-term-research/cantor/linked-representations.png"
+                src="/images/long-term-research/reports/cantor/linked-representations.png"
                 style={{ width: "100%" }}
               />
             </Figure>
@@ -873,7 +873,7 @@ export default class Report extends React.Component {
             <Figure height={300}>
               <img
                 style={{ width: "100%" }}
-                src="/images/long-term-research/cantor/fractions/fractions.gif"
+                src="/images/long-term-research/reports/cantor/fractions/fractions.gif"
               />
             </Figure>
             <Body>
@@ -889,7 +889,7 @@ export default class Report extends React.Component {
             <Figure>
               <img
                 style={{ width: "100%" }}
-                src="/images/long-term-research/cantor/carousel-early-math.png"
+                src="/images/long-term-research/reports/cantor/carousel-early-math.png"
               />
             </Figure>
             <Body>
@@ -904,7 +904,7 @@ export default class Report extends React.Component {
             <Figure>
               <img
                 style={{ width: "100%" }}
-                src="/images/long-term-research/cantor/carousel-cubes.gif"
+                src="/images/long-term-research/reports/cantor/carousel-cubes.gif"
               />
             </Figure>
             <Body>
