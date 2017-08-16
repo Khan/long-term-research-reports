@@ -1,5 +1,8 @@
 // @flow
 import React from "react";
+import { StyleSheet, css } from "aphrodite";
+
+import mediaQueries from "webapp/shared-styles-package/media-queries";
 
 const numCharFrames = 60;
 const startingX = 1460;
@@ -120,7 +123,9 @@ export default class Forest extends React.Component {
       targetPlayerX: startingX,
       playerStepSize: 0,
       playerCel: 0,
-      backgroundOriginXs: new Array(4).fill(cameraOffset).map((initial, i) => initial + i * -30),
+      backgroundOriginXs: new Array(4)
+        .fill(cameraOffset)
+        .map((initial, i) => initial + i * -30),
       hasTargetedYet: false,
       lastFrameCameraSpeed: 0,
     };
@@ -141,9 +146,10 @@ export default class Forest extends React.Component {
   };
 
   animate = (timestamp: number) => {
-    const numFrames = (timestamp - (this.lastTimestamp || (timestamp - 1000/60))) / (1000 / 60)
+    const numFrames =
+      (timestamp - (this.lastTimestamp || timestamp - 1000 / 60)) / (1000 / 60);
     this.lastTimestamp = timestamp;
-    
+
     this.animationRequest = window.requestAnimationFrame(this.animate);
 
     const availableWidthFraction = 0.45; // the fraction of the header width unobscured by other content
@@ -193,8 +199,9 @@ export default class Forest extends React.Component {
     let newState = {};
 
     if (!this.hasTargetedYet) {
-      const alpha = 0.3
-      cameraSpeed = this.state.lastFrameCameraSpeed * alpha + cameraSpeed * (1 - alpha);
+      const alpha = 0.3;
+      cameraSpeed =
+        this.state.lastFrameCameraSpeed * alpha + cameraSpeed * (1 - alpha);
       newState.lastFrameCameraSpeed = cameraSpeed;
     }
 
@@ -208,7 +215,10 @@ export default class Forest extends React.Component {
       newState = {
         backgroundOriginXs: this.state.backgroundOriginXs.map(
           (oldOrigin, index) => {
-            return oldOrigin - (index + 1) * cameraSpeed / this.state.backgroundOriginXs.length;
+            return (
+              oldOrigin -
+              (index + 1) * cameraSpeed / this.state.backgroundOriginXs.length
+            );
           },
         ),
       };
@@ -227,7 +237,8 @@ export default class Forest extends React.Component {
         playerX: this.state.playerX + playerStepSize,
         playerDirection: dx > 0 ? "right" : "left",
         playerStepSize,
-        playerCel: (this.state.playerCel + Math.round(numFrames)) % numCharFrames,
+        playerCel:
+          (this.state.playerCel + Math.round(numFrames)) % numCharFrames,
       };
     } else {
       newState = {
@@ -241,21 +252,41 @@ export default class Forest extends React.Component {
   };
 
   setMovementTarget = (x: number) => {
+    console.log(        x -
+          this.state.backgroundOriginXs[
+            this.state.backgroundOriginXs.length - 1
+          ],
+        -cameraOffset,
+        startingX + 95 * 24,
+)
     this.setState({
       hasTargetedYet: true,
-      targetPlayerX:
-        clip(x - this.state.backgroundOriginXs[this.state.backgroundOriginXs.length - 1], -cameraOffset, startingX + 95 * 24),
+      targetPlayerX: clip(
+        x -
+          this.state.backgroundOriginXs[
+            this.state.backgroundOriginXs.length - 1
+          ],
+        -cameraOffset,
+        startingX + 95 * 24,
+      ),
     });
     this.startAnimation();
   };
 
   onMove = (event: MouseEvent) => {
-    this.setMovementTarget(event.nativeEvent.offsetX);
+    // This lazy hack relies on the fact that the hit-testing node is the older sibling of the main forest node.
+    const { x } = convertPointFromPageToNode(
+      event.target.nextSibling,
+      event.pageX,
+      event.pageY,
+    );
+    this.setMovementTarget(x);
   };
 
   onTouch = (event: TouchEvent) => {
+    // This lazy hack relies on the fact that the hit-testing node is the older sibling of the main forest node.
     const { x } = convertPointFromPageToNode(
-      event.target,
+      event.target.nextSibling,
       event.changedTouches.item(0).pageX,
       event.changedTouches.item(0).pageY,
     );
@@ -292,80 +323,113 @@ export default class Forest extends React.Component {
 
   render() {
     return (
-      <div
-        style={{
-          backgroundColor: "#c7e9f1",
-          position: "absolute",
-          height: 768,
-          width: containerWidth,
-        }}
-        onMouseDown={this.onMove}
-        onTouchStart={this.onTouch}
-        onTouchMove={this.onTouch}
-      >
-        {this.state.backgroundOriginXs.map((origin, index) =>
+      <div>
+        <div
+          className={css(styles.forestFlatBackground)}
+          onMouseDown={this.onMove}
+          onTouchStart={this.onTouch}
+          onTouchMove={this.onTouch}
+        />
+        <div className={css(styles.forestContainer)}>
           <div
             style={{
-              ...imageStyle,
-              transform: `translate3d(${origin}px, 0px, 0px)`,
+              backgroundColor: "#c7e9f1",
+              position: "absolute",
+              height: 768,
+              width: containerWidth,
             }}
-            key={index}
           >
-            <img
-              src={`/images/long-term-research/reports/early-math/trees${index}.png`}
-            />
-            {index === this.state.backgroundOriginXs.length - 1
-              ? <div>
-                  <div
-                    style={{
-                      ...imageStyle,
-                      backgroundImage:
-                        "url('/images/long-term-research/reports/early-math/character.png')",
-                      backgroundSize: "1000px 1000px",
-                      backgroundPosition: `${this.state.playerCel %
-                        8 *
-                        -imageSize}px ${Math.floor(this.state.playerCel / 8) *
-                        -imageSize}px`,
-                      width: imageSize,
-                      height: imageSize,
-                      top: 0,
-                      left: 0,
-                      transform: `translate3d(${this.state.playerX -
-                        imageSize / 2}px, 575px, 0px) ${this.state
-                        .playerDirection === "left"
-                        ? "scaleX(-1)"
-                        : ""}`,
-                    }}
-                  />
-                  <div
-                    style={{
-                      backgroundImage:
-                        "url('/images/long-term-research/reports/early-math/balloon@2x.png')",
-                      backgroundSize: "142px 48px",
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      color: "#106173",
-                      fontFamily: "'Proxima Nova', sans-serif",
-                      fontSize: 22,
-                      boxSizing: "border-box",
-                      padding: "15px 7px 15px 0px",
-                      width: 142,
-                      height: 48,
-                      textAlign: "center",
-                      transform: `translate3d(${this.state.playerX -
-                        165}px, 680px, 0px)`,
-                    }}
-                  >
-                    {`x = ${Math.round(
-                      (this.state.playerX - startingX) / 24 + 4,
-                    )}, y = 0`}
-                  </div>
-                </div>
-              : null}
-          </div>,
-        )}
+            {this.state.backgroundOriginXs.map((origin, index) =>
+              <div
+                style={{
+                  ...imageStyle,
+                  transform: `translate3d(${origin}px, 0px, 0px)`,
+                }}
+                key={index}
+              >
+                <img
+                  src={`/images/long-term-research/reports/early-math/trees${index}.png`}
+                />
+                {index === this.state.backgroundOriginXs.length - 1
+                  ? <div>
+                      <div
+                        style={{
+                          ...imageStyle,
+                          backgroundImage:
+                            "url('/images/long-term-research/reports/early-math/character.png')",
+                          backgroundSize: "1000px 1000px",
+                          backgroundPosition: `${this.state.playerCel %
+                            8 *
+                            -imageSize}px ${Math.floor(
+                            this.state.playerCel / 8,
+                          ) * -imageSize}px`,
+                          width: imageSize,
+                          height: imageSize,
+                          top: 0,
+                          left: 0,
+                          transform: `translate3d(${this.state.playerX -
+                            imageSize / 2}px, 575px, 0px) ${this.state
+                            .playerDirection === "left"
+                            ? "scaleX(-1)"
+                            : ""}`,
+                        }}
+                      />
+                      <div
+                        style={{
+                          backgroundImage:
+                            "url('/images/long-term-research/reports/early-math/balloon@2x.png')",
+                          backgroundSize: "142px 48px",
+                          position: "absolute",
+                          top: 0,
+                          left: 0,
+                          color: "#106173",
+                          fontFamily: "'Proxima Nova', sans-serif",
+                          fontSize: 22,
+                          boxSizing: "border-box",
+                          padding: "15px 7px 15px 0px",
+                          width: 142,
+                          height: 48,
+                          textAlign: "center",
+                          transform: `translate3d(${this.state.playerX -
+                            165}px, 680px, 0px)`,
+                        }}
+                      >
+                        {`x = ${Math.round(
+                          (this.state.playerX - startingX) / 24 + 4,
+                        )}, y = 0`}
+                      </div>
+                    </div>
+                  : null}
+              </div>,
+            )}
+          </div>
+        </div>
       </div>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  forestFlatBackground: {
+    backgroundColor: "#c7e9f1",
+    position: "absolute",
+    left: 0,
+    height: 615,
+    [mediaQueries.smOrSmaller]: {
+      height: 322,
+      maxHeight: "100vh",
+    },
+    width: "100%",
+  },
+
+  forestContainer: {
+    transform: "scale(0.8)",
+    transformOrigin: "0 0",
+    marginLeft: -24,
+    userSelect: "none",
+    pointerEvents: "none",
+    [mediaQueries.smOrSmaller]: {
+      transform: "scale(0.42)",
+    },
+  },
+});

@@ -71,10 +71,7 @@ const Authors = () =>
 const HeroHeader = () =>
   <div>
     <div className={css(styles.heroContainer)}>
-      <div className={css(styles.forestFlatBackground)} />
-      <div className={css(styles.forestContainer)}>
-        <Forest />
-      </div>
+      <Forest />
       <div className={css(styles.heroGradient)} />
       <div
         style={{
@@ -513,12 +510,12 @@ export default class Report extends React.Component {
         </Slider>
         <Hairline />
         <Heading>Design principles</Heading>
-          <Body wide>
-            Our investigations gave rise to deeper ideas that we used to
-            challenge ourselves when designing solutions in this space. They
-            continue to drive our research today.
-          </Body>
-          <Subheading>Learning through discovery</Subheading>
+        <Body wide>
+          Our investigations gave rise to deeper ideas that we used to challenge
+          ourselves when designing solutions in this space. They continue to
+          drive our research today.
+        </Body>
+        <Subheading>Learning through discovery</Subheading>
         <BodyAndSidebar>
           <Body>
             If you move to a new city where you don’t speak the language, you’ll
@@ -1100,28 +1097,6 @@ const styles = StyleSheet.create({
       height: 322,
       marginBottom: 8,
       maxHeight: "100vh",
-    },
-  },
-
-  forestFlatBackground: {
-    backgroundColor: "#c7e9f1",
-    position: "absolute",
-    left: 0,
-    height: 615,
-    [mediaQueries.smOrSmaller]: {
-      height: 322,
-      maxHeight: "100vh",
-    },
-    width: "100%",
-  },
-
-  forestContainer: {
-    transform: "scale(0.8)",
-    transformOrigin: "0 0",
-    marginLeft: -24,
-    userSelect: "none",
-    [mediaQueries.smOrSmaller]: {
-      transform: "scale(0.42)",
     },
   },
 
