@@ -413,13 +413,18 @@ export default class Report extends React.Component {
       <div className={css(styles.container)}>
         <HeroHeader />
         <div className={css(styles.lede)}>
-          <Body>When we think about manipulating numbers, some operations seem easy or
-          obvious, and others exotic and abstract. Addition and decomposition
-          into tens? Straightforward. Modular arithmetic and changes of base? Not exactly
-          obvious.</Body><Body>What if you had some new way to represent numbers in your
-          head—and manipulate them in your hands—that made certain thoughts
-          easier to think? We’ve designed new interactive representations of
-          numbers to attempt just that.</Body>
+          <Body>
+            When we think about manipulating numbers, some operations seem easy
+            or obvious, and others exotic and abstract. Addition and
+            decomposition into tens? Straightforward. Modular arithmetic and
+            changes of base? Not exactly obvious.
+          </Body>
+          <Body>
+            What if you had some new way to represent numbers in your head—and
+            manipulate them in your hands—that made certain thoughts easier to
+            think? We’ve designed new interactive representations of numbers to
+            attempt just that.
+          </Body>
         </div>
         <Hairline />
         <Heading>Looking at numbers in many ways</Heading>
@@ -477,12 +482,14 @@ export default class Report extends React.Component {
             twelve quarters depicted here makes us think of “12 = 3 x 4”.
           </Body>
           <SidebarItem top={0}>
-            <div
-              className={css(styles.placeholder)}
-              style={{ width: "100%", height: 120 }}
-            >
-              photo of three groups of four quarters here
-            </div>
+            <Figure>
+              <div
+                className={css(styles.placeholder)}
+                style={{ width: "100%", height: 120 }}
+              >
+                <FPO />photo of three groups of four quarters here
+              </div>
+            </Figure>
           </SidebarItem>
         </BodyAndSidebar>
         <BodyAndSidebar>
@@ -512,7 +519,7 @@ export default class Report extends React.Component {
             </a>:
           </Body>
           <SidebarItem top={0}>
-            <p className={css(styles.sidebarBody)}>
+            <p className={css(styles.sidebarBody, styles.hideOnMobile)}>
               Papert's 1980 manifesto on empowering children through technology,{" "}
               <a href="https://mindstorms.media.mit.edu">Mindstorms</a>, remains
               a foundational text for anyone interested in learning and
@@ -520,7 +527,14 @@ export default class Report extends React.Component {
             </p>
           </SidebarItem>
         </BodyAndSidebar>
-        <Body wide noTopMargin style={{ marginLeft: 40 }}>
+        <p
+          className={css(
+            styles.body,
+            styles.wideParagraph,
+            styles.noTopMargin,
+            styles.blockQuote,
+          )}
+        >
           While it’s true that most people in math class don’t learn much math,
           most kids in French class don’t learn much French. But, we don’t say
           that they are not “French-ly minded.” We don’t say that they don’t
@@ -528,7 +542,12 @@ export default class Report extends React.Component {
           they would learn French perfectly well. And I think that my image of
           learning mathematics is that if we all learned mathematics in
           “Mathland,” we would all learn mathematics perfectly well.
-        </Body>
+        </p>
+        <p className={css(styles.sidebarBody, styles.hideUnlessMobile)}>
+          Papert's 1980 manifesto on empowering children through technology,{" "}
+          <a href="https://mindstorms.media.mit.edu">Mindstorms</a>, remains a
+          foundational text for anyone interested in learning and technology.
+        </p>
         <BodyAndSidebar>
           <Body>
             Students have long used physical manipulatives like the blocks
@@ -1397,7 +1416,7 @@ const styles = StyleSheet.create({
     },
     height: 20,
     [mediaQueries.smOrSmaller]: {
-      top: "calc(100vw * 3 / 4 / 2)",
+      top: "calc((100vw - (31px)*2) * 3 / 4 / 2)",
     },
     [mediaQueries.mdOrLarger]: {
       top: 131,
@@ -1412,5 +1431,15 @@ const styles = StyleSheet.create({
 
   carouselItem: {
     padding: "0px 15px",
+  },
+
+  blockQuote: {
+    [mediaQueries.smOrSmaller]: {
+      borderLeft: `2px solid ${globalStyles.colors.gray76}`,
+      paddingLeft: 16,
+    },
+    [mediaQueries.mdOrLarger]: {
+      marginLeft: 40,
+    },
   },
 });
