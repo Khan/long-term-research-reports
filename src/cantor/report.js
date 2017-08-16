@@ -152,7 +152,9 @@ const HeroHeader = () =>
           userSelect: "none",
         }}
       >
-        <h1 className={css(styles.title)}>Numbers at play: dynamic toys make the invisible visible</h1>
+        <h1 className={css(styles.title)}>
+          Numbers at play: dynamic toys make the invisible visible
+        </h1>
         <div className={css(styles.hideOnMobile)}>
           <Authors />
         </div>
@@ -410,18 +412,20 @@ export default class Report extends React.Component {
     <div className={css(styles.outerClip)}>
       <div className={css(styles.container)}>
         <HeroHeader />
-        <p className={css(styles.lede)}>
-          Quick: is 29 prime? Our number system makes some properties of numbers
-          easy to see and others much harder. We designed new interactive
-          representations that make invisible number properties more visible.
-        </p>
+        <div className={css(styles.lede)}>
+          <Body>When we think about manipulating numbers, some operations seem easy or
+          obvious, and others exotic and abstract. Addition and decomposition
+          into tens? Straightforward. Modular arithmetic and changes of base? Not exactly
+          obvious.</Body><Body>What if you had some new way to represent numbers in your
+          head—and manipulate them in your hands—that made certain thoughts
+          easier to think? We’ve designed new interactive representations of
+          numbers to attempt just that.</Body>
+        </div>
         <Hairline />
         <Heading>Looking at numbers in many ways</Heading>
         <BodyAndSidebar>
           <Body>
-            We might learn to add numbers using a particular algorithm, but
-            there are lots of ways to think about how a pair of numbers fit
-            together.
+            There are many ways to think about how to add two numbers.
           </Body>
         </BodyAndSidebar>
         <BodyAndSidebar>
@@ -511,7 +515,7 @@ export default class Report extends React.Component {
             <p className={css(styles.sidebarBody)}>
               Papert's 1980 manifesto on empowering children through technology,{" "}
               <a href="https://mindstorms.media.mit.edu">Mindstorms</a>, remains
-              a key foundational text for anyone interested in learning and
+              a foundational text for anyone interested in learning and
               technology.
             </p>
           </SidebarItem>
@@ -520,7 +524,7 @@ export default class Report extends React.Component {
           While it’s true that most people in math class don’t learn much math,
           most kids in French class don’t learn much French. But, we don’t say
           that they are not “French-ly minded.” We don’t say that they don’t
-          have a head for French because we know that if they grew-up in France,
+          have a head for French because we know that if they grew up in France,
           they would learn French perfectly well. And I think that my image of
           learning mathematics is that if we all learned mathematics in
           “Mathland,” we would all learn mathematics perfectly well.
@@ -558,11 +562,11 @@ export default class Report extends React.Component {
             that physical manipulatives depend on instructors’ guidance to
             illustrate connections, facilitate discussion, and encourage
             reflection. Digital manipulatives can’t resolve all her criticisms,
-            but they can certainly improve the situation: they can more easily
-            encode elements of expert guidance in their interactions via
-            constraints and dynamism, they can display and maintain the
-            relationships between multiple representations, and they can create
-            a new expressive context for social interaction.
+            but they can certainly improve the situation. For instance, they can
+            more easily encode elements of expert guidance in their interactions
+            via constraints and dynamism. They can display and maintain the
+            relationships between multiple representations. They can create a
+            new expressive context for social interaction.
           </Body>
         </BodyAndSidebar>
         <Heading>Revealing hidden properties of numbers</Heading>
@@ -621,14 +625,18 @@ export default class Report extends React.Component {
           Cantor's “resize” interaction makes alternative bases easy to explore.
           Along the way, divisibility relationships are immediately apparent.
           Even-ness and odd-ness emerge from casual play here as a clear
-          pattern: some numbers are “smooth” when you put them into two columns,
-          and some are “bumpy.” What about three columns?
+          pattern: some numbers are “smooth” when you arrange them into two
+          columns, and some are “bumpy.”
+        </Body>
+        <Body wide>
+          What will happen if you arrange them into three columns? Think about
+          it for a moment, then try for yourself above.
         </Body>
 
         <Subheading>Making primes vivid</Subheading>
         <Body wide>
-          As we resize 12, it forms lots of precise rectangles. 13 doesn’t form
-          any at all! Why?
+          Which numbers are <em>intrinsically</em> bumpy, no matter how you
+          resize them?
         </Body>
         <Figure>
           <CantorPrototype
@@ -641,8 +649,13 @@ export default class Report extends React.Component {
           />
         </Figure>
         <Body wide>
-          With this interaction, primality becomes an apparent property of a
-          number—something you'd notice naturally when playing with the blocks.
+          As we resize 12, it forms lots of precise rectangles. 13 doesn’t form
+          any at all!
+        </Body>
+        <Body wide>
+          With this interaction,{" "}
+          <em>primality becomes an apparent property of a number</em>—something
+          you'd notice naturally when playing with the blocks.
         </Body>
         <Body wide>
           By making primality vivid through direct manipulation, we help create
@@ -661,8 +674,8 @@ export default class Report extends React.Component {
 
         <Body wide>
           In each case, the student directly manipulates the number—they’re not
-          fiddling with some slider that has a hidden mathematical relationship to
-          the number. The interactions are <em>deeply entangled</em> with the
+          fiddling with some slider that has a hidden mathematical relationship
+          to the number. The interactions are <em>deeply entangled</em> with the
           mathematical operation at hand: for instance, changing a number
           block’s width to some value directly corresponds to changing the
           number’s base to that value.
@@ -721,18 +734,24 @@ export default class Report extends React.Component {
             be used in an online textbook; now let’s look at some other ideas.
           </Body>
         </BodyAndSidebar>
-        <Subheading>
-          Conversations using Cantor at the speed of speech
-        </Subheading>
         <BodyAndSidebar>
-          <Body noBottomMargin>
-            As we tried using Cantor in a variety of situations, we realized
-            that in any context involving communication, great interactive tools
-            become much more powerful when they can be used at the speed of
-            speech. With tools this fluid, we can enhance natural dialogue
-            through novel representations without awkward pauses. Congruently,
-            high-speed interactions amplify learners’ solo explorations,
-            enhancing natural thought without awkward pauses.
+          <Subheading>
+            Supporting exploration at the speed of thought; supporting
+            conversation at the speed of speech
+          </Subheading>
+        </BodyAndSidebar>
+        <BodyAndSidebar>
+          <Body>
+            Great tools keep up with their users. They operate at the speed of
+            thought, ever shrinking the feedback loop between conceiving of an
+            idea and exploring its consequences.
+          </Body>
+          <Body>
+            Tools for thought must support communication not just with their
+            originator: they should enhance conversation between collaborators
+            exploring an idea together. They should enact thought at the speed
+            of speech. With tools this fluid, we can reinforce natural dialogue
+            through novel representations without awkward pauses.
           </Body>
           <SidebarItem top={0}>
             <div
@@ -917,20 +936,27 @@ export default class Report extends React.Component {
             </Body>
           </div>
         </Slider>
+
+        <Heading>A chest of toys, a chest of dreams</Heading>
         <BodyAndSidebar>
           <Body>
-            We’ve shown how through this medium, one can literally see—and
-            possibly hear!—a student’s manipulations and thoughts as they work.
-            A digital curriculum built around this kinds of open-ended student
-            work would emphasize student thought over a final answer. This can
-            give teachers greater insight into a student’s understanding and
-            allow students to explore others’ strategies for tackling a given
-            problem.
+            We dream of giving every child a toy chest filled with countless
+            dynamic manipulatives like the ones we’ve illustrated here.
           </Body>
+
           <Body>
-            We haven’t yet found the “Mathland” Papert dreamed of, but we
-            believe that dynamic representations like these help point the
-            way—not just in math, but across all domains of thought.
+            Just as manipulating our blocks naturally elicits the idea of prime
+            numbers, another toy’s contortions might neatly illustrate
+            fractions. Taken together, these toys can create authentic
+            intellectual need for large swaths of mathematics, then empower
+            students to discover the answers through play.
+          </Body>
+        </BodyAndSidebar>
+        <BodyAndSidebar>
+          <Body>
+            By embedding these manipulatives in a multi-user environment, we
+            augment mathematical collaboration and help students create
+            artifacts of their thought—without abstract symbol manipulation.
           </Body>
           <SidebarItem top={0}>
             <p className={css(styles.sidebarBody)}>
@@ -951,6 +977,13 @@ export default class Report extends React.Component {
             </p>
           </SidebarItem>
         </BodyAndSidebar>
+        <BodyAndSidebar>
+          <Body>
+            If we fill the elementary math environment with enough empowering
+            and curiosity-inspiring mathematical objects, we may lay the
+            foundation for the “Mathland” Papert dreamed of.
+          </Body>
+        </BodyAndSidebar>
 
         <Heading>Further reading</Heading>
         <Body wide>
@@ -959,13 +992,34 @@ export default class Report extends React.Component {
         </Body>
         <ul className={css(styles.furtherReadingList)}>
           <FurtherReadingItem>
-            Seymour Papert's 1980 book, <a href="https://mindstorms.media.mit.edu"><em>Mindstorms</em></a>, remains essential reading for anyone interested in building digital contexts for learning.
+            Seymour Papert's 1980 book,{" "}
+            <a href="https://mindstorms.media.mit.edu">
+              <em>Mindstorms</em>
+            </a>, remains essential reading for anyone interested in building
+            digital contexts for learning.
           </FurtherReadingItem>
           <FurtherReadingItem>
-            Deborah Ball's “<a href="https://ka-hivemind.herokuapp.com/entry/KhkXuvBHnvEuHNomH">Magical hopes: Manipulatives and the reform of math education</a>” outlined the key limitations of manipulatives in math education in 1992.
+            Deborah Ball's “<a href="https://ka-hivemind.herokuapp.com/entry/KhkXuvBHnvEuHNomH">
+              Magical hopes: Manipulatives and the reform of math education
+            </a>” outlined the key limitations of manipulatives in math
+            education in 1992.
           </FurtherReadingItem>
-          <FurtherReadingItem>One of the authors of this report, Scott Farrar, gives an academic survey of digital learning media in his 2016 thesis, “<a href="https://ka-hivemind.herokuapp.com/?entry=SSmwkKtGkKHbnJgTX">Students and Teachers Using a Digital Curriculum and Pedagogy in Secondary Mathematics</a>.”</FurtherReadingItem>
-          <FurtherReadingItem>For more recent work on the promise of the dynamic medium helping us see new things—not just for young learners—see Bret Victor's 2013 talk, “<a href="http://worrydream.com/MediaForThinkingTheUnthinkable/">Media for Thinking the Unthinkable</a>,” and Michael Nielsen's 2016 essay, “<a href="http://cognitivemedium.com/tat/index.html">Thought as a Technology</a>.”</FurtherReadingItem>
+          <FurtherReadingItem>
+            One of the authors of this report, Scott Farrar, gives an academic
+            survey of digital learning media in his 2016 thesis, “<a href="https://ka-hivemind.herokuapp.com/?entry=SSmwkKtGkKHbnJgTX">
+              Students and Teachers Using a Digital Curriculum and Pedagogy in
+              Secondary Mathematics
+            </a>.”
+          </FurtherReadingItem>
+          <FurtherReadingItem>
+            For more recent work on the promise of the dynamic medium helping us
+            see new things—not just for young learners—see Bret Victor's 2013
+            talk, “<a href="http://worrydream.com/MediaForThinkingTheUnthinkable/">
+              Media for Thinking the Unthinkable
+            </a>,” and Michael Nielsen's 2016 essay, “<a href="http://cognitivemedium.com/tat/index.html">
+              Thought as a Technology
+            </a>.”
+          </FurtherReadingItem>
         </ul>
       </div>
     </div>;
@@ -1240,7 +1294,7 @@ const styles = StyleSheet.create({
     },
     [mediaQueries.mdOrLarger]: {
       height: 350,
-    }
+    },
   },
 
   topBar: {
