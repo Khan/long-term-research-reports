@@ -2,6 +2,7 @@ import { StyleSheet, css } from "aphrodite";
 import React from "react";
 
 import globalStyles from "webapp/shared-styles-package/global-styles";
+import mediaQueries from "webapp/shared-styles-package/media-queries";
 
 const Figure = ({ children, caption }) =>
   <div className={css(styles.figureContainer)}>
@@ -45,5 +46,9 @@ const styles = StyleSheet.create({
     fontStyle: "normal",
     marginTop: 8,
     marginBottom: 38,
+
+    [mediaQueries.smOrSmaller]: {
+      marginBottom: 24,
+    },
   },
 });
