@@ -141,7 +141,7 @@ const HeroHeader = () =>
           xOffset={0}
           yOffset={20}
           mobileXOffset={-600}
-          mobileYOffset={150}
+          mobileYOffset={220}
         />
       </div>
       <div className={css(styles.topBar)} />
@@ -1288,7 +1288,7 @@ const styles = StyleSheet.create({
   heroContainer: {
     height: 300,
     [mediaQueries.smOrSmaller]: {
-      height: 350,
+      height: 375,
       marginBottom: 8,
       maxHeight: "100vh",
     },
@@ -1313,7 +1313,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 300,
     [mediaQueries.smOrSmaller]: {
-      height: 350,
+      height: 375,
       maxHeight: "100vh",
     },
     [mediaQueries.mdOrLarger]: {
