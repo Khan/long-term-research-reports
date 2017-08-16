@@ -3,8 +3,10 @@
     "start": "webpack-dev-server",
     "prebuild": "rimraf dist",
     "build": "NODE_ENV=production webpack -p --config webpack.config.production.js",
-    "predeploy": "rimraf deploy && yarn build && mkdir -p deploy/static && cp -R dist/* deploy/static",
-    "deploy": "cp index.html deploy/cantor.html; sed -i '' 's/dev-bundle/cantor-bundle/g' deploy/cantor.html; cp index.html deploy/early-math.html; sed -i '' 's/dev-bundle/early-math-bundle/g' deploy/early-math.html; mkdir -p deploy/images/long-term-research; cp -R public/* deploy/images/long-term-research; ln -s images deploy/sounds"
+    "pretestdeploy": "rimraf deploy && yarn build && mkdir -p deploy/static && cp -R dist/* deploy/static",
+    "testdeploy": "cp index.html deploy/cantor.html; sed -i '' 's/dev-bundle/cantor-bundle/g' deploy/cantor.html; cp index.html deploy/early-math.html; sed -i '' 's/dev-bundle/early-math-bundle/g' deploy/early-math.html; mkdir -p deploy/images/long-term-research; cp -R public/* deploy/images/long-term-research; ln -s images deploy/sounds",
+    "predeploy": "rimraf ../webapp/images/long-term-research/reports; mkdir -p ../webapp/images/long-term-research/reports; rimraf ../webapp/sounds/long-term-research/reports; mkdir -p ../webapp/sounds/long-term-research/reports; rimraf ../webapp/videos/long-term-research/reports; mkdir -p ../webapp/videos/long-term-research/reports; rimraf ../webapp/static/long-term-research-reports; mkdir -p ../webapp/static/long-term-research-reports; yarn build",
+    "deploy": "cp dist/* ../webapp/static/long-term-research-reports && cp -R images/* ../webapp/images/long-term-research/reports && cp -R sounds/* ../webapp/sounds/long-term-research/reports && cp -R videos/* ../webapp/videos/long-term-research/reports"
   },
   "devDependencies": {
     "@types/babel-core": "^6.7.15",

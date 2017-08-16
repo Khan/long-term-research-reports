@@ -25,7 +25,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name]-bundle.js",
-    publicPath: "/static/",
+    publicPath: "/static/long-term-research-reports/",
   },
   module: {
     rules: [

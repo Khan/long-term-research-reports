@@ -76,7 +76,7 @@ class CantorPrototype extends React.Component {
          window.addEventListener("cantor-play", function() { window.cantorRecorder.unpause() })
    window.addEventListener("cantor-pause", function() { window.cantorRecorder.pause() })
 </script>
-<script src="/static/cantor-prototype-bundle.js"></script><script type="text/javascript">${this
+<script src="/static/long-term-research-reports/cantor-prototype-bundle.js"></script><script type="text/javascript">${this
       .props.recording
       ? `
     var data = window.pako.inflate(atob('${this.props
