@@ -244,7 +244,7 @@ export default class Forest extends React.Component {
     this.setState({
       hasTargetedYet: true,
       targetPlayerX:
-        x - this.state.backgroundOriginXs[this.state.backgroundOriginXs.length - 1],
+        clip(x - this.state.backgroundOriginXs[this.state.backgroundOriginXs.length - 1], -cameraOffset, startingX + 95 * 24),
     });
     this.startAnimation();
   };
