@@ -129,6 +129,8 @@ export default class Forest extends React.Component {
       hasTargetedYet: false,
       lastFrameCameraSpeed: 0,
     };
+
+    this.images = [];
   }
 
   startAnimation = () => {
@@ -146,11 +148,15 @@ export default class Forest extends React.Component {
   };
 
   animate = (timestamp: number) => {
+    this.animationRequest = window.requestAnimationFrame(this.animate);
+
+    if (!Object.keys(this.images).every(k => this.images[k].complete)) {
+      return;
+    }
+
     const numFrames =
       (timestamp - (this.lastTimestamp || timestamp - 1000 / 60)) / (1000 / 60);
     this.lastTimestamp = timestamp;
-
-    this.animationRequest = window.requestAnimationFrame(this.animate);
 
     const availableWidthFraction = 0.45; // the fraction of the header width unobscured by other content
     const cameraEdgeLeftFraction = 0.45; // in unit screen space, how far along the screen is the line where the camera moves at the same speed as the player?
@@ -347,8 +353,10 @@ export default class Forest extends React.Component {
                 }}
                 key={index}
               >
+                <img src="/images/long-term-research/reports/early-math/character.png" style={{display: "none"}} ref={(image) => {this.images["character"] = image}} />
                 <img
                   src={`/images/long-term-research/reports/early-math/trees${index}.png`}
+                  ref={(image) => {this.images[index] = image}}
                 />
                 {index === this.state.backgroundOriginXs.length - 1
                   ? <div>
