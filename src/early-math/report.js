@@ -527,9 +527,10 @@ export default class Report extends React.Component {
             <p className={css(styles.sidebarBody)}>
               This metaphor comes from Seymour Papert, whose 1980 manifesto on
               empowering children through technology,{" "}
-              <a href="https://mindstorms.media.mit.edu">Mindstorms</a>, remains
-              a foundational text for anyone interested in learning and
-              technology.
+              <a href="https://mindstorms.media.mit.edu">
+                <em>Mindstorms</em>
+              </a>, remains a foundational text for anyone interested in
+              learning and technology.
             </p>
           </SidebarItem>
         </BodyAndSidebar>
@@ -543,7 +544,28 @@ export default class Report extends React.Component {
             life.
           </Body>
           <SidebarItem>
-            <Figure caption="The space alien theme might be tasty chocolate, but these worksheet problems are still broccoli.">
+            <Figure
+              caption={
+                <span>
+                  The space alien theme might taste like chocolate at first, but
+                  it's covering the same old broccoli.<p
+                    className={css(styles.sidebarBody, styles.hideOnMobile)}
+                    style={{ paddingTop: 16 }}
+                  >
+                    {/* Note that this paragraph is duplicated below for mobile */}
+                    Plenty of evidence suggests that shallow extrinsic
+                    motivations{" "}
+                    <a href="http://psycnet.apa.org/record/1974-10497-001">
+                      can squash burgeoning intrinsic motivation
+                    </a>{" "}
+                    and{" "}
+                    <a href="http://people.whitman.edu/~herbrawt/classes/390/Amabile.pdf">
+                      narrow creative thought
+                    </a>.
+                  </p>
+                </span>
+              }
+            >
               <img
                 src="/images/long-term-research/reports/early-math/4-principles/1-broccoli.jpg"
                 style={{ width: "100%" }}
@@ -555,6 +577,8 @@ export default class Report extends React.Component {
             entangled with mathematical concepts in the same way—and where
             motivation comes from within?
           </Body>
+        </BodyAndSidebar>
+        <BodyAndSidebar>
           <Body>
             <Principle>Entanglement.</Principle> That's been our goal for this
             world: when children manipulate their world, they manipulate
@@ -563,39 +587,104 @@ export default class Report extends React.Component {
             need a trophy system: the desire to explore, interact, and create is
             motivation enough.
           </Body>
+          <SidebarItem>
+            <p className={css(styles.sidebarBody, styles.hideUnlessMobile)}>
+              {/* Note that this paragraph is duplicated below for mobile */}
+              Plenty of evidence suggests that shallow extrinsic motivations{" "}
+              <a href="http://psycnet.apa.org/record/1974-10497-001">
+                can squash burgeoning intrinsic motivation
+              </a>{" "}
+              and{" "}
+              <a href="http://people.whitman.edu/~herbrawt/classes/390/Amabile.pdf">
+                narrow creative thought
+              </a>.
+            </p>
+          </SidebarItem>
         </BodyAndSidebar>
         <BodyAndSidebar>
           <Body>
             <Principle>Creativity.</Principle> With creative freedom and
             exploration comes a wider variety of learning paths. One child might
             construct a mathematical concept through a generative painting;
-            another might form the same idea making digital music. To learn, we
-            connect new ideas to preexisting ones. A prescribed learning path
-            allows no agency or creativity for the learner, their only option is
-            compliance. But if children have agency in the mathematical
-            activity, they'll find learning paths from their own entry points.
-            We can still prescribe experiences in the design of our world, but
-            ultimately, the paths are forged by the learner.
+            another might form the same idea making digital music.{" "}
+            <a href="https://en.wikipedia.org/wiki/Constructivism_(philosophy_of_education)">
+              To learn, we connect new ideas to preexisting ones.
+            </a>{" "}
+            A prescribed learning path allows no agency or creativity for the
+            learner, their only option is compliance. But if children have
+            agency in the mathematical activity, they'll find learning paths
+            from their own entry points. We can still prescribe experiences in
+            the design of our world, but ultimately, the paths are forged by the
+            learner.
           </Body>
           <SidebarItem>
-            <Figure>
+            <Figure
+              caption={
+                <span>
+                  TODO NEEDS SOURCE<p
+                    className={css(styles.sidebarBody, styles.hideOnMobile)}
+                    style={{ paddingTop: 16 }}
+                  >
+                    {/* Note that this paragraph is duplicated below for mobile */}
+                    The{" "}
+                    <a href="http://www.nctm.org/">
+                      National Council of Teachers of Mathematics
+                    </a>{" "}
+                    <a href="http://www.nctm.org/uploadedFiles/Standards_and_Positions/PtAExecutiveSummary.pdf">
+                      lists
+                    </a>{" "}
+                    “too much focus on learning procedures without any
+                    connection to meaning, understanding, or the applications
+                    that require these procedures” as one of the most pressing
+                    problems in math education. They suggest that we reverse the
+                    situation: “build procedural fluency from conceptual
+                    understanding.”
+                  </p>
+                </span>
+              }
+            >
               <img
                 src="/images/long-term-research/reports/early-math/4-principles/2-creativity.jpg"
                 style={{ width: "100%" }}
               />
             </Figure>
           </SidebarItem>
-          <Body>
+          <Body noBottomMargin>
             <Principle>Conceptual understanding.</Principle> Because children
-            are uncovering that learning path themselves, it’s more likely that
-            they’ll understand why the entangled mathematical ideas behave as
-            they do—not just how to perform an algorithm. With procedural
+            are uncovering that learning path themselves,{" "}
+            <a href="http://math.ucsd.edu/~jrabin/publications/ProblemFreeActivity.pdf">
+              it’s more likely that they’ll understand <em>why</em> the
+              entangled mathematical ideas behave as they do
+            </a>—not just how to perform an algorithm. With procedural
             understanding, we’re stuck as soon as we fall off a path we
             recognize. With conceptual understanding, we can correct our own
             errors and combine ideas in creative ways. That creativity leads to
             yet more learning paths and yet more understanding: the cycle
             continues.
           </Body>
+          <SidebarItem>
+            <p
+              className={css(
+                styles.sidebarBody,
+                styles.hideUnlessMobile,
+                styles.noBottomMargin,
+              )}
+            >
+              {/* Note that this paragraph is duplicated above for non-mobile */}
+              The{" "}
+              <a href="http://www.nctm.org/">
+                National Council of Teachers of Mathematics
+              </a>{" "}
+              <a href="http://www.nctm.org/uploadedFiles/Standards_and_Positions/PtAExecutiveSummary.pdf">
+                lists
+              </a>{" "}
+              “too much focus on learning procedures without any connection to
+              meaning, understanding, or the applications that require these
+              procedures” as one of the most pressing problems in math
+              education. They suggest that we reverse the situation: “build
+              procedural fluency from conceptual understanding.”
+            </p>
+          </SidebarItem>
         </BodyAndSidebar>
         <BodyAndSidebar>
           <Subheading>Emotional connectedness</Subheading>
@@ -628,22 +717,25 @@ export default class Report extends React.Component {
             <Principle>Creative ownership.</Principle> We’ve discussed how
             creativity helps children connect new ideas to old ones when
             learning. That creative mindset also makes the activity personally
-            relevant to the child, forming an emotional bond that can inspire
-            their involvement without outside coercion.
+            relevant to the child,{" "}
+            <a href="http://life-slc.org/docs/barron-self-sustainedlearning.pdf">
+              forming an emotional bond that can inspire their involvement
+              without outside coercion
+            </a>.
           </Body>
         </BodyAndSidebar>
         <BodyAndSidebar>
           <Body>
             <Principle>Curiosity.</Principle> Our art direction’s all about
-            setting the stage for curiosity. For instance, in the scenario
-            above, we’ve deliberately added lots of depth and occlusion. The
-            child’s entering a whole new world, but we’re leaving space for
-            their imagination, a feeling of possibility and a sense of
+            setting the stage for curiosity. For instance, in the forest at the
+            top of this report above, we’ve deliberately added lots of depth and
+            occlusion. The child’s entering a whole new world, but we’re leaving
+            space for their imagination, a feeling of possibility and a sense of
             adventure. The imagination, combined with the environment, evokes
             much more than we could have rendered ourselves.
           </Body>
           <SidebarItem>
-            <Figure caption="Artists have used depth and occlusion to capture viewers’ imaginations for years. In Firewatch, Myst, and Caspar David Friedrich’s “Der Abend” of 1821, the trees occlude what might be behind them while still evoking depth, creating a sense of possibility and mystery. The figures in the foreground give us a sense of scale, which increases the sense of adventure into the woods.">
+            <Figure caption="Artists have long used depth and occlusion to capture imaginations. These trees occlude what might be behind them, creating a sense of possibility and mystery. The figures in the foreground give us a sense of scale, which increases the sense of adventure.">
               <img
                 src="/images/long-term-research/reports/early-math/4-principles/4-art-direction-for-curiosity-1.jpg"
                 style={{ width: "100%" }}
@@ -661,7 +753,7 @@ export default class Report extends React.Component {
               />
             </Figure>
           </SidebarItem>
-          <Body>
+          <Body noBottomMargin>
             <Principle>Interpersonal connectedness.</Principle> Interpersonal
             interactions can prompt their own rich emotional connections. As
             children create and discover in this world, we can empower them to
@@ -673,7 +765,7 @@ export default class Report extends React.Component {
         <BodyAndSidebar>
           <Subheading>Empowerment, not condescension</Subheading>
           <SidebarItem top={47}>
-            <Figure>
+            <Figure caption="TODO NEEDS SOURCE">
               <img
                 src="/images/long-term-research/reports/early-math/4-principles/5-empowerment.jpg"
                 style={{ width: "100%" }}
