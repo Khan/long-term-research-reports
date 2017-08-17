@@ -211,7 +211,7 @@ const BodyAndSidebar = ({ children }) =>
   </div>;
 
 const SidebarItem = ({ children, top }) =>
-  <div className={css(styles.sidebarItem)} style={{ top }}>
+  <div className={css(styles.sidebarItem)} style={{ top: top || 0 }}>
     {children}
   </div>;
 
@@ -461,7 +461,7 @@ export default class Report extends React.Component {
             makes a “10 + 2” decomposition natural. But the arrangement of
             twelve quarters depicted here makes us think of “12 = 3 x 4”.
           </Body>
-          <SidebarItem top={0}>
+          <SidebarItem>
             <Figure>
               <div
                 className={css(styles.placeholder)}
@@ -481,7 +481,7 @@ export default class Report extends React.Component {
             numbers using tallies or tokens. Imagine trying to think about the
             number 1,776 if you only had tick marks!
           </Body>
-          <SidebarItem top={0}>
+          <SidebarItem>
             <Figure>
               <img
                 src="/images/long-term-research/reports/cantor/tick-marks.png"
@@ -498,7 +498,7 @@ export default class Report extends React.Component {
               paints the tantalizing possibilities
             </a>:
           </Body>
-          <SidebarItem top={0}>
+          <SidebarItem>
             <p className={css(styles.sidebarBody, styles.hideOnMobile)}>
               Papert's 1980 manifesto on empowering children through technology,{" "}
               <a href="https://mindstorms.media.mit.edu">Mindstorms</a>, remains
@@ -536,7 +536,7 @@ export default class Report extends React.Component {
             body-awareness—but physical objects are limited by
             often-inconvenient laws of physics and practicalities of matter.
           </Body>
-          <SidebarItem top={0}>
+          <SidebarItem>
             <Figure caption="Try representing 1,684! Try showing 36 in base 7! Try checking if 75 is odd! Try…">
               <FPO />
               <img
@@ -708,7 +708,7 @@ export default class Report extends React.Component {
             can’t bend it to some other problem they’re considering on their own
             later.
           </Body>
-          <SidebarItem top={0}>
+          <SidebarItem>
             <Figure>
               <img
                 src="/images/long-term-research/reports/cantor/function-carnival.gif"
@@ -752,7 +752,7 @@ export default class Report extends React.Component {
             of speech. With tools this fluid, we can reinforce natural dialogue
             through novel representations without awkward pauses.
           </Body>
-          <SidebarItem top={0}>
+          <SidebarItem>
             <div
               className={css(styles.placeholder)}
               style={{ height: 200, marginBottom: 24 }}
@@ -785,7 +785,7 @@ export default class Report extends React.Component {
             themselves speaking aloud while manipulating these dynamic
             representations.
           </Body>
-          <SidebarItem top={0}>
+          <SidebarItem>
             <Figure>
               <CantorPrototype
                 height={200}
@@ -811,7 +811,7 @@ export default class Report extends React.Component {
             recorded prompt reacting to a student’s actions and offering further
             provocation.
           </Body>
-          <SidebarItem top={0}>
+          <SidebarItem>
             <Figure>
               <CantorPrototype
                 height={250}
@@ -837,7 +837,7 @@ export default class Report extends React.Component {
             connect to each other, students can create and discover ideas we
             didn’t anticipate.
           </Body>
-          <SidebarItem top={0}>
+          <SidebarItem>
             <Figure>
               <FPO />
               <img
@@ -957,7 +957,7 @@ export default class Report extends React.Component {
             augment mathematical collaboration and help students create
             artifacts of their thought—without abstract symbol manipulation.
           </Body>
-          <SidebarItem top={0}>
+          <SidebarItem>
             <p className={css(styles.sidebarBody)}>
               <a href="http://www.nctm.org/">
                 The National Council of Teachers of Mathematics

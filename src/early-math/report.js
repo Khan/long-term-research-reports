@@ -138,7 +138,7 @@ const BodyAndSidebar = ({ children }) =>
   </div>;
 
 const SidebarItem = ({ children, top }) =>
-  <div className={css(styles.sidebarItem)} style={{ top }}>
+  <div className={css(styles.sidebarItem)} style={{ top: top || 0 }}>
     {children}
   </div>;
 
@@ -509,7 +509,6 @@ export default class Report extends React.Component {
             </div>,
           )}
         </Slider>
-        <Hairline />
         <Heading>Design principles</Heading>
         <Body wide>
           Our investigations gave rise to deeper ideas that we used to challenge
@@ -524,9 +523,17 @@ export default class Report extends React.Component {
             entangled with it. Interacting more deeply with your surroundings
             means interacting more deeply with the language and culture.
           </Body>
-          <SidebarItem top={0}>
-            <div className={css(styles.placeholder)} style={{ height: 298 }} />
+          <SidebarItem>
+            <p className={css(styles.sidebarBody)}>
+              This metaphor comes from Seymour Papert, whose 1980 manifesto on
+              empowering children through technology,{" "}
+              <a href="https://mindstorms.media.mit.edu">Mindstorms</a>, remains
+              a foundational text for anyone interested in learning and
+              technology.
+            </p>
           </SidebarItem>
+        </BodyAndSidebar>
+        <BodyAndSidebar>
           <Body>
             Learning games often feel bolted onto their subjects like
             chocolate-covered broccoli: the game mechanics could just as well be
@@ -535,6 +542,14 @@ export default class Report extends React.Component {
             is constantly motivated by rich interactions inextricable from daily
             life.
           </Body>
+          <SidebarItem>
+            <Figure caption="The space alien theme might be tasty chocolate, but these worksheet problems are still broccoli.">
+              <img
+                src="/images/long-term-research/reports/early-math/4-principles/1-broccoli.jpg"
+                style={{ width: "100%" }}
+              />
+            </Figure>
+          </SidebarItem>
           <Body>
             Can we build an environment whose objects and interactions are
             entangled with mathematical concepts in the same way—and where
@@ -548,6 +563,8 @@ export default class Report extends React.Component {
             need a trophy system: the desire to explore, interact, and create is
             motivation enough.
           </Body>
+        </BodyAndSidebar>
+        <BodyAndSidebar>
           <Body>
             <Principle>Creativity.</Principle> With creative freedom and
             exploration comes a wider variety of learning paths. One child might
@@ -560,6 +577,14 @@ export default class Report extends React.Component {
             We can still prescribe experiences in the design of our world, but
             ultimately, the paths are forged by the learner.
           </Body>
+          <SidebarItem>
+            <Figure>
+              <img
+                src="/images/long-term-research/reports/early-math/4-principles/2-creativity.jpg"
+                style={{ width: "100%" }}
+              />
+            </Figure>
+          </SidebarItem>
           <Body>
             <Principle>Conceptual understanding.</Principle> Because children
             are uncovering that learning path themselves, it’s more likely that
@@ -574,6 +599,25 @@ export default class Report extends React.Component {
         </BodyAndSidebar>
         <BodyAndSidebar>
           <Subheading>Emotional connectedness</Subheading>
+          <SidebarItem top={47}>
+            <Figure
+              caption={
+                <span>
+                  This classic photo from Papert's{" "}
+                  <a href="https://mindstorms.media.mit.edu">
+                    <em>Mindstorms</em>
+                  </a>{" "}
+                  paints a relationship with learning we'd love to see every
+                  child experience.
+                </span>
+              }
+            >
+              <img
+                src="/images/long-term-research/reports/early-math/4-principles/3-emotional-connectedness.jpg"
+                style={{ width: "100%" }}
+              />
+            </Figure>
+          </SidebarItem>
           <Body>
             When talking about education, we often ignore or belittle children’s
             emotions, focusing on intellectual activities. But by creating the
@@ -587,6 +631,8 @@ export default class Report extends React.Component {
             relevant to the child, forming an emotional bond that can inspire
             their involvement without outside coercion.
           </Body>
+        </BodyAndSidebar>
+        <BodyAndSidebar>
           <Body>
             <Principle>Curiosity.</Principle> Our art direction’s all about
             setting the stage for curiosity. For instance, in the scenario
@@ -596,6 +642,25 @@ export default class Report extends React.Component {
             adventure. The imagination, combined with the environment, evokes
             much more than we could have rendered ourselves.
           </Body>
+          <SidebarItem>
+            <Figure caption="Artists have used depth and occlusion to capture viewers’ imaginations for years. In Firewatch, Myst, and Caspar David Friedrich’s “Der Abend” of 1821, the trees occlude what might be behind them while still evoking depth, creating a sense of possibility and mystery. The figures in the foreground give us a sense of scale, which increases the sense of adventure into the woods.">
+              <img
+                src="/images/long-term-research/reports/early-math/4-principles/4-art-direction-for-curiosity-1.jpg"
+                style={{ width: "100%" }}
+                className={css(threeImageCrossFadeStyle.one)}
+              />
+              <img
+                src="/images/long-term-research/reports/early-math/4-principles/4-art-direction-for-curiosity-2.jpg"
+                style={{ width: "100%" }}
+                className={css(threeImageCrossFadeStyle.two)}
+              />
+              <img
+                src="/images/long-term-research/reports/early-math/4-principles/4-art-direction-for-curiosity-3.jpg"
+                style={{ width: "100%" }}
+                className={css(threeImageCrossFadeStyle.three)}
+              />
+            </Figure>
+          </SidebarItem>
           <Body>
             <Principle>Interpersonal connectedness.</Principle> Interpersonal
             interactions can prompt their own rich emotional connections. As
@@ -607,6 +672,14 @@ export default class Report extends React.Component {
         </BodyAndSidebar>
         <BodyAndSidebar>
           <Subheading>Empowerment, not condescension</Subheading>
+          <SidebarItem top={47}>
+            <Figure>
+              <img
+                src="/images/long-term-research/reports/early-math/4-principles/5-empowerment.jpg"
+                style={{ width: "100%" }}
+              />
+            </Figure>
+          </SidebarItem>
           <Body>
             Mathematical ideas are incredibly empowering! Can we create
             activities which reflect that power—which we’re genuinely and
@@ -622,12 +695,22 @@ export default class Report extends React.Component {
             of secrets worth exploring and empowered that exploration through
             mathematical understanding.
           </Body>
+        </BodyAndSidebar>
+        <BodyAndSidebar>
           <Body>
             <Principle>Growth.</Principle> Powerful ideas grow with people, and
             we wanted our design to do the same. Toddlers build simple
             structures with Duplo, then more complex objects with Lego, then
             moving parts with Technic, and even robotics with Mindstorms.
           </Body>
+          <SidebarItem>
+            <div
+              className={css(styles.placeholder)}
+              style={{ width: "100%", height: 150 }}
+            >
+              TODO: neato image of duplo + mindstorms
+            </div>
+          </SidebarItem>
           <Body>
             Can we build an environment which continues to reward deeper
             understanding, becoming ever more empowering as its occupants grow?
@@ -639,7 +722,6 @@ export default class Report extends React.Component {
             more of their world.
           </Body>
         </BodyAndSidebar>
-        <Hairline />
         <Heading>Weaving it all together</Heading>
         <StoryboardElement storyboardElementNumber={1}>
           <Body>
@@ -770,7 +852,6 @@ export default class Report extends React.Component {
             growth and discovered a whole new world.
           </Body>
         </StoryboardElement>
-        <Hairline />
         <Heading>Conclusion</Heading>
         <Body wide>
           We’ve taken a few steps down this road, but we know that as a human
@@ -846,6 +927,46 @@ export default class Report extends React.Component {
       </div>
     </div>;
 }
+
+const threeImageCrossFade = {
+  "22%": {
+    opacity: 1,
+  },
+  "33%": {
+    opacity: 0,
+  },
+  "89%": {
+    opacity: 0,
+  },
+};
+
+const threeImageCrossFadeAnimationStyle = {
+  animationName: [threeImageCrossFade],
+  animationDuration: "6s",
+  animationIterationCount: "infinite",
+  borderRadius: globalStyles.borderRadius,
+};
+
+const threeImageCrossFadeStyle = StyleSheet.create({
+  one: {
+    ...threeImageCrossFadeAnimationStyle,
+    animationDelay: "0s",
+  },
+  two: {
+    ...threeImageCrossFadeAnimationStyle,
+    position: "absolute",
+    top: 0,
+    left: 0,
+    animationDelay: "2s",
+  },
+  three: {
+    ...threeImageCrossFadeAnimationStyle,
+    position: "absolute",
+    top: 0,
+    left: 0,
+    animationDelay: "4s",
+  },
+});
 
 const styles = StyleSheet.create({
   ...sharedReportStyles,
