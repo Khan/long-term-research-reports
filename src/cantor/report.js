@@ -58,7 +58,7 @@ const Icon = props => {
 const Authors = () =>
   <h2 className={css(styles.authors)}>
     <div className={css(styles.authorLine)}>
-      Andy Matuschak, May-Li Khoe, Scott Farrar
+      Scott Farrar, May-Li Khoe, Andy Matuschak<br />(authors listed alphabetically)
     </div>
   </h2>;
 
@@ -1044,6 +1044,9 @@ const styles = StyleSheet.create({
     [mediaQueries.mdOrLarger]: {
       height: 350,
     },
+    [mediaQueries.lgOrSmaller]: {
+      height: 375,
+    },
   },
 
   topBar: {
@@ -1067,6 +1070,9 @@ const styles = StyleSheet.create({
     },
     [mediaQueries.mdOrLarger]: {
       height: 350,
+    },
+    [mediaQueries.lgOrSmaller]: {
+      height: 375,
     },
 
     paddingBottom: 1,

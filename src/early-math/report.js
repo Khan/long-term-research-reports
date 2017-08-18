@@ -59,13 +59,16 @@ const Icon = props => {
 const Authors = () =>
   <h2 className={css(styles.authors)}>
     <div className={css(styles.authorLine)}>
-      <strong>Report:</strong> May-Li Khoe, Andy Matuschak, Scott Farrar.{" "}
+      <strong>Report:</strong> Scott Farrar, May-Li Khoe, Andy Matuschak.{" "}
     </div>
     <div className={css(styles.authorLine)}>
-      <strong>Research:</strong> May-Li Khoe, Andy Matuschak, Jason Brennan.{" "}
+      <strong>Research:</strong> Jason Brennan, May-Li Khoe, Andy Matuschak.{" "}
     </div>
     <div className={css(styles.authorLine)}>
-      <strong>Illustrations:</strong> Natalie Fitzgerald, May-Li Khoe.
+      <strong>Illustrations:</strong> Natalie Fitzgerald, May-Li Khoe.{" "}
+    </div>
+    <div className={css(styles.authorLine)}>
+      (authors listed alphabetically in sections)
     </div>
   </h2>;
 
