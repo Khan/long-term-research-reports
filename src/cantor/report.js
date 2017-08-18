@@ -88,11 +88,17 @@ class CantorPrototype extends React.Component {
    window.recordingData = data;
    window.recordingAudioURL = "${this.props.audioURL}";
    ${this.initialVisibility ? "" : "window.cantorRecorder.pause();"}
-   var updateRootLayerPosition = function() { if (window.innerWidth >= 768) { window.rootLayer.x = window.innerWidth + ${this
-     .props.xOffset || 0}; window.rootLayer.y = ${this.props.yOffset ||
-          0} } else { window.rootLayer.x = window.innerWidth + ${this.props
-          .mobileXOffset || 0}; window.rootLayer.y = ${this.props
-          .mobileYOffset || 0}} }
+   var updateRootLayerPosition = function() {
+      if (window.innerWidth >= 768) {
+        window.rootLayer.x = window.innerWidth + ${this.props.xOffset || 0};
+        window.rootLayer.y = ${this.props.yOffset || 0}
+        ${this.props.isHero ? "window.setShowGridTransition(true);" : ""}
+      } else {
+        window.rootLayer.x = window.innerWidth + ${this.props.mobileXOffset || 0};
+        window.rootLayer.y = ${this.props.mobileYOffset || 0}
+        ${this.props.isHero ? "window.setShowGridTransition(false);" : ""}
+      }
+    }
    window.onresize = updateRootLayerPosition;
    updateRootLayerPosition();`
       : "window.rootLayer.x = 100; window.rootLayer.y = 150"}
@@ -143,6 +149,7 @@ const HeroHeader = () =>
           yOffset={20}
           mobileXOffset={-600}
           mobileYOffset={220}
+          isHero
         />
       </div>
       <div className={css(styles.topBar)} />
