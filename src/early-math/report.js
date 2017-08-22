@@ -10,6 +10,7 @@ import globalStyles from "webapp/shared-styles-package/global-styles";
 import mediaQueries from "webapp/shared-styles-package/media-queries";
 import sharedReportStyles from "../report-styles";
 
+import Breadcrumb from "../components/breadcrumb";
 import Figure from "../components/figure";
 import Forest from "./forest";
 
@@ -83,7 +84,9 @@ const HeroHeader = () =>
           pointerEvents: "none",
           userSelect: "none",
         }}
+        className={css(styles.heroTextContainer)}
       >
+        <Breadcrumb color="white" />
         <h1 className={css(styles.title)}>
           Empowering children through mathematical concepts
         </h1>
@@ -1142,17 +1145,26 @@ const styles = StyleSheet.create({
     userSelect: "none",
   },
 
+  heroTextContainer: {
+    position: "relative",
+    pointerEvents: "none",
+    userSelect: "none",
+    paddingTop: 92,
+    [mediaQueries.smOrSmaller]: {
+      paddingTop: 82,
+    },
+  },
+
   title: {
     color: "white",
     marginBottom: 20,
     ...globalStyles.typography.subjectHeadingDesktop,
     lineHeight: "50px",
-    paddingTop: 108,
     [mediaQueries.smOrSmaller]: {
-      paddingTop: 82,
       ...globalStyles.typography.subjectHeadingMobile,
     },
     maxWidth: 700,
+    marginLeft: -2
   },
 
   authors: {

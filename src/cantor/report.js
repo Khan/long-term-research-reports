@@ -10,6 +10,7 @@ import globalStyles from "webapp/shared-styles-package/global-styles";
 import mediaQueries from "webapp/shared-styles-package/media-queries";
 import sharedReportStyles from "../report-styles";
 
+import Breadcrumb from "../components/breadcrumb";
 import Figure from "../components/figure";
 
 const Icon = props => {
@@ -58,7 +59,8 @@ const Icon = props => {
 const Authors = () =>
   <h2 className={css(styles.authors)}>
     <div className={css(styles.authorLine)}>
-      Scott Farrar, May-Li Khoe, Andy Matuschak<br />(authors listed alphabetically)
+      Scott Farrar, May-Li Khoe, Andy Matuschak<br />(authors listed
+      alphabetically)
     </div>
   </h2>;
 
@@ -89,12 +91,21 @@ class CantorPrototype extends React.Component {
    window.recordingAudioURL = "${this.props.audioURL}";
    ${this.initialVisibility ? "" : "window.cantorRecorder.pause();"}
    var updateRootLayerPosition = function() {
-      if (window.innerWidth >= 768) {
+      if (window.innerWidth >= 1200) {
         window.rootLayer.x = window.innerWidth + ${this.props.xOffset || 0};
         window.rootLayer.y = ${this.props.yOffset || 0}
         ${this.props.isHero ? "window.setShowGridTransition(true);" : ""}
+      } else if (window.innerWidth >= 768) {
+        window.rootLayer.x = window.innerWidth + ${this.props.tabletXOffset ||
+          this.props.xOffset ||
+          0};
+        window.rootLayer.y = ${this.props.tabletYOffset ||
+          this.props.yOffset ||
+          0}
+        ${this.props.isHero ? "window.setShowGridTransition(true);" : ""}
       } else {
-        window.rootLayer.x = window.innerWidth + ${this.props.mobileXOffset || 0};
+        window.rootLayer.x = window.innerWidth + ${this.props.mobileXOffset ||
+          0};
         window.rootLayer.y = ${this.props.mobileYOffset || 0}
         ${this.props.isHero ? "window.setShowGridTransition(false);" : ""}
       }
@@ -147,6 +158,7 @@ const HeroHeader = () =>
           recording={headerCanvasGZ}
           xOffset={0}
           yOffset={20}
+          tabletXOffset={-120}
           mobileXOffset={-600}
           mobileYOffset={220}
           isHero
@@ -159,7 +171,9 @@ const HeroHeader = () =>
           pointerEvents: "none",
           userSelect: "none",
         }}
+        className={css(styles.heroTextContainer)}
       >
+        <Breadcrumb color={globalStyles.domainColors("default").domain3} />
         <h1 className={css(styles.title)}>
           Numbers at play: dynamic toys make the invisible visible
         </h1>
@@ -1037,14 +1051,14 @@ const styles = StyleSheet.create({
   heroContainer: {
     height: 300,
     [mediaQueries.smOrSmaller]: {
-      height: 375,
+      height: 425,
       marginBottom: 8,
       maxHeight: "100vh",
     },
     [mediaQueries.mdOrLarger]: {
-      height: 350,
+      height: 365,
     },
-    [mediaQueries.lgOrSmaller]: {
+    [mediaQueries.lgOrLarger]: {
       height: 375,
     },
   },
@@ -1065,13 +1079,13 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 300,
     [mediaQueries.smOrSmaller]: {
-      height: 375,
+      height: 425,
       maxHeight: "100vh",
     },
     [mediaQueries.mdOrLarger]: {
-      height: 350,
+      height: 363,
     },
-    [mediaQueries.lgOrSmaller]: {
+    [mediaQueries.lgOrLarger]: {
       height: 375,
     },
 
@@ -1098,18 +1112,25 @@ const styles = StyleSheet.create({
     },
   },
 
+  heroTextContainer: {
+    paddingTop: 92,
+    [mediaQueries.smOrSmaller]: {
+      paddingTop: 82,
+    },
+  },
+
   title: {
     color: globalStyles.domainColors("default").domain3,
     marginBottom: 20,
     ...globalStyles.typography.subjectHeadingDesktop,
     lineHeight: "50px",
-    paddingTop: 108,
     maxWidth: 700,
+    marginLeft: -2,
     [mediaQueries.lgOrSmaller]: {
       maxWidth: 500,
     },
     [mediaQueries.smOrSmaller]: {
-      paddingTop: 82,
+      marginLeft: 0,
       ...globalStyles.typography.subjectHeadingMobile,
     },
   },
