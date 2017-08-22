@@ -166,11 +166,6 @@ const HeroHeader = () =>
       </div>
       <div className={css(styles.topBar)} />
       <div
-        style={{
-          position: "relative",
-          pointerEvents: "none",
-          userSelect: "none",
-        }}
         className={css(styles.heroTextContainer)}
       >
         <Breadcrumb color={globalStyles.domainColors("default").domain3} />
@@ -1113,6 +1108,9 @@ const styles = StyleSheet.create({
   },
 
   heroTextContainer: {
+    position: "relative",
+    pointerEvents: "none",
+    userSelect: "none",
     paddingTop: 92,
     [mediaQueries.smOrSmaller]: {
       paddingTop: 82,
