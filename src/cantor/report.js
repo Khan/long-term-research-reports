@@ -165,9 +165,7 @@ const HeroHeader = () =>
         />
       </div>
       <div className={css(styles.topBar)} />
-      <div
-        className={css(styles.heroTextContainer)}
-      >
+      <div className={css(styles.heroTextContainer)}>
         <Breadcrumb color={globalStyles.domainColors("default").domain3} />
         <h1 className={css(styles.title)}>
           Numbers at play: dynamic toys make the invisible visible
@@ -435,8 +433,19 @@ export default class Report extends React.Component {
             15? If you ask a classroom, you’ll hear a huge variety of answers
             drawing on different sets of mathematical ideas.
           </Body>
+          <img
+            className={css(styles.hideUnlessMobile)}
+            src="/images/long-term-research/reports/cantor/37-and-15-mobile.png"
+            style={{
+              width: "100%",
+              maxWidth: 320,
+              marginLeft: "auto",
+              marginRight: "auto",
+              display: "block",
+            }}
+          />
           <SidebarItem top={3}>
-            <p className={css(styles.sidebarBody, styles.noBottomMargin)}>
+            <p className={css(styles.sidebarBody)}>
               Asking this kind of question in a classroom is itself a popular
               pedagogical strategy, called “number talks.” See{" "}
               <a href="https://www.youcubed.org/from-stanford-onlines-how-to-learn-math-for-teachers-and-parents-number-talks/">
@@ -450,10 +459,10 @@ export default class Report extends React.Component {
             </p>
           </SidebarItem>
         </BodyAndSidebar>
-        <FPO />
         <img
+          className={css(styles.hideOnMobile)}
           src="/images/long-term-research/reports/cantor/37-and-15.png"
-          style={{ width: "100%", margin: "24px 0" }}
+          style={{ width: "100%" }}
         />
         <BodyAndSidebar>
           <Body>
@@ -465,26 +474,46 @@ export default class Report extends React.Component {
             own which apply to any number, like “distance to the nearest ten.”
           </Body>
         </BodyAndSidebar>
-        <FPO />
-        <img
-          src="/images/long-term-research/reports/cantor/number-relationships.jpg"
-          style={{ width: "100%", marginBottom: 18 }}
-        />
+        <BodyAndSidebar>
+          <Figure>
+            <img
+              src="/images/long-term-research/reports/cantor/number-relationships.png"
+              style={{ width: "100%", marginBottom: 18 }}
+            />
+          </Figure>
+          <SidebarItem>
+            <p className={css(styles.sidebarBody)}>
+              This figure redrawn and adapted from one in Ed Labinowicz's{" "}
+              <em>
+                <a href="https://www.amazon.com/Learning-Children-Ed-Labinowicz/dp/0201203219">
+                  Learning from Children: New Beginnings for Teaching Numerical
+                  Thinking
+                </a>
+              </em>. We've actually not read that book, but the figure was
+              excerpted in Constance Kamii's{" "}
+              <em>
+                <a href="https://www.amazon.com/Young-Children-Reinvent-Arithmetic-Implications/dp/0807739049">
+                  Young Children Reinvent Arithmetic
+                </a>
+              </em>, an insightful and fascinating account of, well, young
+              children reinventing arithmetic!s
+            </p>
+          </SidebarItem>
+        </BodyAndSidebar>
         <BodyAndSidebar>
           <Body>
             Different representations of numbers emphasize or obscure different
             number meanings. For example, the base-ten representation of 12
             makes a “10 + 2” decomposition natural. But the arrangement of
-            twelve quarters depicted here makes us think of “12 = 3 x 4”.
+            twelve circles depicted here makes us think of “12 = 3 x 4” or “12 =
+            4 x 3”.
           </Body>
           <SidebarItem>
             <Figure>
-              <div
-                className={css(styles.placeholder)}
-                style={{ width: "100%", height: 120 }}
-              >
-                <FPO />photo of three groups of four quarters here
-              </div>
+              <img
+                src="/images/long-term-research/reports/cantor/groups-of-circles.png"
+                style={{ width: "100%" }}
+              />
             </Figure>
           </SidebarItem>
         </BodyAndSidebar>
@@ -855,7 +884,6 @@ export default class Report extends React.Component {
           </Body>
           <SidebarItem>
             <Figure>
-              <FPO />
               <img
                 src="/images/long-term-research/reports/cantor/linked-representations.png"
                 style={{ width: "100%" }}
@@ -952,13 +980,17 @@ export default class Report extends React.Component {
           </div>
         </Slider>
 
-        <Heading>A chest of toys, a chest of dreams</Heading>
         <BodyAndSidebar>
+          <Heading>A chest of toys, a chest of dreams</Heading>
           <Body>
             We dream of giving every child a toy chest filled with countless
             dynamic manipulatives like the ones we’ve illustrated here.
           </Body>
-
+          <SidebarItem top={40}>
+            <Figure>
+              <img src="/images/long-term-research/reports/cantor/chest-of-toys.png" style={{width: "100%"}} />
+            </Figure>
+          </SidebarItem>
           <Body>
             Just as manipulating our blocks naturally elicits the idea of prime
             numbers, another toy’s contortions might neatly illustrate
