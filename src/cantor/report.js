@@ -624,8 +624,8 @@ export default class Report extends React.Component {
           </a>.
         </Body>
         <Body wide>
-          Feel free to interrupt any of the examples below:{" "}
-          <strong>you can manipulate the objects yourself!</strong>
+          <strong>You can manipulate the animations below!</strong> Feel free to
+          interrupt them at any point to play for yourself.
         </Body>
         <Subheading>Exploring numbers' negative space</Subheading>
         <Body wide>
@@ -738,8 +738,8 @@ export default class Report extends React.Component {
         <BodyAndSidebar>
           <Body>
             Physical base-ten blocks can be used in lots of contexts. That’s
-            true of physical media in general: paper and pencil are valuable in a
-            classroom, in a conversation, in an art studio, and all kinds of
+            true of physical media in general: paper and pencil are valuable in
+            a classroom, in a conversation, in an art studio, and all kinds of
             other places. When it comes to digital learning tools, though,
             they’re often designed to work in just one narrow context.
           </Body>
