@@ -810,7 +810,7 @@ export default class Report extends React.Component {
               the conversation, narrating the actions on the canvas at the speed
               of speech. Maybe there’s a Facebook-video-style subtitle track?
             </div>
-            <p className={css(styles.sidebarBody)}>
+            <p className={css(styles.sidebarBody, styles.noBottomMargin)}>
               <a href="https://ka-hivemind.herokuapp.com/entry/KhkXuvBHnvEuHNomH">
                 Deborah Ball, in <em>Magical Hopes:</em>
               </a>{" "}
@@ -833,7 +833,7 @@ export default class Report extends React.Component {
             representations.
           </Body>
           <SidebarItem>
-            <Figure>
+            <Figure noBottomMargin>
               <CantorPrototype
                 height={200}
                 mode="recordYourOwn"
@@ -859,7 +859,7 @@ export default class Report extends React.Component {
             provocation.
           </Body>
           <SidebarItem>
-            <Figure>
+            <Figure noBottomMargin>
               <CantorPrototype
                 height={250}
                 mode="prompt"
@@ -885,7 +885,7 @@ export default class Report extends React.Component {
             didn’t anticipate.
           </Body>
           <SidebarItem>
-            <Figure>
+            <Figure noBottomMargin>
               <img
                 src="/images/long-term-research/reports/cantor/linked-representations.png"
                 style={{ width: "100%" }}
@@ -940,7 +940,7 @@ export default class Report extends React.Component {
                 src="/images/long-term-research/reports/cantor/fractions/fractions.gif"
               />
             </Figure>
-            <Body>
+            <Body noBottomMargin>
               <a href="http://klr.tumblr.com/post/152354637513/fraction-problems">
                 We sketched many ideas for representations of fractions
               </a>. We learned that there are lots of ways to think about
@@ -956,7 +956,7 @@ export default class Report extends React.Component {
                 src="/images/long-term-research/reports/cantor/carousel-early-math.png"
               />
             </Figure>
-            <Body>
+            <Body noBottomMargin>
               We first investigated digital number manipulatives{" "}
               <a href="early-math">
                 in the context of an early numeracy environment
@@ -971,7 +971,7 @@ export default class Report extends React.Component {
                 src="/images/long-term-research/reports/cantor/carousel-cubes.gif"
               />
             </Figure>
-            <Body>
+            <Body noBottomMargin>
               Unlike physical blocks,{" "}
               <a href="http://klr.tumblr.com/post/148763588468/base-ten-blocks-cyclic-dimensions-entangled-math">
                 digital number blocks could represent arbitrarily high place
@@ -1030,7 +1030,7 @@ export default class Report extends React.Component {
           </SidebarItem>
         </BodyAndSidebar>
         <BodyAndSidebar>
-          <Body>
+          <Body noBottomMargin>
             If we fill the elementary math environment with enough empowering
             and curiosity-inspiring mathematical objects, we may lay the
             foundation for the “Mathland” Papert dreamed of.

@@ -145,6 +145,9 @@ export default {
   },
 
   sidebarItem: {
+    [mediaQueries.smOrSmaller]: {
+      marginTop: 24,
+    },
     [mediaQueries.mdOrLarger]: {
       position: "absolute",
       left: 375,
