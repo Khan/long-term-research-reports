@@ -410,7 +410,7 @@ export default class Report extends React.Component {
           <Body>
             When we think about manipulating numbers, some operations seem easy
             or obvious, and others exotic and abstract. Addition and
-            decomposition into tens? Straightforward. Modular arithmetic and
+            multiplication by tens? Straightforward. Modular arithmetic and
             changes of base? Not exactly obvious.
           </Body>
           <Body>
@@ -582,7 +582,7 @@ export default class Report extends React.Component {
             often-inconvenient laws of physics and practicalities of matter.
           </Body>
           <SidebarItem>
-            <Figure caption="Try representing 1,684! Try showing 36 in base 7! Try checking if 75 is odd! Try…">
+            <Figure caption="Try turning your ten ones into one ten! Try showing that 7 divides 112! Try…">
               <FPO />
               <img
                 src="/images/long-term-research/reports/cantor/physical-blocks.jpg"
@@ -591,6 +591,7 @@ export default class Report extends React.Component {
             </Figure>
           </SidebarItem>
           <Body>
+            Happily, we're no longer limited to the practicalities of matter.{" "}
             <a href="http://klr.tumblr.com/post/153279790133/whats-so-great-about-the-digital-medium-again">
               The dynamic medium makes new representations possible
             </a>{" "}
@@ -666,15 +667,15 @@ export default class Report extends React.Component {
           />
         </Figure>
         <Body wide>
-          Cantor's “resize” interaction makes alternative bases easy to explore.
-          Along the way, divisibility relationships are immediately apparent.
-          Even-ness and odd-ness emerge from casual play here as a clear
-          pattern: some numbers are “smooth” when you arrange them into two
-          columns, and some are “bumpy.”
+          Cantor's “resize” interaction makes divisibility relationships easy to
+          explore. Even-ness and odd-ness emerge from casual play here as a
+          clear pattern: some numbers are “smooth” when you arrange them into
+          two columns, and some are “bumpy.”
         </Body>
         <Body wide>
           What will happen if you arrange them into three columns? Think about
-          it for a moment, then try for yourself above.
+          it for a moment, then try for yourself above. Alternative bases feel
+          natural, not alien, with this representation.
         </Body>
 
         <Subheading>Making primes vivid</Subheading>
@@ -693,8 +694,8 @@ export default class Report extends React.Component {
           />
         </Figure>
         <Body wide>
-          As we resize 12, it forms lots of precise rectangles. 13 doesn’t form
-          any at all!
+          As we resize 12, it forms lots of rectangles, like 3 × 4. 13 doesn’t
+          form any at all!
         </Body>
         <Body wide>
           With this interaction,{" "}
@@ -717,26 +718,27 @@ export default class Report extends React.Component {
         <Subheading>And more</Subheading>
 
         <Body wide>
-          In each case, the student directly manipulates the number—they’re not
-          fiddling with some slider that has a hidden mathematical relationship
-          to the number. The interactions are <em>deeply entangled</em> with the
-          mathematical operation at hand: for instance, changing a number
-          block’s width to some value directly corresponds to changing the
-          number’s base to that value.
+          In each case, the student directly manipulates the number’s
+          representation—they’re not fiddling with a slider that has some hidden
+          mathematical relationship to the number. The interactions are{" "}
+          <em>deeply entangled</em> with the mathematical operation at hand. For
+          instance, changing a 17-block’s width to 8 reveals the opportunity to
+          read it as “21” base 8: two eights and one one.
         </Body>
         <Body wide>
-          These are just three examples. We can invent more interactions like
-          the ones we’ve shown here—and alternative dynamic representations of
-          quantities—to build bridges to many other attributes of numbers. When
-          we implement these manipulatives, they tend to surprise us with
-          unanticipated possibilities: we stumbled on some of the examples we’ve
-          shown by accident, just through playing with the interactions!
+          We've explored the consequences of just this one new dynamic
+          representation, but we believe a constellation of other new
+          manipulatives and interactions exist, building bridges to many other
+          attributes of numbers. When we implement these manipulatives, they
+          tend to surprise us with unanticipated possibilities: we stumbled on
+          some of the examples we’ve shown by accident, just through playing
+          with the interactions!
         </Body>
         <Heading>One interactive representation, many contexts</Heading>
         <BodyAndSidebar>
           <Body>
             Physical base-ten blocks can be used in lots of contexts. That’s
-            true of media in general: paper and pencil are valuable in a
+            true of physical media in general: paper and pencil are valuable in a
             classroom, in a conversation, in an art studio, and all kinds of
             other places. When it comes to digital learning tools, though,
             they’re often designed to work in just one narrow context.
@@ -988,7 +990,10 @@ export default class Report extends React.Component {
           </Body>
           <SidebarItem top={40}>
             <Figure>
-              <img src="/images/long-term-research/reports/cantor/chest-of-toys.png" style={{width: "100%"}} />
+              <img
+                src="/images/long-term-research/reports/cantor/chest-of-toys.png"
+                style={{ width: "100%" }}
+              />
             </Figure>
           </SidebarItem>
           <Body>
@@ -1053,7 +1058,7 @@ export default class Report extends React.Component {
           </FurtherReadingItem>
           <FurtherReadingItem>
             One of the authors of this report, Scott Farrar, gives an academic
-            survey of digital learning media in his 2016 thesis, “<a href="https://ka-hivemind.herokuapp.com/?entry=SSmwkKtGkKHbnJgTX">
+            survey of digital learning media in his 2016 thesis, “<a href="https://www.academia.edu/33974879/Farrar_2016_Digital_Curriculum_and_Pedagogy_Field_Study">
               Students and Teachers Using a Digital Curriculum and Pedagogy in
               Secondary Mathematics
             </a>.”
