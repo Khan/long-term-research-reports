@@ -1134,16 +1134,6 @@ const styles = StyleSheet.create({
     },
   },
 
-  forestContainer: {
-    transform: "scale(0.8)",
-    transformOrigin: "0 0",
-    marginLeft: -24,
-    userSelect: "none",
-    [mediaQueries.smOrSmaller]: {
-      transform: "scale(0.42)",
-    },
-  },
-
   heroTextContainer: {
     position: "relative",
     pointerEvents: "none",
