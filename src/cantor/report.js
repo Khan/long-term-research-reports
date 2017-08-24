@@ -496,7 +496,7 @@ export default class Report extends React.Component {
                   Young Children Reinvent Arithmetic
                 </a>
               </em>, an insightful and fascinating account of, well, young
-              children reinventing arithmetic!s
+              children reinventing arithmetic!
             </p>
           </SidebarItem>
         </BodyAndSidebar>
