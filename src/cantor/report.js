@@ -713,7 +713,7 @@ export default class Report extends React.Component {
             <em>consequences</em> of the block form; they’re not bolted-on
             addenda.
           </Body>
-          <Body>
+          <Body noBottomMargin>
             In Cantor, the math is deeply entangled with the representation.
           </Body>
         </BodyAndSidebar>
@@ -787,7 +787,7 @@ export default class Report extends React.Component {
             thought, ever shrinking the feedback loop between conceiving of an
             idea and exploring its consequences.
           </Body>
-          <Body>
+          <Body noBottomMargin>
             Tools for thought must support communication not just with their
             originator: they should enhance conversation between collaborators
             exploring an idea together. They should enact thought at the speed
