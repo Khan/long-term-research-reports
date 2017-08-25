@@ -731,11 +731,12 @@ export default class Report extends React.Component {
         <Heading>One interactive representation, many contexts</Heading>
         <BodyAndSidebar>
           <Body>
-            Physical base-ten blocks can be used in lots of contexts. That’s
-            true of physical media in general: paper and pencil are valuable in
-            a classroom, in a conversation, in an art studio, and all kinds of
-            other places. When it comes to digital learning tools, though,
-            they’re often designed to work in just one narrow context.
+            Physical base-ten blocks can be used in lots of contexts. That’s not
+            just true of blocks: many physical tools involved in learning are
+            highly versatile. For instance, paper and pencil are valuable in a
+            classroom, in a conversation, in an art studio, and all kinds of
+            other places. When it comes to <em>digital</em> learning tools,
+            though, they’re often designed to work in just one narrow context.
           </Body>
         </BodyAndSidebar>
         <BodyAndSidebar>
@@ -940,7 +941,10 @@ export default class Report extends React.Component {
           </BodyAndSidebar>
         </div>
 
-        <div className={css(styles.minFigureHeight)} style={{marginBottom: 24}}>
+        <div
+          className={css(styles.minFigureHeight)}
+          style={{ marginBottom: 24 }}
+        >
           <BodyAndSidebar>
             <Subheading>
               Putting the number blocks in an immersive world
@@ -957,8 +961,8 @@ export default class Report extends React.Component {
               We first investigated digital number manipulatives{" "}
               <a href="early-math">
                 in the context of an early numeracy environment
-              </a>. In that system, these number blocks could be used to explore, create, and modify
-              the child’s world.
+              </a>. In that system, these number blocks could be used to
+              explore, create, and modify the child’s world.
             </Body>
           </BodyAndSidebar>
         </div>
