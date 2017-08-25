@@ -734,8 +734,8 @@ export default class Report extends React.Component {
             added on a set of buttons to perform operations. Those buttons
             operate from <em>outside</em> the representation through hidden
             mechanisms. Cantor’s interactions operate <em>through</em> the
-            representation, not outside it; the number properties we observe are{" "}
-            <em>consequences</em> of the block form, not bolted-on addenda.
+            representation, not outside it. The number properties we observe are{" "}
+            <em>consequences</em> of the block form; they’re not bolted-on addenda.
           </Body>
           <Body>
             In Cantor, the math is deeply entangled with the representation.
