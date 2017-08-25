@@ -1075,7 +1075,7 @@ export default class Report extends React.Component {
         <Body wide>
           We'd like to thank these people for their valuable thoughts on this
           report:{" "}
-          {["Michael Nielsen", "Eli Luberoff", "Jack Schaedler", "Nicky Case"]
+          {["Michael Nielsen", "Eli Luberoff", "Jack Schaedler", "Nicky Case", "Amit Patel"]
             .map(name => name.split(" "))
             .sort(
               ([firstA, lastA], [firstB, lastB]) =>
