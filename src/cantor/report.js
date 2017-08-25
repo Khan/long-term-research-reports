@@ -455,7 +455,7 @@ export default class Report extends React.Component {
             <p className={css(styles.sidebarBody)}>
               Asking this kind of question in a classroom is itself a popular
               pedagogical strategy, called “number talks.” See{" "}
-              <a href="https://www.youcubed.org/from-stanford-onlines-how-to-learn-math-for-teachers-and-parents-number-talks/">
+              <a href="https://www.youtube.com/watch?v=yXNG6GKFhQM">
                 this quick example
               </a>{" "}
               from Jo Boaler or read more{" "}
