@@ -1091,6 +1091,30 @@ export default class Report extends React.Component {
             </a>.”
           </FurtherReadingItem>
         </ul>
+
+        <Heading>Acknowledgements</Heading>
+        <Body wide>
+          We'd like to thank these people for their valuable thoughts on this report:{" "}
+          {[
+            "Michael Nielsen",
+            "Eli Luberoff",
+            "Jack Schaedler",
+            "Nicky Case",
+          ]
+            .map(name => name.split(" "))
+            .sort(
+              ([firstA, lastA], [firstB, lastB]) =>
+                lastA < lastB ? -1 : lastB < lastA ? 1 : 0,
+            )
+            .map(names => names.join(" "))
+            .join(", ")}.
+        </Body>
+
+        <Heading>Contact us</Heading>
+        <Body wide>
+          Have comments or feedback on this report? Please <a href="mailto:long-term-research-team@khanacademy.org">write us</a>.
+        </Body>
+
       </div>
     </div>;
 }
