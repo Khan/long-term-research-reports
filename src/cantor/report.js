@@ -444,7 +444,14 @@ export default class Report extends React.Component {
               display: "block",
             }}
           />
-          <SidebarItem top={3}>
+        </BodyAndSidebar>
+        <img
+          className={css(styles.hideOnMobile)}
+          src="/images/long-term-research/reports/cantor/37-and-15.png"
+          style={{ width: "100%" }}
+        />
+        <BodyAndSidebar>
+        <SidebarItem>
             <p className={css(styles.sidebarBody)}>
               Asking this kind of question in a classroom is itself a popular
               pedagogical strategy, called “number talks.” See{" "}
@@ -458,13 +465,6 @@ export default class Report extends React.Component {
               by Sherry Parrish.
             </p>
           </SidebarItem>
-        </BodyAndSidebar>
-        <img
-          className={css(styles.hideOnMobile)}
-          src="/images/long-term-research/reports/cantor/37-and-15.png"
-          style={{ width: "100%" }}
-        />
-        <BodyAndSidebar>
           <Body>
             We build our fluency with numbers incrementally from many angles,
             filling in a dense network of mathematical properties. We might

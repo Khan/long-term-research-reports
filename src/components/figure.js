@@ -27,6 +27,11 @@ export default Figure;
 const styles = StyleSheet.create({
   figureContainer: {
     marginBottom: 24,
+    [mediaQueries.smOrSmaller]: {
+      maxWidth: 450,
+      marginLeft: "auto",
+      marginRight: "auto",
+    }
   },
   
   noBottomMargin: {
