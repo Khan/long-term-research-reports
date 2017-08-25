@@ -451,7 +451,7 @@ export default class Report extends React.Component {
           style={{ width: "100%" }}
         />
         <BodyAndSidebar>
-        <SidebarItem>
+          <SidebarItem>
             <p className={css(styles.sidebarBody)}>
               Asking this kind of question in a classroom is itself a popular
               pedagogical strategy, called “number talks.” See{" "}
@@ -715,18 +715,36 @@ export default class Report extends React.Component {
           </a>.
         </Body>
 
-        <Subheading>And more</Subheading>
+        <Subheading>Entangling representations and operations</Subheading>
 
+        <BodyAndSidebar>
+          <SidebarItem>
+            <Figure noTopMargin>
+              <img
+                src="/images/long-term-research/reports/cantor/arbitrary-blocks.gif"
+                style={{ width: "100%" }}
+              />
+            </Figure>
+          </SidebarItem>
+          <Body>
+            We started from a representation we found interesting (number
+            blocks), then explored: which natural interactions emerge that
+            represent mathematical ideas? Contrast this to the number block
+            interface depicted here, which started from a representation, then
+            added on a set of buttons to perform operations. Those buttons
+            operate from <em>outside</em> the representation through hidden
+            mechanisms. Cantor’s interactions operate <em>through</em> the
+            representation, not outside it; the number properties we observe are{" "}
+            <em>consequences</em> of the block form, not bolted-on addenda.
+          </Body>
+          <Body>
+            In Cantor, the math is deeply entangled with the representation.
+          </Body>
+        </BodyAndSidebar>
+
+        <Subheading>And more</Subheading>
         <Body wide>
-          In each case, the student directly manipulates the number’s
-          representation—they’re not fiddling with a slider that has some hidden
-          mathematical relationship to the number. The interactions are{" "}
-          <em>deeply entangled</em> with the mathematical operation at hand. For
-          instance, changing a 17-block’s width to 8 reveals the opportunity to
-          read it as “21” base 8: two eights and one one.
-        </Body>
-        <Body wide>
-          We've explored the consequences of just this one new dynamic
+          We’ve explored the consequences of just this one new dynamic
           representation, but we believe a constellation of other new
           manipulatives and interactions exist, building bridges to many other
           attributes of numbers. When we implement these manipulatives, they

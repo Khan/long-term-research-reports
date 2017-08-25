@@ -4,11 +4,12 @@ import React from "react";
 import globalStyles from "webapp/shared-styles-package/global-styles";
 import mediaQueries from "webapp/shared-styles-package/media-queries";
 
-const Figure = ({ children, caption, noBottomMargin }) =>
+const Figure = ({ children, caption, noBottomMargin, noTopMargin }) =>
   <div
     className={css(
       styles.figureContainer,
       noBottomMargin ? styles.noBottomMargin : undefined,
+      noTopMargin ? styles.noTopMargin : undefined,
     )}
   >
     <div className={css(styles.figure)}>
@@ -32,6 +33,10 @@ const styles = StyleSheet.create({
       marginLeft: "auto",
       marginRight: "auto",
     }
+  },
+
+  noTopMargin: {
+    marginTop: 0
   },
   
   noBottomMargin: {
