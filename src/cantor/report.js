@@ -598,66 +598,76 @@ export default class Report extends React.Component {
             to make certain thoughts more thinkable
           </a>.
         </Body>
-        <Body wide>
+        <Body wide noBottomMargin>
           <strong>You can manipulate the animations below!</strong> Feel free to
           interrupt them at any point to play for yourself.
         </Body>
         <Subheading>Exploring numbers' negative space</Subheading>
-        <Body wide>
-          Here's 37 + 15 again. This “reflow” interaction makes the{" "}
-          <em>negative space</em> in base ten numbers feel visceral: 37 is
-          clearly “3 away” from 40, and we “feel” that interactively as we try
-          to fit the two together.
-        </Body>
-        <Figure>
-          <CantorPrototype
-            height={240}
-            recording={negativeSpaceGZ}
-            xOffset={-200}
-            yOffset={100}
-            mobileXOffset={-200}
-            mobileYOffset={100}
-          />
-          <div className={css(styles.figureBorder)} />
-        </Figure>
-        <Body wide>
-          Fluent addition and subtraction of numbers up to 20 relies on an
-          intuitive grasp of these relationships (also called complements or
-          number partners).
-        </Body>
+        <BodyAndSidebar>
+          <Body>
+            Here's 37 + 15 again. This “reflow” interaction makes the{" "}
+            <em>negative space</em> in base ten numbers feel visceral: 37 is
+            clearly “3 away” from 40, and we “feel” that interactively as we try
+            to fit the two together.
+          </Body>
+          <SidebarItem>
+            <Figure>
+              <CantorPrototype
+                height={240}
+                recording={negativeSpaceGZ}
+                xOffset={-200}
+                yOffset={100}
+                mobileXOffset={-200}
+                mobileYOffset={100}
+              />
+              <div className={css(styles.figureBorder)} />
+            </Figure>
+          </SidebarItem>
+          <Body noBottomMargin>
+            Fluent addition and subtraction of numbers up to 20 relies on an
+            intuitive grasp of these relationships (also called complements or
+            number partners).
+          </Body>
+        </BodyAndSidebar>
 
         <Subheading>From modular arithmetic to even and odd</Subheading>
-        <Body wide>
-          Do you see a pattern? What's with the little “bumps” that stick out of
-          some of the numbers?
-        </Body>
-        <Figure>
-          <CantorPrototype
-            height={240}
-            recording={evenOddGZ}
-            xOffset={-400}
-            yOffset={100}
-            mobileXOffset={-300}
-            mobileYOffset={100}
-          />
-        </Figure>
-        <Body wide>
-          Cantor's “resize” interaction makes divisibility relationships easy to
-          explore. Even-ness and odd-ness emerge from casual play here as a
-          clear pattern: some numbers are “smooth” when you arrange them into
-          two columns, and some are “bumpy.”
-        </Body>
-        <Body wide>
-          What will happen if you arrange them into three columns? Think about
-          it for a moment, then try for yourself above. Alternative bases feel
-          natural, not alien, with this representation.
-        </Body>
+        <BodyAndSidebar>
+          <Body>
+            Do you see a pattern with these blocks? What's with the little “bumps” that stick out
+            of some of the numbers?
+          </Body>
+          <SidebarItem>
+            <Figure>
+              <CantorPrototype
+                height={240}
+                recording={evenOddGZ}
+                xOffset={-480}
+                yOffset={100}
+                mobileXOffset={-300}
+                mobileYOffset={100}
+              />
+            </Figure>
+          </SidebarItem>
+          <Body>
+            Cantor's “resize” interaction makes divisibility relationships easy
+            to explore. Even-ness and odd-ness emerge from casual play here as a
+            clear pattern: some numbers are “smooth” when you arrange them into
+            two columns, and some are “bumpy.”
+          </Body>
+          <Body noBottomMargin>
+            What will happen if you arrange them into three columns? Think about
+            it for a moment, then try for yourself. Alternative bases feel
+            natural, not alien, with this representation.
+          </Body>
+        </BodyAndSidebar>
 
         <Subheading>Making primes vivid</Subheading>
-        <Body wide>
+        <BodyAndSidebar>
+        <Body>
           Which numbers are <em>intrinsically</em> bumpy, no matter how you
           resize them?
         </Body>
+        <SidebarItem>
         <Figure>
           <CantorPrototype
             height={240}
@@ -668,16 +678,17 @@ export default class Report extends React.Component {
             mobileYOffset={60}
           />
         </Figure>
-        <Body wide>
+        </SidebarItem>
+        <Body>
           As we resize 12, it forms lots of rectangles, like 3 × 4. 13 doesn’t
           form any at all!
         </Body>
-        <Body wide>
+        <Body>
           With this interaction,{" "}
           <em>primality becomes an apparent property of a number</em>—something
           you'd notice naturally when playing with the blocks.
         </Body>
-        <Body wide>
+        <Body noBottomMargin>
           By making primality vivid through direct manipulation, we help create
           authentic{" "}
           <a href="http://math.ucsd.edu/~jrabin/publications/ProblemFreeActivity.pdf">
@@ -689,6 +700,7 @@ export default class Report extends React.Component {
             they're more able to transfer their new knowledge to other problems
           </a>.
         </Body>
+        </BodyAndSidebar>
 
         <Subheading>Entangling representations and operations</Subheading>
 
