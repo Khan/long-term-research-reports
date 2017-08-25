@@ -1,9 +1,6 @@
 import { StyleSheet, css } from "aphrodite";
 import React from "react";
-import Slider from "react-slick";
 import VisibilitySensor from "react-visibility-sensor";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 import angleBracketLeftIcon from "webapp/shared-styles-package/icon.angleBracketLeft.js";
 import globalStyles from "webapp/shared-styles-package/global-styles";
@@ -367,23 +364,6 @@ const FurtherReadingItem = ({ children }) =>
     {children}
   </li>;
 
-const CarouselArrow = ({ className, style, onClick, isNext }) =>
-  <div
-    className={css(styles.carouselArrow)}
-    style={{
-      transform: `translate(0, -50%)${isNext ? " scaleX(-1)" : ""}`,
-      right: isNext ? 10 : undefined,
-      left: isNext ? undefined : 10,
-    }}
-    onClick={onClick}
-  >
-    <Icon icon={angleBracketLeftIcon} size={20} color="#fff" />
-  </div>;
-
-const CarouselNextArrow = props => <CarouselArrow {...props} isNext />;
-
-const CarouselPrevArrow = props => <CarouselArrow {...props} />;
-
 const FPO = () =>
   <p
     style={{
@@ -397,11 +377,6 @@ const FPO = () =>
   </p>;
 
 export default class Report extends React.Component {
-  componentDidMount = () => {
-    // Aphrodite interferes with the initial sizing of our carousel. This is a hack to work around that.
-    setTimeout(() => this.slider.innerSlider.onWindowResized(), 0);
-  };
-
   render = () =>
     <div className={css(styles.outerClip)}>
       <div className={css(styles.container)}>
@@ -735,7 +710,8 @@ export default class Report extends React.Component {
             operate from <em>outside</em> the representation through hidden
             mechanisms. Cantor’s interactions operate <em>through</em> the
             representation, not outside it. The number properties we observe are{" "}
-            <em>consequences</em> of the block form; they’re not bolted-on addenda.
+            <em>consequences</em> of the block form; they’re not bolted-on
+            addenda.
           </Body>
           <Body>
             In Cantor, the math is deeply entangled with the representation.
@@ -913,82 +889,46 @@ export default class Report extends React.Component {
         </BodyAndSidebar>
         <Heading>Further possibilities</Heading>
         <BodyAndSidebar>
-          <Body>
+          <Body noBottomMargin>
             We generated many more ideas throughout our process, at various
             stages of fidelity. There’s so much more to explore in this space!
           </Body>
         </BodyAndSidebar>
-        <Slider
-          ref={slider => (this.slider = slider)}
-          dots
-          infinite
-          slidesToShow={1}
-          centerMode
-          centerPadding="223px"
-          dots={false}
-          nextArrow={<CarouselNextArrow />}
-          prevArrow={<CarouselPrevArrow />}
-          responsive={[
-            {
-              breakpoint: 1200,
-              settings: {
-                centerPadding: "188px",
-              },
-            },
-            {
-              breakpoint: 1024,
-              settings: {
-                centerPadding: "176px",
-              },
-            },
-            {
-              breakpoint: 768,
-              settings: {
-                centerMode: false,
-                autoplay: true,
-                autoplaySpeed: 5000,
-              },
-            },
-          ]}
-        >
-          <div className={css(styles.carouselItem)}>
-            <Figure height={300}>
-              <img
-                style={{ width: "100%" }}
-                src="/images/long-term-research/reports/cantor/fractions/fractions.gif"
-              />
-            </Figure>
-            <Body noBottomMargin>
+        <div className={css(styles.minFigureHeight)}>
+          <BodyAndSidebar>
+            <Subheading>Fractions</Subheading>
+            <SidebarItem top={50}>
+              <Figure>
+                <img
+                  style={{ width: "100%" }}
+                  src="/images/long-term-research/reports/cantor/fractions/fractions.gif"
+                />
+              </Figure>
+            </SidebarItem>
+            <Body>
               <a href="http://klr.tumblr.com/post/152354637513/fraction-problems">
                 We sketched many ideas for representations of fractions
               </a>. We learned that there are lots of ways to think about
               fractions: as ratios, as measures, as scaling operations, and so
-              on. Playing with multiple representations might make it easier to
+              on.
+            </Body>
+            <Body noBottomMargin>
+              Playing with multiple representations might make it easier to
               understand how these conceptions relate.
             </Body>
-          </div>
-          <div className={css(styles.carouselItem)}>
-            <Figure>
-              <img
-                style={{ width: "100%" }}
-                src="/images/long-term-research/reports/cantor/carousel-early-math.png"
-              />
-            </Figure>
-            <Body noBottomMargin>
-              We first investigated digital number manipulatives{" "}
-              <a href="early-math">
-                in the context of an early numeracy environment
-              </a>. In that system, these number blocks could be used to modify
-              the child’s world.
-            </Body>
-          </div>
-          <div className={css(styles.carouselItem)}>
-            <Figure>
-              <img
-                style={{ width: "100%" }}
-                src="/images/long-term-research/reports/cantor/carousel-cubes.gif"
-              />
-            </Figure>
+          </BodyAndSidebar>
+        </div>
+        <div className={css(styles.minFigureHeight)}>
+          <BodyAndSidebar>
+            <Subheading>Representing much bigger numbers</Subheading>
+            <SidebarItem top={50}>
+              <Figure>
+                <img
+                  style={{ width: "100%" }}
+                  src="/images/long-term-research/reports/cantor/carousel-cubes.gif"
+                />
+              </Figure>
+            </SidebarItem>
             <Body noBottomMargin>
               Unlike physical blocks,{" "}
               <a href="http://klr.tumblr.com/post/148763588468/base-ten-blocks-cyclic-dimensions-entangled-math">
@@ -997,8 +937,31 @@ export default class Report extends React.Component {
               </a>, or by representing higher place values by higher-dimensional
               rotations.
             </Body>
-          </div>
-        </Slider>
+          </BodyAndSidebar>
+        </div>
+
+        <div className={css(styles.minFigureHeight)} style={{marginBottom: 24}}>
+          <BodyAndSidebar>
+            <Subheading>
+              Putting the number blocks in an immersive world
+            </Subheading>
+            <SidebarItem top={50}>
+              <Figure height={300}>
+                <img
+                  style={{ width: "100%" }}
+                  src="/images/long-term-research/reports/cantor/carousel-early-math.png"
+                />
+              </Figure>
+            </SidebarItem>
+            <Body noBottomMargin>
+              We first investigated digital number manipulatives{" "}
+              <a href="early-math">
+                in the context of an early numeracy environment
+              </a>. In that system, these number blocks could be used to explore, create, and modify
+              the child’s world.
+            </Body>
+          </BodyAndSidebar>
+        </div>
 
         <BodyAndSidebar>
           <Heading>A chest of toys, a chest of dreams</Heading>
@@ -1094,13 +1057,9 @@ export default class Report extends React.Component {
 
         <Heading>Acknowledgements</Heading>
         <Body wide>
-          We'd like to thank these people for their valuable thoughts on this report:{" "}
-          {[
-            "Michael Nielsen",
-            "Eli Luberoff",
-            "Jack Schaedler",
-            "Nicky Case",
-          ]
+          We'd like to thank these people for their valuable thoughts on this
+          report:{" "}
+          {["Michael Nielsen", "Eli Luberoff", "Jack Schaedler", "Nicky Case"]
             .map(name => name.split(" "))
             .sort(
               ([firstA, lastA], [firstB, lastB]) =>
@@ -1112,9 +1071,9 @@ export default class Report extends React.Component {
 
         <Heading>Contact us</Heading>
         <Body wide>
-          Have comments or feedback on this report? Please <a href="mailto:long-term-research-team@khanacademy.org">write us</a>.
+          Have comments or feedback on this report? Please{" "}
+          <a href="mailto:long-term-research-team@khanacademy.org">write us</a>.
         </Body>
-
       </div>
     </div>;
 }
@@ -1220,6 +1179,18 @@ const styles = StyleSheet.create({
     },
     [mediaQueries.mdOrLarger]: {
       display: "block",
+    },
+  },
+
+  minFigureHeight: {
+    [mediaQueries.mdOrLarger]: {
+      minHeight: "calc(264px + 24px)",
+    },
+    [mediaQueries.lgOrLarger]: {
+      minHeight: "calc(282px + 24px)",
+    },
+    [mediaQueries.xlOrLarger]: {
+      minHeight: "calc(334px + 24px)",
     },
   },
 });
