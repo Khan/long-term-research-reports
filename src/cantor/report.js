@@ -364,14 +364,14 @@ export default class Report extends React.Component {
           </Figure>
           <SidebarItem>
             <p className={css(styles.sidebarBody)}>
-              This figure redrawn and adapted from one in Ed Labinowicz's{" "}
+              This figure redrawn and adapted from one in Ed Labinowiczʼs{" "}
               <em>
                 <a href="https://www.amazon.com/Learning-Children-Ed-Labinowicz/dp/0201203219">
                   Learning from Children: New Beginnings for Teaching Numerical
                   Thinking
                 </a>
-              </em>. We've actually not read that book, but the figure was
-              excerpted in Constance Kamii's{" "}
+              </em>. Weʼve actually not read that book, but the figure was
+              excerpted in Constance Kamiiʼs{" "}
               <em>
                 <a href="https://www.amazon.com/Young-Children-Reinvent-Arithmetic-Implications/dp/0807739049">
                   Young Children Reinvent Arithmetic
@@ -426,7 +426,7 @@ export default class Report extends React.Component {
           </Body>
           <SidebarItem>
             <p className={css(styles.sidebarBody, styles.hideOnMobile)}>
-              Papert's 1980 manifesto on empowering children through technology,{" "}
+              Papertʼs 1980 manifesto on empowering children through technology,{" "}
               <a href="https://mindstorms.media.mit.edu">Mindstorms</a>, remains
               a foundational text for anyone interested in learning and
               technology.
@@ -450,7 +450,7 @@ export default class Report extends React.Component {
           “Mathland,” we would all learn mathematics perfectly well.
         </p>
         <p className={css(styles.sidebarBody, styles.hideUnlessMobile)}>
-          Papert's 1980 manifesto on empowering children through technology,{" "}
+          Papertʼs 1980 manifesto on empowering children through technology,{" "}
           <a href="https://mindstorms.media.mit.edu">Mindstorms</a>, remains a
           foundational text for anyone interested in learning and technology.
         </p>
@@ -472,7 +472,7 @@ export default class Report extends React.Component {
             </Figure>
           </SidebarItem>
           <Body>
-            Happily, we're no longer limited to the practicalities of matter.{" "}
+            Happily, weʼre no longer limited to the practicalities of matter.{" "}
             <a href="http://klr.tumblr.com/post/153279790133/whats-so-great-about-the-digital-medium-again">
               The dynamic medium makes new representations possible
             </a>{" "}
@@ -508,10 +508,10 @@ export default class Report extends React.Component {
           <strong>You can manipulate the animations below!</strong> Feel free to
           interrupt them at any point to play for yourself.
         </Body>
-        <Subheading>Exploring numbers' negative space</Subheading>
+        <Subheading>Exploring numbersʼ negative space</Subheading>
         <BodyAndSidebar>
           <Body>
-            Here's 37 + 15 again. This “reflow” interaction makes the{" "}
+            Hereʼs 37 + 15 again. This “reflow” interaction makes the{" "}
             <em>negative space</em> in base ten numbers feel visceral: 37 is
             clearly “3 away” from 40, and we “feel” that interactively as we try
             to fit the two together.
@@ -539,7 +539,7 @@ export default class Report extends React.Component {
         <Subheading>From modular arithmetic to even and odd</Subheading>
         <BodyAndSidebar>
           <Body>
-            Do you see a pattern with these blocks? What's with the little
+            Do you see a pattern with these blocks? Whatʼs with the little
             “bumps” that stick out of some of the numbers?
           </Body>
           <SidebarItem>
@@ -555,7 +555,7 @@ export default class Report extends React.Component {
             </Figure>
           </SidebarItem>
           <Body>
-            Cantor's “resize” interaction makes divisibility relationships easy
+            Cantorʼs “resize” interaction makes divisibility relationships easy
             to explore. Even-ness and odd-ness can emerge from casual play here
             as a clear pattern: some numbers are “smooth” when you arrange them
             into two columns, and some are “bumpy.”
@@ -593,7 +593,7 @@ export default class Report extends React.Component {
             With this interaction,{" "}
             <em>
               primality becomes an apparent property of a number
-            </em>—something you'd notice naturally when playing with the blocks.
+            </em>—something youʼd notice naturally when playing with the blocks.
           </Body>
           <Body noBottomMargin>
             By making primality vivid through direct manipulation, we help
@@ -602,9 +602,9 @@ export default class Report extends React.Component {
               intellectual need
             </a>{" "}
             to understand this abstract number property. When students learn by
-            responding to a problem they've identified,{" "}
+            responding to a problem theyʼve identified,{" "}
             <a href="https://aaalab.stanford.edu/assets/papers/2011/Practicing_versus_inventing.pdf">
-              they're more able to transfer their new knowledge to other
+              theyʼre more able to transfer their new knowledge to other
               problems
             </a>.
           </Body>
@@ -761,7 +761,7 @@ export default class Report extends React.Component {
           </SidebarItem>
         </BodyAndSidebar>
         <Subheading>
-          Interrupting, answering, and elaborating others' recordings
+          Interrupting, answering, and elaborating othersʼ recordings
         </Subheading>
         <BodyAndSidebar>
           <Body noBottomMargin>
@@ -945,19 +945,19 @@ export default class Report extends React.Component {
 
         <Heading>Further reading</Heading>
         <Body wide>
-          If you're interested in reading more about the topics in this report,
+          If youʼre interested in reading more about the topics in this report,
           our top recommendations are:
         </Body>
         <ul className={css(styles.furtherReadingList)}>
           <FurtherReadingItem>
-            Seymour Papert's 1980 book,{" "}
+            Seymour Papertʼs 1980 book,{" "}
             <a href="https://mindstorms.media.mit.edu">
               <em>Mindstorms</em>
             </a>, remains essential reading for anyone interested in building
             digital contexts for learning.
           </FurtherReadingItem>
           <FurtherReadingItem>
-            Deborah Ball's “<a href="https://ka-hivemind.herokuapp.com/entry/KhkXuvBHnvEuHNomH">
+            Deborah Ballʼs “<a href="https://ka-hivemind.herokuapp.com/entry/KhkXuvBHnvEuHNomH">
               Magical hopes: Manipulatives and the reform of math education
             </a>” outlined the key limitations of manipulatives in math
             education in 1992.
@@ -971,10 +971,10 @@ export default class Report extends React.Component {
           </FurtherReadingItem>
           <FurtherReadingItem>
             For more recent work on the promise of the dynamic medium helping us
-            see new things—not just for young learners—see Bret Victor's 2013
+            see new things—not just for young learners—see Bret Victorʼs 2013
             talk, “<a href="http://worrydream.com/MediaForThinkingTheUnthinkable/">
               Media for Thinking the Unthinkable
-            </a>,” and Michael Nielsen's 2016 essay, “<a href="http://cognitivemedium.com/tat/index.html">
+            </a>,” and Michael Nielsenʼs 2016 essay, “<a href="http://cognitivemedium.com/tat/index.html">
               Thought as a Technology
             </a>.”
           </FurtherReadingItem>
@@ -982,7 +982,7 @@ export default class Report extends React.Component {
 
         <Heading>Acknowledgements</Heading>
         <Body wide>
-          We'd like to thank these people for their valuable thoughts on this
+          Weʼd like to thank these people for their valuable thoughts on this
           report:{" "}
           {[
             "Michael Nielsen",
