@@ -696,10 +696,12 @@ export default class Report extends React.Component {
           </Body>
         </BodyAndSidebar>
         <BodyAndSidebar>
-          <Subheading>
+        <Subheading>
             Supporting exploration at the speed of thought; supporting
             conversation at the speed of speech
-          </Subheading>
+        </Subheading>
+        </BodyAndSidebar>
+        <BodyAndSidebar>
           <Body>
             Great tools keep up with their users. They operate at the speed of
             thought, ever shrinking the feedback loop between conceiving of an
@@ -712,17 +714,25 @@ export default class Report extends React.Component {
             of speech. With tools this fluid, we can reinforce natural dialogue
             through novel representations without awkward pauses.
           </Body>
-          <SidebarItem top={50}>
+          <Body noBottomMargin>
+            <a href="https://ka-hivemind.herokuapp.com/entry/KhkXuvBHnvEuHNomH">
+              Per Deborah Ball, in <em>Magical Hopes:</em>
+            </a>{" "}
+            “If manipulatives are to find their place [...] there will have to
+            be more opportunities for individual reflection and professional
+            discourse.”
+          </Body>
+          <SidebarItem>
             <Figure>
               <YouTubePlayer videoId="sb9EC_nTxYQ" />
             </Figure>
             <p className={css(styles.sidebarBody, styles.noBottomMargin)}>
-              <a href="https://ka-hivemind.herokuapp.com/entry/KhkXuvBHnvEuHNomH">
-                Deborah Ball, in <em>Magical Hopes:</em>
-              </a>{" "}
-              “If manipulatives are to find their place [...] there will have to
-              be more opportunities for individual reflection and professional
-              discourse.”
+              Itʼs worth noting that immediate feedback is <em>not</em> always
+              helpful in learning environments. Delayed feedback can provoke
+              productive reflection and metacognition through student predictions. We donʼt yet know of a strong theory on when each kind of feedback is appropiate. {" "}
+              <a href="http://blog.mrmeyer.com/2017/desmos-design-why-were-suspicious-of-immediate-feedback/">
+                Read more on this topic from Dan Meyer
+              </a>.
             </p>
           </SidebarItem>
         </BodyAndSidebar>
