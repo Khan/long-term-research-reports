@@ -236,7 +236,7 @@ const YouTubePlayer = withContentRect(
       videoId={videoId}
       opts={{
         width: "100%",
-        height: contentRect.bounds.width * 3/4,
+        height: contentRect.bounds.width * 3 / 4,
         playerVars: {
           autoplay: false,
           modestbranding: 1,
@@ -347,12 +347,12 @@ export default class Report extends React.Component {
             </p>
           </SidebarItem>
           <Body>
-            We build our fluency with numbers incrementally from many angles,
-            filling in a dense network of mathematical properties. We might
-            think of “seven” in terms of three away from ten… or as being two
-            more than five… or as being almost double four. When viewed across
-            numbers, these relationships can become first-class ideas of their
-            own which apply to any number, like “distance to the nearest ten.”
+            We build our fluency with numbers incrementally from many angles. We
+            might think of “seven” in terms of three away from ten… or as being
+            two more than five… or as being almost double four. When viewed
+            across numbers, these relationships can become first-class ideas of
+            their own which apply to any number, like “distance to the nearest
+            ten.”
           </Body>
         </BodyAndSidebar>
         <BodyAndSidebar>
@@ -984,7 +984,7 @@ export default class Report extends React.Component {
             "Dan Meyer",
             "Toby Schachman",
             "John Golden",
-            "Kate Nowak"
+            "Kate Nowak",
           ]
             .map(name => name.split(" "))
             .sort(
@@ -995,7 +995,10 @@ export default class Report extends React.Component {
             .join(", ")}.
         </Body>
         <Body wide>
-        While their comments have hugely improved this report, any remaining deficiencies in this work should be attributed to us alone. The people listed here should not necessarily be construed as endorsing this report.
+          While their comments have hugely improved this report, any remaining
+          deficiencies in this work should be attributed to us alone. The people
+          listed here should not necessarily be construed as endorsing this
+          report.
         </Body>
 
         <Heading>Contact us</Heading>
