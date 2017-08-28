@@ -1,6 +1,8 @@
-import { StyleSheet, css } from "aphrodite";
 import React from "react";
 import VisibilitySensor from "react-visibility-sensor";
+import YouTube from "react-youtube";
+import { StyleSheet, css } from "aphrodite";
+import { withContentRect } from "react-measure";
 
 import angleBracketLeftIcon from "webapp/shared-styles-package/icon.angleBracketLeft.js";
 import globalStyles from "webapp/shared-styles-package/global-styles";
@@ -226,122 +228,26 @@ const SidebarItem = ({ children, top }) =>
     {children}
   </div>;
 
-class AudibleVideoPlayer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      muted: true,
-      isVisible: false,
-    };
-  }
-
-  onToggleAudio = () => {
-    this.setState({ muted: !this.state.muted });
-  };
-
-  onVisibilityChange = isVisible => {
-    if (isVisible !== this.state.isVisible) {
-      this.setState({ isVisible });
-      if (isVisible) {
-        this.videoRef.play();
-      } else {
-        this.videoRef.pause();
-      }
-    }
-  };
-
-  render = () =>
-    <VisibilitySensor partialVisibility onChange={this.onVisibilityChange}>
-      <div style={{ position: "relative" }}>
-        <video
-          ref={videoRef => (this.videoRef = videoRef)}
-          src="/images/long-term-research/reports/early-math/2-early-sketch/sing-through-touch.mp4"
-          muted={this.state.muted}
-          loop
-          playsInline
-          preload
-          style={{ width: "100%" }}
-        />
-        <button
-          style={{
-            width: 44,
-            height: 44,
-            position: "absolute",
-            borderRadius: 22,
-            bottom: 20,
-            left: 15,
-            border: "2px solid white",
-            backgroundColor: "rgba(255, 255, 255, 0.2)",
-            paddingTop: 5,
-          }}
-          onClick={this.onToggleAudio}
-        >
-          {this.state.muted
-            ? <svg width="28px" height="22px" viewBox="0 0 28 22" version="1.1">
-                <g
-                  id="Page-1"
-                  stroke="none"
-                  stroke-width="1"
-                  fill="none"
-                  fill-rule="evenodd"
-                >
-                  <g id="noun_1122767_cc" fill-rule="nonzero" fill="#ffffff">
-                    <g id="Group">
-                      <path
-                        d="M20.5541401,6.2307159 C20.177854,5.89512914 19.5820676,5.92563703 19.2371387,6.32223956 C18.8922097,6.6883342 18.9235669,7.26798405 19.3312102,7.60357081 C20.4914258,8.57982319 21.1499265,10.0136939 21.1499265,11.5085803 C21.1499265,13.0034668 20.4914258,14.4068296 19.3312102,15.4135899 C18.9549241,15.7491766 18.8922097,16.3288265 19.2371387,16.6949211 C19.4252817,16.9084763 19.6761391,17 19.9269966,17 C20.1464968,17 20.3659971,16.9389842 20.5541401,16.7559369 C22.0906418,15.4135899 23,13.491593 23,11.5085803 C23,9.52556769 22.121999,7.54255504 20.5541401,6.2307159 Z"
-                        id="Shape"
-                      />
-                      <path
-                        d="M24.584997,3.24436072 C24.202006,2.89352665 23.5956037,2.92542066 23.2445286,3.30814874 C22.8934535,3.69087681 22.9253694,4.29686294 23.3083604,4.64769701 C25.0956517,6.27429135 26.116961,8.60255384 26.116961,10.9946043 C26.116961,13.3866548 25.0956517,15.7149173 23.3083604,17.3415117 C22.9253694,17.6923457 22.8934535,18.2983319 23.2445286,18.6810599 C23.4360241,18.872424 23.6913514,19 23.9466787,19 C24.1700901,19 24.4254175,18.904318 24.584997,18.7448479 C26.7552793,16.7674195 28,13.9288529 28,10.9946043 C28,8.06035572 26.7552793,5.22178913 24.584997,3.24436072 Z"
-                        id="Shape"
-                      />
-                      <path
-                        d="M17.2194884,0.211012433 C16.7006337,-0.0703374778 16.0844939,-0.0703374778 15.5980676,0.211012433 L6.55053984,5.33783304 L2.5942732,5.33783304 C1.16742294,5.33783304 2.99760217e-15,6.46323268 2.99760217e-15,7.83872114 L2.99760217e-15,14.1847247 C2.99760217e-15,15.5602131 1.16742294,16.6856128 2.5942732,16.6856128 L6.55053984,16.6856128 L15.5656392,21.7811723 C15.8250665,21.9374778 16.1169223,22 16.3763496,22 C16.6682053,22 16.9276327,21.9374778 17.18706,21.7811723 C17.7059146,21.4998224 17.9977704,20.9683837 17.9977704,20.4369449 L17.9977704,1.55523979 C18.0301988,0.992539964 17.7059146,0.492362345 17.2194884,0.211012433 Z M2,14.308642 L2,7.65843621 C2,7.2962963 2.3,7 2.66666667,7 L6,7 L6,15 L2.66666667,15 C2.3,14.9670782 2,14.7037037 2,14.308642 Z M16,20 L8,15.254833 L8,6.74516696 L16,2 L16,20 Z"
-                        id="Shape"
-                      />
-                      <path
-                        d="M9.10779907,9.43138986 C9.26057148,9.7867712 9.59667076,10 9.93277005,10 C10.0855425,10 10.2077604,9.96446187 10.3605328,9.8933856 L13.5076443,8.0098645 C13.9659615,7.72555943 14.1187339,7.08587302 13.9048525,6.58833914 C13.6604167,6.05526713 13.110436,5.84203833 12.6826733,6.1263434 L9.5355618,8.0098645 C9.04669011,8.29416957 8.86336323,8.93385598 9.10779907,9.43138986 Z"
-                        id="Shape"
-                      />
-                    </g>
-                  </g>
-                </g>
-              </svg>
-            : <svg width="28px" height="23px" viewBox="0 0 23 23" version="1.1">
-                <g
-                  id="Page-1"
-                  stroke="none"
-                  stroke-width="1"
-                  fill="none"
-                  fill-rule="evenodd"
-                >
-                  <g
-                    id="noun_1122767_cc"
-                    transform="translate(-2.150000, -27.100000)"
-                    fill-rule="nonzero"
-                    fill="#ffffff"
-                  >
-                    <g id="Group" transform="translate(0.000000, 27.000000)">
-                      <path
-                        d="M2.25402504,17 L2.83363148,17 C3.38103757,17 3.79964222,16.5874942 3.79964222,16.0480635 C3.79964222,15.5086328 3.38103757,15.0961269 2.83363148,15.0961269 L2.25402504,15.0961269 C2.0608229,15.0961269 1.93202147,14.9692021 1.93202147,14.7788147 L1.93202147,7.6075595 C1.93202147,7.41717219 2.0608229,7.29024732 2.25402504,7.29024732 L5.7960644,7.29024732 L5.7960644,11.7008866 C5.7960644,12.2403173 6.21466905,12.6528231 6.76207513,12.6528231 C7.30948122,12.6528231 7.72808587,12.2403173 7.72808587,11.7008866 L7.72808587,6.94120392 L16.0679785,2.1180588 L16.0679785,2.68922072 C16.0679785,3.22865142 16.4865832,3.64115726 17.0339893,3.64115726 C17.5813953,3.64115726 18,3.22865142 18,2.68922072 L18,1.57862809 C18,1.00746617 17.6779964,0.468035464 17.1949911,0.214185721 C16.6797853,-0.0713952403 16.0679785,-0.0713952403 15.5849732,0.214185721 L6.56887299,5.44983668 L2.25402504,5.44983668 C0.998211091,5.44983668 6.66133815e-16,6.43350443 6.66133815e-16,7.67102193 L6.66133815e-16,14.810546 C6.66133815e-16,15.984601 1.03041145,17 2.25402504,17 Z"
-                        id="Shape"
-                      />
-                      <path
-                        d="M17.0225156,11 C16.4686078,11 16.0450313,11.4148936 16.0450313,11.9574468 L16.0450313,20.8617021 L9.39813757,17.7021277 C8.90939539,17.4787234 8.32290477,17.6702128 8.09482508,18.1489362 C7.8667454,18.6276596 8.06224227,19.2021277 8.55098445,19.4255319 L15.6214547,22.8085106 C15.8495344,22.9361702 16.1101969,23 16.3708594,23 C16.6641047,23 16.95735,22.9361702 17.2180125,22.7765957 C17.7067547,22.4893617 18,21.9787234 18,21.4042553 L18,11.9574468 C18,11.4468085 17.5764234,11 17.0225156,11 Z"
-                        id="Shape"
-                      />
-                      <path
-                        d="M22.7629323,1.31136406 C22.4225689,0.92464247 21.8346686,0.89241567 21.4633632,1.24691046 L0.298951955,21.3242064 C-0.0723535046,21.6787012 -0.103295626,22.2910104 0.237067712,22.677732 C0.422720442,22.8710928 0.670257416,23 0.917794389,23 C1.13438924,23 1.35098409,22.9033196 1.53663682,22.7421856 L22.701048,2.66488963 C23.0723535,2.31039484 23.1032956,1.69808565 22.7629323,1.31136406 Z"
-                        id="Shape"
-                      />
-                    </g>
-                  </g>
-                </g>
-              </svg>}
-        </button>
-      </div>
-    </VisibilitySensor>;
-}
+const YouTubePlayer = withContentRect(
+  "bounds",
+)(({ measureRef, measure, contentRect, videoId }) =>
+  <div ref={measureRef} style={{ width: "100%" }}>
+    <YouTube
+      videoId={videoId}
+      opts={{
+        width: "100%",
+        height: contentRect.bounds.width * 3/4,
+        playerVars: {
+          autoplay: false,
+          modestbranding: 1,
+          playsinline: 1,
+          showinfo: 0,
+          rel: 0,
+        },
+      }}
+    />
+  </div>,
+);
 
 const PrototypeExample = ({ heading, children }) =>
   <div className={css(styles.prototypeExample)}>
@@ -633,8 +539,8 @@ export default class Report extends React.Component {
         <Subheading>From modular arithmetic to even and odd</Subheading>
         <BodyAndSidebar>
           <Body>
-            Do you see a pattern with these blocks? What's with the little “bumps” that stick out
-            of some of the numbers?
+            Do you see a pattern with these blocks? What's with the little
+            “bumps” that stick out of some of the numbers?
           </Body>
           <SidebarItem>
             <Figure>
@@ -663,43 +569,45 @@ export default class Report extends React.Component {
 
         <Subheading>Making primes vivid</Subheading>
         <BodyAndSidebar>
-        <Body>
-          Which numbers are <em>intrinsically</em> bumpy, no matter how you
-          resize them?
-        </Body>
-        <SidebarItem>
-        <Figure>
-          <CantorPrototype
-            height={240}
-            recording={primesGZ}
-            xOffset={-300}
-            yOffset={60}
-            mobileXOffset={-260}
-            mobileYOffset={60}
-          />
-        </Figure>
-        </SidebarItem>
-        <Body>
-          As we resize 12, it forms lots of rectangles, like 3 × 4. 13 doesn’t
-          form any at all!
-        </Body>
-        <Body>
-          With this interaction,{" "}
-          <em>primality becomes an apparent property of a number</em>—something
-          you'd notice naturally when playing with the blocks.
-        </Body>
-        <Body noBottomMargin>
-          By making primality vivid through direct manipulation, we help create
-          authentic{" "}
-          <a href="http://math.ucsd.edu/~jrabin/publications/ProblemFreeActivity.pdf">
-            intellectual need
-          </a>{" "}
-          to understand this abstract number property. When students learn by
-          responding to a problem they've identified,{" "}
-          <a href="https://aaalab.stanford.edu/assets/papers/2011/Practicing_versus_inventing.pdf">
-            they're more able to transfer their new knowledge to other problems
-          </a>.
-        </Body>
+          <Body>
+            Which numbers are <em>intrinsically</em> bumpy, no matter how you
+            resize them?
+          </Body>
+          <SidebarItem>
+            <Figure>
+              <CantorPrototype
+                height={240}
+                recording={primesGZ}
+                xOffset={-300}
+                yOffset={60}
+                mobileXOffset={-260}
+                mobileYOffset={60}
+              />
+            </Figure>
+          </SidebarItem>
+          <Body>
+            As we resize 12, it forms lots of rectangles, like 3 × 4. 13 doesn’t
+            form any at all!
+          </Body>
+          <Body>
+            With this interaction,{" "}
+            <em>
+              primality becomes an apparent property of a number
+            </em>—something you'd notice naturally when playing with the blocks.
+          </Body>
+          <Body noBottomMargin>
+            By making primality vivid through direct manipulation, we help
+            create authentic{" "}
+            <a href="http://math.ucsd.edu/~jrabin/publications/ProblemFreeActivity.pdf">
+              intellectual need
+            </a>{" "}
+            to understand this abstract number property. When students learn by
+            responding to a problem they've identified,{" "}
+            <a href="https://aaalab.stanford.edu/assets/papers/2011/Practicing_versus_inventing.pdf">
+              they're more able to transfer their new knowledge to other
+              problems
+            </a>.
+          </Body>
         </BodyAndSidebar>
 
         <Subheading>Entangling representations and operations</Subheading>
@@ -792,8 +700,6 @@ export default class Report extends React.Component {
             Supporting exploration at the speed of thought; supporting
             conversation at the speed of speech
           </Subheading>
-        </BodyAndSidebar>
-        <BodyAndSidebar>
           <Body>
             Great tools keep up with their users. They operate at the speed of
             thought, ever shrinking the feedback loop between conceiving of an
@@ -806,17 +712,10 @@ export default class Report extends React.Component {
             of speech. With tools this fluid, we can reinforce natural dialogue
             through novel representations without awkward pauses.
           </Body>
-          <SidebarItem>
-            <div
-              className={css(styles.placeholder)}
-              style={{ height: 200, marginBottom: 24 }}
-            >
-              {" "}looping animation of two people in conversation drawing and
-              resizing 12 and 13, noticing factors.<br />
-              <br />Speaker icon floats on canvas. When you click it, you hear
-              the conversation, narrating the actions on the canvas at the speed
-              of speech. Maybe there’s a Facebook-video-style subtitle track?
-            </div>
+          <SidebarItem top={50}>
+            <Figure>
+              <YouTubePlayer videoId="sb9EC_nTxYQ" />
+            </Figure>
             <p className={css(styles.sidebarBody, styles.noBottomMargin)}>
               <a href="https://ka-hivemind.herokuapp.com/entry/KhkXuvBHnvEuHNomH">
                 Deborah Ball, in <em>Magical Hopes:</em>
@@ -1075,7 +974,13 @@ export default class Report extends React.Component {
         <Body wide>
           We'd like to thank these people for their valuable thoughts on this
           report:{" "}
-          {["Michael Nielsen", "Eli Luberoff", "Jack Schaedler", "Nicky Case", "Amit Patel"]
+          {[
+            "Michael Nielsen",
+            "Eli Luberoff",
+            "Jack Schaedler",
+            "Nicky Case",
+            "Amit Patel",
+          ]
             .map(name => name.split(" "))
             .sort(
               ([firstA, lastA], [firstB, lastB]) =>
