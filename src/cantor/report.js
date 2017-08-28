@@ -556,9 +556,9 @@ export default class Report extends React.Component {
           </SidebarItem>
           <Body>
             Cantor's “resize” interaction makes divisibility relationships easy
-            to explore. Even-ness and odd-ness emerge from casual play here as a
-            clear pattern: some numbers are “smooth” when you arrange them into
-            two columns, and some are “bumpy.”
+            to explore. Even-ness and odd-ness can emerge from casual play here
+            as a clear pattern: some numbers are “smooth” when you arrange them
+            into two columns, and some are “bumpy.”
           </Body>
           <Body noBottomMargin>
             What will happen if you arrange them into three columns? Think about
