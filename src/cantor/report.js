@@ -980,6 +980,11 @@ export default class Report extends React.Component {
             "Jack Schaedler",
             "Nicky Case",
             "Amit Patel",
+            "M Eifler",
+            "Dan Meyer",
+            "Toby Schachman",
+            "John Golden",
+            "Kate Nowak"
           ]
             .map(name => name.split(" "))
             .sort(
@@ -988,6 +993,9 @@ export default class Report extends React.Component {
             )
             .map(names => names.join(" "))
             .join(", ")}.
+        </Body>
+        <Body wide>
+        While their comments have hugely improved this report, any remaining deficiencies in this work should be attributed to us alone. The people listed here should not necessarily be construed as endorsing this report.
         </Body>
 
         <Heading>Contact us</Heading>
