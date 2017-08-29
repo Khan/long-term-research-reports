@@ -745,11 +745,13 @@ export default class Report extends React.Component {
             idea and exploring its consequences.
           </Body>
           <Body noBottomMargin>
-            Tools for thought must support communication not just with their
-            originator: they should enhance conversation between collaborators
-            exploring an idea together. They should enact thought at the speed
-            of speech. With tools this fluid, we can reinforce natural dialogue
-            through novel representations without awkward pauses.
+            Tools for thought must support communication not just from the
+            expert to the novice: they should enhance conversation between
+            collaborative peers. They should enact thought at the speed of
+            speech. With tools this fluid, we can reinforce natural dialogue
+            through novel representations without awkward pauses. We can support
+            students in co-constructing meaning as they discuss and resolve
+            their multiple interpretations.
           </Body>
           <Body noBottomMargin>
             <a href="https://ka-hivemind.herokuapp.com/entry/KhkXuvBHnvEuHNomH">
