@@ -502,11 +502,13 @@ export default class Report extends React.Component {
             that physical manipulatives depend on instructors’ guidance to
             illustrate connections, facilitate discussion, and encourage
             reflection. Digital manipulatives can’t resolve all her criticisms,
-            but they can certainly improve the situation. For instance, they can
-            more easily encode elements of expert guidance in their interactions
-            via constraints and dynamism. They can display and maintain the
-            relationships between multiple representations. They can create a
-            new expressive context for social interaction.
+            but they can certainly improve the situation. They can display and
+            maintain the relationships between multiple representations. They
+            can create a new expressive context for social interaction. And they
+            can more easily encode elements of expert guidance in their
+            interactions via constraints and dynamism: “rows must have ten
+            blocks” can be an inherent property of digital objects, but plastic
+            blocks need teacher support to maintain that idea.
           </Body>
         </BodyAndSidebar>
         <Heading>Revealing hidden properties of numbers</Heading>
