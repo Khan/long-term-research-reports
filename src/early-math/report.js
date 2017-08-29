@@ -633,7 +633,8 @@ export default class Report extends React.Component {
             <Figure
               caption={
                 <span>
-                  TODO NEEDS SOURCE<p
+                  <p className={css(styles.sidebarBody)}><a href="http://n-e-r-v-o-u-s.com/kinematicsHome/">These 3D-printed bracelets</a> express creativity through geometry. (Photo ©2017 Go-3D Print)</p>
+                  <p
                     className={css(styles.sidebarBody, styles.hideOnMobile)}
                     style={{ paddingTop: 16 }}
                   >
