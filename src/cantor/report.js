@@ -707,10 +707,10 @@ export default class Report extends React.Component {
           </Body>
         </BodyAndSidebar>
         <BodyAndSidebar>
-        <Subheading>
+          <Subheading>
             Supporting exploration at the speed of thought; supporting
             conversation at the speed of speech
-        </Subheading>
+          </Subheading>
         </BodyAndSidebar>
         <BodyAndSidebar>
           <Body>
@@ -740,7 +740,9 @@ export default class Report extends React.Component {
             <p className={css(styles.sidebarBody, styles.noBottomMargin)}>
               Itʼs worth noting that immediate feedback is <em>not</em> always
               helpful in learning environments. Delayed feedback can provoke
-              productive reflection and metacognition through student predictions. We donʼt yet know of a strong theory on when each kind of feedback is appropiate. {" "}
+              productive reflection and metacognition through student
+              predictions. We donʼt yet know of a strong theory on when each
+              kind of feedback is appropiate. {" "}
               <a href="http://blog.mrmeyer.com/2017/desmos-design-why-were-suspicious-of-immediate-feedback/">
                 Read more on this topic from Dan Meyer
               </a>.
