@@ -643,13 +643,37 @@ export default class Report extends React.Component {
             added on a set of buttons to perform operations. Those buttons
             operate from <em>outside</em> the representation through hidden
             mechanisms. Cantor’s interactions operate <em>through</em> the
-            representation, not outside it. The number properties we observe are{" "}
-            <em>consequences</em> of the block form; they’re not bolted-on
-            addenda.
+            representation, not outside it.
           </Body>
+        </BodyAndSidebar>
+        <BodyAndSidebar>
+          <Body>
+            The number properties we observe are <em>consequences</em> of the
+            block form, not a jumble of dissociated ideas. They form a more
+            well-connected mathematical system, which in turn helps students
+            develop more well-connected understanding.
+          </Body>
+        </BodyAndSidebar>
+        <BodyAndSidebar>
           <Body noBottomMargin>
-            In Cantor, the math is deeply entangled with the representation.
+            Zooming out: we want students to think of <em>math itself</em> as a
+            well-connected system. If we give them representations and
+            manipulatives which suggest a jumble of dissociated ideas, that may
+            become how they perceive math itself.
           </Body>
+          <SidebarItem>
+            <p className={css(styles.sidebarBody)}>
+              Despite what weʼre suggesting here, one important thing to
+              remember about manipulatives is that they donʼt themselves contain
+              and transmit mathematical knowledge. We believe students acquire
+              understanding through their explorations and discussions{" "}
+              <em>using</em> the manipulatives. See{" "}
+              <a href="https://ka-hivemind.herokuapp.com/entry/ANrbWSdgcPqfXGE4H?">
+                this paper by Cobb, Yackel, and Wood
+              </a>{" "}
+              for more.
+            </p>
+          </SidebarItem>
         </BodyAndSidebar>
 
         <Subheading>And more</Subheading>
