@@ -737,14 +737,29 @@ export default class Report extends React.Component {
             Supporting exploration at the speed of thought; supporting
             conversation at the speed of speech
           </Subheading>
-        </BodyAndSidebar>
-        <BodyAndSidebar>
+          <div className={css(styles.hideUnlessMobile)}>
+            {/* This section is duplicated for non-mobile. BEWARE! */}
+            <Figure>
+              <YouTubePlayer videoId="sb9EC_nTxYQ" />
+            </Figure>
+          </div>
           <Body>
             Great tools keep up with their users. They operate at the speed of
             thought, ever shrinking the feedback loop between conceiving of an
             idea and exploring its consequences.
           </Body>
-          <Body noBottomMargin>
+          <p className={css(styles.hideUnlessMobile, styles.sidebarBody)}>
+            {/* This section is duplicated for non-mobile. BEWARE! */}
+            Itʼs worth noting that immediate feedback is <em>not</em> always
+            helpful in learning environments. Delayed feedback can provoke
+            productive reflection and metacognition through student predictions.
+            We donʼt yet know of a strong theory on when each kind of feedback
+            is appropiate. {" "}
+            <a href="http://blog.mrmeyer.com/2017/desmos-design-why-were-suspicious-of-immediate-feedback/">
+              Read more on this topic from Dan Meyer
+            </a>.
+          </p>
+          <Body>
             Tools for thought must support communication not just from the
             expert to the novice: they should enhance conversation between
             collaborative peers. They should enact thought at the speed of
@@ -753,6 +768,18 @@ export default class Report extends React.Component {
             students in co-constructing meaning as they discuss and resolve
             their multiple interpretations.
           </Body>
+          <p className={css(styles.hideUnlessMobile, styles.sidebarBody)}>
+            {/* This section is duplicated for non-mobile. BEWARE! */}
+            For more on the importance of discussion in exposing and developing
+            multiple interpretations is explored further in papers by{" "}
+            <a href="https://ka-hivemind.herokuapp.com/entry/spChNPDMhZSt7ZFgr">
+              Kamii, Lewis, & Kirkland
+            </a>{" "}
+            and{" "}
+            <a href="https://ka-hivemind.herokuapp.com/entry/ANrbWSdgcPqfXGE4H">
+              Yackel, Cobb, & Wood
+            </a>.
+          </p>
           <Body noBottomMargin>
             <a href="https://ka-hivemind.herokuapp.com/entry/KhkXuvBHnvEuHNomH">
               Per Deborah Ball, in <em>Magical Hopes:</em>
@@ -761,21 +788,36 @@ export default class Report extends React.Component {
             be more opportunities for individual reflection and professional
             discourse.”
           </Body>
-          <SidebarItem>
-            <Figure>
-              <YouTubePlayer videoId="sb9EC_nTxYQ" />
-            </Figure>
-            <p className={css(styles.sidebarBody, styles.noBottomMargin)}>
-              Itʼs worth noting that immediate feedback is <em>not</em> always
-              helpful in learning environments. Delayed feedback can provoke
-              productive reflection and metacognition through student
-              predictions. We donʼt yet know of a strong theory on when each
-              kind of feedback is appropiate. {" "}
-              <a href="http://blog.mrmeyer.com/2017/desmos-design-why-were-suspicious-of-immediate-feedback/">
-                Read more on this topic from Dan Meyer
-              </a>.
-            </p>
-          </SidebarItem>
+          <div className={css(styles.hideOnMobile)}>
+            {/* This section is duplicated for mobile. BEWARE! */}
+            <SidebarItem top={50}>
+              <Figure>
+                <YouTubePlayer videoId="sb9EC_nTxYQ" />
+              </Figure>
+              <p className={css(styles.sidebarBody)}>
+                Itʼs worth noting that immediate feedback is <em>not</em> always
+                helpful in learning environments. Delayed feedback can provoke
+                productive reflection and metacognition through student
+                predictions. We donʼt yet know of a strong theory on when each
+                kind of feedback is appropiate. {" "}
+                <a href="http://blog.mrmeyer.com/2017/desmos-design-why-were-suspicious-of-immediate-feedback/">
+                  Read more on this topic from Dan Meyer
+                </a>.
+              </p>
+              <p className={css(styles.sidebarBody, styles.noBottomMargin)}>
+                For more on the importance of discussion in exposing and
+                developing multiple interpretations is explored further in
+                papers by{" "}
+                <a href="https://ka-hivemind.herokuapp.com/entry/spChNPDMhZSt7ZFgr">
+                  Kamii, Lewis, & Kirkland
+                </a>{" "}
+                and{" "}
+                <a href="https://ka-hivemind.herokuapp.com/entry/ANrbWSdgcPqfXGE4H">
+                  Yackel, Cobb, & Wood
+                </a>.
+              </p>
+            </SidebarItem>
+          </div>
         </BodyAndSidebar>
         <Subheading>
           Recording and replaying explanations within Cantor
