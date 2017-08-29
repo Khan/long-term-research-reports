@@ -88,7 +88,8 @@ const HeroHeader = () =>
       >
         <Breadcrumb color="white" />
         <h1 className={css(styles.title)}>
-          An immersive world of playful math: empowering students through numbers
+          An immersive world of playful math: empowering students through
+          numbers
         </h1>
         <div className={css(styles.hideOnMobile)}>
           <Authors />
@@ -338,16 +339,21 @@ export default class Report extends React.Component {
     <div className={css(styles.outerClip)}>
       <div className={css(styles.container)}>
         <HeroHeader />
-        <p className={css(styles.lede)}>
-          During the spring of 2015, we studied the landscape of mathematical
-          learning software for kids, particularly in the pre-kindergarten and
-          kindergarten range. We noticed an opportunity to investigate what it
-          would mean to <em>
-            empower children through mathematical concepts
-          </em>—give them a space where they can create, explore, and mold their
-          world by playing with the mathematical properties of the elements
-          within it.
-        </p>
+        <div className={css(styles.lede)}>
+          <Body>
+            Plenty of adult artists, scientists, and engineers find math
+            tremendously empowering on a personal level. Why doesn't school math
+            feel like that? What would it mean to{" "}
+            <em>empower children through elementary math?</em>
+          </Body>
+          <Body>
+            We envisioned a world where kids can create, explore, and remix by
+            playing with the mathematical properties of the elements within it.
+            In this report, we'll paint a picture of that world through
+            interactive sketches, design principles, snippets from learning
+            theory, and stories.
+          </Body>
+        </div>
         <Hairline />
         <Heading>Early sketches and prototypes</Heading>
         <Figure caption="A small taste of dozens of interaction sketches we completed.">
@@ -1164,7 +1170,7 @@ const styles = StyleSheet.create({
       ...globalStyles.typography.subjectHeadingMobile,
     },
     maxWidth: 700,
-    marginLeft: -2
+    marginLeft: -2,
   },
 
   authors: {
