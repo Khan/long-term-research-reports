@@ -663,11 +663,11 @@ export default class Report extends React.Component {
           </Body>
           <SidebarItem>
             <p className={css(styles.sidebarBody)}>
-              Despite what weʼre suggesting here, one important thing to
-              remember about manipulatives is that they donʼt themselves contain
-              and transmit mathematical knowledge. We believe students acquire
-              understanding through their explorations and discussions{" "}
-              <em>using</em> the manipulatives. See{" "}
+              Despite what weʼre suggesting here, itʼs important to remember
+              that manipulatives donʼt themselves contain and transmit
+              mathematical knowledge. We believe students acquire understanding
+              through their explorations and discussions <em>using</em> the
+              manipulatives. See{" "}
               <a href="https://ka-hivemind.herokuapp.com/entry/ANrbWSdgcPqfXGE4H?">
                 this paper by Cobb, Yackel, and Wood
               </a>{" "}
@@ -833,7 +833,10 @@ export default class Report extends React.Component {
             representations.
           </Body>
           <SidebarItem>
-            <Figure noBottomMargin caption="Click Record, then manipulate the block in some way. Then you can replay your interactions (and your voice, if your browser supports it).">
+            <Figure
+              noBottomMargin
+              caption="Click Record, then manipulate the block in some way. Then you can replay your interactions (and your voice, if your browser supports it)."
+            >
               <CantorPrototype
                 height={200}
                 mode="recordYourOwn"
@@ -859,7 +862,10 @@ export default class Report extends React.Component {
             provocation.
           </Body>
           <SidebarItem>
-            <Figure noBottomMargin caption="In this figure, recorded manipulations and voice live on the same canvas as your interactions. Turn on your speakers and click Start.">
+            <Figure
+              noBottomMargin
+              caption="In this figure, recorded manipulations and voice live on the same canvas as your interactions. Turn on your speakers and click Start."
+            >
               <CantorPrototype
                 height={250}
                 mode="prompt"
