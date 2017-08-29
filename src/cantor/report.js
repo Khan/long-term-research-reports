@@ -370,8 +370,7 @@ export default class Report extends React.Component {
                   Learning from Children: New Beginnings for Teaching Numerical
                   Thinking
                 </a>
-              </em>. Weʼve actually not read that book, but the figure was
-              excerpted in Constance Kamiiʼs{" "}
+              </em>, which we discovered via Constance Kamiiʼs{" "}
               <em>
                 <a href="https://www.amazon.com/Young-Children-Reinvent-Arithmetic-Implications/dp/0807739049">
                   Young Children Reinvent Arithmetic
