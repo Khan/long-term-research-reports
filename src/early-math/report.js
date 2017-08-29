@@ -88,7 +88,7 @@ const HeroHeader = () =>
       >
         <Breadcrumb color="white" />
         <h1 className={css(styles.title)}>
-          Empowering children through mathematical concepts
+          An immersive world of playful math: empowering students through numbers
         </h1>
         <div className={css(styles.hideOnMobile)}>
           <Authors />
