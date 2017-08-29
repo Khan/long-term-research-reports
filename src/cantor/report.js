@@ -833,7 +833,7 @@ export default class Report extends React.Component {
             representations.
           </Body>
           <SidebarItem>
-            <Figure noBottomMargin>
+            <Figure noBottomMargin caption="Click Record, then manipulate the block in some way. Then you can replay your interactions (and your voice, if your browser supports it).">
               <CantorPrototype
                 height={200}
                 mode="recordYourOwn"
@@ -859,7 +859,7 @@ export default class Report extends React.Component {
             provocation.
           </Body>
           <SidebarItem>
-            <Figure noBottomMargin>
+            <Figure noBottomMargin caption="In this figure, recorded manipulations and voice live on the same canvas as your interactions. Turn on your speakers and click Start.">
               <CantorPrototype
                 height={250}
                 mode="prompt"
