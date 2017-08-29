@@ -579,11 +579,27 @@ export default class Report extends React.Component {
             as a clear pattern: some numbers are “smooth” when you arrange them
             into two columns, and some are “bumpy.”
           </Body>
-          <Body noBottomMargin>
+          <Body>
             What will happen if you arrange them into three columns? Think about
             it for a moment, then try for yourself. Would you call 10 “even” in
             the world of three columns?
           </Body>
+        </BodyAndSidebar>
+        <BodyAndSidebar>
+          <Body>
+            Use this audio player to hear one young students draw on his
+            fraction knowledge to connect this situation to deeper ideas in
+            modular arithmetic.
+          </Body>
+          <SidebarItem>
+            <Figure>
+              <audio
+                src="/sounds/long-term-research/reports/cantor/student-audio.mp3"
+                style={{ width: "100%" }}
+                controls
+              />
+            </Figure>
+          </SidebarItem>
         </BodyAndSidebar>
 
         <Subheading>Making primes vivid</Subheading>
