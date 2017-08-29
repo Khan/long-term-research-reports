@@ -852,7 +852,7 @@ export default class Report extends React.Component {
         </BodyAndSidebar>
         <Heading>Further possibilities</Heading>
         <BodyAndSidebar>
-          <Body noBottomMargin>
+          <Body wide noBottomMargin>
             We generated many more ideas throughout our process, at various
             stages of fidelity. There’s so much more to explore in this space!
           </Body>
@@ -903,10 +903,7 @@ export default class Report extends React.Component {
           </BodyAndSidebar>
         </div>
 
-        <div
-          className={css(styles.minFigureHeight)}
-          style={{ marginBottom: 36 }}
-        >
+        <div className={css(styles.minFigureHeight)}>
           <BodyAndSidebar>
             <Subheading>
               Putting the number blocks in an immersive world
@@ -927,16 +924,20 @@ export default class Report extends React.Component {
             </Body>
           </BodyAndSidebar>
         </div>
-
-        <BodyAndSidebar>
-          <Heading>A chest of toys, a chest of dreams</Heading>
-          <Body>
+          <Subheading>Co-evolving Cantor</Subheading>
+          <Body wide>
             Weʼve only taken the first steps in our work with Cantor.
             Critically, we must next iterate directly with students to validate
-            our design principles and extend these ideas. Weʼre moved on to
-            other projects now, but we hope this work inspires you, dear reader,
-            to continue our explorations in this space.
+            our design principles and extend these ideas. Do bumpy numbers draw
+            interest? Do students reach for Cantor to show an idea to their
+            neighbor? Do they make discoveries we havenʼt?
           </Body>
+          <Body wide noBottomMargin>If this work inspires
+            you, dear reader, we invite you to join in the explorations of this
+            space.
+          </Body>
+        <BodyAndSidebar>
+          <Heading>A chest of toys, a chest of dreams</Heading>
           <Body>
             We dream of giving every child a toy chest filled with countless
             dynamic manipulatives like the ones we’ve illustrated here.
