@@ -930,6 +930,13 @@ export default class Report extends React.Component {
         <BodyAndSidebar>
           <Heading>A chest of toys, a chest of dreams</Heading>
           <Body>
+            Weʼve only taken the first steps in our work with Cantor.
+            Critically, we must next iterate directly with students to validate
+            our design principles and extend these ideas. Weʼre moved on to
+            other projects now, but we hope this work inspires you, dear reader,
+            to continue our explorations in this space.
+          </Body>
+          <Body>
             We dream of giving every child a toy chest filled with countless
             dynamic manipulatives like the ones we’ve illustrated here.
           </Body>
