@@ -228,18 +228,6 @@ const FurtherReadingItem = ({ children }) =>
     {children}
   </li>;
 
-const FPO = () =>
-  <p
-    style={{
-      position: "absolute",
-      color: "magenta",
-      paddingLeft: 24,
-      fontSize: 24,
-    }}
-  >
-    FPO
-  </p>;
-
 export default class Report extends React.Component {
   render = () =>
     <div className={css(styles.outerClip)}>
