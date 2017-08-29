@@ -552,11 +552,14 @@ export default class Report extends React.Component {
           </Body>
         </BodyAndSidebar>
 
-        <Subheading>From modular arithmetic to even and odd</Subheading>
+        <Subheading>
+          From even and odd to fractions and modular arithmetic
+        </Subheading>
         <BodyAndSidebar>
           <Body>
-            Do you see a pattern with these blocks? Whatʼs with the little
-            “bumps” that stick out of some of the numbers?
+            Let’s make the blocks two columns wide. Do you see a pattern with
+            these blocks? Whatʼs with the little “bumps” that stick out of some
+            of the numbers?
           </Body>
           <SidebarItem>
             <Figure>
@@ -578,8 +581,8 @@ export default class Report extends React.Component {
           </Body>
           <Body noBottomMargin>
             What will happen if you arrange them into three columns? Think about
-            it for a moment, then try for yourself. Alternative bases feel
-            natural, not alien, with this representation.
+            it for a moment, then try for yourself. Would you call 10 “even” in
+            the world of three columns?
           </Body>
         </BodyAndSidebar>
 
