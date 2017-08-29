@@ -12,49 +12,6 @@ import sharedReportStyles from "../report-styles";
 import Breadcrumb from "../components/breadcrumb";
 import Figure from "../components/figure";
 
-const Icon = props => {
-  const { color, pathClassName, className } = props;
-  let { icon, size } = props;
-  let units = "";
-
-  // If the raw path was passed in, wrap it in the format that we expect.
-  if (typeof icon === "string") {
-    icon = {
-      path: icon,
-      width: 10,
-      height: 10,
-    };
-  }
-
-  // `size` defaults to 1em to mirror the behavior of Font Awesome.
-  if (typeof size !== "number") {
-    size = 1;
-    units = "em";
-  }
-
-  const height = size;
-  const width = height / icon.height * icon.width;
-
-  // NOTE: We assume that the viewBox is cropped and aligned to (0, 0),
-  //       but icons can be defined differently. At some point we might
-  //       want to add these attributes to icon-paths.js, but for now
-  //       this is a fairly safe assumption.
-  const xMin = 0;
-  const yMin = 0;
-
-  return (
-    <svg
-      className={className}
-      focusable={!!props.focusable}
-      width={width + units}
-      height={height + units}
-      viewBox={`${xMin} ${yMin} ${icon.width} ${icon.height}`}
-    >
-      <path className={pathClassName} fill={color} d={icon.path} />
-    </svg>
-  );
-};
-
 const Authors = () =>
   <h2 className={css(styles.authors)}>
     <div className={css(styles.authorLine)}>
