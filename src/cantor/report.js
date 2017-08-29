@@ -160,7 +160,7 @@ const HeroHeader = () =>
           yOffset={20}
           tabletXOffset={-120}
           mobileXOffset={-600}
-          mobileYOffset={220}
+          mobileYOffset={260}
           isHero
         />
       </div>
