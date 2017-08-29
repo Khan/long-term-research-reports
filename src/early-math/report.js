@@ -349,9 +349,9 @@ export default class Report extends React.Component {
           <Body>
             We envisioned a world where kids can create, explore, and remix by
             playing with the mathematical properties of the elements within it.
-            In this report, we'll paint a picture of that world through
-            interactive sketches, design principles, snippets from learning
-            theory, and stories.
+            You can't visit that world yet, but we'll paint a picture of it here
+            through interactive sketches, design principles, snippets from
+            learning theory, and stories.
           </Body>
         </div>
         <Hairline />
@@ -367,12 +367,11 @@ export default class Report extends React.Component {
           />
         </Figure>
         <p className={css(styles.body, styles.wideParagraph)}>
-          We began the project by spending many weeks talking to experts,
-          surveying the product landscape, reading associated research, and
-          interviewing students, parents, and teachers. Insights from that
-          background research informed our design principles, which we’ll
-          explain shortly—but they’ll make more sense after we give you a taste
-          of the sketches they inspired.
+          We began this project with many weeks of background research—talking
+          to experts, surveying the landscape, reading associated research, and
+          conducting interviews. We formed our design principles through that
+          background research, but they'll make more sense through the lens of
+          some sketches they inspired. Let's look at a few of those first.
         </p>
         <PrototypeExample
           heading="Singing through touch"
@@ -381,36 +380,39 @@ export default class Report extends React.Component {
           <Body>
             Our very first idea explored: what are all the ways a child might
             input a number? If you ask a kid their age, they often hold up their
-            fingers – sometimes before they start saying the number. We
-            prototyped ways we might take advantage of multi-touch input to
-            connect multiple fingers on the screen to a display of symbolic
-            quantity.
+            fingers–sometimes before they start saying the number. Inspired by
+            that observation, we prototyped ways we might connect multiple
+            fingers on a screen to displayed quantities.
           </Body>
           <Body>
-            Playing with our initial prototype made us realize we could layer on
-            representations of quantity—and give the numbers creative power—by
-            giving each number a distinct note! Turning the counting of
-            multi-touches into a musical instrument.
+            As we played with our initial prototype, we realized we could give
+            the numbers creative power and layer on another representation of
+            quantity by assigning each number a distinct note. With this
+            interaction, a child's simple gesture—holding up some fingers to
+            indicate a number—becomes a musical instrument!
           </Body>
         </PrototypeExample>
         <PrototypeExample
           heading="Altering the world using handwritten numbers"
           figure={
-            <div
-              className={css(styles.placeholder)}
-              style={{ width: "100%", height: 300 }}
+            <img
+              src="/images/long-term-research/reports/early-math/2-early-sketches/2-alter-your-world.png"
+              style={{ width: "100%" }}
             />
           }
         >
           <Body>
-            Handwriting was another natural input method. This, alongside our
-            observations that many kids don’t yet feel in control of their
-            situation and are often told what to do – made us feel that giving
-            them control of a little digital world is a welcome break from the
-            norm. In this sketch, we wondered if we could translate the
-            students’ number expression abilities into something personally
-            meaningful: the ability to precisely modify their world with
-            numbers.
+            Handwriting is another natural input method, and it's important
+            because it lets students use the symbolic representation of
+            numbers—digits. Separately, we observed that many kids don’t feel in
+            control of their situation; they're often told what to do. What
+            would happen if we gave them total control of a little digital world
+            through their handwriting?
+          </Body>
+          <Body>
+            In this sketch, we wondered if we could translate the students’
+            ability to express numbers into something personally meaningful: the
+            power to precisely modify their world with numbers.
           </Body>
           <Body>Want to see what a hundred birds looks like? Just ask.</Body>
         </PrototypeExample>
@@ -439,20 +441,22 @@ export default class Report extends React.Component {
         <PrototypeExample
           heading="Place-value cards"
           figure={
-            <div
-              className={css(styles.placeholder)}
-              style={{ width: "100%", height: 300 }}
+            <img
+              src="/images/long-term-research/reports/early-math/2-early-sketches/2-place-value-cards.png"
+              style={{ width: "100%" }}
             />
           }
         >
           <Body>
             Our background research helped us get familiar with existing
-            manipulatives for early learning, such as place-value cards. In the
-            digital medium, these “tens-place” and “ones-place” cards can be
-            manipulated individually or stacked on top of each other to
-            represent a single two-digit number. The cards’ interactions
-            implicitly illustrate decomposition in the base-ten number
-            system—that 27 is the same as 20 + 7.
+            manipulatives for early learning, such as{" "}
+            <a href="http://www.lakeshorelearning.com/product/productDet.jsp?productItemID=1%2C689%2C949%2C371%2C919%2C753&ASSORTMENT%3C%3East_id=1408474395181113&bmUID=1504047177209">
+              place-value cards
+            </a>. In the digital medium, these “tens-place” and “ones-place”
+            cards can be manipulated individually or stacked on top of each
+            other to represent a single two-digit number. The cards’
+            interactions implicitly illustrate decomposition in the base-ten
+            number system—that 27 is the same as 20 + 7.
           </Body>
           <Body>
             Unlike a physical version of these cards, kids can adjust the
@@ -523,17 +527,21 @@ export default class Report extends React.Component {
         </Slider>
         <Heading>Design principles</Heading>
         <Body wide>
-          Our investigations gave rise to deeper ideas that we used to challenge
-          ourselves when designing solutions in this space. They continue to
-          drive our research today.
+          Our background research and early prototyping helped us establish
+          design principles for the world we wanted to create. We used those
+          principles to challenge ourselves when designing solutions, and they
+          continue to drive our research today. We hope the sketches in the
+          previous section will help you see the implications of these ideas.
         </Body>
         <Subheading>Learning through discovery</Subheading>
         <BodyAndSidebar>
           <Body>
             If you move to a new city where you don’t speak the language, you’ll
-            pick it up. If you engage with your new city, your life becomes
-            entangled with it. Interacting more deeply with your surroundings
-            means interacting more deeply with the language and culture.
+            pick it up. As you engage with your new city, your life becomes
+            entangled with it. Interacting more deeply with your surroundings{" "}
+            <em>means</em> interacting more deeply with the language and
+            culture. How might we build a “city” whose objects and interactions
+            are entangled with mathematical concepts in the same way?
           </Body>
           <SidebarItem>
             <p className={css(styles.sidebarBody)}>
@@ -544,23 +552,11 @@ export default class Report extends React.Component {
               </a>, remains a foundational text for anyone interested in
               learning and technology.
             </p>
-          </SidebarItem>
-        </BodyAndSidebar>
-        <BodyAndSidebar>
-          <Body>
-            Learning games often feel bolted onto their subjects like
-            chocolate-covered broccoli: the game mechanics could just as well be
-            used to incentivize other random tasks. Learning games often
-            motivate with badges or scoreboards, but learning language in a city
-            is constantly motivated by rich interactions inextricable from daily
-            life.
-          </Body>
-          <SidebarItem>
             <Figure
               caption={
                 <span>
                   The space alien theme might taste like chocolate at first, but
-                  it's covering the same old broccoli.<p
+                  it's covering the same old broccoli!<p
                     className={css(styles.sidebarBody, styles.hideOnMobile)}
                     style={{ paddingTop: 16 }}
                   >
@@ -584,17 +580,24 @@ export default class Report extends React.Component {
               />
             </Figure>
           </SidebarItem>
+        </BodyAndSidebar>
+        <BodyAndSidebar>
           <Body>
-            Can we build an environment whose objects and interactions are
-            entangled with mathematical concepts in the same way—and where
-            motivation comes from within?
+            Learning games often feel bolted onto their subjects like
+            chocolate-covered broccoli: the game mechanics could just as well be
+            used to incentivize other random tasks. Learning games often
+            motivate with badges or scoreboards, but learning language in a city
+            is constantly motivated by rich interactions inextricable from daily
+            life. How might we build a “city” where learning math is as
+            intrinsically motivating as learning language in a foreign city?
           </Body>
+          <SidebarItem />
         </BodyAndSidebar>
         <BodyAndSidebar>
           <Body>
             <Principle>Entanglement.</Principle> That's been our goal for this
-            world: when children manipulate their world, they manipulate
-            mathematics. If they improve at manipulating their world, they
+            world: when children manipulate their environment, they manipulate
+            mathematics. If they improve at manipulating their environment, they
             improve at manipulating mathematics. We believe the world doesn't
             need a trophy system: the desire to explore, interact, and create is
             motivation enough.
@@ -615,25 +618,30 @@ export default class Report extends React.Component {
         </BodyAndSidebar>
         <BodyAndSidebar>
           <Body>
-            <Principle>Creativity.</Principle> With creative freedom and
-            exploration comes a wider variety of learning paths. One child might
-            construct a mathematical concept through a generative painting;
-            another might form the same idea making digital music.{" "}
+            <Principle>Creativity.</Principle> A focus on creative freedom and
+            exploration can deliver a wider variety of learning paths. One child
+            might construct a mathematical concept through a generative
+            painting; another might form the same idea making digital music.{" "}
             <a href="https://en.wikipedia.org/wiki/Constructivism_(philosophy_of_education)">
               To learn, we connect new ideas to preexisting ones.
             </a>{" "}
-            A prescribed learning path allows no agency or creativity for the
-            learner, their only option is compliance. But if children have
-            agency in the mathematical activity, they'll find learning paths
-            from their own entry points. We can still prescribe experiences in
-            the design of our world, but ultimately, the paths are forged by the
-            learner.
+            If children have agency in choosing their methods and goals for a
+            mathematical activity, they'll find learning paths from their own
+            entry points. We can still prescribe experiences in the design of
+            our world, but ultimately, each learner's paths forges their own
+            path.
           </Body>
           <SidebarItem>
             <Figure
               caption={
                 <span>
-                  <p className={css(styles.sidebarBody)}><a href="http://n-e-r-v-o-u-s.com/kinematicsHome/">These 3D-printed bracelets</a> express creativity through geometry. (Photo ©2017 Go-3D Print)</p>
+                  <p className={css(styles.sidebarBody)}>
+                    <a href="http://n-e-r-v-o-u-s.com/kinematicsHome/">
+                      These 3D-printed bracelets
+                    </a>{" "}
+                    express creativity through geometry. (Photo ©2017 Go-3D
+                    Print)
+                  </p>
                   <p
                     className={css(styles.sidebarBody, styles.hideOnMobile)}
                     style={{ paddingTop: 16 }}
@@ -668,12 +676,12 @@ export default class Report extends React.Component {
             <a href="http://math.ucsd.edu/~jrabin/publications/ProblemFreeActivity.pdf">
               it’s more likely that they’ll understand <em>why</em> the
               entangled mathematical ideas behave as they do
-            </a>—not just how to perform an algorithm. With procedural
-            understanding, we’re stuck as soon as we fall off a path we
-            recognize. With conceptual understanding, we can correct our own
-            errors and combine ideas in creative ways. That creativity leads to
-            yet more learning paths and yet more understanding: the cycle
-            continues.
+            </a>—not just how to perform an algorithm. We worry that students
+            with procedural understanding find themselves stuck as soon as they
+            fall off a path they recognize. With conceptual understanding,
+            students can correct their own errors and combine ideas in creative
+            ways. That creativity leads to yet more learning paths and yet more
+            understanding: the cycle continues.
           </Body>
           <SidebarItem>
             <p
@@ -721,8 +729,8 @@ export default class Report extends React.Component {
             </Figure>
           </SidebarItem>
           <Body>
-            When talking about education, we often ignore or belittle children’s
-            emotions, focusing on intellectual activities. But by creating the
+            When thinking about education, it's easy to focus on cognition and
+            lose sight of students' emotions. But by intentionally creating the
             space for emotional connections to form, we pave the way for a deep,
             enduring relationship between a child and learning.
           </Body>
@@ -788,17 +796,19 @@ export default class Report extends React.Component {
           <Body>
             Mathematical ideas are incredibly empowering! Can we create
             activities which reflect that power—which we’re genuinely and
-            personally excited to share—rather than condescending tasks we
-            pretend are interesting so that kids will learn “what's good for
-            them”?
+            personally excited to share? Let's not make tasks we
+            <em>pretend</em> are interesting so that kids will learn “what's
+            good for them”!
           </Body>
           <Body>
             <Principle>Empowerment.</Principle> In this project, we focused on
-            empowerment and trusted that learning would follow. We explored
-            creative tools for art and music, translating numeracy into
-            interesting, personally-relevant creations. We imagined a world full
-            of secrets worth exploring and empowered that exploration through
-            mathematical understanding.
+            building contexts where mathematical concepts authentically empower
+            the student. We believe that genuine interest will follow from
+            empowerment, and successful learning will follow from genuine
+            interest. To that end, we explored creative tools for art and music,
+            translating numeracy into exciting personal creations. We imagined a
+            world full of secrets worth exploring and connected that exploration
+            to mathematical understanding.
           </Body>
         </BodyAndSidebar>
         <BodyAndSidebar>
@@ -828,6 +838,11 @@ export default class Report extends React.Component {
           </Body>
         </BodyAndSidebar>
         <Heading>Weaving it all together</Heading>
+        <Body wide>
+          Now that we've explored those design principles in more detail, let's
+          return to our mathematical environment and walk through a longer story
+          of one student's journey.
+        </Body>
         <StoryboardElement storyboardElementNumber={1}>
           <Body>
             We start in a scene that deliberately evokes depth and leaves space
@@ -946,15 +961,15 @@ export default class Report extends React.Component {
           <Body>
             We embrace curiosity and the urge to push limits even further by
             embracing that kind of intellectual need as it arises. If a child is
-            curious what might exist up far above the trees, they may try and
-            get there but setting the ladder’s height to a huge number. They
-            wouldn’t be able to collect a quantity large enough by counting,
-            which would inspire the need for repetition or scaling, bases for
-            the concepts of multiplication and exponentiation.{" "}
+            curious what might exist up far above the trees, they may try to get
+            there by setting the ladder’s height to a huge number. But: they
+            wouldn’t be able to collect a quantity large enough by counting!
+            That would inspire the need for repetition or scaling, which in turn
+            would create space to introduce multiplication and exponentiation.
           </Body>
           <Body>
             In this case, the child has discovered the power of exponential
-            growth and discovered a whole new world.
+            growth—and a whole new world.
           </Body>
         </StoryboardElement>
         <Heading>Conclusion</Heading>
