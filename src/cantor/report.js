@@ -471,7 +471,10 @@ export default class Report extends React.Component {
                     showing that 7 divides 112! Try…
                   </p>
                   <p className={css(styles.sidebarBody)}>
-                    Photo of place value blocks ©2017 <a href="http://www.lakeshorelearning.com/product/productDet.jsp?productItemID=1%2C689%2C949%2C371%2C919%2C766&ASSORTMENT%3C%3East_id=1408474395181113&bmUID=1503960579934">Lakeshore Learning Materials</a>.
+                    Photo of place value blocks ©2017{" "}
+                    <a href="http://www.lakeshorelearning.com/product/productDet.jsp?productItemID=1%2C689%2C949%2C371%2C919%2C766&ASSORTMENT%3C%3East_id=1408474395181113&bmUID=1503960579934">
+                      Lakeshore Learning Materials
+                    </a>.
                   </p>
                 </span>
               }
@@ -892,11 +895,10 @@ export default class Report extends React.Component {
               </Figure>
             </SidebarItem>
             <Body noBottomMargin>
-              We first investigated digital number manipulatives{" "}
-              <a href="early-math">
-                in the context of an early numeracy environment
-              </a>. In that system, these number blocks could be used to
-              explore, create, and modify the child’s world.
+              We first investigated digital number manipulatives in the context
+              of an early numeracy environment. In that system, these number
+              blocks could be used to explore, create, and modify the child’s
+              world. Weʼll have a separate report on that work soon.
             </Body>
           </BodyAndSidebar>
         </div>
@@ -1008,6 +1010,7 @@ export default class Report extends React.Component {
             "Toby Schachman",
             "John Golden",
             "Kate Nowak",
+            "Hamish Todd",
           ]
             .map(name => name.split(" "))
             .sort(
