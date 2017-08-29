@@ -306,11 +306,10 @@ export default class Report extends React.Component {
           </SidebarItem>
           <Body>
             We build our fluency with numbers incrementally from many angles. We
-            might think of “seven” in terms of three away from ten… or as being
-            two more than five… or as being almost double four. When viewed
-            across numbers, these relationships can become first-class ideas of
-            their own which apply to any number, like “distance to the nearest
-            ten.”
+            might think of “seven” as being three away from ten… or as being two
+            more than five… or as being almost double four. When viewed across
+            numbers, these relationships can become first-class ideas of their
+            own that apply to any number, like “distance to the nearest ten.”
           </Body>
         </BodyAndSidebar>
         <BodyAndSidebar>
@@ -342,8 +341,8 @@ export default class Report extends React.Component {
           <Body>
             Different representations of numbers emphasize or obscure different
             number meanings. For example, the base-ten representation of 12
-            makes a “10 + 2” decomposition natural. But the arrangement of
-            twelve circles depicted here makes us think of “12 = 3 x 4” or “12 =
+            makes a “10 + 2” decomposition natural. But the two arrangements of
+            twelve circles depicted here make us think of “12 = 3 x 4” or “12 =
             4 x 3”.
           </Body>
           <SidebarItem>
@@ -413,9 +412,9 @@ export default class Report extends React.Component {
         </p>
         <BodyAndSidebar>
           <Body>
-            Students have long used physical manipulatives like the blocks
-            depicted here as alternative representations for numbers. These can
-            be powerful—particularly because they take advantage of our
+            Students have long used physical manipulatives like these plastic
+            blocks to represent numbers. Manipulatives can be
+            powerful—particularly because they take advantage of our
             body-awareness—but physical objects are limited by
             often-inconvenient laws of physics and practicalities of matter.
           </Body>
@@ -460,12 +459,12 @@ export default class Report extends React.Component {
             illustrate connections, facilitate discussion, and encourage
             reflection. Digital manipulatives can’t resolve all her criticisms,
             but they can certainly improve the situation. They can display and
-            maintain the relationships between multiple representations. They
-            can create a new expressive context for social interaction. And they
-            can more easily encode elements of expert guidance in their
-            interactions via constraints and dynamism: “rows must have ten
-            blocks” can be an inherent property of digital objects, but plastic
-            blocks need teacher support to maintain that idea.
+            maintain relationships between multiple representations. They can
+            create a new expressive context for social interaction. And they can
+            more easily encode elements of expert guidance in their interactions
+            via constraints and dynamism: “rows must have ten blocks” can be an
+            inherent property of digital objects, but plastic blocks need
+            teacher support to maintain that property.
           </Body>
         </BodyAndSidebar>
         <Heading>Revealing hidden properties of numbers</Heading>
@@ -544,9 +543,9 @@ export default class Report extends React.Component {
         </BodyAndSidebar>
         <BodyAndSidebar>
           <Body>
-            Use this audio player to hear one young students draw on his
-            fraction knowledge to connect this situation to deeper ideas in
-            modular arithmetic.
+            Use this audio player to hear one young student draw on his fraction
+            knowledge to connect this situation to deeper ideas in modular
+            arithmetic.
           </Body>
           <SidebarItem>
             <Figure>
@@ -578,11 +577,11 @@ export default class Report extends React.Component {
             </Figure>
           </SidebarItem>
           <Body>
-            As we resize 12, it forms lots of rectangles, like 3 × 4. 13 doesn’t
-            form any at all!
+            As we resize 12, it forms lots of rectangles, like 3 × 4. But 13
+            doesn’t form any at all!
           </Body>
           <Body>
-            With this interaction,{" "}
+            With the “resize” interaction,{" "}
             <em>
               primality becomes an apparent property of a number
             </em>—something youʼd notice naturally when playing with the blocks.
@@ -629,7 +628,7 @@ export default class Report extends React.Component {
             The number properties we observe are <em>consequences</em> of the
             block form, not a jumble of dissociated ideas. They form a more
             well-connected mathematical system, which in turn helps students
-            develop more well-connected understanding.
+            develop well-connected understanding.
           </Body>
         </BodyAndSidebar>
         <BodyAndSidebar>
@@ -637,7 +636,7 @@ export default class Report extends React.Component {
             Zooming out: we want students to think of <em>math itself</em> as a
             well-connected system. If we give them representations and
             manipulatives which suggest a jumble of dissociated ideas, that may
-            become how they perceive math itself.
+            come to be how they perceive math itself.
           </Body>
           <SidebarItem>
             <p className={css(styles.sidebarBody)}>
@@ -661,8 +660,8 @@ export default class Report extends React.Component {
           manipulatives and interactions exist, building bridges to many other
           attributes of numbers. When we implement these manipulatives, they
           tend to surprise us with unanticipated possibilities: we stumbled on
-          some of the examples we’ve shown by accident, just through playing
-          with the interactions!
+          some of the examples we’ve shown by accident, just by playing with the
+          interactions!
         </Body>
         <Heading>One interactive representation, many contexts</Heading>
         <BodyAndSidebar>
@@ -708,7 +707,7 @@ export default class Report extends React.Component {
           <Body noBottomMargin>
             We pushed hard for versatility as we explored and invented in this
             space. The examples above have already illustrated how Cantor might
-            be used in an online textbook; now let’s look at some other ideas.
+            be used in an online textbook—now let’s look at some other ideas.
           </Body>
         </BodyAndSidebar>
         <BodyAndSidebar>
@@ -803,12 +802,12 @@ export default class Report extends React.Component {
         </Subheading>
         <BodyAndSidebar>
           <Body noBottomMargin>
-            The dialogue example above demonstrates a recording of a
+            The video in the previous section demonstrates a recording of a
             conversation using Cantor. We realized: what if this interaction
             were built into the medium? A student might submit an answer to a
             homework problem or ask a peer for asynchronous help by recording
-            themselves speaking aloud while manipulating these dynamic
-            representations.
+            themselves speaking aloud while simultaneously manipulating these
+            dynamic representations.
           </Body>
           <SidebarItem>
             <Figure
@@ -831,13 +830,13 @@ export default class Report extends React.Component {
         <BodyAndSidebar>
           <Body noBottomMargin>
             If we add recordings as a first-class element of Cantor’s canvas, we
-            don’t have to play them back like a non-interactive video: they can
-            be integrated into the interactive canvas. A teacher’s recorded
-            prompts and block manipulations could inhabit the same space as
-            student interactions. Then we could string together a sequence—or
-            even a dynamic tree—of teacher–student interactions, with each
-            recorded prompt reacting to a student’s actions and offering further
-            provocation.
+            don’t have to play them back like a non-interactive video:
+            recordings can be <em>integrated into the interactive canvas</em>. A
+            teacher’s recorded prompts and block manipulations could inhabit the
+            same space as student interactions. Then we could string together a
+            sequence—or even a dynamic tree—of teacher/student interactions,
+            with each recorded prompt reacting to a student’s actions and
+            offering further provocation.
           </Body>
           <SidebarItem>
             <Figure
@@ -861,7 +860,7 @@ export default class Report extends React.Component {
         </Subheading>
         <BodyAndSidebar>
           <Body noBottomMargin>
-            This versatile canvas doesn’t have to be limited to the number block
+            Our versatile canvas doesn’t have to be limited to the number block
             representation we’ve shown. We imagine a future version of this
             canvas that can support all kinds of dynamic representations:
             physics simulations, geometric diagrams, videos, drawings, algebraic
