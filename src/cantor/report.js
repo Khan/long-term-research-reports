@@ -637,12 +637,12 @@ export default class Report extends React.Component {
           <Body>
             We started from a representation we found interesting (number
             blocks), then explored: which natural interactions emerge that
-            represent mathematical ideas? Contrast this to the number block
-            interface depicted here, which started from a representation, then
-            added on a set of buttons to perform operations. Those buttons
-            operate from <em>outside</em> the representation through hidden
-            mechanisms. Cantor’s interactions operate <em>through</em> the
-            representation, not outside it.
+            represent mathematical ideas? Contrast Cantor to the commercial
+            “Base-Ten Blocks” interface depicted here, which started from a
+            representation, then added on a set of buttons to perform
+            operations. Those buttons operate from <em>outside</em> the
+            representation through hidden mechanisms. Cantor’s interactions
+            operate <em>through</em> the representation, not outside it.
           </Body>
         </BodyAndSidebar>
         <BodyAndSidebar>
@@ -924,18 +924,18 @@ export default class Report extends React.Component {
             </Body>
           </BodyAndSidebar>
         </div>
-          <Subheading>Co-evolving Cantor</Subheading>
-          <Body wide>
-            Weʼve only taken the first steps in our work with Cantor.
-            Critically, we must next iterate directly with students to validate
-            our design principles and extend these ideas. Do bumpy numbers draw
-            interest? Do students reach for Cantor to show an idea to their
-            neighbor? Do they make discoveries we havenʼt?
-          </Body>
-          <Body wide noBottomMargin>If this work inspires
-            you, dear reader, we invite you to join in the explorations of this
-            space.
-          </Body>
+        <Subheading>Co-evolving Cantor</Subheading>
+        <Body wide>
+          Weʼve only taken the first steps in our work with Cantor. Critically,
+          we must next iterate directly with students to validate our design
+          principles and extend these ideas. Do bumpy numbers draw interest? Do
+          students reach for Cantor to show an idea to their neighbor? Do they
+          make discoveries we havenʼt?
+        </Body>
+        <Body wide noBottomMargin>
+          If this work inspires you, dear reader, we invite you to join in the
+          explorations of this space.
+        </Body>
         <BodyAndSidebar>
           <Heading>A chest of toys, a chest of dreams</Heading>
           <Body>
