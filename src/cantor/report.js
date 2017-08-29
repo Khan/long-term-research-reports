@@ -463,8 +463,19 @@ export default class Report extends React.Component {
             often-inconvenient laws of physics and practicalities of matter.
           </Body>
           <SidebarItem>
-            <Figure caption="Try turning your ten ones into one ten! Try showing that 7 divides 112! Try…">
-              <FPO />
+            <Figure
+              caption={
+                <span>
+                  <p className={css(styles.sidebarBody)}>
+                    Try turning your ten “ones blocks” into one “ten block”! Try
+                    showing that 7 divides 112! Try…
+                  </p>
+                  <p className={css(styles.sidebarBody)}>
+                    Photo of place value blocks ©2017 <a href="http://www.lakeshorelearning.com/product/productDet.jsp?productItemID=1%2C689%2C949%2C371%2C919%2C766&ASSORTMENT%3C%3East_id=1408474395181113&bmUID=1503960579934">Lakeshore Learning Materials</a>.
+                  </p>
+                </span>
+              }
+            >
               <img
                 src="/images/long-term-research/reports/cantor/physical-blocks.jpg"
                 style={{ width: "100%" }}
