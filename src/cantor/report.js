@@ -88,6 +88,7 @@ class CantorPrototype extends React.Component {
      : "window.cantorRecorder.playRecordedData(data);"}
    window.recordingData = data;
    window.recordingAudioURL = "${this.props.audioURL}";
+   window.recordingFollowupAudioURL = "${this.props.followupAudioURL}";
    ${this.initialVisibility ? "" : "window.cantorRecorder.pause();"}
    var updateRootLayerPosition = function() {
       if (window.innerWidth >= 1200) {
@@ -864,6 +865,7 @@ export default class Report extends React.Component {
                 mode="prompt"
                 recording={promptGZ}
                 audioURL="/sounds/long-term-research/reports/cantor/3-prompt.mp3"
+                followupAudioURL="/sounds/long-term-research/reports/cantor/3-reprompt.mp3"
                 mobileXOffset={-200}
                 mobileYOffset={100}
               />
