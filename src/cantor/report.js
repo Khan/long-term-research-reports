@@ -904,7 +904,7 @@ export default class Report extends React.Component {
 
         <div
           className={css(styles.minFigureHeight)}
-          style={{ marginBottom: 24 }}
+          style={{ marginBottom: 36 }}
         >
           <BodyAndSidebar>
             <Subheading>
