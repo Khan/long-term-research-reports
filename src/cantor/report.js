@@ -15,8 +15,8 @@ import Figure from "../components/figure";
 const Authors = () =>
   <h2 className={css(styles.authors)}>
     <div className={css(styles.authorLine)}>
-      Scott Farrar, May-Li Khoe, Andy Matuschak<br />(authors listed
-      alphabetically)
+      Scott Farrar, May-Li Khoe, Andy Matuschak<br /><span className={css(styles.authorListingAsterisk)}>(authors listed
+      alphabetically)</span>
     </div>
   </h2>;
 
@@ -1211,6 +1211,13 @@ const styles = StyleSheet.create({
       fontWeight: "normal",
     },
     maxWidth: 600,
+  },
+  
+  authorListingAsterisk: {
+    ...globalStyles.typography.caption,
+    fontStyle: "normal",
+    fontSize: 15,
+    opacity: 0.7
   },
 
   authorLine: {
