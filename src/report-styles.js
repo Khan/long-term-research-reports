@@ -147,9 +147,6 @@ export default {
   sidebarItem: {
     [mediaQueries.smOrSmaller]: {
       marginTop: 24,
-      [":first-of-type"]: {
-        marginTop: 0,
-      },  
     },
     [mediaQueries.mdOrLarger]: {
       position: "absolute",

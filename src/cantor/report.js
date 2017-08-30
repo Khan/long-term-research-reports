@@ -456,18 +456,25 @@ export default class Report extends React.Component {
           </Body>
         </BodyAndSidebar>
         <Heading>Revealing hidden properties of numbers</Heading>
-        <Body wide>
-          To explore the possibilities in this space, we built <em>Cantor,</em>{" "}
-          a digital representation of quantity with some unusual interactions.
-          Our aim was to make typically-subtle properties of numbers more
-          visceral—<a href="http://worrydream.com/MediaForThinkingTheUnthinkable/">
-            to make certain thoughts more thinkable
-          </a>.
-        </Body>
-        <Body wide noBottomMargin>
-          <strong>You can manipulate the animations below!</strong> Feel free to
-          interrupt them at any point to play for yourself.
-        </Body>
+        <BodyAndSidebar>
+          <Body noBottomMargin>
+            To explore the possibilities in this space, we built{" "}
+            <em>Cantor,</em> a digital representation of quantity with some
+            unusual interactions. Our aim was to make typically-subtle
+            properties of numbers more visceral—<a href="http://worrydream.com/MediaForThinkingTheUnthinkable/">
+              to make certain thoughts more thinkable
+            </a>.
+          </Body>
+          <SidebarItem>
+            <Figure noBottomMargin noBorder>
+              <img
+                src="/images/long-term-research/reports/cantor/interactive-indicator.png"
+                style={{ width: "100%" }}
+              />
+            </Figure>
+          </SidebarItem>
+        </BodyAndSidebar>
+
         <Subheading>Exploring numbersʼ negative space</Subheading>
         <BodyAndSidebar>
           <Body>
