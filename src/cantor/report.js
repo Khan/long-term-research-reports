@@ -201,6 +201,7 @@ const YouTubePlayer = withContentRect(
           playsinline: 1,
           showinfo: 0,
           rel: 0,
+          origin: document.location.origin
         },
       }}
     />
