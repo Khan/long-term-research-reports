@@ -12,13 +12,16 @@ import sharedReportStyles from "../report-styles";
 import Breadcrumb from "../components/breadcrumb";
 import Figure from "../components/figure";
 
-const Authors = () =>
+const Authors = () => (
   <h2 className={css(styles.authors)}>
     <div className={css(styles.authorLine)}>
-      Scott Farrar, May-Li Khoe, Andy Matuschak<br /><span className={css(styles.authorListingAsterisk)}>(authors listed
-      alphabetically)</span>
+      Scott Farrar, May-Li Khoe, Andy Matuschak<br />
+      <span className={css(styles.authorListingAsterisk)}>
+        (authors listed alphabetically)
+      </span>
     </div>
-  </h2>;
+  </h2>
+);
 
 import headerCanvasGZ from "./canvases/0-header.gz";
 import negativeSpaceGZ from "./canvases/2-37-and-15.gz";
@@ -96,18 +99,14 @@ class CantorPrototype extends React.Component {
       </VisibilitySensor>
     );
     if (this.props.height) {
-      return (
-        <div style={{ height: this.props.height }}>
-          {inner}
-        </div>
-      );
+      return <div style={{ height: this.props.height }}>{inner}</div>;
     } else {
       return inner;
     }
   };
 }
 
-const HeroHeader = () =>
+const HeroHeader = () => (
   <div>
     <div className={css(styles.heroContainer)}>
       <div className={css(styles.heroInteractiveContainer)}>
@@ -135,11 +134,12 @@ const HeroHeader = () =>
     <div className={css(styles.hideUnlessMobile)}>
       <Authors />
     </div>
-  </div>;
+  </div>
+);
 
 const Hairline = () => <div className={css(styles.hairline)} />;
 
-const Body = ({ children, noBottomMargin, noTopMargin, wide, style }) =>
+const Body = ({ children, noBottomMargin, noTopMargin, wide, style }) => (
   <p
     className={css(
       styles.body,
@@ -150,19 +150,19 @@ const Body = ({ children, noBottomMargin, noTopMargin, wide, style }) =>
     style={style}
   >
     {children}
-  </p>;
+  </p>
+);
 
-const Heading = ({ children }) =>
-  <h2 className={css(styles.heading)}>
-    {children}
-  </h2>;
+const Heading = ({ children }) => (
+  <h2 className={css(styles.heading)}>{children}</h2>
+);
 
 const Subheading = ({
   children,
   noTopMargin,
   hideOnMobile,
   hideUnlessMobile,
-}) =>
+}) => (
   <h3
     className={css(
       styles.subheading,
@@ -172,23 +172,24 @@ const Subheading = ({
     )}
   >
     {children}
-  </h3>;
+  </h3>
+);
 
-const BodyAndSidebar = ({ children }) =>
+const BodyAndSidebar = ({ children }) => (
   <div className={css(styles.bodyAndSidebar)}>
-    <div className={css(styles.leftColumn)}>
-      {children}
-    </div>
-  </div>;
+    <div className={css(styles.leftColumn)}>{children}</div>
+  </div>
+);
 
-const SidebarItem = ({ children, top }) =>
+const SidebarItem = ({ children, top }) => (
   <div className={css(styles.sidebarItem)} style={{ top: top || 0 }}>
     {children}
-  </div>;
+  </div>
+);
 
 const YouTubePlayer = withContentRect(
   "bounds",
-)(({ measureRef, measure, contentRect, videoId }) =>
+)(({ measureRef, measure, contentRect, videoId }) => (
   <div ref={measureRef} style={{ width: "100%" }}>
     <YouTube
       videoId={videoId}
@@ -201,14 +202,14 @@ const YouTubePlayer = withContentRect(
           playsinline: 1,
           showinfo: 0,
           rel: 0,
-          origin: document.location.origin
+          origin: document.location.origin,
         },
       }}
     />
-  </div>,
-);
+  </div>
+));
 
-const PrototypeExample = ({ heading, children }) =>
+const PrototypeExample = ({ heading, children }) => (
   <div className={css(styles.prototypeExample)}>
     <Subheading noTopMargin hideUnlessMobile>
       {heading}
@@ -222,15 +223,17 @@ const PrototypeExample = ({ heading, children }) =>
     <div className={css(styles.prototypeVideo)}>
       <AudibleVideoPlayer />
     </div>
-  </div>;
+  </div>
+);
 
-const FurtherReadingItem = ({ children }) =>
+const FurtherReadingItem = ({ children }) => (
   <li className={css(styles.furtherReadingItem, styles.wideParagraph)}>
     {children}
-  </li>;
+  </li>
+);
 
 export default class Report extends React.Component {
-  render = () =>
+  render = () => (
     <div className={css(styles.outerClip)}>
       <div className={css(styles.container)}>
         <HeroHeader />
@@ -1101,13 +1104,15 @@ export default class Report extends React.Component {
                 lastA < lastB ? -1 : lastB < lastA ? 1 : 0,
             )
             .map(names => names.join(" "))
-            .join(", ")}.
+            .join(", ")}. We'd also like to thank our young testers at the Khan
+          Lab School for playing with Cantor and Lauren Wesnak for coordinating
+          those collaborations.
         </Body>
         <Body wide>
-          While their comments have hugely improved this report, any remaining
-          deficiencies in this work should be attributed to us alone. The people
-          listed here should not necessarily be construed as endorsing this
-          report.
+          While comments from these people have hugely improved this report, any
+          remaining deficiencies in this work should be attributed to us alone.
+          The people listed here should not necessarily be construed as
+          endorsing this report.
         </Body>
 
         <Heading>Contact us</Heading>
@@ -1116,7 +1121,8 @@ export default class Report extends React.Component {
           <a href="mailto:long-term-research-team@khanacademy.org">write us</a>.
         </Body>
       </div>
-    </div>;
+    </div>
+  );
 }
 
 const styles = StyleSheet.create({
@@ -1213,12 +1219,12 @@ const styles = StyleSheet.create({
     },
     maxWidth: 600,
   },
-  
+
   authorListingAsterisk: {
     ...globalStyles.typography.caption,
     fontStyle: "normal",
     fontSize: 15,
-    opacity: 0.7
+    opacity: 0.7,
   },
 
   authorLine: {
