@@ -972,18 +972,20 @@ export default class Report extends React.Component {
             growth—and a whole new world.
           </Body>
         </StoryboardElement>
-        <Heading>Conclusion</Heading>
+        <Heading>Onward</Heading>
         <Body wide>
-          We’ve taken a few steps down this road, but we know that as a human
-          race we’re just barely getting started on this journey. We believe
-          educational technology has the potential to be so much more empowering
-          than it is today. We reject a future in which children robotically
-          compute answers to arithmetic worksheets. We dream of a future filled
-          with curious explorers and lifelong learners, solving important human
-          problems. We’ll continue to experiment in this space as part of our
-          long-term research, but we hope that these sketches and design
-          principles inspire others to join us in pushing toward a humane future
-          of learning technology.
+          We wrapped up this design research project in mid 2015 and brought
+          what we learned to other projects, like{" "}
+          <a href="cantor">Cantor, our number block manipulative</a>. Writing
+          about this project now in 2017, these early ideas still resonate with
+          us. We believe educational technology has the potential to
+          authentically empower students through the ideas being presented. We
+          dream of a future filled with curious explorers and lifelong learners,
+          solving important human problems. We’ll continue to experiment in this
+          space as part of{" "}
+          <a href="https://khanacademy.org/research">our long-term research</a>,
+          but we hope that these sketches and design principles inspire others
+          to join us in pushing toward a humane future of learning technology.
         </Body>
 
         <Heading>Acknowledgements</Heading>
