@@ -674,7 +674,16 @@ export default class Report extends React.Component {
             later.
           </Body>
           <SidebarItem>
-            <Figure caption={<span>Play with this interactive yourself <a href="https://teacher.desmos.com/carnival">over at Desmos</a>.</span>}>
+            <Figure
+              caption={
+                <span>
+                  Play with this interactive yourself{" "}
+                  <a href="https://teacher.desmos.com/carnival">
+                    over at Desmos
+                  </a>.
+                </span>
+              }
+            >
               <img
                 src="/images/long-term-research/reports/cantor/function-carnival.gif"
                 style={{ width: "100%" }}
@@ -964,6 +973,23 @@ export default class Report extends React.Component {
                 style={{ width: "100%" }}
               />
             </Figure>
+            {/* This section is duplicated for mobile. BEWARE! */}
+            <p className={css(styles.sidebarBody, styles.hideOnMobile)}>
+              <a href="http://www.nctm.org/">
+                The National Council of Teachers of Mathematics
+              </a>{" "}
+              lists “elicit and use evidence of student thinking” as one of{" "}
+              <a href="http://www.nctm.org/uploadedFiles/Standards_and_Positions/PtAExecutiveSummary.pdf">
+                its core mathematical teaching practices.
+              </a>
+            </p>
+            <p className={css(styles.sidebarBody, styles.hideOnMobile)}>
+              Separately,{" "}
+              <a href="http://klr.tumblr.com/post/163537969033/we-asked-khan-academy-learners-to-talk-to-each">
+                weʼve been working on a broader project
+              </a>{" "}
+              around supporting open-ended student work across subjects.
+            </p>
           </SidebarItem>
           <Body>
             Just as manipulating our blocks naturally elicits the idea of prime
@@ -980,7 +1006,8 @@ export default class Report extends React.Component {
             artifacts of their thought—without abstract symbol manipulation.
           </Body>
           <SidebarItem>
-            <p className={css(styles.sidebarBody)}>
+            {/* This section is duplicated for non-mobile. BEWARE! */}
+            <p className={css(styles.sidebarBody, styles.hideUnlessMobile)}>
               <a href="http://www.nctm.org/">
                 The National Council of Teachers of Mathematics
               </a>{" "}
@@ -989,7 +1016,7 @@ export default class Report extends React.Component {
                 its core mathematical teaching practices.
               </a>
             </p>
-            <p className={css(styles.sidebarBody)}>
+            <p className={css(styles.sidebarBody, styles.hideUnlessMobile)}>
               Separately,{" "}
               <a href="http://klr.tumblr.com/post/163537969033/we-asked-khan-academy-learners-to-talk-to-each">
                 weʼve been working on a broader project
