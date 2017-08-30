@@ -301,7 +301,7 @@ export default class Report extends React.Component {
           </Body>
         </BodyAndSidebar>
         <BodyAndSidebar>
-          <Figure>
+          <Figure noBorder>
             <img
               src="/images/long-term-research/reports/cantor/number-relationships.png"
               style={{ width: "100%", marginBottom: 18 }}
@@ -334,7 +334,7 @@ export default class Report extends React.Component {
             4 x 3”.
           </Body>
           <SidebarItem>
-            <Figure>
+            <Figure noBorder>
               <img
                 src="/images/long-term-research/reports/cantor/groups-of-circles.png"
                 style={{ width: "100%" }}
@@ -352,7 +352,7 @@ export default class Report extends React.Component {
             number 1,776 if you only had tick marks!
           </Body>
           <SidebarItem>
-            <Figure>
+            <Figure noBorder>
               <img
                 src="/images/long-term-research/reports/cantor/tick-marks.png"
                 style={{ width: "100%" }}
@@ -857,7 +857,7 @@ export default class Report extends React.Component {
             didn’t anticipate.
           </Body>
           <SidebarItem>
-            <Figure noBottomMargin>
+            <Figure noBottomMargin noBorder>
               <img
                 src="/images/long-term-research/reports/cantor/linked-representations.png"
                 style={{ width: "100%" }}
@@ -958,7 +958,7 @@ export default class Report extends React.Component {
             dynamic manipulatives like the ones we’ve illustrated here.
           </Body>
           <SidebarItem top={40}>
-            <Figure>
+            <Figure noBorder>
               <img
                 src="/images/long-term-research/reports/cantor/chest-of-toys.png"
                 style={{ width: "100%" }}
