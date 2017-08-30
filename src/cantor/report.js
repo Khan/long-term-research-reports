@@ -674,7 +674,7 @@ export default class Report extends React.Component {
             later.
           </Body>
           <SidebarItem>
-            <Figure>
+            <Figure caption={<span>Play with this interactive yourself <a href="https://teacher.desmos.com/carnival">over at Desmos</a>.</span>}>
               <img
                 src="/images/long-term-research/reports/cantor/function-carnival.gif"
                 style={{ width: "100%" }}
