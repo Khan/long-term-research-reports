@@ -820,7 +820,7 @@ export default class Report extends React.Component {
           <SidebarItem>
             <Figure
               noBottomMargin
-              caption="Click Record, then manipulate the block in some way. Then you can replay your interactions (and your voice, if your browser supports it)."
+              caption="Hit Record, then manipulate the block in some way. Then you can replay your interactions (and your voice, if your browser supports it)."
             >
               <CantorPrototype
                 height={200}
@@ -849,7 +849,7 @@ export default class Report extends React.Component {
           <SidebarItem>
             <Figure
               noBottomMargin
-              caption="In this figure, recorded manipulations and voice live on the same canvas as your interactions. Turn on your speakers and click Start."
+              caption="In this figure, recorded manipulations and voice live on the same canvas as your interactions. Turn on your speakers and hit Start."
             >
               <CantorPrototype
                 height={250}
