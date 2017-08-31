@@ -101,7 +101,7 @@ class CantorPrototype extends React.Component {
         onChange={this.onVisibilityChange}
         delayedCall={false}
         intervalCheck={false}
-        offset={{ top: -200, bottom: -200 }}
+        offset={{ top: -600, bottom: -600 }}
         scrollCheck
         resizeCheck
       >
