@@ -32,7 +32,14 @@ import recordYourOwnGZ from "./canvases/3-record-your-own.gz";
 import promptGZ from "./canvases/3-prompt.gz";
 
 class CantorPrototype extends React.Component {
-  componentDidMount = () => {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isVisible: false,
+    };
+  }
+
+  mountIframe = () => {
     this.iframe.contentWindow.document.open();
     this.iframe.contentWindow.document.write(`<html><head><base href="${document
       .location.origin}" /></head><body><script type="text/javascript">
@@ -50,7 +57,6 @@ class CantorPrototype extends React.Component {
    window.recordingData = data;
    window.recordingAudioURL = "${this.props.audioURL}";
    window.recordingFollowupAudioURL = "${this.props.followupAudioURL}";
-   ${this.initialVisibility ? "" : "window.cantorRecorder.pause();"}
    var updateRootLayerPosition = function() {
       if (window.innerWidth >= 1200) {
         window.rootLayer.x = window.innerWidth + ${this.props.xOffset || 0};
@@ -80,10 +86,12 @@ class CantorPrototype extends React.Component {
   };
 
   onVisibilityChange = newVisibility => {
-    this.initialVisibility = newVisibility;
-    this.iframe.contentWindow.dispatchEvent(
-      new Event(newVisibility ? "cantor-play" : "cantor-pause"),
-    );
+    if (!this.state.isVisible && newVisibility) {
+      setTimeout(() => this.mountIframe(), 0);
+    }
+    this.setState({
+      isVisible: newVisibility,
+    });
   };
 
   render = () => {
@@ -92,11 +100,21 @@ class CantorPrototype extends React.Component {
         partialVisibility
         onChange={this.onVisibilityChange}
         delayedCall={false}
+        intervalCheck={false}
+        offset={{ top: -200, bottom: -200 }}
+        scrollCheck
+        resizeCheck
       >
-        <iframe
-          ref={element => (this.iframe = element)}
-          style={{ width: "100%", height: "100%" }}
-        />
+        <div style={{ width: "100%", height: "100%" }}>
+          {this.state.isVisible ? (
+            <iframe
+              ref={element => (this.iframe = element)}
+              style={{ width: "100%", height: "100%" }}
+            />
+          ) : (
+            <div />
+          )}
+        </div>
       </VisibilitySensor>
     );
     if (this.props.height) {
@@ -261,7 +279,9 @@ export default class Report extends React.Component {
               >
                 Unfortunately, this interactive article uses modern web features
                 not supported by your browser. Please view this page in{" "}
-                <a href="https://google.com/chrome" style={{color: "white"}}>Chrome</a>.
+                <a href="https://google.com/chrome" style={{ color: "white" }}>
+                  Chrome
+                </a>.
               </p>
             </div>
             <div style={{ height: 100 }} />
