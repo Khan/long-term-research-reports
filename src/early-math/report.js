@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import VisibilitySensor from "react-visibility-sensor";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "babel-polyfill";
 
 import angleBracketLeftIcon from "webapp/shared-styles-package/icon.angleBracketLeft.js";
 import globalStyles from "webapp/shared-styles-package/global-styles";

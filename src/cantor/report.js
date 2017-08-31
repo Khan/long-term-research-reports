@@ -3,6 +3,7 @@ import VisibilitySensor from "react-visibility-sensor";
 import YouTube from "react-youtube";
 import { StyleSheet, css } from "aphrodite";
 import { withContentRect } from "react-measure";
+import "babel-polyfill";
 
 import angleBracketLeftIcon from "webapp/shared-styles-package/icon.angleBracketLeft.js";
 import globalStyles from "webapp/shared-styles-package/global-styles";
@@ -237,6 +238,35 @@ export default class Report extends React.Component {
     <div className={css(styles.outerClip)}>
       <div className={css(styles.container)}>
         <HeroHeader />
+        {window.WebKitCSSMatrix ? null : (
+          <div>
+            <div
+              style={{
+                left: 0,
+                right: 0,
+                padding: 20,
+                backgroundColor: globalStyles.colors.alertRed,
+                position: "absolute",
+                height: 100,
+                marginTop: 0,
+              }}
+            >
+              <p
+                style={{
+                  maxWidth: 600,
+                  margin: "0 auto",
+                  color: "white",
+                  ...globalStyles.typography.bodyLarge,
+                }}
+              >
+                Unfortunately, this interactive article uses modern web features
+                not supported by your browser. Please view this page in{" "}
+                <a href="https://google.com/chrome" style={{color: "white"}}>Chrome</a>.
+              </p>
+            </div>
+            <div style={{ height: 100 }} />
+          </div>
+        )}
         <div className={css(styles.lede)}>
           <Body>
             When we think about manipulating numbers, some operations seem easy
