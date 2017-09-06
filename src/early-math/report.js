@@ -58,7 +58,7 @@ const Icon = props => {
   );
 };
 
-const Authors = () =>
+const Authors = () => (
   <h2 className={css(styles.authors)}>
     <div className={css(styles.authorLine)}>
       <strong>Report:</strong> Scott Farrar, May-Li Khoe, Andy Matuschak.{" "}
@@ -72,9 +72,10 @@ const Authors = () =>
     <div className={css(styles.authorLine)}>
       (authors listed alphabetically in sections)
     </div>
-  </h2>;
+  </h2>
+);
 
-const HeroHeader = () =>
+const HeroHeader = () => (
   <div>
     <div className={css(styles.heroContainer)}>
       <Forest />
@@ -89,8 +90,7 @@ const HeroHeader = () =>
       >
         <Breadcrumb color="white" />
         <h1 className={css(styles.title)}>
-          An immersive world of playful math: empowering students through
-          numbers
+          Playful worlds of creative math: an exploration
         </h1>
         <div className={css(styles.hideOnMobile)}>
           <Authors />
@@ -100,11 +100,12 @@ const HeroHeader = () =>
     <div className={css(styles.hideUnlessMobile)}>
       <Authors />
     </div>
-  </div>;
+  </div>
+);
 
 const Hairline = () => <div className={css(styles.hairline)} />;
 
-const Body = ({ children, noBottomMargin, noTopMargin, wide }) =>
+const Body = ({ children, noBottomMargin, noTopMargin, wide }) => (
   <p
     className={css(
       styles.body,
@@ -114,19 +115,19 @@ const Body = ({ children, noBottomMargin, noTopMargin, wide }) =>
     )}
   >
     {children}
-  </p>;
+  </p>
+);
 
-const Heading = ({ children }) =>
-  <h2 className={css(styles.heading)}>
-    {children}
-  </h2>;
+const Heading = ({ children }) => (
+  <h2 className={css(styles.heading)}>{children}</h2>
+);
 
 const Subheading = ({
   children,
   noTopMargin,
   hideOnMobile,
   hideUnlessMobile,
-}) =>
+}) => (
   <h3
     className={css(
       styles.subheading,
@@ -136,19 +137,20 @@ const Subheading = ({
     )}
   >
     {children}
-  </h3>;
+  </h3>
+);
 
-const BodyAndSidebar = ({ children }) =>
+const BodyAndSidebar = ({ children }) => (
   <div className={css(styles.bodyAndSidebar)}>
-    <div className={css(styles.leftColumn)}>
-      {children}
-    </div>
-  </div>;
+    <div className={css(styles.leftColumn)}>{children}</div>
+  </div>
+);
 
-const SidebarItem = ({ children, top }) =>
+const SidebarItem = ({ children, top }) => (
   <div className={css(styles.sidebarItem)} style={{ top: top || 0 }}>
     {children}
-  </div>;
+  </div>
+);
 
 class AudibleVideoPlayer extends React.Component {
   constructor(props) {
@@ -174,7 +176,7 @@ class AudibleVideoPlayer extends React.Component {
     }
   };
 
-  render = () =>
+  render = () => (
     <VisibilitySensor partialVisibility onChange={this.onVisibilityChange}>
       <div>
         <video
@@ -200,74 +202,77 @@ class AudibleVideoPlayer extends React.Component {
           }}
           onClick={this.onToggleAudio}
         >
-          {this.state.muted
-            ? <svg width="28px" height="22px" viewBox="0 0 28 22" version="1.1">
-                <g
-                  id="Page-1"
-                  stroke="none"
-                  stroke-width="1"
-                  fill="none"
-                  fill-rule="evenodd"
-                >
-                  <g id="noun_1122767_cc" fill-rule="nonzero" fill="#ffffff">
-                    <g id="Group">
-                      <path
-                        d="M20.5541401,6.2307159 C20.177854,5.89512914 19.5820676,5.92563703 19.2371387,6.32223956 C18.8922097,6.6883342 18.9235669,7.26798405 19.3312102,7.60357081 C20.4914258,8.57982319 21.1499265,10.0136939 21.1499265,11.5085803 C21.1499265,13.0034668 20.4914258,14.4068296 19.3312102,15.4135899 C18.9549241,15.7491766 18.8922097,16.3288265 19.2371387,16.6949211 C19.4252817,16.9084763 19.6761391,17 19.9269966,17 C20.1464968,17 20.3659971,16.9389842 20.5541401,16.7559369 C22.0906418,15.4135899 23,13.491593 23,11.5085803 C23,9.52556769 22.121999,7.54255504 20.5541401,6.2307159 Z"
-                        id="Shape"
-                      />
-                      <path
-                        d="M24.584997,3.24436072 C24.202006,2.89352665 23.5956037,2.92542066 23.2445286,3.30814874 C22.8934535,3.69087681 22.9253694,4.29686294 23.3083604,4.64769701 C25.0956517,6.27429135 26.116961,8.60255384 26.116961,10.9946043 C26.116961,13.3866548 25.0956517,15.7149173 23.3083604,17.3415117 C22.9253694,17.6923457 22.8934535,18.2983319 23.2445286,18.6810599 C23.4360241,18.872424 23.6913514,19 23.9466787,19 C24.1700901,19 24.4254175,18.904318 24.584997,18.7448479 C26.7552793,16.7674195 28,13.9288529 28,10.9946043 C28,8.06035572 26.7552793,5.22178913 24.584997,3.24436072 Z"
-                        id="Shape"
-                      />
-                      <path
-                        d="M17.2194884,0.211012433 C16.7006337,-0.0703374778 16.0844939,-0.0703374778 15.5980676,0.211012433 L6.55053984,5.33783304 L2.5942732,5.33783304 C1.16742294,5.33783304 2.99760217e-15,6.46323268 2.99760217e-15,7.83872114 L2.99760217e-15,14.1847247 C2.99760217e-15,15.5602131 1.16742294,16.6856128 2.5942732,16.6856128 L6.55053984,16.6856128 L15.5656392,21.7811723 C15.8250665,21.9374778 16.1169223,22 16.3763496,22 C16.6682053,22 16.9276327,21.9374778 17.18706,21.7811723 C17.7059146,21.4998224 17.9977704,20.9683837 17.9977704,20.4369449 L17.9977704,1.55523979 C18.0301988,0.992539964 17.7059146,0.492362345 17.2194884,0.211012433 Z M2,14.308642 L2,7.65843621 C2,7.2962963 2.3,7 2.66666667,7 L6,7 L6,15 L2.66666667,15 C2.3,14.9670782 2,14.7037037 2,14.308642 Z M16,20 L8,15.254833 L8,6.74516696 L16,2 L16,20 Z"
-                        id="Shape"
-                      />
-                      <path
-                        d="M9.10779907,9.43138986 C9.26057148,9.7867712 9.59667076,10 9.93277005,10 C10.0855425,10 10.2077604,9.96446187 10.3605328,9.8933856 L13.5076443,8.0098645 C13.9659615,7.72555943 14.1187339,7.08587302 13.9048525,6.58833914 C13.6604167,6.05526713 13.110436,5.84203833 12.6826733,6.1263434 L9.5355618,8.0098645 C9.04669011,8.29416957 8.86336323,8.93385598 9.10779907,9.43138986 Z"
-                        id="Shape"
-                      />
-                    </g>
+          {this.state.muted ? (
+            <svg width="28px" height="22px" viewBox="0 0 28 22" version="1.1">
+              <g
+                id="Page-1"
+                stroke="none"
+                stroke-width="1"
+                fill="none"
+                fill-rule="evenodd"
+              >
+                <g id="noun_1122767_cc" fill-rule="nonzero" fill="#ffffff">
+                  <g id="Group">
+                    <path
+                      d="M20.5541401,6.2307159 C20.177854,5.89512914 19.5820676,5.92563703 19.2371387,6.32223956 C18.8922097,6.6883342 18.9235669,7.26798405 19.3312102,7.60357081 C20.4914258,8.57982319 21.1499265,10.0136939 21.1499265,11.5085803 C21.1499265,13.0034668 20.4914258,14.4068296 19.3312102,15.4135899 C18.9549241,15.7491766 18.8922097,16.3288265 19.2371387,16.6949211 C19.4252817,16.9084763 19.6761391,17 19.9269966,17 C20.1464968,17 20.3659971,16.9389842 20.5541401,16.7559369 C22.0906418,15.4135899 23,13.491593 23,11.5085803 C23,9.52556769 22.121999,7.54255504 20.5541401,6.2307159 Z"
+                      id="Shape"
+                    />
+                    <path
+                      d="M24.584997,3.24436072 C24.202006,2.89352665 23.5956037,2.92542066 23.2445286,3.30814874 C22.8934535,3.69087681 22.9253694,4.29686294 23.3083604,4.64769701 C25.0956517,6.27429135 26.116961,8.60255384 26.116961,10.9946043 C26.116961,13.3866548 25.0956517,15.7149173 23.3083604,17.3415117 C22.9253694,17.6923457 22.8934535,18.2983319 23.2445286,18.6810599 C23.4360241,18.872424 23.6913514,19 23.9466787,19 C24.1700901,19 24.4254175,18.904318 24.584997,18.7448479 C26.7552793,16.7674195 28,13.9288529 28,10.9946043 C28,8.06035572 26.7552793,5.22178913 24.584997,3.24436072 Z"
+                      id="Shape"
+                    />
+                    <path
+                      d="M17.2194884,0.211012433 C16.7006337,-0.0703374778 16.0844939,-0.0703374778 15.5980676,0.211012433 L6.55053984,5.33783304 L2.5942732,5.33783304 C1.16742294,5.33783304 2.99760217e-15,6.46323268 2.99760217e-15,7.83872114 L2.99760217e-15,14.1847247 C2.99760217e-15,15.5602131 1.16742294,16.6856128 2.5942732,16.6856128 L6.55053984,16.6856128 L15.5656392,21.7811723 C15.8250665,21.9374778 16.1169223,22 16.3763496,22 C16.6682053,22 16.9276327,21.9374778 17.18706,21.7811723 C17.7059146,21.4998224 17.9977704,20.9683837 17.9977704,20.4369449 L17.9977704,1.55523979 C18.0301988,0.992539964 17.7059146,0.492362345 17.2194884,0.211012433 Z M2,14.308642 L2,7.65843621 C2,7.2962963 2.3,7 2.66666667,7 L6,7 L6,15 L2.66666667,15 C2.3,14.9670782 2,14.7037037 2,14.308642 Z M16,20 L8,15.254833 L8,6.74516696 L16,2 L16,20 Z"
+                      id="Shape"
+                    />
+                    <path
+                      d="M9.10779907,9.43138986 C9.26057148,9.7867712 9.59667076,10 9.93277005,10 C10.0855425,10 10.2077604,9.96446187 10.3605328,9.8933856 L13.5076443,8.0098645 C13.9659615,7.72555943 14.1187339,7.08587302 13.9048525,6.58833914 C13.6604167,6.05526713 13.110436,5.84203833 12.6826733,6.1263434 L9.5355618,8.0098645 C9.04669011,8.29416957 8.86336323,8.93385598 9.10779907,9.43138986 Z"
+                      id="Shape"
+                    />
                   </g>
                 </g>
-              </svg>
-            : <svg width="28px" height="23px" viewBox="0 0 23 23" version="1.1">
+              </g>
+            </svg>
+          ) : (
+            <svg width="28px" height="23px" viewBox="0 0 23 23" version="1.1">
+              <g
+                id="Page-1"
+                stroke="none"
+                stroke-width="1"
+                fill="none"
+                fill-rule="evenodd"
+              >
                 <g
-                  id="Page-1"
-                  stroke="none"
-                  stroke-width="1"
-                  fill="none"
-                  fill-rule="evenodd"
+                  id="noun_1122767_cc"
+                  transform="translate(-2.150000, -27.100000)"
+                  fill-rule="nonzero"
+                  fill="#ffffff"
                 >
-                  <g
-                    id="noun_1122767_cc"
-                    transform="translate(-2.150000, -27.100000)"
-                    fill-rule="nonzero"
-                    fill="#ffffff"
-                  >
-                    <g id="Group" transform="translate(0.000000, 27.000000)">
-                      <path
-                        d="M2.25402504,17 L2.83363148,17 C3.38103757,17 3.79964222,16.5874942 3.79964222,16.0480635 C3.79964222,15.5086328 3.38103757,15.0961269 2.83363148,15.0961269 L2.25402504,15.0961269 C2.0608229,15.0961269 1.93202147,14.9692021 1.93202147,14.7788147 L1.93202147,7.6075595 C1.93202147,7.41717219 2.0608229,7.29024732 2.25402504,7.29024732 L5.7960644,7.29024732 L5.7960644,11.7008866 C5.7960644,12.2403173 6.21466905,12.6528231 6.76207513,12.6528231 C7.30948122,12.6528231 7.72808587,12.2403173 7.72808587,11.7008866 L7.72808587,6.94120392 L16.0679785,2.1180588 L16.0679785,2.68922072 C16.0679785,3.22865142 16.4865832,3.64115726 17.0339893,3.64115726 C17.5813953,3.64115726 18,3.22865142 18,2.68922072 L18,1.57862809 C18,1.00746617 17.6779964,0.468035464 17.1949911,0.214185721 C16.6797853,-0.0713952403 16.0679785,-0.0713952403 15.5849732,0.214185721 L6.56887299,5.44983668 L2.25402504,5.44983668 C0.998211091,5.44983668 6.66133815e-16,6.43350443 6.66133815e-16,7.67102193 L6.66133815e-16,14.810546 C6.66133815e-16,15.984601 1.03041145,17 2.25402504,17 Z"
-                        id="Shape"
-                      />
-                      <path
-                        d="M17.0225156,11 C16.4686078,11 16.0450313,11.4148936 16.0450313,11.9574468 L16.0450313,20.8617021 L9.39813757,17.7021277 C8.90939539,17.4787234 8.32290477,17.6702128 8.09482508,18.1489362 C7.8667454,18.6276596 8.06224227,19.2021277 8.55098445,19.4255319 L15.6214547,22.8085106 C15.8495344,22.9361702 16.1101969,23 16.3708594,23 C16.6641047,23 16.95735,22.9361702 17.2180125,22.7765957 C17.7067547,22.4893617 18,21.9787234 18,21.4042553 L18,11.9574468 C18,11.4468085 17.5764234,11 17.0225156,11 Z"
-                        id="Shape"
-                      />
-                      <path
-                        d="M22.7629323,1.31136406 C22.4225689,0.92464247 21.8346686,0.89241567 21.4633632,1.24691046 L0.298951955,21.3242064 C-0.0723535046,21.6787012 -0.103295626,22.2910104 0.237067712,22.677732 C0.422720442,22.8710928 0.670257416,23 0.917794389,23 C1.13438924,23 1.35098409,22.9033196 1.53663682,22.7421856 L22.701048,2.66488963 C23.0723535,2.31039484 23.1032956,1.69808565 22.7629323,1.31136406 Z"
-                        id="Shape"
-                      />
-                    </g>
+                  <g id="Group" transform="translate(0.000000, 27.000000)">
+                    <path
+                      d="M2.25402504,17 L2.83363148,17 C3.38103757,17 3.79964222,16.5874942 3.79964222,16.0480635 C3.79964222,15.5086328 3.38103757,15.0961269 2.83363148,15.0961269 L2.25402504,15.0961269 C2.0608229,15.0961269 1.93202147,14.9692021 1.93202147,14.7788147 L1.93202147,7.6075595 C1.93202147,7.41717219 2.0608229,7.29024732 2.25402504,7.29024732 L5.7960644,7.29024732 L5.7960644,11.7008866 C5.7960644,12.2403173 6.21466905,12.6528231 6.76207513,12.6528231 C7.30948122,12.6528231 7.72808587,12.2403173 7.72808587,11.7008866 L7.72808587,6.94120392 L16.0679785,2.1180588 L16.0679785,2.68922072 C16.0679785,3.22865142 16.4865832,3.64115726 17.0339893,3.64115726 C17.5813953,3.64115726 18,3.22865142 18,2.68922072 L18,1.57862809 C18,1.00746617 17.6779964,0.468035464 17.1949911,0.214185721 C16.6797853,-0.0713952403 16.0679785,-0.0713952403 15.5849732,0.214185721 L6.56887299,5.44983668 L2.25402504,5.44983668 C0.998211091,5.44983668 6.66133815e-16,6.43350443 6.66133815e-16,7.67102193 L6.66133815e-16,14.810546 C6.66133815e-16,15.984601 1.03041145,17 2.25402504,17 Z"
+                      id="Shape"
+                    />
+                    <path
+                      d="M17.0225156,11 C16.4686078,11 16.0450313,11.4148936 16.0450313,11.9574468 L16.0450313,20.8617021 L9.39813757,17.7021277 C8.90939539,17.4787234 8.32290477,17.6702128 8.09482508,18.1489362 C7.8667454,18.6276596 8.06224227,19.2021277 8.55098445,19.4255319 L15.6214547,22.8085106 C15.8495344,22.9361702 16.1101969,23 16.3708594,23 C16.6641047,23 16.95735,22.9361702 17.2180125,22.7765957 C17.7067547,22.4893617 18,21.9787234 18,21.4042553 L18,11.9574468 C18,11.4468085 17.5764234,11 17.0225156,11 Z"
+                      id="Shape"
+                    />
+                    <path
+                      d="M22.7629323,1.31136406 C22.4225689,0.92464247 21.8346686,0.89241567 21.4633632,1.24691046 L0.298951955,21.3242064 C-0.0723535046,21.6787012 -0.103295626,22.2910104 0.237067712,22.677732 C0.422720442,22.8710928 0.670257416,23 0.917794389,23 C1.13438924,23 1.35098409,22.9033196 1.53663682,22.7421856 L22.701048,2.66488963 C23.0723535,2.31039484 23.1032956,1.69808565 22.7629323,1.31136406 Z"
+                      id="Shape"
+                    />
                   </g>
                 </g>
-              </svg>}
+              </g>
+            </svg>
+          )}
         </button>
       </div>
-    </VisibilitySensor>;
+    </VisibilitySensor>
+  );
 }
 
-const PrototypeExample = ({ heading, children, figure }) =>
+const PrototypeExample = ({ heading, children, figure }) => (
   <div className={css(styles.prototypeExample)}>
     <Subheading noTopMargin hideUnlessMobile>
       {heading}
@@ -279,13 +284,12 @@ const PrototypeExample = ({ heading, children, figure }) =>
       {children}
     </div>
     <div className={css(styles.prototypeVideo)}>
-      <Figure>
-        {figure}
-      </Figure>
+      <Figure>{figure}</Figure>
     </div>
-  </div>;
+  </div>
+);
 
-const StoryboardElement = ({ storyboardElementNumber, children }) =>
+const StoryboardElement = ({ storyboardElementNumber, children }) => (
   <div className={css(styles.storyboardElement)}>
     <div className={css(styles.storyboardFigure)}>
       <Figure>
@@ -301,19 +305,20 @@ const StoryboardElement = ({ storyboardElementNumber, children }) =>
       </span>
       {children}
     </div>
-  </div>;
+  </div>
+);
 
-const Principle = ({ children }) =>
-  <span className={css(styles.principleTitle)}>
-    {children}
-  </span>;
+const Principle = ({ children }) => (
+  <span className={css(styles.principleTitle)}>{children}</span>
+);
 
-const FurtherReadingItem = ({ children }) =>
+const FurtherReadingItem = ({ children }) => (
   <li className={css(styles.furtherReadingItem, styles.wideParagraph)}>
     {children}
-  </li>;
+  </li>
+);
 
-const CarouselArrow = ({ className, style, onClick, isNext }) =>
+const CarouselArrow = ({ className, style, onClick, isNext }) => (
   <div
     className={css(styles.carouselArrow)}
     style={{
@@ -324,7 +329,8 @@ const CarouselArrow = ({ className, style, onClick, isNext }) =>
     onClick={onClick}
   >
     <Icon icon={angleBracketLeftIcon} size={20} color="#fff" />
-  </div>;
+  </div>
+);
 
 const CarouselNextArrow = props => <CarouselArrow {...props} isNext />;
 
@@ -336,16 +342,15 @@ export default class Report extends React.Component {
     setTimeout(() => this.slider.innerSlider.onWindowResized(), 0);
   };
 
-  render = () =>
+  render = () => (
     <div className={css(styles.outerClip)}>
       <div className={css(styles.container)}>
         <HeroHeader />
         <div className={css(styles.lede)}>
           <Body>
-            Plenty of adult artists, scientists, and engineers find math
-            tremendously empowering on a personal level. Why doesn't school math
-            feel like that? What would it mean to{" "}
-            <em>empower children through elementary math?</em>
+            Plenty of grown-up artists, scientists, and engineers find math
+            tremendously empowering. How might we enable that feeling earlier in
+            learners' lives?
           </Body>
           <Body>
             We envisioned a world where kids can create, explore, and remix by
@@ -368,33 +373,31 @@ export default class Report extends React.Component {
           />
         </Figure>
         <p className={css(styles.body, styles.wideParagraph)}>
-          We began this project with many weeks of background research—talking
-          to experts, surveying the landscape, reading associated research, and
-          conducting interviews. We formed our design principles through that
-          background research, but they'll make more sense through the lens of
-          some sketches they inspired. Let's look at a few of those first.
+          We began this project with background research—talking to experts,
+          surveying the landscape, reading associated research, and conducting
+          interviews. We formed our design principles through that background
+          research, but they'll make more sense through the lens of some
+          sketches they inspired. Let's look at a few of those first!
         </p>
         <PrototypeExample
           heading="Singing through touch"
           figure={<AudibleVideoPlayer />}
         >
           <Body>
-            Our very first idea explored: what are all the ways a child might
-            input a number? If you ask a kid their age, they often hold up their
-            fingers–sometimes before they start saying the number. Inspired by
-            that observation, we prototyped ways we might connect multiple
-            fingers on a screen to displayed quantities.
+            What are all the ways a child might input a number? If you ask a kid
+            their age, they often hold up their fingers as an answer. This
+            inspired us to prototype ways we might connect multiple fingers on a
+            screen to symbolic quantities.
           </Body>
           <Body>
-            As we played with our initial prototype, we realized we could give
-            the numbers creative power and layer on another representation of
-            quantity by assigning each number a distinct note. With this
-            interaction, a child's simple gesture—holding up some fingers to
-            indicate a number—becomes a musical instrument!
+            As we played with our prototype, we realized we could assign each
+            number to a note. With this interaction, a child's simple
+            gesture—holding up some fingers to indicate a number—becomes a
+            musical instrument!
           </Body>
         </PrototypeExample>
         <PrototypeExample
-          heading="Altering the world using handwritten numbers"
+          heading="Altering the world through handwritten numbers"
           figure={
             <img
               src="/images/long-term-research/reports/early-math/2-early-sketches/2-alter-your-world.png"
@@ -403,44 +406,22 @@ export default class Report extends React.Component {
           }
         >
           <Body>
-            Handwriting is another natural input method, and it's important
+            Handwriting is another natural input method. It's also important
             because it lets students use the symbolic representation of
-            numbers—digits. Separately, we observed that many kids don’t feel in
-            control of their situation; they're often told what to do. What
-            would happen if we gave them total control of a little digital world
-            through their handwriting?
+            numbers—digits. Separately, we observed that many kids’ apps don’t
+            provide agency; they often instruct kids narrowly what to do.
           </Body>
           <Body>
-            In this sketch, we wondered if we could translate the students’
-            ability to express numbers into something personally meaningful: the
-            power to precisely modify their world with numbers.
-          </Body>
-          <Body>Want to see what a hundred birds looks like? Just ask.</Body>
-        </PrototypeExample>
-        <PrototypeExample
-          heading="Subtraction blocks"
-          figure={
-            <div
-              className={css(styles.placeholder)}
-              style={{ width: "100%", height: 300 }}
-            />
-          }
-        >
-          <Body>
-            We kept asking ourselves:{" "}
-            <a href="http://klr.tumblr.com/post/153279790133/whats-so-great-about-the-digital-medium-again">
-              what’s <em>only</em> possible in the dynamic medium?
-            </a>
+            What if, instead of asking students to handwrite a response
+            correctly to a fixed prompt – we turned things upside down and let
+            them modify the scene with whatever numbers they can write?
           </Body>
           <Body>
-            Digital objects can disappear into thin air. We thought that might
-            make for an interesting new angle on subtraction. Here the student
-            can build a staircase down to the mysterious character below using
-            negative “ghost blocks.”
+            Want to see what thirty-three birds looks like? Just handwrite 33!
           </Body>
         </PrototypeExample>
         <PrototypeExample
-          heading="Place-value cards"
+          heading="Altering the world through digital manipulatives"
           figure={
             <img
               src="/images/long-term-research/reports/early-math/2-early-sketches/2-place-value-cards.png"
@@ -454,15 +435,40 @@ export default class Report extends React.Component {
             <a href="http://www.lakeshorelearning.com/product/productDet.jsp?productItemID=1%2C689%2C949%2C371%2C919%2C753&ASSORTMENT%3C%3East_id=1408474395181113&bmUID=1504047177209">
               place-value cards
             </a>. In the digital medium, these “tens-place” and “ones-place”
-            cards can be manipulated individually or stacked on top of each
-            other to represent a single two-digit number. The cards’
-            interactions implicitly illustrate decomposition in the base-ten
-            number system—that 27 is the same as 20 + 7.
+            cards can be played with or stacked on top of each other to
+            represent a single two-digit number. The cards’ interactions
+            implicitly illustrate decomposition in the base-ten number
+            system—that 27 is the same as 20 + 7.
           </Body>
           <Body>
-            Unlike a physical version of these cards, kids can adjust the
-            quantities in place, seeing their impact on another representation,
-            like these birds.
+            Again we thought: what if students could see the impact of their own
+            manipulations play out in visual quantity? Want to see what it’s
+            like when you add ten birds at a time? Play with the tens card!
+          </Body>
+        </PrototypeExample>
+        <PrototypeExample
+          heading="Digital manipulatives for subtraction"
+          figure={
+            <img
+              src="/images/long-term-research/reports/early-math/2-early-sketches/2-subtraction.gif"
+              style={{ width: "100%" }}
+            />
+          }
+        >
+          <Body>
+            What other manipulatives could we create that might
+            <a href="http://klr.tumblr.com/post/153279790133/whats-so-great-about-the-digital-medium-again">
+              <em>only</em> be possible in the dynamic medium?
+            </a>
+          </Body>
+          <Body>
+            Digital objects can disappear into thin air! We played with that
+            observation to illustrate{" "}
+            <a href="https://vimeo.com/157768846">
+              different ways of thinking about of subtraction
+            </a>. How might you make stairs out of a rectangular chunk of
+            blocks? Carve away positive blocks using negative, fixed-quantity
+            “ghost blocks”!
           </Body>
         </PrototypeExample>
         <Subheading>And more!</Subheading>
@@ -504,7 +510,7 @@ export default class Report extends React.Component {
             },
           ]}
         >
-          {["green", "blue", "yellow", "red"].map(color =>
+          {["green", "blue", "yellow", "red"].map(color => (
             <div
               style={{
                 padding: "0 15px",
@@ -523,16 +529,16 @@ export default class Report extends React.Component {
                 a caption for the figure in the carousel above. This is a
                 caption for the figure in the carousel above.
               </Body>
-            </div>,
-          )}
+            </div>
+          ))}
         </Slider>
         <Heading>Design principles</Heading>
         <Body wide>
-          Our background research and early prototyping helped us establish
-          design principles for the world we wanted to create. We used those
-          principles to challenge ourselves when designing solutions, and they
-          continue to drive our research today. We hope the sketches in the
-          previous section will help you see the implications of these ideas.
+          Our background research and early prototyping inspired us to form
+          design principles which continue to color our research today. We’ll
+          share them with you here, in the hopes that you might join us in
+          imagining digital mathematical experiences for kids that feel more
+          like an open-ended adventure!
         </Body>
         <Subheading>Learning through discovery</Subheading>
         <BodyAndSidebar>
@@ -553,44 +559,33 @@ export default class Report extends React.Component {
               </a>, remains a foundational text for anyone interested in
               learning and technology.
             </p>
-            <Figure
-              caption={
-                <span>
-                  The space alien theme might taste like chocolate at first, but
-                  it's covering the same old broccoli!<p
-                    className={css(styles.sidebarBody, styles.hideOnMobile)}
-                    style={{ paddingTop: 16 }}
-                  >
-                    {/* Note that this paragraph is duplicated below for mobile */}
-                    Plenty of evidence suggests that shallow extrinsic
-                    motivations{" "}
-                    <a href="http://psycnet.apa.org/record/1974-10497-001">
-                      can squash burgeoning intrinsic motivation
-                    </a>{" "}
-                    and{" "}
-                    <a href="http://people.whitman.edu/~herbrawt/classes/390/Amabile.pdf">
-                      narrow creative thought
-                    </a>.
-                  </p>
-                </span>
-              }
-            >
+            <Figure caption="The space alien theme might taste like chocolate at first, but it's covering the same old broccoli!">
               <img
                 src="/images/long-term-research/reports/early-math/4-principles/1-broccoli.jpg"
                 style={{ width: "100%" }}
               />
             </Figure>
+            <p className={css(styles.sidebarBody, styles.hideOnMobile)}>
+              {/* Note that this paragraph is duplicated below for mobile */}
+              Plenty of evidence suggests that shallow extrinsic motivations{" "}
+              <a href="http://psycnet.apa.org/record/1974-10497-001">
+                can squash burgeoning intrinsic motivation
+              </a>{" "}
+              and{" "}
+              <a href="http://people.whitman.edu/~herbrawt/classes/390/Amabile.pdf">
+                narrow creative thought
+              </a>.
+            </p>
           </SidebarItem>
-        </BodyAndSidebar>
-        <BodyAndSidebar>
           <Body>
-            Learning games often feel bolted onto their subjects like
-            chocolate-covered broccoli: the game mechanics could just as well be
-            used to incentivize other random tasks. Learning games often
-            motivate with badges or scoreboards, but learning language in a city
-            is constantly motivated by rich interactions inextricable from daily
-            life. How might we build a “city” where learning math is as
-            intrinsically motivating as learning language in a foreign city?
+            But many learning games often feel bolted onto their subjects like
+            chocolate-covered broccoli, adding game mechanics like badges or
+            scoreboards to a dull task. These extrinsic motivators could
+            incentivize any random task; they're disconnected from the meaning
+            of the activity. Learning language in a city is constantly motivated
+            by rich interactions inextricable from daily life. How might we
+            build a “city” where learning math is as intrinsically motivating as
+            learning language in a foreign city?
           </Body>
           <SidebarItem />
         </BodyAndSidebar>
@@ -624,7 +619,7 @@ export default class Report extends React.Component {
             might construct a mathematical concept through a generative
             painting; another might form the same idea making digital music.{" "}
             <a href="https://en.wikipedia.org/wiki/Constructivism_(philosophy_of_education)">
-              To learn, we connect new ideas to preexisting ones.
+              To learn, we build new ideas from preexisting ones.
             </a>{" "}
             If children have agency in choosing their methods and goals for a
             mathematical activity, they'll find learning paths from their own
@@ -652,15 +647,13 @@ export default class Report extends React.Component {
                     <a href="http://www.nctm.org/">
                       National Council of Teachers of Mathematics
                     </a>{" "}
-                    <a href="http://www.nctm.org/uploadedFiles/Standards_and_Positions/PtAExecutiveSummary.pdf">
-                      lists
-                    </a>{" "}
-                    “too much focus on learning procedures without any
+                    lists “too much focus on learning procedures without any
                     connection to meaning, understanding, or the applications
-                    that require these procedures” as one of the most pressing
-                    problems in math education. They suggest that we reverse the
-                    situation: “build procedural fluency from conceptual
-                    understanding.”
+                    that require these procedures” as{" "}
+                    <a href="http://www.nctm.org/uploadedFiles/Standards_and_Positions/PtAExecutiveSummary.pdf">
+                      one of the most pressing problems in math education
+                    </a>. They suggest that we reverse the situation: “build
+                    procedural fluency from conceptual understanding.”
                   </p>
                 </span>
               }
@@ -697,13 +690,12 @@ export default class Report extends React.Component {
               <a href="http://www.nctm.org/">
                 National Council of Teachers of Mathematics
               </a>{" "}
+              lists “too much focus on learning procedures without any
+              connection to meaning, understanding, or the applications that
+              require these procedures” as{" "}
               <a href="http://www.nctm.org/uploadedFiles/Standards_and_Positions/PtAExecutiveSummary.pdf">
-                lists
-              </a>{" "}
-              “too much focus on learning procedures without any connection to
-              meaning, understanding, or the applications that require these
-              procedures” as one of the most pressing problems in math
-              education. They suggest that we reverse the situation: “build
+                one of the most pressing problems in math education
+              </a>. They suggest that we reverse the situation: “build
               procedural fluency from conceptual understanding.”
             </p>
           </SidebarItem>
@@ -718,8 +710,8 @@ export default class Report extends React.Component {
                   <a href="https://mindstorms.media.mit.edu">
                     <em>Mindstorms</em>
                   </a>{" "}
-                  paints a relationship with learning we'd love to see every
-                  child experience.
+                  paints a playful relationship with learning we'd love to see
+                  every child experience.
                 </span>
               }
             >
@@ -748,13 +740,15 @@ export default class Report extends React.Component {
         </BodyAndSidebar>
         <BodyAndSidebar>
           <Body>
-            <Principle>Curiosity.</Principle> Our art direction’s all about
-            setting the stage for curiosity. For instance, in the forest at the
-            top of this report above, we’ve deliberately added lots of depth and
-            occlusion. The child’s entering a whole new world, but we’re leaving
-            space for their imagination, a feeling of possibility and a sense of
-            adventure. The imagination, combined with the environment, evokes
-            much more than we could have rendered ourselves.
+            <Principle>Curiosity.</Principle> We believe art direction plays a
+            major role in setting the stage for curiosity. For instance, in the
+            forest at the top of this report, we’ve deliberately added lots of
+            depth and occlusion that hints at hidden structure. The child’s
+            entering a whole new world, but we’re leaving space for their
+            imagination, a feeling of possibility and a sense of adventure. We
+            suspect that a child’s imagination, combined with a carefully
+            art-directed environment, evokes much more than we could have
+            rendered ourselves.
           </Body>
           <SidebarItem>
             <Figure caption="Artists have long used depth and occlusion to capture imaginations. These trees occlude what might be behind them, creating a sense of possibility and mystery. The figures in the foreground give us a sense of scale, which increases the sense of adventure.">
@@ -795,9 +789,9 @@ export default class Report extends React.Component {
             </Figure>
           </SidebarItem>
           <Body>
-            Mathematical ideas are incredibly empowering! Can we create
-            activities which reflect that power—which we’re genuinely and
-            personally excited to share? Let's not make tasks we
+            Mathematical ideas are deeply empowering! Can we create activities
+            which reflect that power—which we’re genuinely and personally
+            excited to share? Let's not make tasks we
             <em>pretend</em> are interesting so that kids will learn “what's
             good for them”!
           </Body>
@@ -831,18 +825,35 @@ export default class Report extends React.Component {
             Can we build an environment which continues to reward deeper
             understanding, becoming ever more empowering as its occupants grow?
           </Body>
+          <Body>
+            We imagined a world where children can eventually "look behind" an
+            object in the digital environment to see a more abstract
+            representation. As learners understand more about the objects in
+            their environment, they can grow new powers by treating objects at a
+            higher level of abstraction.
+          </Body>
           <Body noBottomMargin>
-            We imagined a world where children can eventually "look behind"
-            everything in their environment to a deeper mathematical
-            representation. As students understand more math, they can redefine
-            more of their world.
+            A child might initially understand a triangle in terms of its
+            holistic appearance, but{" "}
+            <a href="https://en.wikipedia.org/wiki/Van_Hiele_model">
+              as they develop and grow their experience
+            </a>, they’ll come think of triangles in terms of more abstract
+            properties. Ultimately, they’ll see how those properties extend to
+            other shapes and to a system at large. In the same way, we might
+            initially express a flower as a collection of petals—but later
+            define the petals through structured patterns, and eventually define
+            those patterns through a system of code. The child can climb{" "}
+            <a href="http://worrydream.com/LadderOfAbstraction/">
+              up and down the ladder of abstraction
+            </a>.
           </Body>
         </BodyAndSidebar>
         <Heading>Weaving it all together</Heading>
         <Body wide>
-          Now that we've explored those design principles in more detail, let's
-          return to our mathematical environment and walk through a longer story
-          of one student's journey.
+          We’ve woven our early sketches and the principles above into a rough
+          story to illustrate <em>one possible manifestation</em> of a playful
+          world of creative math. We hope it inspires others to create more
+          possibilities like this for kids in the future!
         </Body>
         <StoryboardElement storyboardElementNumber={1}>
           <Body>
@@ -852,8 +863,10 @@ export default class Report extends React.Component {
           </Body>
           <Body>
             A coordinate indicator trails the character. If the child explores
-            walks left from the red-door-tree, they’ll discover negative
-            x-coordinates.
+            walks left from the red-door-tree, they’ll see negative
+            x-coordinates. The computer doesn’t demand answers about Cartesian
+            grid model: instead, with infinite patience, it surfaces that model
+            by reflecting the child’s actions in a property of the environment.
           </Body>
         </StoryboardElement>
 
@@ -861,7 +874,11 @@ export default class Report extends React.Component {
           <Body>
             The coordinate system expresses the character's position in a way
             that children can naturally relate to their own experience of their
-            body in the world.
+            body in the world (see{" "}
+            <em>
+              <a href="https://mindstorms.media.mit.edu/">Mindstorms</a>,
+            </em>{" "}
+            again, for more on this).
           </Body>
           <Body>
             New items that spark curiosity appear throughout the journey—like
@@ -882,8 +899,8 @@ export default class Report extends React.Component {
           <Body>
             The character can’t yet reach the yellow door, so they continue on
             and befriend a little basket with its own coordinates. The basket
-            will help the character by being the holding place for things that
-            the character can collect: “quantity-bricks”, operators, and tools.
+            will help the character by being the container for things that the
+            character can collect: “quantity-bricks”, operators, and tools.
             These are mathematical properties with which to build or mold the
             world.
           </Body>
@@ -898,22 +915,24 @@ export default class Report extends React.Component {
             <a href="https://www.educateiowa.gov/sites/files/ed/documents/8017g%20Elem%20CLP%20with%20descriptors.pdf">
               one-to-one correspondence counting
             </a>{" "}
-            and keeping track of what's been counted and what hasn't.
+            and keeps track of what's been counted and what hasn't.
           </Body>
         </StoryboardElement>
 
         <StoryboardElement storyboardElementNumber={6}>
           <Body>
             This child discovered that they can build themselves a staircase of
-            quantity-bricks. To sort the bricks by length, they compared
-            quantities.
+            quantity-bricks. As they sort the bricks by length, they reinforce
+            their ability to compare number quantities.
           </Body>
           <Body>
-            Now our character can reach the yellow door. What's inside the tree?
+            There were many ways the student might have reached the door. What
+            if they had different quantity bricks in their basket? What if the
+            child had no brick with length 5? How might they creatively clear
+            these hurdles? Can you think of other ways to reach the door?
           </Body>
           <Body>
-            There were many solutions the student could have used to reach the
-            door. Can you, the reader, think of others?
+            Now we’ve reached the yellow door. What's inside the tree?
           </Body>
         </StoryboardElement>
 
@@ -925,11 +944,13 @@ export default class Report extends React.Component {
           </Body>
           <Body>
             <em>
-              Computer graphics and computer generation of music are outstanding
-              opportunities to experience the link between beauty and math.
+              <a href="http://www.papert.org/articles/SomePoeticAndSocialCriteriaForEducationDesign.html">
+                Computer graphics and computer-generated music are outstanding
+                opportunities to experience the link between beauty and math.
+              </a>
             </em>{" "}
-            This is because computers are great at translating in realtime
-            between alternate representations.
+            That’s because computers are great at translating between numbers
+            and these alternative representations in real time.
           </Body>
         </StoryboardElement>
 
@@ -940,12 +961,16 @@ export default class Report extends React.Component {
             quantity-bricks.
           </Body>
           <Body>
-            Over time, more “tools”, or properties, are revealed: control over
-            color, size, angle—as well as operators on those numbers.
+            Over time, we reveal more “tools” and properties of objects in the
+            world. Students eventually gain control over color, size, angle—as
+            well as operators on those numbers.
           </Body>
           <Body>
             At any time, learners can choose to “look behind” an activity to see
-            its underlying mechanics. This could take the form of source code.
+            its underlying mechanics. Like{" "}
+            <a href="https://en.wikipedia.org/wiki/HyperCard">Hypercard</a>,
+            Flash, and other powerful creative tools, we envision this could
+            even take the form of source code if they dig far enough!
           </Body>
         </StoryboardElement>
 
@@ -975,18 +1000,19 @@ export default class Report extends React.Component {
         </StoryboardElement>
         <Heading>Onward</Heading>
         <Body wide>
-          We wrapped up this design research project in mid 2015 and brought
-          what we learned to other projects, like{" "}
-          <a href="cantor">Cantor, our number block manipulative</a>. Writing
-          about this project now in 2017, these early ideas still resonate with
-          us. We believe educational technology has the potential to
-          authentically empower students through the ideas being presented. We
-          dream of a future filled with curious explorers and lifelong learners,
-          solving important human problems. We’ll continue to experiment in this
-          space as part of{" "}
-          <a href="https://khanacademy.org/research">our long-term research</a>,
-          but we hope that these sketches and design principles inspire others
-          to join us in pushing toward a humane future of learning technology.
+          Over two years have passed since we had this first little dream of a
+          playful world of creative math. The ideas still resonate with us – we
+          hope they sparked something in you, too!
+        </Body>
+        <Body wide>
+          The early explorations we’ve shared in this article have led to other
+          projects, like{" "}
+          <a href="/research/reports/cantor">
+            Cantor, our number block manipulative
+          </a>. Amongst these sketches and principles, we feel there are more
+          seedlings of ideas that could potentially blossom. We hope that they
+          inspire others to join us in pushing toward a humane future of
+          learning technology!
         </Body>
 
         <Heading>Acknowledgements</Heading>
@@ -1048,7 +1074,8 @@ export default class Report extends React.Component {
           </FurtherReadingItem>
         </ul>
       </div>
-    </div>;
+    </div>
+  );
 }
 
 const threeImageCrossFade = {
