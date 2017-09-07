@@ -582,9 +582,7 @@ export default class Report extends React.Component {
                 style={{ width: "100%" }}
               />
             </Figure>
-            <Body>
-              [early Cantor]
-            </Body>
+            <Body>[early Cantor]</Body>
           </div>
         </Slider>
         <Heading>Design principles</Heading>
@@ -1124,26 +1122,31 @@ export default class Report extends React.Component {
         </Body>
         <ul className={css(styles.furtherReadingList)}>
           <FurtherReadingItem>
-            Papert, Seymour. 1980. <em>Mindstorms</em>. Harvester Press.
+            Seymour Papertʼs 1980 book,{" "}
+            <a href="https://mindstorms.media.mit.edu">
+              <em>Mindstorms</em>
+            </a>, remains essential reading for anyone interested in building
+            digital contexts for learning.
           </FurtherReadingItem>
           <FurtherReadingItem>
-            Holt, John. 1964. <em>How children fail</em>. Pitman Publishing
-            Company.
+            For more on the foundations of constructivism (the idea that
+            knowledge can't be directly transmitted; instead, learners construct
+            understanding through experience), see{" "}
+            <em><a href="https://books.google.com/books?id=JhjPK4FKpCcC">Experience and Education</a></em> by John Dewey (1938) and{" "}
+            <em><a href="https://books.google.com/books?id=EOQEtK5MtA0C">How Children Fail</a></em> by John Holt (1964).
           </FurtherReadingItem>
           <FurtherReadingItem>
-            Dewey, John. 1938. <em>Experience and education</em>. Kappa Delta
-            Pi.
+            Constance Kamii provided us a great math-specific perspective on
+            experiential learning in <em>
+              <a href="https://books.google.com/books/about/Young_Children_Reinvent_Arithmetic.html?id=XWPdDgAAQBAJ">Young Children Reinvent Arithmetic</a>
+            </em>, which documents children doing exactly what it sounds like in
+            1985.
           </FurtherReadingItem>
           <FurtherReadingItem>
-            Montessori, Maria. 1912. <em>The Montessori method</em>. Frederick
-            A. Stokes Company.
-          </FurtherReadingItem>
-          <FurtherReadingItem>
-            Kamii, Constance. 1985.{" "}
-            <em>
-              Young children reinvent arithmetic: implications of Piaget's
-              theory
-            </em>. Teachers College Press.
+            For more about learning through play, <em><a href="http://digital.library.upenn.edu/women/montessori/method/method.html">The Montessori Method</a></em>{" "}
+            documents Maria Montessori's foundational work in 1912. Mitchel
+            Resnick offers a modern perspective on playful learning with
+            technology in <em><a href="https://mitpress.mit.edu/books/lifelong-kindergarten">Lifelong Kindergarten</a></em> (2017).
           </FurtherReadingItem>
         </ul>
 
