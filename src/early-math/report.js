@@ -751,17 +751,22 @@ export default class Report extends React.Component {
               <img
                 src="/images/long-term-research/reports/early-math/4-principles/4-art-direction-for-curiosity-1.jpg"
                 style={{ width: "100%" }}
-                className={css(threeImageCrossFadeStyle.one)}
+                className={css(fourImageCrossFadeStyle.one)}
               />
               <img
                 src="/images/long-term-research/reports/early-math/4-principles/4-art-direction-for-curiosity-2.jpg"
                 style={{ width: "100%" }}
-                className={css(threeImageCrossFadeStyle.two)}
+                className={css(fourImageCrossFadeStyle.two)}
               />
               <img
                 src="/images/long-term-research/reports/early-math/4-principles/4-art-direction-for-curiosity-3.jpg"
                 style={{ width: "100%" }}
-                className={css(threeImageCrossFadeStyle.three)}
+                className={css(fourImageCrossFadeStyle.three)}
+              />
+              <img
+                src="/images/long-term-research/reports/early-math/5-storyboard/1.png"
+                style={{ width: "100%" }}
+                className={css(fourImageCrossFadeStyle.four)}
               />
             </Figure>
           </SidebarItem>
@@ -1074,44 +1079,57 @@ export default class Report extends React.Component {
   );
 }
 
-const threeImageCrossFade = {
-  "22%": {
+const fourImageCrossFade = {
+  "0": {
     opacity: 1,
   },
-  "33%": {
+  "17%": {
+    opacity: 1,
+  },
+  "25%": {
     opacity: 0,
   },
-  "89%": {
+  "92%": {
     opacity: 0,
+  },
+  "100%": {
+    opacity: 1,
   },
 };
 
-const threeImageCrossFadeAnimationStyle = {
-  animationName: [threeImageCrossFade],
-  animationDuration: "6s",
+const fourImageCrossFadeAnimationStyle = {
+  animationName: [fourImageCrossFade],
+  animationDuration: "8s",
   animationIterationCount: "infinite",
   borderRadius: globalStyles.borderRadius,
 };
 
-const threeImageCrossFadeStyle = StyleSheet.create({
+const fourImageCrossFadeStyle = StyleSheet.create({
   one: {
-    ...threeImageCrossFadeAnimationStyle,
+    ...fourImageCrossFadeAnimationStyle,
     animationDelay: "0s",
   },
   two: {
-    ...threeImageCrossFadeAnimationStyle,
+    ...fourImageCrossFadeAnimationStyle,
     position: "absolute",
     top: 0,
     left: 0,
     animationDelay: "2s",
   },
   three: {
-    ...threeImageCrossFadeAnimationStyle,
+    ...fourImageCrossFadeAnimationStyle,
     position: "absolute",
     top: 0,
     left: 0,
     animationDelay: "4s",
   },
+  four: {
+    ...fourImageCrossFadeAnimationStyle,
+    position: "absolute",
+    top: 0,
+    left: 0,
+    animationDelay: "6s",
+  }
 });
 
 const styles = StyleSheet.create({
