@@ -769,6 +769,12 @@ export default class Report extends React.Component {
                 className={css(fourImageCrossFadeStyle.four)}
               />
             </Figure>
+            <p className={css(styles.sidebarBody, styles.hideOnMobile)}>
+              {/* WARNING repeated for mobile */}
+              For more on the value of conversation in math education, see "<a href="https://ka-hivemind.herokuapp.com/?entry=MPm4fWnuAN3T37NSp">
+                Identity, Agency, and Knowing in Mathematical Worlds
+              </a>" by Jo Boaler and James Greeno.
+            </p>
           </SidebarItem>
           <Body noBottomMargin>
             <Principle>Interpersonal connectedness.</Principle> Interpersonal
@@ -778,6 +784,12 @@ export default class Report extends React.Component {
             mathematical adventures can lead to laughter, oohs and ahhs, traded
             stories, and—yes—more learning from great conversation.
           </Body>
+          <p className={css(styles.sidebarBody, styles.hideUnlessMobile)}>
+            {/* WARNING repeated for non-mobile */}
+            For more on the value of conversation in math education, see "<a href="https://ka-hivemind.herokuapp.com/?entry=MPm4fWnuAN3T37NSp">
+              Identity, Agency, and Knowing in Mathematical Worlds
+            </a>" by Jo Boaler and James Greeno.
+          </p>
         </BodyAndSidebar>
         <BodyAndSidebar>
           <Subheading>Empowerment, not condescension</Subheading>
@@ -788,6 +800,16 @@ export default class Report extends React.Component {
                 style={{ width: "100%" }}
               />
             </Figure>
+            <p className={css(styles.sidebarBody, styles.hideOnMobile)}>
+              {/* WARNING repeated for mobile */}
+              For more on how to use technology to unlock creative learning, see
+              Mitch Resnick's{" "}
+              <em>
+                <a href="https://mitpress.mit.edu/books/lifelong-kindergarten">
+                  Lifelong Kindergarten
+                </a>
+              </em>.
+            </p>
           </SidebarItem>
           <Body>
             Mathematical ideas are deeply empowering! Can we create activities
@@ -796,6 +818,16 @@ export default class Report extends React.Component {
             <em>pretend</em> are interesting so that kids will learn “what's
             good for them”!
           </Body>
+          <p className={css(styles.sidebarBody, styles.hideUnlessMobile)}>
+            {/* WARNING repeated for non-mobile */}
+            For more on how to use technology to unlock creative learning, see
+            Mitch Resnick's{" "}
+            <em>
+              <a href="https://mitpress.mit.edu/books/lifelong-kindergarten">
+                Lifelong Kindergarten
+              </a>
+            </em>.
+          </p>
           <Body>
             <Principle>Empowerment.</Principle> In this project, we focused on
             building contexts where mathematical concepts authentically empower
@@ -817,7 +849,7 @@ export default class Report extends React.Component {
           <SidebarItem>
             <div
               className={css(styles.placeholder)}
-              style={{ width: "100%", height: 150 }}
+              style={{ width: "100%", height: 275, marginBottom: 24 }}
             >
               TODO: neato image of duplo + mindstorms
             </div>
@@ -833,6 +865,16 @@ export default class Report extends React.Component {
             their environment, they can grow new powers by treating objects at a
             higher level of abstraction.
           </Body>
+        </BodyAndSidebar>
+        <BodyAndSidebar>
+          <SidebarItem>
+            <Figure>
+              <img
+                src="/images/long-term-research/reports/early-math/5-storyboard/8.png"
+                style={{ width: "100%" }}
+              />
+            </Figure>
+          </SidebarItem>
           <Body noBottomMargin>
             A child might initially understand a triangle in terms of its
             holistic appearance, but{" "}
@@ -939,7 +981,7 @@ export default class Report extends React.Component {
 
         <StoryboardElement storyboardElementNumber={7}>
           <Body>
-            We reward curiosity with more opportunity for exploration. Inside
+            We reward curiosity with more opportunity for exploration! Inside
             the tree, children can play with the relationship between numbers
             and sound; pitches correspond to quantities.
           </Body>
