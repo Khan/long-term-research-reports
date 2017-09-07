@@ -1117,35 +1117,6 @@ export default class Report extends React.Component {
           learning technology!
         </Body>
 
-        <Heading>Acknowledgements</Heading>
-        <Body wide>
-          We'd like to thank these people for their valuable thoughts along the
-          way:{" "}
-          {[
-            "Bret Victor",
-            "Chaim Gingold",
-            "Sonia Cho",
-            "Bill McCullum",
-            "Kristin Umland",
-            "Mitch Resnick",
-            "Carol Dweck",
-            "Orly Friedman",
-            "Paula Te",
-            "Corinna Liew",
-            "Federico Ardila",
-            "Natalia Ardila Mantilla",
-            "Dania Cabello",
-            "Monica Tran",
-          ]
-            .map(name => name.split(" "))
-            .sort(
-              ([firstA, lastA], [firstB, lastB]) =>
-                lastA < lastB ? -1 : lastB < lastA ? 1 : 0,
-            )
-            .map(names => names.join(" "))
-            .join(", ")}.
-        </Body>
-
         <Heading>Further reading</Heading>
         <Body wide>
           If you're interested in reading more about the topics in this report,
@@ -1175,6 +1146,47 @@ export default class Report extends React.Component {
             </em>. Teachers College Press.
           </FurtherReadingItem>
         </ul>
+
+        <Heading>Acknowledgements</Heading>
+        <Body wide>
+          We'd like to thank these people for their valuable thoughts along the
+          way:{" "}
+          {[
+            "Bret Victor",
+            "Chaim Gingold",
+            "Sonia Cho",
+            "Bill McCullum",
+            "Kristin Umland",
+            "Mitch Resnick",
+            "Carol Dweck",
+            "Orly Friedman",
+            "Paula Te",
+            "Corinna Liew",
+            "Federico Ardila",
+            "Natalia Ardila Mantilla",
+            "Dania Cabello",
+            "Monica Tran",
+          ]
+            .map(name => name.split(" "))
+            .sort(
+              ([firstA, lastA], [firstB, lastB]) =>
+                lastA < lastB ? -1 : lastB < lastA ? 1 : 0,
+            )
+            .map(names => names.join(" "))
+            .join(", ")}.
+        </Body>
+        <Body wide>
+          While comments from these people have hugely improved this report, any
+          remaining deficiencies in this work should be attributed to us alone.
+          The people listed here should not necessarily be construed as
+          endorsing this report.
+        </Body>
+
+        <Heading>Contact us</Heading>
+        <Body wide>
+          Have comments or feedback on this report? Please{" "}
+          <a href="mailto:long-term-research-team@khanacademy.org">write us</a>.
+        </Body>
       </div>
     </div>
   );
