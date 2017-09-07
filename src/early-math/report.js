@@ -350,14 +350,10 @@ export default class Report extends React.Component {
           <Body>
             Plenty of grown-up artists, scientists, and engineers find math
             tremendously empowering. How might we enable that feeling earlier in
-            learners' lives?
-          </Body>
-          <Body>
-            We envisioned a world where kids can create, explore, and remix by
+            learners' lives? We envisioned a world where kids can create, explore, and remix by
             playing with the mathematical properties of the elements within it.
-            You can't visit that world yet, but we'll paint a picture of it here
-            through interactive sketches, design principles, snippets from
-            learning theory, and stories.
+            You can't visit that world yet, but we hope to inspire other creators of educational worlds through our sketches, design principles, and snippets from
+            learning theory.
           </Body>
         </div>
         <Hairline />
