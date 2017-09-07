@@ -350,10 +350,11 @@ export default class Report extends React.Component {
           <Body>
             Plenty of grown-up artists, scientists, and engineers find math
             tremendously empowering. How might we enable that feeling earlier in
-            learners' lives? We envisioned a world where kids can create, explore, and remix by
-            playing with the mathematical properties of the elements within it.
-            You can't visit that world yet, but we hope to inspire other creators of educational worlds through our sketches, design principles, and snippets from
-            learning theory.
+            learners' lives? We envisioned a world where kids can create,
+            explore, and remix by playing with the mathematical properties of
+            the elements within it. You can't visit that world yet, but we hope
+            to inspire other creators of educational worlds through our
+            sketches, design principles, and snippets from learning theory.
           </Body>
         </div>
         <Hairline />
@@ -506,27 +507,85 @@ export default class Report extends React.Component {
             },
           ]}
         >
-          {["green", "blue", "yellow", "red"].map(color => (
-            <div
-              style={{
-                padding: "0 15px",
-              }}
-            >
-              <div
-                style={{
-                  width: "100%",
-                  height: 517,
-                  backgroundColor: color,
-                  marginBottom: 8,
-                }}
+          <div className={css(styles.carouselItem)}>
+            <Figure>
+              <img
+                src="/images/long-term-research/reports/early-math/3-carousel/3-color-mixer.png"
+                style={{ width: "100%" }}
               />
-              <Body noBottomMargin>
-                This is a caption for the figure in the carousel above. This is
-                a caption for the figure in the carousel above. This is a
-                caption for the figure in the carousel above.
-              </Body>
-            </div>
-          ))}
+            </Figure>
+            <Body>
+              Could children start to learn about ratios using a color mixer
+              that only takes numerical quantities of color as input?
+            </Body>
+          </div>
+          <div className={css(styles.carouselItem)}>
+            <Figure>
+              <video
+                src="/videos/long-term-research/reports/early-math/3-connecting-to-sensors.mp4"
+                style={{ width: "100%" }}
+                loop
+                muted
+                autoPlay
+                playsInline
+              />
+            </Figure>
+            <Body>
+              Playing with sensors is fun! And it’s always fun to connect the
+              digital back into the physical world. Could we connect movement or
+              sensors to numbers? We also played with the idea of kids being
+              able to measure or count objects in the real world through the
+              camera.
+            </Body>
+          </div>
+          <div className={css(styles.carouselItem)}>
+            <Figure>
+              <img
+                src="/images/long-term-research/reports/early-math/3-carousel/3-multiplier.png"
+                style={{ width: "100%" }}
+              />
+            </Figure>
+            <Body>
+              What if multiplication were a superpower you could find in the
+              world—and once found, you could tap on anything to multiply it?
+              Want 6 of everything? Use your multiply-by-6 tool to tap on things
+              and get six of them!
+            </Body>
+          </div>
+          <div className={css(styles.carouselItem)}>
+            <Figure>
+              <img
+                src="/images/long-term-research/reports/early-math/3-carousel/3-gallery-of-numbers.png"
+                style={{ width: "100%" }}
+              />
+            </Figure>
+            <Body>
+              [motivation, social aspects of learning together, self-reflection
+              on own quality of work]
+            </Body>
+          </div>
+          <div className={css(styles.carouselItem)}>
+            <Figure>
+              <img
+                src="/images/long-term-research/reports/early-math/3-carousel/3-associations-with-3.jpg"
+                style={{ width: "100%" }}
+              />
+            </Figure>
+            <Body>
+              [maybe link to associations with the number 7 in cantor?]
+            </Body>
+          </div>
+          <div className={css(styles.carouselItem)}>
+            <Figure>
+              <img
+                src="/images/long-term-research/reports/early-math/3-carousel/3-drawing-with-numbers.png"
+                style={{ width: "100%" }}
+              />
+            </Figure>
+            <Body>
+              [early Cantor]
+            </Body>
+          </div>
         </Slider>
         <Heading>Design principles</Heading>
         <Body wide>
@@ -1171,7 +1230,7 @@ const fourImageCrossFadeStyle = StyleSheet.create({
     top: 0,
     left: 0,
     animationDelay: "6s",
-  }
+  },
 });
 
 const styles = StyleSheet.create({
@@ -1294,5 +1353,9 @@ const styles = StyleSheet.create({
     [mediaQueries.mdOrLarger]: {
       display: "block",
     },
+  },
+
+  carouselItem: {
+    padding: "0 15px",
   },
 });
