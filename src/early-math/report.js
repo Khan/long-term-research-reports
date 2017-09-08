@@ -596,8 +596,9 @@ export default class Report extends React.Component {
           Through all those sketches, we were looking for pieces of our ultimate
           goal: an open-ended adventure in a playful world of creative math.
           That vision grew from design themes we developed during our background
-          reading and interviews. We hope these themes will inspire more
-          exciting ideas in you!
+          reading and interviews. As you read through these themes, imagine:
+          what would educational technologies you’ve used look like through
+          these lenses?
         </Body>
         <Subheading>Learning through discovery</Subheading>
         <BodyAndSidebar>
@@ -937,8 +938,8 @@ export default class Report extends React.Component {
         <Body wide>
           We’ve woven our early sketches and the principles above into a rough
           story to illustrate <em>one possible manifestation</em> of a playful
-          world of creative math. We hope it inspires others to create more
-          possibilities like this for kids in the future!
+          world of creative math. We hope it will inspire others to create other
+          possibilities for kids in the future!
         </Body>
         <StoryboardElement storyboardElementNumber={1}>
           <Body>
@@ -967,16 +968,18 @@ export default class Report extends React.Component {
           </Body>
           <Body>
             New items that spark curiosity appear throughout the journey—like
-            this yellow door just out of reach, partway up a tree.
+            this yellow door just out of reach, partway up a tree. What's behind
+            that door?
           </Body>
         </StoryboardElement>
 
         <StoryboardElement storyboardElementNumber={3}>
           <Body>
-            Tapping something that’s out of reach reveals its distance from the
-            player. In this case, the yellow door’s y-distance from the ground
-            is shown as being “7”. The concept of distance is introduced because
-            the learner has shown us, through interaction, that they’re curious.
+            If something is out of reach, tapping it reveals its distance from
+            the character. In this case, the yellow door’s y-distance from the
+            ground is shown as “7”. The concept of distance is introduced
+            because the learner has shown us, through interaction, that they’re
+            curious about it.
           </Body>
         </StoryboardElement>
 
@@ -984,23 +987,24 @@ export default class Report extends React.Component {
           <Body>
             The character can’t yet reach the yellow door, so they continue on
             and befriend a little basket with its own coordinates. The basket
-            will help the character by being the container for things that the
-            character can collect: “quantity-bricks”, operators, and tools.
-            These are mathematical properties with which to build or mold the
-            world.
+            will help the character by holding things the character can collect,
+            like “quantity-bricks,” operators, and tools. With those
+            mathematical objects, students can build and mold the world.
           </Body>
         </StoryboardElement>
 
         <StoryboardElement storyboardElementNumber={5}>
           <Body>
             Children can “harvest” flowering plants for quantities. For example,
-            tapping three flowers on a single stem allows our character to fill
-            and collect a “3” quantity-brick. Each flower blooms when tapped, a
-            gentle feedback that provides scaffolding towards{" "}
+            as the player taps three flowers on a single stem, they fill and
+            collect a “3” quantity-brick.
+          </Body>
+          <Body>
+            Each flower blooms when tapped. This gentle feedback scaffolds{" "}
             <a href="https://www.educateiowa.gov/sites/files/ed/documents/8017g%20Elem%20CLP%20with%20descriptors.pdf">
               one-to-one correspondence counting
             </a>{" "}
-            and keeps track of what's been counted and what hasn't.
+            and visually tracks what's been counted and what hasn't.
           </Body>
         </StoryboardElement>
 
@@ -1028,12 +1032,10 @@ export default class Report extends React.Component {
             and sound; pitches correspond to quantities.
           </Body>
           <Body>
-            <em>
-              <a href="http://www.papert.org/articles/SomePoeticAndSocialCriteriaForEducationDesign.html">
-                Computer graphics and computer-generated music are outstanding
-                opportunities to experience the link between beauty and math.
-              </a>
-            </em>{" "}
+            <a href="http://www.papert.org/articles/SomePoeticAndSocialCriteriaForEducationDesign.html">
+              Computer graphics and computer-generated music are outstanding
+              opportunities to experience the link between beauty and math.
+            </a>{" "}
             That’s because computers are great at translating between numbers
             and these alternative representations in real time.
           </Body>
@@ -1041,21 +1043,24 @@ export default class Report extends React.Component {
 
         <StoryboardElement storyboardElementNumber={8}>
           <Body>
-            The world is packed with these kinds of creative activities. For
-            example, computationally generated flowers can be altered with
+            We’ve scattered these kinds of creative activities everywhere. For
+            instance, children can alter computationally-generated flowers with
             quantity-bricks.
           </Body>
           <Body>
-            Over time, we reveal more “tools” and properties of objects in the
-            world. Students eventually gain control over color, size, angle—as
+            Over time, we reveal more “tools” and{" "}
+            <a href="https://en.wikipedia.org/wiki/Van_Hiele_model">
+              properties of objects in the world
+            </a>. Students eventually gain control over color, size, angle—as
             well as operators on those numbers.
           </Body>
           <Body>
             At any time, learners can choose to “look behind” an activity to see
             its underlying mechanics. Like{" "}
             <a href="https://en.wikipedia.org/wiki/HyperCard">Hypercard</a>,
-            Flash, and other powerful creative tools, we envision this could
-            even take the form of source code if they dig far enough!
+            Flash, and other powerful creative tools, we envision these
+            mechanics could even take the form of source code if kids dig far
+            enough!
           </Body>
         </StoryboardElement>
 
@@ -1063,20 +1068,20 @@ export default class Report extends React.Component {
           <Body>
             Operators and tools can be combined in powerful ways with other
             properties of objects in the world. For example, if the character
-            happens upon a ladder, they can manipulate its height attribute, or
-            its number of rungs.
+            happens upon a ladder, they can manipulate either its height
+            attribute, or its number of rungs.
           </Body>
         </StoryboardElement>
 
         <StoryboardElement storyboardElementNumber={10}>
           <Body>
-            We embrace curiosity and the urge to push limits even further by
-            embracing that kind of intellectual need as it arises. If a child is
-            curious what might exist up far above the trees, they may try to get
-            there by setting the ladder’s height to a huge number. But: they
-            wouldn’t be able to collect a quantity large enough by counting!
-            That would inspire the need for repetition or scaling, which in turn
-            would create space to introduce multiplication and exponentiation.
+            If a child is curious what might exist up far above the trees, they
+            may try to get there by setting the ladder’s height to a huge
+            number. But: they wouldn’t be able to collect a quantity large
+            enough by counting! We support curiosity and the urge to push limits
+            by embracing this kind of intellectual need as it arises. The ladder
+            problem inspires the need for repetition or scaling, which in turn
+            creates space to introduce multiplication and exponentiation.
           </Body>
           <Body>
             In this case, the child has discovered the power of exponential
@@ -1086,7 +1091,7 @@ export default class Report extends React.Component {
         <Heading>Onward</Heading>
         <Body wide>
           Over two years have passed since we had this first little dream of a
-          playful world of creative math. The ideas still resonate with us – we
+          playful world of creative math. The ideas still resonate with us–we
           hope they sparked something in you, too!
         </Body>
         <Body wide>
@@ -1094,7 +1099,7 @@ export default class Report extends React.Component {
           projects, like{" "}
           <a href="/research/reports/cantor">
             Cantor, our number block manipulative
-          </a>. Amongst these sketches and principles, we feel there are more
+          </a>. Amongst these sketches and design themes, we feel there are more
           seedlings of ideas that could potentially blossom. We hope that they
           inspire others to join us in pushing toward a humane future of
           learning technology!
