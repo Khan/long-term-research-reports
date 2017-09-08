@@ -465,7 +465,7 @@ export default class Report extends React.Component {
             Digital objects can disappear into thin air! We played with that
             observation to illustrate{" "}
             <a href="https://vimeo.com/157768846">
-              different ways of thinking about of subtraction
+              different ways of thinking about subtraction
             </a>.
           </Body>
           <Body>
