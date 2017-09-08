@@ -566,8 +566,9 @@ export default class Report extends React.Component {
               />
             </Figure>
             <Body>
-              [motivation, social aspects of learning together, self-reflection
-              on own quality of work]
+              Hey, you’ve written a lot of “3”s. Which ones do you like best?
+              What do you like about them? Let’s put your favorites up on the
+              wall for your friends to see.
             </Body>
           </div>
           <div className={css(styles.carouselItem)}>
@@ -578,7 +579,11 @@ export default class Report extends React.Component {
               />
             </Figure>
             <Body>
-              [maybe link to associations with the number 7 in cantor?]
+              There are so many ways we can think about “3.” By{" "}
+              <a href="http://www.nctm.org/Conferences-and-Professional-Development/Principles-to-Actions-Toolkit/Resources/6-ES-Smith-TeacherStudentActions-Representations/">
+                showing connections between many different representations of
+                numbers
+              </a>, we can help students build richer understanding.
             </Body>
           </div>
           <div className={css(styles.carouselItem)}>
@@ -588,7 +593,14 @@ export default class Report extends React.Component {
                 style={{ width: "100%" }}
               />
             </Figure>
-            <Body>[early Cantor]</Body>
+            <Body>
+              What if painting by numbers really meant{" "}
+              <em>painting by numbers?</em> The block manipulatives we started
+              developing here later became transformed into{" "}
+              <a href="/research/reports/cantor">
+                Cantor, another research project
+              </a>.
+            </Body>
           </div>
         </Slider>
         <Heading>Design themes</Heading>
@@ -861,7 +873,7 @@ export default class Report extends React.Component {
             Mathematical ideas are deeply empowering! Can we create activities
             which reflect that power—which we’re genuinely and personally
             excited to share? Let's not make tasks we <em>pretend</em> are
-            interesting so that kids will learn “what's good for them”!
+            interesting so that kids will learn “what's good for them.”
           </Body>
           <p className={css(styles.sidebarBody, styles.hideUnlessMobile)}>
             {/* WARNING repeated for non-mobile */}
