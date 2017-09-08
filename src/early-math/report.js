@@ -354,7 +354,7 @@ export default class Report extends React.Component {
             explore, and remix by playing with the mathematical properties of
             the objects within it. You can't visit that world yet, but we hope
             to inspire other creators of educational environments through our
-            sketches, design principles, and snippets from learning theory.
+            sketches, design themes, and snippets from learning theory.
           </Body>
         </div>
         <Hairline />
@@ -372,7 +372,7 @@ export default class Report extends React.Component {
         <p className={css(styles.body, styles.wideParagraph)}>
           We’d love to begin by showing you some of our early sketches. We’ll
           use these examples a little later to help illustrate the background
-          research and design principles that we used while making them.
+          research and design themes that we used while making them.
         </p>
         <PrototypeExample
           heading="Singing through touch"
@@ -948,7 +948,7 @@ export default class Report extends React.Component {
         </BodyAndSidebar>
         <Heading>Weaving it all together</Heading>
         <Body wide>
-          We’ve woven our early sketches and the principles above into a rough
+          We’ve woven our early sketches and the design themes above into a rough
           story to illustrate <em>one possible manifestation</em> of a playful
           world of creative math. We hope it will inspire others to create other
           possibilities for kids in the future!
