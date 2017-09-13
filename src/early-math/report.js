@@ -69,7 +69,7 @@ const Authors = () => (
     <div className={css(styles.authorLine)}>
       <strong>Illustrations:</strong> Natalie Fitzgerald, May-Li Khoe.{" "}
     </div>
-    <div className={css(styles.authorLine)}>
+    <div className={css(styles.authorLine, styles.authorListingAsterisk)}>
       (authors listed alphabetically in sections)
     </div>
   </h2>
@@ -1406,6 +1406,16 @@ const styles = StyleSheet.create({
     [mediaQueries.mdOrLarger]: {
       display: "block",
     },
+  },
+
+  authorListingAsterisk: {
+    ...globalStyles.typography.caption,
+    fontStyle: "normal",
+    fontSize: 15,
+    opacity: 0.7,
+    [mediaQueries.mdOrLarger]: {
+      lineHeight: "23px",
+    }
   },
 
   carouselItem: {
