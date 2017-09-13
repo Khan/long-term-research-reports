@@ -349,17 +349,18 @@ export default class Report extends React.Component {
         <div className={css(styles.lede)}>
           <Body>
             Plenty of grown-up artists, scientists, and engineers find math
-            tremendously empowering. How might we enable that feeling earlier in
-            learners' lives? We envisioned a world where kids can create,
-            explore, and remix by playing with the mathematical properties of
-            the objects within it. You can't visit that world yet, but we hope
-            to inspire other creators of educational environments through our
-            sketches, design themes, and snippets from learning theory.
+            tremendously empowering. We wondered: how might we enable that
+            feeling earlier in learners' lives? We envisioned a world where kids
+            can create, explore, and remix by playing with the mathematical
+            properties of the objects within it. You can't visit that world yet,
+            but we hope to inspire other creators of educational environments
+            through our sketches, design themes, and snippets from learning
+            theory.
           </Body>
         </div>
         <Hairline />
-        <Heading>Early sketches and prototypes</Heading>
-        <Figure caption="A small taste of dozens of interaction sketches we completed.">
+        <Heading>An appetizer: early sketches and prototypes</Heading>
+        <Figure>
           <video
             src="/videos/long-term-research/reports/early-math/1-small-multiples.mp4"
             muted
@@ -370,24 +371,28 @@ export default class Report extends React.Component {
           />
         </Figure>
         <p className={css(styles.body, styles.wideParagraph)}>
-          We’d love to begin by showing you some of our early sketches. We’ll
-          use these examples a little later to help illustrate the background
-          research and design themes that we used while making them.
+          Before we dive too deeply into details of our approach, we’d love to
+          whet your palate with some of our early sketches. We’ll use these
+          examples a little later to help illustrate the background research and
+          design themes that we used while making them.
         </p>
         <PrototypeExample
           heading="Singing through touch"
           figure={<AudibleVideoPlayer />}
         >
           <Body>
-            What are all the ways a child might <em>input</em> a number? If you
-            ask a kid their age, they often hold up their fingers as an answer.
-            That gesture inspired us to play with ways we might connect fingers
-            on a screen to quantities they might manipulate.
+            These sketches came from our iterative design explorations. We asked
+            ourselves all kinds of questions, like: What are all the ways a
+            child might <em>input</em> a number? If you ask a kid their age,
+            they often hold up their fingers as an answer. That gesture inspired
+            us to play with ways we might connect fingers on a screen to
+            quantities they might manipulate.
           </Body>
           <Body>
             As we tried out our prototype, we realized we could assign a note to
-            each number. With this interaction, a child's simple gesture—holding
-            up some fingers to indicate a number—becomes a musical instrument!
+            each number. With this interaction, a child's natural
+            gesture—holding up some fingers to indicate a number—becomes a
+            musical instrument!
           </Body>
         </PrototypeExample>
         <PrototypeExample
@@ -411,7 +416,7 @@ export default class Report extends React.Component {
             modify the scene with whatever numbers they can write?
           </Body>
           <Body>
-            Want to see what thirty-three birds looks like? Just handwrite 33!
+            Want to see what thirty-three birds looks like? Handwrite 33!
           </Body>
         </PrototypeExample>
         <PrototypeExample
@@ -442,8 +447,8 @@ export default class Report extends React.Component {
             their own manipulations play out in visual quantities?
           </Body>
           <Body>
-            Want to see what it’s like when you add ten birds at a time? Play
-            with the tens card!
+            Play with the tens card, and: whoa! You’re adding ten birds at a
+            time!
           </Body>
         </PrototypeExample>
         <PrototypeExample
@@ -610,7 +615,8 @@ export default class Report extends React.Component {
           That vision grew from design themes we developed during our background
           reading and interviews. As you read through these themes, imagine:
           what would educational technologies you’ve used look like through
-          these lenses?
+          these lenses? In the next section, we’ll show one world we imagined
+          using these themes.
         </Body>
         <Subheading>Learning through discovery</Subheading>
         <BodyAndSidebar>
@@ -634,8 +640,8 @@ export default class Report extends React.Component {
             Learning games often feel bolted onto their subjects like
             chocolate-covered broccoli, sprinkling game mechanics like badges or
             scoreboards on top of a dull task. Extrinsic “chocolate” motivators
-            be used to incentivize any other random task; they’re disconnected
-            from the meaning of the activity.
+            can be used to incentivize any other random task; they’re
+            disconnected from the meaning of the activity.
           </Body>
           <SidebarItem>
             <p className={css(styles.sidebarBody)}>
@@ -686,8 +692,9 @@ export default class Report extends React.Component {
         <BodyAndSidebar>
           <Body>
             <Principle>Creativity.</Principle> A focus on creative freedom and
-            exploration can open up wide variety of learning paths. One child
-            might understand a mathematical concept through generative painting;
+            exploration can open up wide variety of learning paths. You’ve
+            already seen that emphasis in our early sketches. One child might
+            understand a mathematical concept through generative painting;
             another might form the same idea making digital music.{" "}
             <a href="https://en.wikipedia.org/wiki/Constructivism_(philosophy_of_education)">
               To learn, we build new ideas from preexisting ones.
@@ -727,8 +734,8 @@ export default class Report extends React.Component {
 
         <BodyAndSidebar>
           <Body noBottomMargin>
-            <Principle>Conceptual understanding.</Principle> When children are
-            uncovering that learning path themselves,{" "}
+            <Principle>Conceptual understanding.</Principle> When children have
+            a real intellectual need,{" "}
             <a href="http://math.ucsd.edu/~jrabin/publications/ProblemFreeActivity.pdf">
               it’s more likely that they’ll understand <em>why</em> the
               entangled mathematical ideas behave as they do
@@ -802,7 +809,7 @@ export default class Report extends React.Component {
             entering a whole new world, but we’re leaving space for their
             imagination, a feeling of possibility and a sense of adventure. We
             believe that in a carefully art-directed environment, a child’s
-            imagination, evokes much more than we could have rendered ourselves.
+            imagination evokes much more than we could have rendered ourselves.
           </Body>
           <SidebarItem>
             <Figure caption="Artists have long used depth and occlusion to capture imaginations. These trees occlude what might be behind them, creating a sense of possibility and mystery. The figures in the foreground give us a sense of scale, which increases the sense of adventure.">
@@ -948,7 +955,7 @@ export default class Report extends React.Component {
         </BodyAndSidebar>
         <Heading>Weaving it all together</Heading>
         <Body wide>
-          We’ve woven our early sketches and the design themes above into a rough
+          We’ve woven our early sketches and the design themes into a rough
           story to illustrate <em>one possible manifestation</em> of a playful
           world of creative math. We hope it will inspire others to create other
           possibilities for kids in the future!
@@ -988,10 +995,9 @@ export default class Report extends React.Component {
         <StoryboardElement storyboardElementNumber={3}>
           <Body>
             If something is out of reach, tapping it reveals its distance from
-            the character. In this case, the yellow door’s y-distance from the
-            ground is shown as “7”. The concept of distance is introduced
-            because the learner has shown us, through interaction, that they’re
-            curious about it.
+            the ground. In this case, the yellow door’s distance is shown as
+            “7”. The concept of distance is introduced because the learner has
+            shown us, through interaction, that they’re curious about it.
           </Body>
         </StoryboardElement>
 
@@ -1070,9 +1076,8 @@ export default class Report extends React.Component {
             At any time, learners can choose to “look behind” an activity to see
             its underlying mechanics. Like{" "}
             <a href="https://en.wikipedia.org/wiki/HyperCard">Hypercard</a>,
-            Flash, and other powerful creative tools, we envision these
-            mechanics could even take the form of source code if kids dig far
-            enough!
+            Flash, and other powerful creative tools, we can support kids in
+            digging all the way down to source code!
           </Body>
         </StoryboardElement>
 
@@ -1082,6 +1087,13 @@ export default class Report extends React.Component {
             properties of objects in the world. For example, if the character
             happens upon a ladder, they can manipulate either its height
             attribute, or its number of rungs.
+          </Body>
+          <Body>
+            High school courses cover operators and{" "}
+            <a href="https://en.wikipedia.org/wiki/Van_Hiele_model#Van_Hiele_levels">
+              abstract properties
+            </a>, but we can smooth the ramp by allowing kids to experienced
+            them less formally years earlier.
           </Body>
         </StoryboardElement>
 
