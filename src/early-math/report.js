@@ -551,11 +551,15 @@ export default class Report extends React.Component {
           </div>
           <div className={css(styles.carouselItem)}>
             <Figure>
-              <img
-                src="/images/long-term-research/reports/early-math/3-carousel/3-multiplier.png"
-                style={{ width: "100%" }}
-              />
-            </Figure>
+            <video
+            src="/videos/long-term-research/reports/early-math/3-multiplier-wand.mp4"
+            style={{ width: "100%" }}
+            loop
+            muted
+            autoPlay
+            playsInline
+          />
+        </Figure>
             <Body>
               What if multiplication were a superpower you could find in the
               world—and once found, you could tap on anything to multiply it?
