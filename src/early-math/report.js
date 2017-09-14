@@ -813,26 +813,34 @@ export default class Report extends React.Component {
           </Body>
           <SidebarItem>
             <Figure caption="Artists have long used depth and occlusion to capture imaginations. These trees occlude what might be behind them, creating a sense of possibility and mystery. The figures in the foreground give us a sense of scale, which increases the sense of adventure.">
-              <img
-                src="/images/long-term-research/reports/early-math/4-principles/4-art-direction-for-curiosity-1.jpg"
-                style={{ width: "100%" }}
-                className={css(fourImageCrossFadeStyle.one)}
-              />
-              <img
-                src="/images/long-term-research/reports/early-math/4-principles/4-art-direction-for-curiosity-2.jpg"
-                style={{ width: "100%" }}
-                className={css(fourImageCrossFadeStyle.two)}
-              />
-              <img
-                src="/images/long-term-research/reports/early-math/4-principles/4-art-direction-for-curiosity-3.jpg"
-                style={{ width: "100%" }}
-                className={css(fourImageCrossFadeStyle.three)}
-              />
-              <img
-                src="/images/long-term-research/reports/early-math/5-storyboard/1.png"
-                style={{ width: "100%" }}
-                className={css(fourImageCrossFadeStyle.four)}
-              />
+              <div className={css(fourImageCrossFadeStyle.one)}>
+                <img
+                  src="/images/long-term-research/reports/early-math/4-principles/4-art-direction-for-curiosity-1.jpg"
+                  style={{ width: "100%" }}
+                />
+                <p className={css(styles.artDirectionLabel)}>Firewatch</p>
+              </div>
+              <div className={css(fourImageCrossFadeStyle.two)}>
+                <img
+                  src="/images/long-term-research/reports/early-math/4-principles/4-art-direction-for-curiosity-2.jpg"
+                  style={{ width: "100%" }}
+                />
+                <p className={css(styles.artDirectionLabel)}>Caspar David Friedrich</p>
+              </div>
+              <div className={css(fourImageCrossFadeStyle.three)}>
+                <img
+                  src="/images/long-term-research/reports/early-math/4-principles/4-art-direction-for-curiosity-3.jpg"
+                  style={{ width: "100%" }}
+                />
+                <p className={css(styles.artDirectionLabel, styles.mystLabel)}>Myst</p>
+              </div>
+              <div className={css(fourImageCrossFadeStyle.four)}>
+                <img
+                  src="/images/long-term-research/reports/early-math/5-storyboard/1.png"
+                  style={{ width: "100%" }}
+                />
+                <p className={css(styles.artDirectionLabel)}>Our own world</p>
+              </div>
             </Figure>
             <p className={css(styles.sidebarBody, styles.hideOnMobile)}>
               {/* WARNING repeated for mobile */}
@@ -1256,6 +1264,7 @@ const fourImageCrossFadeAnimationStyle = {
   animationDuration: "8s",
   animationIterationCount: "infinite",
   borderRadius: globalStyles.borderRadius,
+  overflow: "hidden",
 };
 
 const fourImageCrossFadeStyle = StyleSheet.create({
@@ -1408,6 +1417,21 @@ const styles = StyleSheet.create({
     },
   },
 
+  artDirectionLabel: {
+    position: "absolute",
+    bottom: 0,
+    width: "100%",
+    padding: 5,
+    textAlign: "right",
+    color: "white",
+    ...globalStyles.typography.caption,
+    margin: 0,
+  },
+
+  mystLabel: {
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+  },
+
   authorListingAsterisk: {
     ...globalStyles.typography.caption,
     fontStyle: "normal",
@@ -1415,7 +1439,7 @@ const styles = StyleSheet.create({
     opacity: 0.7,
     [mediaQueries.mdOrLarger]: {
       lineHeight: "23px",
-    }
+    },
   },
 
   carouselItem: {
