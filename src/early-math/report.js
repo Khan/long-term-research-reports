@@ -796,8 +796,11 @@ export default class Report extends React.Component {
             believe that in a carefully art-directed environment, a child’s
             imagination evokes much more than we could have rendered ourselves.
           </Body>
-          <SidebarItem>
-            <Figure caption="Artists have long used depth and occlusion to capture imaginations. These trees occlude what might be behind them, creating a sense of possibility and mystery. The figures in the foreground give us a sense of scale, which increases the sense of adventure.">
+          <SidebarItem top={8}>
+            <Figure
+              noBottomMargin
+              caption="Artists have long used depth and occlusion to capture imaginations. These trees occlude what might be behind them, creating a sense of possibility and mystery. The figures in the foreground give us a sense of scale, which increases the sense of adventure."
+            >
               <div className={css(fourImageCrossFadeStyle.one)}>
                 <img
                   src="/images/long-term-research/reports/early-math/4-principles/4-art-direction-for-curiosity-1.jpg"
@@ -831,12 +834,14 @@ export default class Report extends React.Component {
                 <p className={css(styles.artDirectionLabel)}>Our own world</p>
               </div>
             </Figure>
-            <p className={css(styles.sidebarBody, styles.hideOnMobile)}>
-              {/* WARNING repeated for mobile */}
-              For more on the value of conversation in math education, see "<a href="https://ka-hivemind.herokuapp.com/?entry=MPm4fWnuAN3T37NSp">
-                Identity, Agency, and Knowing in Mathematical Worlds
-              </a>" by Jo Boaler and James Greeno.
-            </p>
+            <div style={{ marginTop: 24 }}>
+              <p className={css(styles.sidebarBody, styles.hideOnMobile)}>
+                {/* WARNING repeated for mobile */}
+                For more on conversation in math, see "<a href="https://ka-hivemind.herokuapp.com/?entry=MPm4fWnuAN3T37NSp">
+                  Identity, Agency, and Knowing in Mathematical Worlds
+                </a>" by Jo Boaler and James Greeno.
+              </p>
+            </div>
           </SidebarItem>
           <Body noBottomMargin>
             <Principle>Interpersonal connectedness.</Principle> Interpersonal
@@ -848,30 +853,42 @@ export default class Report extends React.Component {
           </Body>
           <p className={css(styles.sidebarBody, styles.hideUnlessMobile)}>
             {/* WARNING repeated for non-mobile */}
-            For more on the value of conversation in math education, see "<a href="https://ka-hivemind.herokuapp.com/?entry=MPm4fWnuAN3T37NSp">
+            For more on conversation in math, see "<a href="https://ka-hivemind.herokuapp.com/?entry=MPm4fWnuAN3T37NSp">
               Identity, Agency, and Knowing in Mathematical Worlds
             </a>" by Jo Boaler and James Greeno.
           </p>
         </BodyAndSidebar>
         <BodyAndSidebar>
           <Subheading>Empowerment, not condescension</Subheading>
-          <SidebarItem top={47}>
-            <Figure caption="TODO NEEDS SOURCE">
+          <SidebarItem top={96}>
+            <Figure
+              noBottomMargin
+              caption={
+                <span>
+                  Minecraft empowered this player to{" "}
+                  <a href="https://www.youtube.com/watch?v=kGFZ9beEgdI">
+                    make a working guitar
+                  </a>.
+                </span>
+              }
+            >
               <img
                 src="/images/long-term-research/reports/early-math/4-principles/5-empowerment.jpg"
                 style={{ width: "100%" }}
               />
             </Figure>
-            <p className={css(styles.sidebarBody, styles.hideOnMobile)}>
-              {/* WARNING repeated for mobile */}
-              For more on how to use technology to unlock creative learning, see
-              Mitch Resnick's{" "}
-              <em>
-                <a href="https://mitpress.mit.edu/books/lifelong-kindergarten">
-                  Lifelong Kindergarten
-                </a>
-              </em>.
-            </p>
+            <div style={{ marginTop: 24 }}>
+              <p className={css(styles.sidebarBody, styles.hideOnMobile)}>
+                {/* WARNING repeated for mobile */}
+                For more on how to use technology to unlock creative learning,
+                see Mitch Resnick's{" "}
+                <em>
+                  <a href="https://mitpress.mit.edu/books/lifelong-kindergarten">
+                    Lifelong Kindergarten
+                  </a>
+                </em>.
+              </p>
+            </div>
           </SidebarItem>
           <Body>
             Mathematical ideas are deeply empowering! Can we create activities

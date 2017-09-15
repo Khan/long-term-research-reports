@@ -4,7 +4,13 @@ import React from "react";
 import globalStyles from "webapp/shared-styles-package/global-styles";
 import mediaQueries from "webapp/shared-styles-package/media-queries";
 
-const Figure = ({ children, caption, noBottomMargin, noTopMargin, noBorder }) =>
+const Figure = ({
+  children,
+  caption,
+  noBottomMargin,
+  noTopMargin,
+  noBorder,
+}) => (
   <div
     className={css(
       styles.figureContainer,
@@ -14,14 +20,20 @@ const Figure = ({ children, caption, noBottomMargin, noTopMargin, noBorder }) =>
   >
     <div className={css(styles.figure)}>
       {children}
-      {noBorder ? null : <div className={css(styles.figureBorder)} /> }
+      {noBorder ? null : <div className={css(styles.figureBorder)} />}
     </div>
-    {caption
-      ? <div className={css(styles.figureCaption)}>
-          {caption}
-        </div>
-      : null}
-  </div>;
+    {caption ? (
+      <div
+        className={css(
+          styles.figureCaption,
+          noBottomMargin ? styles.noBottomMargin : undefined,
+        )}
+      >
+        {caption}
+      </div>
+    ) : null}
+  </div>
+);
 
 export default Figure;
 
@@ -32,17 +44,17 @@ const styles = StyleSheet.create({
       maxWidth: 450,
       marginLeft: "auto",
       marginRight: "auto",
-    }
+    },
   },
 
   noTopMargin: {
-    marginTop: 0
+    marginTop: 0,
   },
-  
+
   noBottomMargin: {
-    marginBottom: 0
+    marginBottom: 0,
   },
-  
+
   figure: {
     borderRadius: 4,
     overflow: "hidden",
