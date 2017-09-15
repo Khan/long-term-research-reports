@@ -527,7 +527,9 @@ export default class Report extends React.Component {
             </Figure>
             <Body>
               Could children start to learn about ratios using a color mixer
-              that only takes numerical quantities of color as input?
+              that only takes numerical quantities of color as input? What if
+              our machine mixes light instead of paint—how does that affect how
+              colors combine?
             </Body>
           </div>
           <div className={css(styles.carouselItem)}>
