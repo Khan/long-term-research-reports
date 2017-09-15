@@ -551,15 +551,15 @@ export default class Report extends React.Component {
           </div>
           <div className={css(styles.carouselItem)}>
             <Figure>
-            <video
-            src="/videos/long-term-research/reports/early-math/3-multiplier-wand.mp4"
-            style={{ width: "100%" }}
-            loop
-            muted
-            autoPlay
-            playsInline
-          />
-        </Figure>
+              <video
+                src="/videos/long-term-research/reports/early-math/3-multiplier-wand.mp4"
+                style={{ width: "100%" }}
+                loop
+                muted
+                autoPlay
+                playsInline
+              />
+            </Figure>
             <Body>
               What if multiplication were a superpower you could find in the
               world—and once found, you could tap on anything to multiply it?
@@ -618,9 +618,9 @@ export default class Report extends React.Component {
           goal: an open-ended adventure in a playful world of creative math.
           That vision grew from design themes we developed during our background
           reading and interviews. As you read through these themes, imagine:
-          what would educational technologies you’ve used look like through
-          these lenses? In the next section, we’ll show one world we imagined
-          using these themes.
+          what would educational technologies you’ve used look like if they were
+          recreated according to these themes? In the section following this
+          one, we’ll show a world we imagined using these themes.
         </Body>
         <Subheading>Learning through discovery</Subheading>
         <BodyAndSidebar>
@@ -829,14 +829,18 @@ export default class Report extends React.Component {
                   src="/images/long-term-research/reports/early-math/4-principles/4-art-direction-for-curiosity-2.jpg"
                   style={{ width: "100%" }}
                 />
-                <p className={css(styles.artDirectionLabel)}>Caspar David Friedrich</p>
+                <p className={css(styles.artDirectionLabel)}>
+                  Caspar David Friedrich
+                </p>
               </div>
               <div className={css(fourImageCrossFadeStyle.three)}>
                 <img
                   src="/images/long-term-research/reports/early-math/4-principles/4-art-direction-for-curiosity-3.jpg"
                   style={{ width: "100%" }}
                 />
-                <p className={css(styles.artDirectionLabel, styles.mystLabel)}>Myst</p>
+                <p className={css(styles.artDirectionLabel, styles.mystLabel)}>
+                  Myst
+                </p>
               </div>
               <div className={css(fourImageCrossFadeStyle.four)}>
                 <img
