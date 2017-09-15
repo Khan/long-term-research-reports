@@ -937,14 +937,21 @@ export default class Report extends React.Component {
             Can we build an environment which continues to reward deeper
             understanding, becoming ever more empowering as its occupants grow?
           </Body>
+        </BodyAndSidebar>
+        <BodyAndSidebar>
           <Body>
             We imagined a world where children could eventually "look behind" an
             object in the digital world to see a more abstract representation.
-            As learners understand more about the objects in their environment,
-            they can grow new powers by using higher levels of abstraction.
+            For instance, a child might first describe a flower by{" "}
+            <a href="https://en.wikipedia.org/wiki/Van_Hiele_model#Van_Hiele_levels">
+              its holistic shape
+            </a>, but as they develop, they’ll come to see how its petals
+            abstractly relate to leaves of a tree. At that point, they’re ready
+            to define the patterns petals follow. The child can climb{" "}
+            <a href="http://worrydream.com/LadderOfAbstraction/">
+              up and down the ladder of abstraction
+            </a>.
           </Body>
-        </BodyAndSidebar>
-        <BodyAndSidebar>
           <SidebarItem>
             <Figure>
               <img
@@ -953,21 +960,6 @@ export default class Report extends React.Component {
               />
             </Figure>
           </SidebarItem>
-          <Body noBottomMargin>
-            For instance, a child might initially understand a triangle in terms
-            of its holistic appearance, but{" "}
-            <a href="https://en.wikipedia.org/wiki/Van_Hiele_model">
-              as they develop and grow their experience
-            </a>, they’ll come think of triangles in terms of more abstract
-            properties. Ultimately, they’ll see how those properties extend to
-            other shapes and to a larger system. In the same way, we might
-            initially express a flower as a collection of petals—but later
-            define the petals through structured patterns, and eventually define
-            those patterns through a system of code. The child can climb{" "}
-            <a href="http://worrydream.com/LadderOfAbstraction/">
-              up and down the ladder of abstraction
-            </a>.
-          </Body>
         </BodyAndSidebar>
         <Heading>Weaving it all together</Heading>
         <Body wide>
