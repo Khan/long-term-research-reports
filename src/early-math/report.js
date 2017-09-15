@@ -90,7 +90,7 @@ const HeroHeader = () => (
       >
         <Breadcrumb color="white" />
         <h1 className={css(styles.title)}>
-          Playful worlds of creative math: an exploration
+          Playful worlds of creative math: a design exploration
         </h1>
         <div className={css(styles.hideOnMobile)}>
           <Authors />
@@ -350,12 +350,12 @@ export default class Report extends React.Component {
           <Body>
             Plenty of grown-up artists, scientists, and engineers find math
             tremendously empowering. We wondered: how might we enable that
-            feeling earlier in learners' lives? We envisioned a world where kids
-            can create, explore, and remix by playing with the mathematical
-            properties of the objects within it. You can't visit that world yet,
-            but we hope to inspire other creators of educational environments
-            through our sketches, design themes, and snippets from learning
-            theory.
+            feeling earlier in learners' lives? We explored designs for a world
+            where kids can create, explore, and remix by playing with the
+            mathematical properties of the objects within it. You can't visit
+            that world yet, but we hope to inspire other creators of educational
+            environments through our sketches, design themes, and snippets from
+            learning theory.
           </Body>
         </div>
         <Hairline />
