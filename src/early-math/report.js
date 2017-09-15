@@ -644,11 +644,10 @@ export default class Report extends React.Component {
             it’s about.
           </p>
           <Body>
-            Learning games often feel bolted onto their subjects like
-            chocolate-covered broccoli, sprinkling game mechanics like badges or
-            scoreboards on top of a dull task. Extrinsic “chocolate” motivators
-            can be used to incentivize any other random task; they’re
-            disconnected from the meaning of the activity.
+            Learning games often feel bolted onto their subjects. Scoreboards
+            and badges cover dull tasks like chocolate-covered broccoli. These
+            shallow motivators aren’t connected to the meaning of the activity;
+            they could have been used to incentivize any random task.{" "}
           </Body>
           <SidebarItem>
             <p className={css(styles.sidebarBody)}>
@@ -667,7 +666,7 @@ export default class Report extends React.Component {
             </Figure>
             <p className={css(styles.sidebarBody, styles.hideOnMobile)}>
               {/* Note that this paragraph is duplicated below for mobile */}
-              Plenty of evidence suggests that shallow extrinsic motivations{" "}
+              Plenty of evidence suggests that extrinsic motivations{" "}
               <a href="http://psycnet.apa.org/record/1974-10497-001">
                 can squash burgeoning intrinsic motivation
               </a>{" "}
@@ -685,7 +684,7 @@ export default class Report extends React.Component {
           </Body>
           <p className={css(styles.sidebarBody, styles.hideUnlessMobile)}>
             {/* Note that this paragraph is duplicated below for mobile */}
-            Plenty of evidence suggests that shallow extrinsic motivations{" "}
+            Plenty of evidence suggests that extrinsic motivations{" "}
             <a href="http://psycnet.apa.org/record/1974-10497-001">
               can squash burgeoning intrinsic motivation
             </a>{" "}
