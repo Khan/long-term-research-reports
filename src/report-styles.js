@@ -217,9 +217,10 @@ export default {
     ":focus": {
       opacity: 1,
     },
-    height: 20,
+    height: 97.5,
     [mediaQueries.smOrSmaller]: {
-      top: "calc((100vw - (31px)*2) * 3 / 4 / 2)",
+      display: "none",
+      // top: "calc((100vw - (31px)*2) * 3 / 4 / 2)",
     },
     [mediaQueries.mdOrLarger]: {
       top: 131,

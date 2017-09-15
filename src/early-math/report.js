@@ -6,7 +6,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "babel-polyfill";
 
-import angleBracketLeftIcon from "webapp/shared-styles-package/icon.angleBracketLeft.js";
 import globalStyles from "webapp/shared-styles-package/global-styles";
 import mediaQueries from "webapp/shared-styles-package/media-queries";
 import sharedReportStyles from "../report-styles";
@@ -15,46 +14,12 @@ import Breadcrumb from "../components/breadcrumb";
 import Figure from "../components/figure";
 import Forest from "./forest";
 
-const Icon = props => {
-  const { color, pathClassName, className } = props;
-  let { icon, size } = props;
-  let units = "";
-
-  // If the raw path was passed in, wrap it in the format that we expect.
-  if (typeof icon === "string") {
-    icon = {
-      path: icon,
-      width: 10,
-      height: 10,
-    };
-  }
-
-  // `size` defaults to 1em to mirror the behavior of Font Awesome.
-  if (typeof size !== "number") {
-    size = 1;
-    units = "em";
-  }
-
-  const height = size;
-  const width = height / icon.height * icon.width;
-
-  // NOTE: We assume that the viewBox is cropped and aligned to (0, 0),
-  //       but icons can be defined differently. At some point we might
-  //       want to add these attributes to icon-paths.js, but for now
-  //       this is a fairly safe assumption.
-  const xMin = 0;
-  const yMin = 0;
-
+const isTouch = () => {
   return (
-    <svg
-      className={className}
-      focusable={!!props.focusable}
-      width={width + units}
-      height={height + units}
-      viewBox={`${xMin} ${yMin} ${icon.width} ${icon.height}`}
-    >
-      <path className={pathClassName} fill={color} d={icon.path} />
-    </svg>
+    null === window.ontouchstart &&
+    null === window.ontouchmove &&
+    null === window.ontouchend &&
+    !/Windows NT/.test(window.navigator.userAgent)
   );
 };
 
@@ -322,13 +287,18 @@ const CarouselArrow = ({ className, style, onClick, isNext }) => (
   <div
     className={css(styles.carouselArrow)}
     style={{
-      transform: `translate(0, -50%)${isNext ? " scaleX(-1)" : ""}`,
-      right: isNext ? 10 : undefined,
-      left: isNext ? undefined : 10,
+      position: "absolute",
+      transform: `translate(0, -50%) ${isNext ? "" : " scaleX(-1)"}`,
+      right: isNext ? 0 : undefined,
+      left: isNext ? undefined : 0,
     }}
     onClick={onClick}
   >
-    <Icon icon={angleBracketLeftIcon} size={20} color="#fff" />
+    <img
+      src="/images/long-term-research/reports/early-math/3-carousel/3-carousel-arrow.png"
+      width="84"
+      height="97.5"
+    />
   </div>
 );
 
@@ -338,8 +308,12 @@ const CarouselPrevArrow = props => <CarouselArrow {...props} />;
 
 export default class Report extends React.Component {
   componentDidMount = () => {
-    // Aphrodite interferes with the initial sizing of our carousel. This is a hack to work around that.
-    setTimeout(() => this.slider.innerSlider.onWindowResized(), 0);
+    setTimeout(() => {
+      // Aphrodite interferes with the initial sizing of our carousel. This is a hack to work around that.
+      this.slider.innerSlider.onWindowResized();
+      // Break out of your box!
+      this.slider.innerSlider.list.style.overflow = "visible";
+    }, 0);
   };
 
   render = () => (
@@ -487,6 +461,10 @@ export default class Report extends React.Component {
           them focused on specific interactions; others refined our principles
           or broader architecture. Here’s a peek at more sketches and process.
         </Body>
+        <div style={{ position: "absolute", left: 0, width: "100%" }}>
+          <CarouselPrevArrow onClick={() => this.slider.slickPrev()} />
+          <CarouselNextArrow onClick={() => this.slider.slickNext()} />
+        </div>
         <Slider
           ref={slider => (this.slider = slider)}
           dots
@@ -495,8 +473,8 @@ export default class Report extends React.Component {
           centerMode
           centerPadding="223px"
           dots={false}
-          nextArrow={<CarouselNextArrow />}
-          prevArrow={<CarouselPrevArrow />}
+          arrows={false}
+          swipe={isTouch()}
           responsive={[
             {
               breakpoint: 1200,
@@ -513,9 +491,8 @@ export default class Report extends React.Component {
             {
               breakpoint: 768,
               settings: {
-                centerMode: false,
-                autoplay: true,
-                autoplaySpeed: 5000,
+                swipe: true,
+                centerPadding: "10px",
               },
             },
           ]}
