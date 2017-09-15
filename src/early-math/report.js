@@ -606,8 +606,9 @@ export default class Report extends React.Component {
             </Figure>
             <Body>
               What if painting by numbers really meant{" "}
-              <em>painting by numbers?</em> The block manipulatives we started
-              developing here later became transformed into{" "}
+              <em>painting by numbers?</em> Can we reveal the number patterns in
+              pixel art? The block manipulatives we started developing here
+              later meandered their way into{" "}
               <a href="/research/reports/cantor">
                 Cantor, another research project
               </a>.
