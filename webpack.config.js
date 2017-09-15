@@ -103,7 +103,10 @@ module.exports = {
         "/fonts",
         express.static(path.join(__dirname, "../webapp/fonts"))
       );
-
+      app.use(
+        "/styles",
+        express.static(path.join(__dirname, "styles"))
+      );
     },
 
     historyApiFallback: true,
