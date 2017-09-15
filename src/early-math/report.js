@@ -544,9 +544,8 @@ export default class Report extends React.Component {
             <Body>
               Playing with sensors is fun! And it’s always fun to connect the
               digital back into the physical world. Could we connect movement or
-              sensors to numbers? We also played with the idea of kids being
-              able to measure or count objects in the real world through the
-              camera.
+              sensors to numbers? We also tried enabling kids to measure or count
+              objects in the real world through the camera.
             </Body>
           </div>
           <div className={css(styles.carouselItem)}>
@@ -575,9 +574,10 @@ export default class Report extends React.Component {
               />
             </Figure>
             <Body>
+              To achieve numeracy, children must learn to read and write digits.
+              But we don’t have to make that proces all about right vs. wrong.
               Hey, you’ve written a lot of “3”s. Which ones do you like best?
-              What do you like about them? Let’s put your favorites up on the
-              wall for your friends to see.
+              Why? Let’s put those up on the wall for your friends to see.
             </Body>
           </div>
           <div className={css(styles.carouselItem)}>
