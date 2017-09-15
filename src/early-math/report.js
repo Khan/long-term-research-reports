@@ -546,8 +546,8 @@ export default class Report extends React.Component {
             <Body>
               Playing with sensors is fun! And it’s always fun to connect the
               digital back into the physical world. Could we connect movement or
-              sensors to numbers? We also tried enabling kids to measure or count
-              objects in the real world through the camera.
+              sensors to numbers? We also tried enabling kids to measure or
+              count objects in the real world through the camera.
             </Body>
           </div>
           <div className={css(styles.carouselItem)}>
