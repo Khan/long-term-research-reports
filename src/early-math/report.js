@@ -405,15 +405,17 @@ export default class Report extends React.Component {
           }
         >
           <Body>
-            Handwriting is another natural input method. It's also important
-            because it supports students in using the symbolic representation of
-            numbers—digits. Separately, we observed that many kids’ apps don’t
-            provide agency: they often instruct kids narrowly what to do.
+            Handwriting is another natural way to express numbers. It's also
+            important because it supports students in using the symbolic
+            representation of numbers: digits. Meanwhile, we observed that many
+            kids’ apps don’t give them any real agency. They tell kids what to
+            do.
           </Body>
           <Body>
-            What if, instead of asking students to handwrite a response
-            correctly to a fixed prompt, we turn things upside down and let them
-            modify the scene with whatever numbers they can write?
+            This prototype tried to explore handwriting through the lens of
+            giving kids agency. Instead of asking students to use handwriting to
+            answer a fixed math problem, what if we turn things upside down—give
+            them a scene they can alter with whatever numbers they can write?
           </Body>
           <Body>
             Want to see what thirty-three birds looks like? Handwrite 33!
