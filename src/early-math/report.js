@@ -1118,22 +1118,52 @@ export default class Report extends React.Component {
             growth—and a whole new world.
           </Body>
         </StoryboardElement>
+        <BodyAndSidebar>
         <Heading>Onward</Heading>
-        <Body wide>
-          Over two years have passed since we had this first little dream of a
-          playful world of creative math. The ideas still resonate with us–we
-          hope they sparked something in you, too!
-        </Body>
-        <Body wide>
-          The early explorations we’ve shared in this article have led to other
-          projects, like{" "}
-          <a href="/research/reports/cantor">
-            Cantor, our number block manipulative
-          </a>. Amongst these sketches and design themes, we feel there are more
-          seedlings of ideas that could potentially blossom. We hope that they
-          inspire others to join us in pushing toward a humane future of
-          learning technology!
-        </Body>
+          <SidebarItem top={20}>
+            <Figure noBorder>
+              <img
+                src="/images/long-term-research/reports/cantor/chest-of-toys.png"
+                style={{ width: "100%" }}
+              />
+            </Figure>
+            <p className={css(styles.sidebarBody, styles.hideOnMobile)}>
+              The early explorations we’ve shared in this article have led to
+              other projects, like{" "}
+              <a href="http://khanacademy.org/research/reports/cantor">
+                Cantor, our number block manipulative.
+              </a>
+            </p>
+          </SidebarItem>
+          <Body>
+            Plenty of grown-up artists, scientists, and engineers find math
+            tremendously empowering. We dream of helping every child feel the
+            same way.
+          </Body>
+          <Body>
+            An open-ended adventure in a playful world of creative math could
+            help kids experience what math lovers experience. Curiosity! Wonder!
+            Creative superpowers! Poetry!
+          </Body>
+        </BodyAndSidebar>
+        <BodyAndSidebar>
+          <Body>
+            Over two years have passed since we had this first little dream.
+            Amongst these sketches and design themes, we feel there are more
+            seedlings waiting to blossom. The ideas still resonate with us; if
+            they sparked something in you, we hope you’ll bring them to your own
+            work. Together we can spread mathematical joy near and far!
+          </Body>
+          <SidebarItem>
+            <p className={css(styles.sidebarBody, styles.hideUnlessMobile)}>
+              The early explorations we’ve shared in this article have led to
+              other projects, like{" "}
+              <a href="http://khanacademy.org/research/reports/cantor">
+                Cantor, our number block manipulative.
+              </a>
+            </p>
+          </SidebarItem>
+        </BodyAndSidebar>
 
         <Heading>Further reading</Heading>
         <Body wide>
