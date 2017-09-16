@@ -418,9 +418,9 @@ export default class Report extends React.Component {
             value—that 27 is the same as 20 + 7.
           </Body>
           <Body>
-            In the digital medium, though, kids can morph these cards’ values
-            with a swipe of the finger. Again we thought: what if students could
-            see their own manipulations play out in visual quantities?
+            In the digital medium, though, kids can morph these cards’ values by
+            scrubbing them with their finger. Again we thought: what if students
+            could see their own manipulations play out in visual quantities?
           </Body>
           <Body>
             Play with the tens card, and: whoa! You’re adding ten birds at a
