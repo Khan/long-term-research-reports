@@ -131,6 +131,7 @@ export default class Forest extends React.Component {
     };
 
     this.images = [];
+    this.imageLoadTime = null;
   }
 
   startAnimation = () => {
@@ -151,6 +152,11 @@ export default class Forest extends React.Component {
     this.animationRequest = window.requestAnimationFrame(this.animate);
 
     if (!Object.keys(this.images).every(k => this.images[k].complete)) {
+      return;
+    } else if (!this.imageLoadTime) {
+      this.imageLoadTime = timestamp;
+      return;
+    } else if ((timestamp - this.imageLoadTime) < 750) {
       return;
     }
 
