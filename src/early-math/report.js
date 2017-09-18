@@ -991,7 +991,7 @@ export default class Report extends React.Component {
             <em>
               <a href="https://mindstorms.media.mit.edu/">Mindstorms</a>,
             </em>{" "}
-            again, for more on this).
+            on “body syntonicity” for more on this).
           </Body>
           <Body>
             New items that spark curiosity appear throughout the journey—like
