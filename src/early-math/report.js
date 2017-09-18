@@ -930,12 +930,12 @@ export default class Report extends React.Component {
             the same can of paint.
           </Body>
           <SidebarItem top={50}>
-            <div
-              className={css(styles.placeholder)}
-              style={{ width: "100%", height: 275, marginBottom: 24 }}
-            >
-              TODO: neato image of duplo + mindstorms
-            </div>
+            <Figure>
+              <img
+                src="/images/long-term-research/reports/early-math/4-principles/6-duplo-mindstorms.jpg"
+                style={{ width: "100%" }}
+              />
+            </Figure>
             <div className={css(styles.hideOnMobile)}>
               {/* WARNING repeated for mobile */}
               <Figure>
