@@ -366,7 +366,7 @@ export default class Report extends React.Component {
             As we tried out our prototype, we realized we could assign a note to
             each number. With this interaction, a child's natural
             gesture—holding up some fingers to indicate a number—becomes a
-            musical instrument!
+            musical instrument.
           </Body>
         </PrototypeExample>
         <PrototypeExample
@@ -423,7 +423,7 @@ export default class Report extends React.Component {
             could see their own manipulations play out in visual quantities?
           </Body>
           <Body>
-            Play with the tens card, and: whoa! You’re adding ten birds at a
+            Play with the tens card, and: whoa. You’re adding ten birds at a
             time!
           </Body>
         </PrototypeExample>
@@ -443,7 +443,7 @@ export default class Report extends React.Component {
             </a>
           </Body>
           <Body>
-            Digital objects can disappear into thin air! We played with that
+            Digital objects can disappear into thin air. We played with that
             observation to illustrate{" "}
             <a href="https://vimeo.com/157768846">
               different ways of thinking about subtraction
