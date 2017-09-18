@@ -910,29 +910,40 @@ export default class Report extends React.Component {
               </a>
             </em>.
           </p>
-          <Body>
-            <Principle>Empowerment.</Principle> We believe that genuine interest
-            will follow from empowerment, and successful learning will follow
-            from genuine interest. To that end, we explored creative tools for
-            art and music, translating numeracy into exciting personal
-            creations. We imagined a world full of secrets worth exploring and
-            connected that exploration to mathematical understanding. We wanted
-            to show students just how empowering math can be.
+          <Body noBottomMargin>
+            We believe that genuine interest will follow from empowerment, and
+            successful learning will follow from genuine interest. To that end,
+            we explored creative tools for art and music, translating numeracy
+            into exciting personal creations. We imagined a world full of
+            secrets worth exploring and connected that exploration to
+            mathematical understanding. We wanted to show students just how
+            empowering math can be.
           </Body>
         </BodyAndSidebar>
         <BodyAndSidebar>
+          <Subheading>Growth</Subheading>
           <Body>
-            <Principle>Growth.</Principle> Powerful ideas grow with people, and
-            we wanted our design to do the same. Toddlers build simple
-            structures with Duplo, then more complex objects with Lego, then
-            moving parts with Technic, and even robotics with Mindstorms.
+            Powerful ideas grow with people, and we wanted our design to do the
+            same. Toddlers build simple structures with Duplo, then more complex
+            objects with Lego, then moving parts with Technic, and even robotics
+            with Mindstorms. Kids and adults can both make wonderful things with
+            the same can of paint.
           </Body>
-          <SidebarItem>
+          <SidebarItem top={50}>
             <div
               className={css(styles.placeholder)}
               style={{ width: "100%", height: 275, marginBottom: 24 }}
             >
               TODO: neato image of duplo + mindstorms
+            </div>
+            <div className={css(styles.hideOnMobile)}>
+              {/* WARNING repeated for mobile */}
+              <Figure>
+                <img
+                  src="/images/long-term-research/reports/early-math/5-storyboard/8.png"
+                  style={{ width: "100%" }}
+                />
+              </Figure>
             </div>
           </SidebarItem>
           <Body>
@@ -957,12 +968,15 @@ export default class Report extends React.Component {
             </a>.
           </Body>
           <SidebarItem>
-            <Figure>
-              <img
-                src="/images/long-term-research/reports/early-math/5-storyboard/8.png"
-                style={{ width: "100%" }}
-              />
-            </Figure>
+            <div className={css(styles.hideUnlessMobile)}>
+              <Figure>
+                {/* WARNING repeated for mobile */}
+                <img
+                  src="/images/long-term-research/reports/early-math/5-storyboard/8.png"
+                  style={{ width: "100%" }}
+                />
+              </Figure>
+            </div>
           </SidebarItem>
         </BodyAndSidebar>
         <Heading>Weaving it all together</Heading>
