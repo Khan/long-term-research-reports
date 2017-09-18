@@ -795,6 +795,10 @@ export default class Report extends React.Component {
             imagination, a feeling of possibility and a sense of adventure. We
             believe that in a carefully art-directed environment, a child’s
             imagination evokes much more than we could have rendered ourselves.
+            Even better: we’ve entangled our art direction with the math. When
+            kids act on their curiosity in this world (e.g. what’s in the
+            tree?), they’re manipulating numbers (e.g. to build themselves a
+            ladder).
           </Body>
           <SidebarItem top={8}>
             <Figure
