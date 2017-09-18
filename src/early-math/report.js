@@ -556,7 +556,7 @@ export default class Report extends React.Component {
             </Figure>
             <Body>
               To achieve numeracy, children must learn to read and write digits.
-              But we don’t have to make that proces all about right vs. wrong.
+              But we don’t have to make that process all about right vs. wrong.
               Hey, you’ve written a lot of “3”s. Which ones do you like best?
               Why? Let’s put those up on the wall for your friends to see.
             </Body>
