@@ -934,6 +934,8 @@ export default class Report extends React.Component {
           <Body>
             Can we build an environment which continues to reward deeper
             understanding, becoming ever more empowering as its occupants grow?
+            Or with ideas deep and broad enough to appeal to novices and experts
+            alike, in their own ways?
           </Body>
         </BodyAndSidebar>
         <BodyAndSidebar>
@@ -1119,7 +1121,7 @@ export default class Report extends React.Component {
           </Body>
         </StoryboardElement>
         <BodyAndSidebar>
-        <Heading>Onward</Heading>
+          <Heading>Onward</Heading>
           <SidebarItem top={20}>
             <Figure noBorder>
               <img
