@@ -1245,6 +1245,8 @@ export default class Report extends React.Component {
             "Monica Tran",
             "Amit Patel",
             "Christopher Walker",
+            "Jack Schaedler",
+            "Nicky Case",
           ]
             .map(name => name.split(" "))
             .sort(
