@@ -1028,7 +1028,7 @@ export default class Report extends React.Component {
           </SidebarItem>
         </BodyAndSidebar>
 
-        <Heading>Further reading</Heading>
+        <Heading>Further reading, listening, playing</Heading>
         <Body wide>
           If you're interested in reading more about the topics in this report,
           our top recommendations are:
@@ -1084,6 +1084,15 @@ export default class Report extends React.Component {
               </a>
             </em>{" "}
             (2017).
+          </FurtherReadingItem>
+          <FurtherReadingItem>
+            We were inspired in art direction and in concept by wonderful children's books like <a href="https://books.google.com/books/about/Harold_and_the_Purple_Crayon.html?id=ZWlK6Y3rhiMC&printsec=frontcover&source=kp_read_button#v=onepage&q&f=false">Harold and the Purple Crayon</a> by Crockett Johnson and <a href="https://books.google.com/books/about/Journey.html?id=BOSgRVqWPCsC&printsec=frontcover&source=kp_read_button#v=onepage&q&f=false">Journey</a> by Aaron Becker.
+          </FurtherReadingItem>
+          <FurtherReadingItem>
+            We imagined sound direction along the lines of <a href="https://www.youtube.com/watch?v=3Ei4Dxxhi_s">Lullatone</a> and <a href="https://www.youtube.com/watch?v=NZGznPUC43k">Las Cafeteras</a>.
+          </FurtherReadingItem>
+          <FurtherReadingItem>
+            We were influenced by so many games! A few standouts: <a href="https://en.wikipedia.org/wiki/Journey_(2012_video_game)">Journey</a>, <a href="https://en.wikipedia.org/wiki/Fez_(video_game)">Fez</a>, <a href="https://en.wikipedia.org/wiki/Monument_Valley_(video_game)">Monument Valley</a>, and <a href="https://en.wikipedia.org/wiki/Braid_(video_game)">Braid</a>.
           </FurtherReadingItem>
         </ul>
 
