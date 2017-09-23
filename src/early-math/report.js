@@ -544,11 +544,9 @@ export default class Report extends React.Component {
             Powerful ideas grow with people, and we wanted our design to do the
             same. Toddlers build simple structures with Duplo, then more complex
             objects with Lego, then moving parts with Technic, and even robotics
-            with Mindstorms. Over time, we reveal more “tools” and{" "}
-            <a href="https://en.wikipedia.org/wiki/Van_Hiele_model">
-              properties of objects in the world
-            </a>. Students eventually gain control over color, size, angle—as
-            well as operators on those numbers.
+            with Mindstorms. Over time, we reveal more “tools” and properties of
+            objects in the world. Students eventually gain control over color,
+            size, angle—as well as operators on those numbers.
           </Body>
           <Body>
             Learners can choose to “look behind” an activity to see its
@@ -568,11 +566,9 @@ export default class Report extends React.Component {
             climbable, theyʼll need to do both!
           </Body>
           <Body>
-            High school courses cover operators and{" "}
-            <a href="https://en.wikipedia.org/wiki/Van_Hiele_model#Van_Hiele_levels">
-              abstract properties
-            </a>, but we can smooth the ramp by allowing kids to experienced
-            them less formally years earlier.
+            High school courses cover operators and abstract properties , but we
+            can smooth the ramp by allowing kids to experienced them less
+            formally years earlier.
           </Body>
         </StoryboardElement>
 
@@ -701,11 +697,22 @@ export default class Report extends React.Component {
             <a href="http://www.nctm.org/uploadedFiles/Standards_and_Positions/PtAExecutiveSummary.pdf">
               help kids understand the <em>meaning</em> of number operations—not
               just how to perform procedures like adding numbers
-            </a>. One key way we did that was by{" "}
-            <a href="https://en.wikipedia.org/wiki/Van_Hiele_model">
-              connecting concrete, symbolic, and abstract representations
-            </a>. Here, the child simultaneously manipulates birds, digits, and
-            interesting place value operations.
+            </a>. One key way we did that was by connecting concrete, symbolic,
+            and abstract representations. Here, the child simultaneously
+            manipulates birds, digits, and interesting place value operations.
+          </Body>
+          <Body>
+            We imagined a world where children can "look behind" an object in
+            the digital world to see more abstract representations. A child
+            might first describe a flower by{" "}
+            <a href="https://en.wikipedia.org/wiki/Van_Hiele_model#Van_Hiele_levels">
+              its holistic shape
+            </a>, but as they develop, they’ll see how its petals abstractly
+            relate to leaves of a tree. Then they’re ready to control the
+            patterns that petals follow: the child can climb{" "}
+            <a href="http://worrydream.com/LadderOfAbstraction/">
+              up and down the ladder of abstraction
+            </a>.
           </Body>
         </PrototypeExample>
 
@@ -1011,11 +1018,12 @@ export default class Report extends React.Component {
           <Body>
             Over two years have passed since we completed this design
             exploration. Weʼve moved onto{" "}
-            <a href="https://www.khanacademy.org/research?t=projects">other projects</a>, but
-            weʼve carried the insights from this work in everything weʼve
-            done since. Weʼre thrilled we can share them with you now. If these ideas sparked something in you, we hope you’ll
-            bring them to your own work. Together we can spread mathematical joy
-            near and far!
+            <a href="https://www.khanacademy.org/research?t=projects">
+              other projects
+            </a>, but weʼve carried the insights from this work in everything
+            weʼve done since. Weʼre thrilled we can share them with you now. If
+            these ideas sparked something in you, we hope you’ll bring them to
+            your own work. Together we can spread mathematical joy near and far!
           </Body>
           <SidebarItem>
             <p className={css(styles.sidebarBody, styles.hideUnlessMobile)}>
@@ -1086,13 +1094,39 @@ export default class Report extends React.Component {
             (2017).
           </FurtherReadingItem>
           <FurtherReadingItem>
-            We were inspired in art direction and in concept by wonderful childrenʼs books like <a href="https://books.google.com/books/about/Harold_and_the_Purple_Crayon.html?id=ZWlK6Y3rhiMC&printsec=frontcover&source=kp_read_button#v=onepage&q&f=false">Harold and the Purple Crayon</a> by Crockett Johnson and <a href="https://books.google.com/books/about/Journey.html?id=BOSgRVqWPCsC&printsec=frontcover&source=kp_read_button#v=onepage&q&f=false">Journey</a> by Aaron Becker.
+            We were inspired in art direction and in concept by wonderful
+            childrenʼs books like{" "}
+            <a href="https://books.google.com/books/about/Harold_and_the_Purple_Crayon.html?id=ZWlK6Y3rhiMC&printsec=frontcover&source=kp_read_button#v=onepage&q&f=false">
+              Harold and the Purple Crayon
+            </a>{" "}
+            by Crockett Johnson and{" "}
+            <a href="https://books.google.com/books/about/Journey.html?id=BOSgRVqWPCsC&printsec=frontcover&source=kp_read_button#v=onepage&q&f=false">
+              Journey
+            </a>{" "}
+            by Aaron Becker.
           </FurtherReadingItem>
           <FurtherReadingItem>
-            We imagined sound direction along the lines of <a href="https://www.youtube.com/watch?v=3Ei4Dxxhi_s">Lullatone</a> and <a href="https://www.youtube.com/watch?v=NZGznPUC43k">Las Cafeteras</a>.
+            We imagined sound direction along the lines of{" "}
+            <a href="https://www.youtube.com/watch?v=3Ei4Dxxhi_s">
+              Lullatone
+            </a>{" "}
+            and{" "}
+            <a href="https://www.youtube.com/watch?v=NZGznPUC43k">
+              Las Cafeteras
+            </a>.
           </FurtherReadingItem>
           <FurtherReadingItem>
-            We were influenced by so many games! A few standouts: <a href="https://en.wikipedia.org/wiki/Journey_(2012_video_game)">Journey</a>, <a href="https://en.wikipedia.org/wiki/Fez_(video_game)">Fez</a>, <a href="https://en.wikipedia.org/wiki/Monument_Valley_(video_game)">Monument Valley</a>, and <a href="https://en.wikipedia.org/wiki/Braid_(video_game)">Braid</a>.
+            We were influenced by so many games! A few standouts:{" "}
+            <a href="https://en.wikipedia.org/wiki/Journey_(2012_video_game)">
+              Journey
+            </a>,{" "}
+            <a href="https://en.wikipedia.org/wiki/Fez_(video_game)">Fez</a>,{" "}
+            <a href="https://en.wikipedia.org/wiki/Monument_Valley_(video_game)">
+              Monument Valley
+            </a>, and{" "}
+            <a href="https://en.wikipedia.org/wiki/Braid_(video_game)">
+              Braid
+            </a>.
           </FurtherReadingItem>
         </ul>
 
