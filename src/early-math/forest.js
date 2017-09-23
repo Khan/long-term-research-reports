@@ -4,7 +4,7 @@ import { StyleSheet, css } from "aphrodite";
 
 import mediaQueries from "webapp/shared-styles-package/media-queries";
 
-const numCharFrames = 60;
+const numCharFrames = 32;
 const startingX = 1460;
 const cameraOffset = -1000;
 const imageSize = 125;
@@ -123,7 +123,7 @@ export default class Forest extends React.Component {
       targetPlayerX: startingX,
       playerStepSize: 0,
       playerCel: 0,
-      backgroundOriginXs: new Array(4)
+      backgroundOriginXs: new Array(6)
         .fill(cameraOffset)
         .map((initial, i) => initial + i * -30),
       hasTargetedYet: false,
@@ -156,7 +156,7 @@ export default class Forest extends React.Component {
     } else if (!this.imageLoadTime) {
       this.imageLoadTime = timestamp;
       return;
-    } else if ((timestamp - this.imageLoadTime) < 750) {
+    } else if (timestamp - this.imageLoadTime < 750) {
       return;
     }
 
@@ -264,13 +264,12 @@ export default class Forest extends React.Component {
   };
 
   setMovementTarget = (x: number) => {
-    console.log(        x -
-          this.state.backgroundOriginXs[
-            this.state.backgroundOriginXs.length - 1
-          ],
-        -cameraOffset,
-        startingX + 95 * 24,
-)
+    console.log(
+      x -
+        this.state.backgroundOriginXs[this.state.backgroundOriginXs.length - 1],
+      -cameraOffset,
+      startingX + 95 * 24,
+    );
     this.setState({
       hasTargetedYet: true,
       targetPlayerX: clip(
@@ -351,7 +350,7 @@ export default class Forest extends React.Component {
               width: containerWidth,
             }}
           >
-            {this.state.backgroundOriginXs.map((origin, index) =>
+            {this.state.backgroundOriginXs.map((origin, index) => (
               <div
                 style={{
                   ...imageStyle,
@@ -359,63 +358,69 @@ export default class Forest extends React.Component {
                 }}
                 key={index}
               >
-                <img src="/images/long-term-research/reports/early-math/character.png" style={{display: "none"}} ref={(image) => {this.images["character"] = image}} />
+                <img
+                  src="/images/long-term-research/reports/early-math/character.png"
+                  style={{ display: "none" }}
+                  ref={image => {
+                    this.images["character"] = image;
+                  }}
+                />
                 <img
                   src={`/images/long-term-research/reports/early-math/trees${index}.png`}
-                  ref={(image) => {this.images[index] = image}}
+                  ref={image => {
+                    this.images[index] = image;
+                  }}
                 />
-                {index === this.state.backgroundOriginXs.length - 1
-                  ? <div>
-                      <div
-                        style={{
-                          ...imageStyle,
-                          backgroundImage:
-                            "url('/images/long-term-research/reports/early-math/character.png')",
-                          backgroundSize: "1000px 1000px",
-                          backgroundPosition: `${this.state.playerCel %
-                            8 *
-                            -imageSize}px ${Math.floor(
-                            this.state.playerCel / 8,
-                          ) * -imageSize}px`,
-                          width: imageSize,
-                          height: imageSize,
-                          top: 0,
-                          left: 0,
-                          transform: `translate3d(${this.state.playerX -
-                            imageSize / 2}px, 575px, 0px) ${this.state
-                            .playerDirection === "left"
-                            ? "scaleX(-1)"
-                            : ""}`,
-                        }}
-                      />
-                      <div
-                        style={{
-                          backgroundImage:
-                            "url('/images/long-term-research/reports/early-math/balloon@2x.png')",
-                          backgroundSize: "142px 48px",
-                          position: "absolute",
-                          top: 0,
-                          left: 0,
-                          color: "#106173",
-                          fontFamily: "'Proxima Nova', sans-serif",
-                          fontSize: 22,
-                          boxSizing: "border-box",
-                          padding: "15px 7px 15px 0px",
-                          width: 142,
-                          height: 48,
-                          textAlign: "center",
-                          transform: `translate3d(${this.state.playerX -
-                            165}px, 680px, 0px)`,
-                        }}
-                      >
-                        {`x = ${Math.round(
-                          (this.state.playerX - startingX) / 24 + 4,
-                        )}, y = 0`}
-                      </div>
-                    </div>
-                  : null}
-              </div>,
-            )}
+                {index === this.state.backgroundOriginXs.length - 2 ? (
+                  <div
+                    style={{
+                      ...imageStyle,
+                      backgroundImage:
+                        "url('/images/long-term-research/reports/early-math/character.png')",
+                      backgroundSize: "1000px 500px",
+                      backgroundPosition: `${(this.state.playerCel % 8) *
+                        -imageSize}px ${Math.floor(this.state.playerCel / 8) *
+                        -imageSize}px`,
+                      width: imageSize,
+                      height: imageSize,
+                      top: 0,
+                      left: 0,
+                      transform: `translate3d(${this.state.playerX -
+                        imageSize / 2}px, 575px, 0px) ${this.state
+                        .playerDirection === "left"
+                        ? "scaleX(-1)"
+                        : ""}`,
+                    }}
+                  />
+                ) : null}
+                {index === this.state.backgroundOriginXs.length - 1 ? (
+                  <div
+                    style={{
+                      backgroundImage:
+                        "url('/images/long-term-research/reports/early-math/balloon@2x.png')",
+                      backgroundSize: "142px 48px",
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      color: "#106173",
+                      fontFamily: "'Proxima Nova', sans-serif",
+                      fontSize: 22,
+                      boxSizing: "border-box",
+                      padding: "15px 7px 15px 0px",
+                      width: 142,
+                      height: 48,
+                      textAlign: "center",
+                      transform: `translate3d(${this.state.playerX -
+                        165 + this.state.backgroundOriginXs[this.state.backgroundOriginXs.length - 2] - this.state.backgroundOriginXs[this.state.backgroundOriginXs.length - 1]}px, 680px, 0px)`,
+                    }}
+                  >
+                    {`x = ${Math.round(
+                      (this.state.playerX - startingX) / 24 + 4,
+                    )}, y = 0`}
+                  </div>
+                ) : null}
+              </div>
+            ))}
           </div>
         </div>
       </div>
