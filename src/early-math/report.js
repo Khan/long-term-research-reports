@@ -29,7 +29,8 @@ const Authors = () => (
       <strong>Report:</strong> Scott Farrar, May-Li Khoe, Andy Matuschak.{" "}
     </div>
     <div className={css(styles.authorLine)}>
-      <strong>Research:</strong> Jason Brennan, May-Li Khoe, Andy Matuschak.{" "}
+      <strong>Design and research:</strong> Jason Brennan, May-Li Khoe, Andy
+      Matuschak.{" "}
     </div>
     <div className={css(styles.authorLine)}>
       <strong>Illustrations:</strong> Natalie Fitzgerald, May-Li Khoe.{" "}
@@ -320,36 +321,431 @@ export default class Report extends React.Component {
     <div className={css(styles.outerClip)}>
       <div className={css(styles.container)}>
         <HeroHeader />
-        <div className={css(styles.lede)}>
-          <Body>
+        <BodyAndSidebar>
+          <Body wide>
             Plenty of grown-up artists, scientists, and engineers find math
-            tremendously empowering. We wondered: how might we enable that
-            feeling earlier in learners' lives? We explored designs for a world
-            where kids can create, explore, and remix by playing with the
-            mathematical properties of the objects within it. You can't visit
-            that world yet, but we hope to inspire other creators of educational
-            environments through our sketches, design themes, and snippets from
-            learning theory.
+            empowering and beautiful. We wondered:{" "}
+            <em>
+              how might we help more kids experience what math lovers
+              experience?
+            </em>{" "}
+            We explored designs for a world where everything wears its math on
+            its sleeve—where children can create and have adventures by playing
+            with the numbers behind every object. You can't visit that world
+            yet, but we hope our sketches and prototypes will inspire you to see
+            a new angle on educational technology.
           </Body>
-        </div>
-        <Hairline />
-        <Heading>An appetizer: early sketches and prototypes</Heading>
-        <Figure>
-          <video
-            src="/videos/long-term-research/reports/early-math/1-small-multiples.mp4"
-            muted
-            autoPlay
-            loop
-            playsInline
-            style={{ width: "100%" }}
-          />
-        </Figure>
-        <p className={css(styles.body, styles.wideParagraph)}>
-          Before we dive too deeply into details of our approach, we’d love to
-          whet your palate with some of our early sketches. We’ll use these
-          examples a little later to help illustrate the background research and
-          design themes that we used while making them.
-        </p>
+        </BodyAndSidebar>
+        <BodyAndSidebar>
+          <Body>
+            Why a <em>world</em>, anyway? Seymour Papert, one key inspiration,{" "}
+            <a href="https://www.youtube.com/watch?v=_l7TR6r8MK8&feature=youtu.be">
+              said
+            </a>:
+          </Body>
+          <SidebarItem>
+            <Figure
+              caption={
+                <span>
+                  This classic photo from Papert's{" "}
+                  <a href="https://mindstorms.media.mit.edu">
+                    <em>Mindstorms</em>
+                  </a>{" "}
+                  paints a playful relationship with learning we'd love to see
+                  every child experience.
+                </span>
+              }
+            >
+              <img
+                src="/images/long-term-research/reports/early-math/4-principles/3-emotional-connectedness.jpg"
+                style={{ width: "100%" }}
+              />
+            </Figure>
+            <div className={css(styles.hideOnMobile)}>
+              {/* Note that this paragraph is duplicated below for mobile */}
+
+              <Figure caption="The space alien theme might taste like chocolate at first, but it's covering the same old broccoli!">
+                <img
+                  src="/images/long-term-research/reports/early-math/4-principles/1-broccoli.jpg"
+                  style={{ width: "100%" }}
+                />
+              </Figure>
+            </div>
+          </SidebarItem>
+          <p className={css(styles.body, styles.blockQuote)}>
+            While it’s true that most people in math class don’t learn much
+            math, most kids in French class don’t learn much French. But we
+            don’t say that they’re not “French-ly minded.”… We know that if they
+            grew up in France, they would learn French perfectly well… If we all
+            learned mathematics in “Mathland,” we would all learn mathematics
+            perfectly well. How can we create “Mathland”? That’s really what
+            it’s about.
+          </p>
+          <Body>
+            Learning games often feel bolted onto their subjects. Scoreboards
+            and badges cover dull tasks like chocolate-covered broccoli. These
+            shallow motivators aren’t connected to the meaning of the activity;
+            they could have been used to incentivize any random task.
+          </Body>
+          <div className={css(styles.hideUnlessMobile)}>
+            {/* Note that this paragraph is duplicated below for mobile */}
+
+            <Figure caption="The space alien theme might taste like chocolate at first, but it's covering the same old broccoli!">
+              <img
+                src="/images/long-term-research/reports/early-math/4-principles/1-broccoli.jpg"
+                style={{ width: "100%" }}
+              />
+            </Figure>
+          </div>
+          <Body>
+            Kids learning language are constantly motivated by rich interactions
+            inextricable from daily life. How might we create the same kinds of
+            interactions in “Mathland,” so that learning math becomes as
+            intrinsically motivating as learning language?
+          </Body>
+          <Body noBottomMargin>
+            We imagined an{" "}
+            <em>open-ended adventure in a playful world of creative math</em>.
+            We imagined a world full of secrets worth exploring—and connected
+            that exploration to mathematical understanding. We wanted to show
+            students just how empowering math can be.
+          </Body>
+        </BodyAndSidebar>
+
+        <Heading>A day in Mathland</Heading>
+        <Body wide>
+          We sketched and prototyped a huge variety of possibilities, but let's
+          begin by walking through a full adventure in one potential
+          manifestation.
+        </Body>
+        <StoryboardElement storyboardElementNumber={1}>
+          <Body>
+            We start in a scene that evokes depth with its art direction,
+            leaving space for the child’s imagination to participate. What’s
+            hiding among the trees? Does the character live inside a tree?
+          </Body>
+          <Body>
+            A coordinate indicator trails the character, immediately linking
+            their actions to numbers in a way that children can naturally relate
+            to their own experience of their body in the world.
+          </Body>
+        </StoryboardElement>
+
+        <StoryboardElement storyboardElementNumber={2}>
+          <Body>
+            The child descends the steps. If they walk left from the
+            red-door-tree, they’ll get a first taste of negative numbers! The
+            computer doesn’t demand answers about the Cartesian grid model:
+            instead, with infinite patience, it surfaces that model by
+            reflecting the child’s actions in the environment.
+          </Body>
+          <Body>
+            New items that spark curiosity appear throughout the journey—like
+            this yellow door just out of reach, partway up a tree. What's behind
+            that door?
+          </Body>
+        </StoryboardElement>
+
+        <StoryboardElement storyboardElementNumber={3}>
+          <Body>
+            If something is out of reach, tapping it reveals its distance from
+            the ground. In this case, the yellow door’s distance is shown as
+            “7.”
+          </Body>
+          <Body>
+            We introduce the concept of distance because the learner has shown
+            us, through interaction, that they’re curious about it.
+          </Body>
+        </StoryboardElement>
+
+        <StoryboardElement storyboardElementNumber={4}>
+          <Body>
+            The character can’t yet reach the yellow door, so they continue on
+            and befriend a little basket with its own coordinates.
+          </Body>
+          <Body>
+            The basket will help the child by holding things the character can
+            collect like “quantity-bricks,” operators, and tools. Students will
+            use these mathematical objects to create in the world.
+          </Body>
+          <Body>
+            In education, it's easy to focus on cognition and lose sight of
+            students' emotions. But in this world, something as mundane as a
+            tool palette becomes a friend. By intentionally creating space for
+            emotional connections (this is just one type) we pave the way for a
+            deep, enduring relationship between a child and learning.
+          </Body>
+        </StoryboardElement>
+
+        <StoryboardElement storyboardElementNumber={5}>
+          <Body>
+            Children can “harvest” flowering plants to make quantities. For
+            example, as the player taps three flowers on a single stem, they
+            fill and collect a “3” quantity-brick. For now, if they want a "4"
+            brick, they'll need to find and count 4 of something.
+          </Body>
+          <Body>
+            Each flower blooms when tapped. This gentle feedback scaffolds{" "}
+            <a href="https://www.educateiowa.gov/sites/files/ed/documents/8017g%20Elem%20CLP%20with%20descriptors.pdf">
+              one-to-one correspondence counting
+            </a>, visually tracking what's been counted and what hasn't.
+          </Body>
+        </StoryboardElement>
+
+        <StoryboardElement storyboardElementNumber={6}>
+          <Body>
+            This child discovered that they can build themselves a staircase of
+            quantity-bricks. To build this staircase, they had to sort the
+            bricks by length, reinforcing their ability to compare number
+            quantities.
+          </Body>
+          <Body>
+            There were many ways they might have reached the door. What if they
+            had different quantity bricks in their basket? What if the they had
+            no brick with length 5? How might they creatively clear these
+            hurdles? Can you think of other ways to reach the door?
+          </Body>
+          <Body>
+            Now we’ve reached the yellow door. What's inside the tree?
+          </Body>
+        </StoryboardElement>
+
+        <StoryboardElement storyboardElementNumber={7}>
+          <Body>
+            We reward curiosity with more opportunity for exploration! Inside
+            the tree, children can play with the relationship between numbers
+            and sound; pitches correspond to quantities.
+          </Body>
+          <Body>
+            <a href="http://www.papert.org/articles/SomePoeticAndSocialCriteriaForEducationDesign.html">
+              Computer-generated art and music are outstanding opportunities to
+              experience the link between beauty and math.
+            </a>{" "}
+            That’s because computers can translate between familiar forms of
+            numbers and these alternative representations in real time.
+          </Body>
+          <Body>
+            Mathematical ideas are deeply empowering! Can we create activities
+            which reflect that power—which we're genuinely excited to share?
+            Let's not make tasks we <em>pretend</em> are interesting so that
+            kids will learn "what's good for them." We believe that genuine
+            interest will follow from empowerment, and successful learning will
+            follow from genuine interest.
+          </Body>
+        </StoryboardElement>
+
+        <StoryboardElement storyboardElementNumber={8}>
+          <Body>
+            We’ve scattered these kinds of creative activities everywhere. For
+            instance, children can alter computationally-generated flowers with
+            quantity-bricks.
+          </Body>
+          <Body>
+            Powerful ideas grow with people, and we wanted our design to do the
+            same. Toddlers build simple structures with Duplo, then more complex
+            objects with Lego, then moving parts with Technic, and even robotics
+            with Mindstorms. Over time, we reveal more “tools” and{" "}
+            <a href="https://en.wikipedia.org/wiki/Van_Hiele_model">
+              properties of objects in the world
+            </a>. Students eventually gain control over color, size, angle—as
+            well as operators on those numbers.
+          </Body>
+          <Body>
+            Learners can choose to “look behind” an activity to see its
+            underlying mechanics. In the tradition of
+            <a href="https://en.wikipedia.org/wiki/HyperCard">Hypercard</a> and
+            Flash, we can support kids in digging all the way down to source
+            code!
+          </Body>
+        </StoryboardElement>
+
+        <StoryboardElement storyboardElementNumber={9}>
+          <Body>
+            Children can combine operators and tools in powerful ways with
+            properties of objects in the world. For example, if the character
+            happens upon a ladder, they can manipulate either its height
+            attribute, or its number of rungs. To make a ladder both taller and
+            climbable, they'll need to do both!
+          </Body>
+          <Body>
+            High school courses cover operators and{" "}
+            <a href="https://en.wikipedia.org/wiki/Van_Hiele_model#Van_Hiele_levels">
+              abstract properties
+            </a>, but we can smooth the ramp by allowing kids to experienced
+            them less formally years earlier.
+          </Body>
+        </StoryboardElement>
+
+        <StoryboardElement storyboardElementNumber={10}>
+          <Body>
+            If a child is curious what might exist up far above the trees, they
+            may try to get there by setting the ladder’s height to a huge
+            number. But: they wouldn’t be able to collect a quantity large
+            enough by counting! We support curiosity and the urge to push limits
+            by embracing this kind of intellectual need as it arises. The ladder
+            problem inspires the need for repetition or scaling, which in turn
+            creates space to introduce multiplication and exponentiation.
+          </Body>
+          <Body>
+            In this case, the child has discovered the power of exponential
+            growth—and a whole new world.
+          </Body>
+        </StoryboardElement>
+
+        <Heading>Zooming in</Heading>
+        <Body wide>
+          On the road to creating the story we just told, we prototyped and
+          sketched dozens of ideas. We'd like to show some of them in more
+          detail now; we'll use them to illustrate how we thought about
+          developing this world.
+        </Body>
+
+        <PrototypeExample
+          heading="Creative empowerment"
+          figure={
+            <video
+              src="/videos/long-term-research/reports/early-math/pixel-art-ruler.mp4"
+              style={{ width: "100%" }}
+              loop
+              muted
+              autoPlay
+              playsInline
+            />
+          }
+        >
+          <Body>
+            What if painting by numbers really meant{" "}
+            <em>painting by numbers?</em> Can we reveal the number patterns and
+            ratios in pixel art? Can we turn something like traditional
+            kindergarten number blocks into a powerful drawing tool?
+          </Body>
+          <Body>
+            This prototype, like the computational flower and music environments
+            above, illustrate our emphasis on creative empowerment. Creative
+            activities are a great way to achieve{" "}
+            <a href="https://design.blog/2016/08/25/mitchel-resnick-designing-for-wide-walls/">
+              low floors, wide walls, and high ceilings
+            </a>: they're accessible to novices, they're exciting for experts,
+            and they support many pathways to engage each child's individual
+            interests. Those properties help make the activity personally
+            relevant to the child,{" "}
+            <a href="http://life-slc.org/docs/barron-self-sustainedlearning.pdf">
+              forming an emotional bond that can inspire their involvement
+              without outside coercion
+            </a>.
+          </Body>
+          <Body>
+            So many adult artists and scientists love math because it empowers
+            them creatively. We wanted to bring that same feeling to children.
+          </Body>
+        </PrototypeExample>
+
+        <PrototypeExample
+          heading="Entanglement"
+          figure={
+            <video
+              src="/videos/long-term-research/reports/early-math/subtraction-blocks.mp4"
+              style={{ width: "100%" }}
+              loop
+              muted
+              autoPlay
+              playsInline
+            />
+          }
+        >
+          <Body>
+            How might you make stairs out of a rectangular chunk of blocks?
+            Carve away positive blocks using negative, fixed-quantity “ghost
+            blocks”! Now you can climb down and see what that cat's up to…
+          </Body>
+          <Body>
+            We tried to make creative activities where math really does give
+            learners superpowers—where they manipulate their world{" "}
+            <em>through</em> manipulating math. That way, when kids improve at
+            manipulating math, they improve at making things in their world.
+          </Body>
+          <Body>
+            The math isn't bolted onto here: the player's actions and the
+            underlying mathematical ideas form a well-connected <em>system</em>,
+            which in turn helps students develop well-connected understanding.
+            We want students to think of <em>math itself</em> as a
+            well-connected system. If we give them math toys which suggest a
+            jumble of dissociated ideas, that may come to be how kids perceive
+            math itself.
+          </Body>
+        </PrototypeExample>
+
+        <PrototypeExample
+          heading="Conceptual understanding"
+          figure={
+            <img
+              src="/images/long-term-research/reports/early-math/2-early-sketches/2-place-value-cards.png"
+              style={{ width: "100%" }}
+            />
+          }
+        >
+          <Body>
+            Kids can use these “tens-place” and “ones-place” cards individually
+            to describe numbers. But if you stack two cards, they represent a
+            single two-digit number. These cards implicitly illustrate place
+            value—the idea that 27 is the same as 20 + 7.
+          </Body>
+          <Body>
+            Kids can morph these cards’ values by scrubbing them with their
+            finger. What if students could see their own manipulations play out
+            in visual quantities? Play with the tens card, and: whoa. You’re
+            adding ten birds at a time!
+          </Body>
+          <Body>
+            We tried to design interactions which would{" "}
+            <a href="http://www.nctm.org/uploadedFiles/Standards_and_Positions/PtAExecutiveSummary.pdf">
+              help kids understand the <em>meaning</em> of number operations—not
+              just how to perform procedures like adding numbers
+            </a>. One key way we did that was by{" "}
+            <a href="https://en.wikipedia.org/wiki/Van_Hiele_model">
+              connecting concrete, symbolic, and abstract representations
+            </a>. Here, the child simultaneously manipulates birds, digits, and
+            interesting place value operations.
+          </Body>
+        </PrototypeExample>
+
+        <PrototypeExample
+          heading="Interpersonal connectedness"
+          figure={
+            <img
+              src="/images/long-term-research/reports/early-math/3-carousel/3-gallery-of-numbers.png"
+              style={{ width: "100%" }}
+            />
+          }
+        >
+          <Body>
+            Hey: you've made lots of great stuff in this world! Which creations
+            do you like best? Why? Let’s put those up on the wall for your
+            friends to see.
+          </Body>
+          <Body>
+            Interpersonal interactions can prompt their own rich emotional
+            connections. As children create and discover in this world, we can
+            help them share their inventions and experiences with loved ones.
+            Creative mathematical adventures can lead to laughter, oohs and
+            ahhs, traded stories, and{" "}
+            <a href="https://ka-hivemind.herokuapp.com/?entry=MPm4fWnuAN3T37NSp">
+              more learning from great conversation
+            </a>.
+          </Body>
+          <Body>
+            Social interactions offer{" "}
+            <a href="https://en.wikipedia.org/wiki/Social_learning_theory">
+              all kinds of opportunities to learn
+            </a>: students can compare their work to others', adopt others'
+            strategies, and practice thinking about strategies and norms—not
+            just numbers themselves.
+          </Body>
+        </PrototypeExample>
+
+        <Heading>Taking the medium seriously</Heading>
+        <Body wide>TODO copy introducing this section</Body>
+
         <PrototypeExample
           heading="Singing through touch"
           figure={<AudibleVideoPlayer />}
@@ -369,6 +765,7 @@ export default class Report extends React.Component {
             musical instrument.
           </Body>
         </PrototypeExample>
+
         <PrototypeExample
           heading="Altering the world through handwritten numbers"
           figure={
@@ -395,72 +792,30 @@ export default class Report extends React.Component {
             Want to see what thirty-three birds looks like? Handwrite 33!
           </Body>
         </PrototypeExample>
+
         <PrototypeExample
-          heading="Altering the world through digital manipulatives"
+          heading="Connecting sensors to quantities"
           figure={
-            <img
-              src="/images/long-term-research/reports/early-math/2-early-sketches/2-place-value-cards.png"
+            <video
+              src="/videos/long-term-research/reports/early-math/3-connecting-to-sensors.mp4"
               style={{ width: "100%" }}
+              loop
+              muted
+              autoPlay
+              playsInline
             />
           }
         >
           <Body>
-            We wondered: how might we use the digital medium to enrich existing
-            physical manipulatives like{" "}
-            <a href="http://www.lakeshorelearning.com/product/productDet.jsp?productItemID=1%2C689%2C949%2C371%2C919%2C753&ASSORTMENT%3C%3East_id=1408474395181113&bmUID=1504047177209">
-              these place-value cards
-            </a>?
-          </Body>
-          <Body>
-            Kids can use these “tens-place” and “ones-place” cards individually
-            to describe numbers. But if you stack two cards, they represent a
-            single two-digit number. These cards implicitly illustrate place
-            value—that 27 is the same as 20 + 7.
-          </Body>
-          <Body>
-            In the digital medium, though, kids can morph these cards’ values by
-            scrubbing them with their finger. Again we thought: what if students
-            could see their own manipulations play out in visual quantities?
-          </Body>
-          <Body>
-            Play with the tens card, and: whoa. You’re adding ten birds at a
-            time!
+            Playing with sensors is fun! And it’s always fun to connect the
+            digital back into the physical world. Could we connect movement or
+            sensors to numbers? We also tried enabling kids to measure or count
+            objects in the real world through the camera.
           </Body>
         </PrototypeExample>
-        <PrototypeExample
-          heading="Digital manipulatives for subtraction"
-          figure={
-            <img
-              src="/images/long-term-research/reports/early-math/2-early-sketches/2-subtraction.gif"
-              style={{ width: "100%" }}
-            />
-          }
-        >
-          <Body>
-            What other manipulatives could we create that might{" "}
-            <a href="http://klr.tumblr.com/post/153279790133/whats-so-great-about-the-digital-medium-again">
-              <em>only</em> be possible in the dynamic medium?
-            </a>
-          </Body>
-          <Body>
-            Digital objects can disappear into thin air. We played with that
-            observation to illustrate{" "}
-            <a href="https://vimeo.com/157768846">
-              different ways of thinking about subtraction
-            </a>.
-          </Body>
-          <Body>
-            How might you make stairs out of a rectangular chunk of blocks?
-            Carve away positive blocks using negative, fixed-quantity “ghost
-            blocks”!
-          </Body>
-        </PrototypeExample>
-        <Subheading>And more!</Subheading>
-        <Body wide>
-          We brainstormed, sketched, and prototyped so many ideas! Some of our
-          them focused on specific interactions; others refined our principles
-          or broader architecture. Here’s a peek at more sketches and process.
-        </Body>
+
+        <Body wide>TODO probably some copy setting up the carousel below</Body>
+
         <div style={{ position: "absolute", left: 0, width: "100%" }}>
           <CarouselPrevArrow onClick={() => this.slider.slickPrev()} />
           <CarouselNextArrow onClick={() => this.slider.slickNext()} />
@@ -511,10 +866,11 @@ export default class Report extends React.Component {
               colors combine?
             </Body>
           </div>
+
           <div className={css(styles.carouselItem)}>
             <Figure>
               <video
-                src="/videos/long-term-research/reports/early-math/3-connecting-to-sensors.mp4"
+                src="/videos/long-term-research/reports/early-math/infinite-scrolling.mp4"
                 style={{ width: "100%" }}
                 loop
                 muted
@@ -522,13 +878,51 @@ export default class Report extends React.Component {
                 playsInline
               />
             </Figure>
-            <Body>
-              Playing with sensors is fun! And it’s always fun to connect the
-              digital back into the physical world. Could we connect movement or
-              sensors to numbers? We also tried enabling kids to measure or
-              count objects in the real world through the camera.
-            </Body>
+            <Body>TODO</Body>
           </div>
+
+          <div className={css(styles.carouselItem)}>
+            <Figure>
+              <video
+                src="/videos/long-term-research/reports/early-math/draw-around-to-count.mp4"
+                style={{ width: "100%" }}
+                loop
+                muted
+                autoPlay
+                playsInline
+              />
+            </Figure>
+            <Body>TODO</Body>
+          </div>
+
+          <div className={css(styles.carouselItem)}>
+            <Figure>
+              <video
+                src="/videos/long-term-research/reports/early-math/add-side-to-polygon.mp4"
+                style={{ width: "100%" }}
+                loop
+                muted
+                autoPlay
+                playsInline
+              />
+            </Figure>
+            <Body>TODO</Body>
+          </div>
+
+          <div className={css(styles.carouselItem)}>
+            <Figure>
+              <video
+                src="/videos/long-term-research/reports/early-math/split-blocks.mp4"
+                style={{ width: "100%" }}
+                loop
+                muted
+                autoPlay
+                playsInline
+              />
+            </Figure>
+            <Body>TODO</Body>
+          </div>
+
           <div className={css(styles.carouselItem)}>
             <Figure>
               <video
@@ -547,597 +941,8 @@ export default class Report extends React.Component {
               and get six of them!
             </Body>
           </div>
-          <div className={css(styles.carouselItem)}>
-            <Figure>
-              <img
-                src="/images/long-term-research/reports/early-math/3-carousel/3-gallery-of-numbers.png"
-                style={{ width: "100%" }}
-              />
-            </Figure>
-            <Body>
-              To achieve numeracy, children must learn to read and write digits.
-              But we don’t have to make that process all about right vs. wrong.
-              Hey, you’ve written a lot of “3”s. Which ones do you like best?
-              Why? Let’s put those up on the wall for your friends to see.
-            </Body>
-          </div>
-          <div className={css(styles.carouselItem)}>
-            <Figure>
-              <img
-                src="/images/long-term-research/reports/early-math/3-carousel/3-associations-with-3.jpg"
-                style={{ width: "100%" }}
-              />
-            </Figure>
-            <Body>
-              There are so many ways we can think about “3.” By{" "}
-              <a href="http://www.nctm.org/Conferences-and-Professional-Development/Principles-to-Actions-Toolkit/Resources/6-ES-Smith-TeacherStudentActions-Representations/">
-                showing connections between many different representations of
-                numbers
-              </a>, we can help students build richer understanding.
-            </Body>
-          </div>
-          <div className={css(styles.carouselItem)}>
-            <Figure>
-              <img
-                src="/images/long-term-research/reports/early-math/3-carousel/3-drawing-with-numbers.png"
-                style={{ width: "100%" }}
-              />
-            </Figure>
-            <Body>
-              What if painting by numbers really meant{" "}
-              <em>painting by numbers?</em> Can we reveal the number patterns in
-              pixel art? The block manipulatives we started developing here
-              later meandered their way into{" "}
-              <a href="/research/reports/cantor">
-                Cantor, another research project
-              </a>.
-            </Body>
-          </div>
         </Slider>
-        <Heading>Design themes</Heading>
-        <Body wide>
-          Through all those sketches, we were looking for pieces of our ultimate
-          goal: an open-ended adventure in a playful world of creative math.
-          That vision grew from design themes we developed during our background
-          reading and interviews. As you read through these themes, imagine:
-          what would educational technologies you’ve used look like if they were
-          recreated according to these themes? In the section following this
-          one, we’ll show a world we imagined using these themes.
-        </Body>
-        <Subheading>Learning through discovery</Subheading>
-        <BodyAndSidebar>
-          <Body>
-            Why do we want to make a <em>world</em>, anyway? One key inspiration
-            was Seymour Papert,{" "}
-            <a href="https://www.youtube.com/watch?v=_l7TR6r8MK8&feature=youtu.be">
-              who said
-            </a>:
-          </Body>
-          <p className={css(styles.body, styles.blockQuote)}>
-            While it’s true that most people in math class don’t learn much
-            math, most kids in French class don’t learn much French. But we
-            don’t say that they’re not “French-ly minded.”… We know that if they
-            grew up in France, they would learn French perfectly well… If we all
-            learned mathematics in “Mathland,” we would all learn mathematics
-            perfectly well. How can we create “Mathland”? That’s really what
-            it’s about.
-          </p>
-          <Body>
-            Learning games often feel bolted onto their subjects. Scoreboards
-            and badges cover dull tasks like chocolate-covered broccoli. These
-            shallow motivators aren’t connected to the meaning of the activity;
-            they could have been used to incentivize any random task.{" "}
-          </Body>
-          <SidebarItem>
-            <p className={css(styles.sidebarBody)}>
-              Seymour Papert’s 1980 manifesto on empowering children through
-              technology,{" "}
-              <a href="https://mindstorms.media.mit.edu">
-                <em>Mindstorms</em>
-              </a>, remains a foundational text for anyone interested in
-              learning and technology.
-            </p>
-            <Figure caption="The space alien theme might taste like chocolate at first, but it's covering the same old broccoli!">
-              <img
-                src="/images/long-term-research/reports/early-math/4-principles/1-broccoli.jpg"
-                style={{ width: "100%" }}
-              />
-            </Figure>
-            <p className={css(styles.sidebarBody, styles.hideOnMobile)}>
-              {/* Note that this paragraph is duplicated below for mobile */}
-              Plenty of evidence suggests that extrinsic motivations{" "}
-              <a href="http://psycnet.apa.org/record/1974-10497-001">
-                can squash burgeoning intrinsic motivation
-              </a>{" "}
-              and{" "}
-              <a href="http://people.whitman.edu/~herbrawt/classes/390/Amabile.pdf">
-                narrow creative thought
-              </a>.
-            </p>
-          </SidebarItem>
-          <Body>
-            Kids learning language are constantly motivated by rich interactions
-            inextricable from daily life. How might we create the same kinds of
-            interactions in “Mathland,” so that learning math becomes as
-            intrinsically motivating as learning language?
-          </Body>
-          <p className={css(styles.sidebarBody, styles.hideUnlessMobile)}>
-            {/* Note that this paragraph is duplicated below for mobile */}
-            Plenty of evidence suggests that extrinsic motivations{" "}
-            <a href="http://psycnet.apa.org/record/1974-10497-001">
-              can squash burgeoning intrinsic motivation
-            </a>{" "}
-            and{" "}
-            <a href="http://people.whitman.edu/~herbrawt/classes/390/Amabile.pdf">
-              narrow creative thought
-            </a>.
-          </p>
-        </BodyAndSidebar>
 
-        <BodyAndSidebar>
-          <Body>
-            <Principle>Creativity.</Principle> A focus on creative freedom and
-            exploration can open up wide variety of learning paths. You’ve
-            already seen that emphasis in our early sketches. One child might
-            understand a mathematical concept through generative painting;
-            another might form the same idea making digital music.{" "}
-            <a href="https://en.wikipedia.org/wiki/Constructivism_(philosophy_of_education)">
-              To learn, we build new ideas from preexisting ones.
-            </a>{" "}
-            If children have some agency in choosing their approach and goals,
-            they'll more likely find learning paths reflecting their own
-            starting points and interests.
-          </Body>
-          <SidebarItem>
-            <Figure
-              caption={
-                <span>
-                  <a href="http://n-e-r-v-o-u-s.com/kinematicsHome/">
-                    These 3D-printed bracelets
-                  </a>{" "}
-                  express creativity through geometry. (Photo ©2017 Go-3D Print)
-                </span>
-              }
-            >
-              <img
-                src="/images/long-term-research/reports/early-math/4-principles/2-creativity.jpg"
-                style={{ width: "100%" }}
-              />
-            </Figure>
-          </SidebarItem>
-        </BodyAndSidebar>
-
-        <BodyAndSidebar>
-          <Body>
-            <Principle>Entanglement.</Principle> We focused on creative
-            activities where math really does give learners superpowers—where
-            they manipulate their world <em>through</em> manipulating math. That
-            way, when kids improve at manipulating math, they improve at making
-            things in their world.
-          </Body>
-        </BodyAndSidebar>
-
-        <BodyAndSidebar>
-          <Body noBottomMargin>
-            <Principle>Conceptual understanding.</Principle> When children have
-            a real intellectual need,{" "}
-            <a href="http://math.ucsd.edu/~jrabin/publications/ProblemFreeActivity.pdf">
-              it’s more likely that they’ll understand <em>why</em> the
-              entangled mathematical ideas behave as they do
-            </a>—not just how to perform an algorithm. We worry that students
-            with procedural understanding find themselves stuck as soon as they
-            fall off a path they recognize. We tried to design interactions that
-            reward conceptual understanding, encouraging students to correct
-            their own errors and combine ideas in creative ways.
-          </Body>
-          <SidebarItem>
-            <p className={css(styles.sidebarBody, styles.noBottomMargin)}>
-              {/* Note that this paragraph is duplicated above for non-mobile */}
-              The{" "}
-              <a href="http://www.nctm.org/">
-                National Council of Teachers of Mathematics
-              </a>{" "}
-              lists “too much focus on learning procedures without any
-              connection to meaning, understanding, or the applications that
-              require these procedures” as{" "}
-              <a href="http://www.nctm.org/uploadedFiles/Standards_and_Positions/PtAExecutiveSummary.pdf">
-                one of the most pressing problems in math education
-              </a>. They suggest that we reverse the situation: “build
-              procedural fluency from conceptual understanding.”
-            </p>
-          </SidebarItem>
-        </BodyAndSidebar>
-        <BodyAndSidebar>
-          <Subheading>Emotional connectedness</Subheading>
-          <SidebarItem top={47}>
-            <Figure
-              caption={
-                <span>
-                  This classic photo from Papert's{" "}
-                  <a href="https://mindstorms.media.mit.edu">
-                    <em>Mindstorms</em>
-                  </a>{" "}
-                  paints a playful relationship with learning we'd love to see
-                  every child experience.
-                </span>
-              }
-            >
-              <img
-                src="/images/long-term-research/reports/early-math/4-principles/3-emotional-connectedness.jpg"
-                style={{ width: "100%" }}
-              />
-            </Figure>
-          </SidebarItem>
-          <Body>
-            When thinking about education, it's easy to focus on cognition and
-            lose sight of students' emotions. But by intentionally creating the
-            space for emotional connections to form, we pave the way for a deep,
-            enduring relationship between a child and learning.
-          </Body>
-          <Body>
-            <Principle>Creative ownership.</Principle> We’ve discussed how
-            creativity helps children connect new ideas to old ones when
-            learning. That creative mindset also makes the activity personally
-            relevant to the child,{" "}
-            <a href="http://life-slc.org/docs/barron-self-sustainedlearning.pdf">
-              forming an emotional bond that can inspire their involvement
-              without outside coercion
-            </a>.
-          </Body>
-        </BodyAndSidebar>
-        <BodyAndSidebar>
-          <Body>
-            <Principle>Curiosity.</Principle> We believe art direction plays a
-            major role in setting the stage for curiosity. For instance, in the
-            forest at the top of this report, we’ve deliberately added lots of
-            depth and occlusion hinting at hidden structure. The child’s
-            entering a whole new world, but we’re leaving space for their
-            imagination, a feeling of possibility and a sense of adventure. We
-            believe that in a carefully art-directed environment, a child’s
-            imagination evokes much more than we could have rendered ourselves.
-            Even better: we’ve entangled our art direction with the math. When
-            kids act on their curiosity in this world (e.g. what’s in the
-            tree?), they’re manipulating numbers (e.g. to build themselves a
-            ladder).
-          </Body>
-          <SidebarItem top={8}>
-            <Figure
-              noBottomMargin
-              caption="Artists have long used depth and occlusion to capture imaginations. These trees occlude what might be behind them, creating a sense of possibility and mystery. The figures in the foreground give us a sense of scale, which increases the sense of adventure."
-            >
-              <div className={css(fourImageCrossFadeStyle.one)}>
-                <img
-                  src="/images/long-term-research/reports/early-math/4-principles/4-art-direction-for-curiosity-1.jpg"
-                  style={{ width: "100%" }}
-                />
-                <p className={css(styles.artDirectionLabel)}>Firewatch</p>
-              </div>
-              <div className={css(fourImageCrossFadeStyle.two)}>
-                <img
-                  src="/images/long-term-research/reports/early-math/4-principles/4-art-direction-for-curiosity-2.jpg"
-                  style={{ width: "100%" }}
-                />
-                <p className={css(styles.artDirectionLabel)}>
-                  Caspar David Friedrich
-                </p>
-              </div>
-              <div className={css(fourImageCrossFadeStyle.three)}>
-                <img
-                  src="/images/long-term-research/reports/early-math/4-principles/4-art-direction-for-curiosity-3.jpg"
-                  style={{ width: "100%" }}
-                />
-                <p className={css(styles.artDirectionLabel, styles.mystLabel)}>
-                  Myst
-                </p>
-              </div>
-              <div className={css(fourImageCrossFadeStyle.four)}>
-                <img
-                  src="/images/long-term-research/reports/early-math/5-storyboard/1.png"
-                  style={{ width: "100%" }}
-                />
-                <p className={css(styles.artDirectionLabel)}>Our own world</p>
-              </div>
-            </Figure>
-            <div style={{ marginTop: 24 }}>
-              <p className={css(styles.sidebarBody, styles.hideOnMobile)}>
-                {/* WARNING repeated for mobile */}
-                For more on conversation in math, see "<a href="https://ka-hivemind.herokuapp.com/?entry=MPm4fWnuAN3T37NSp">
-                  Identity, Agency, and Knowing in Mathematical Worlds
-                </a>" by Jo Boaler and James Greeno.
-              </p>
-            </div>
-          </SidebarItem>
-          <Body noBottomMargin>
-            <Principle>Interpersonal connectedness.</Principle> Interpersonal
-            interactions can prompt their own rich emotional connections. As
-            children create and discover in this world, we can help them share
-            their inventions and experiences with loved ones. Creative
-            mathematical adventures can lead to laughter, oohs and ahhs, traded
-            stories, and—yes—more learning from great conversation.
-          </Body>
-          <p className={css(styles.sidebarBody, styles.hideUnlessMobile)}>
-            {/* WARNING repeated for non-mobile */}
-            For more on conversation in math, see "<a href="https://ka-hivemind.herokuapp.com/?entry=MPm4fWnuAN3T37NSp">
-              Identity, Agency, and Knowing in Mathematical Worlds
-            </a>" by Jo Boaler and James Greeno.
-          </p>
-        </BodyAndSidebar>
-        <BodyAndSidebar>
-          <Subheading>Empowerment, not condescension</Subheading>
-          <SidebarItem top={96}>
-            <Figure
-              noBottomMargin
-              caption={
-                <span>
-                  Minecraft empowered this player to{" "}
-                  <a href="https://www.youtube.com/watch?v=kGFZ9beEgdI">
-                    make a working guitar
-                  </a>.
-                </span>
-              }
-            >
-              <img
-                src="/images/long-term-research/reports/early-math/4-principles/5-empowerment.jpg"
-                style={{ width: "100%" }}
-              />
-            </Figure>
-            <div style={{ marginTop: 24 }}>
-              <p className={css(styles.sidebarBody, styles.hideOnMobile)}>
-                {/* WARNING repeated for mobile */}
-                For more on how to use technology to unlock creative learning,
-                see Mitch Resnick's{" "}
-                <em>
-                  <a href="https://mitpress.mit.edu/books/lifelong-kindergarten">
-                    Lifelong Kindergarten
-                  </a>
-                </em>.
-              </p>
-            </div>
-          </SidebarItem>
-          <Body>
-            Mathematical ideas are deeply empowering! Can we create activities
-            which reflect that power—which we’re genuinely and personally
-            excited to share? Let's not make tasks we <em>pretend</em> are
-            interesting so that kids will learn “what's good for them.”
-          </Body>
-          <p className={css(styles.sidebarBody, styles.hideUnlessMobile)}>
-            {/* WARNING repeated for non-mobile */}
-            For more on how to use technology to unlock creative learning, see
-            Mitch Resnick's{" "}
-            <em>
-              <a href="https://mitpress.mit.edu/books/lifelong-kindergarten">
-                Lifelong Kindergarten
-              </a>
-            </em>.
-          </p>
-          <Body noBottomMargin>
-            We believe that genuine interest will follow from empowerment, and
-            successful learning will follow from genuine interest. To that end,
-            we explored creative tools for art and music, translating numeracy
-            into exciting personal creations. We imagined a world full of
-            secrets worth exploring and connected that exploration to
-            mathematical understanding. We wanted to show students just how
-            empowering math can be.
-          </Body>
-        </BodyAndSidebar>
-        <BodyAndSidebar>
-          <Subheading>Growth</Subheading>
-          <Body>
-            Powerful ideas grow with people, and we wanted our design to do the
-            same. Toddlers build simple structures with Duplo, then more complex
-            objects with Lego, then moving parts with Technic, and even robotics
-            with Mindstorms. Kids and adults can both make wonderful things with
-            the same can of paint.
-          </Body>
-          <SidebarItem top={50}>
-            <Figure>
-              <img
-                src="/images/long-term-research/reports/early-math/4-principles/6-duplo-mindstorms.jpg"
-                style={{ width: "100%" }}
-              />
-            </Figure>
-            <div className={css(styles.hideOnMobile)}>
-              {/* WARNING repeated for mobile */}
-              <Figure>
-                <img
-                  src="/images/long-term-research/reports/early-math/5-storyboard/8.png"
-                  style={{ width: "100%" }}
-                />
-              </Figure>
-            </div>
-          </SidebarItem>
-          <Body>
-            Can we build an environment which continues to reward deeper
-            understanding, becoming ever more empowering as its occupants grow?
-            Or with ideas deep and broad enough to appeal to novices and experts
-            alike, in their own ways?
-          </Body>
-        </BodyAndSidebar>
-        <BodyAndSidebar>
-          <Body>
-            We imagined a world where children could eventually "look behind" an
-            object in the digital world to see a more abstract representation.
-            For instance, a child might first describe a flower by{" "}
-            <a href="https://en.wikipedia.org/wiki/Van_Hiele_model#Van_Hiele_levels">
-              its holistic shape
-            </a>, but as they develop, they’ll come to see how its petals
-            abstractly relate to leaves of a tree. At that point, they’re ready
-            to define the patterns petals follow. The child can climb{" "}
-            <a href="http://worrydream.com/LadderOfAbstraction/">
-              up and down the ladder of abstraction
-            </a>.
-          </Body>
-          <SidebarItem>
-            <div className={css(styles.hideUnlessMobile)}>
-              <Figure>
-                {/* WARNING repeated for mobile */}
-                <img
-                  src="/images/long-term-research/reports/early-math/5-storyboard/8.png"
-                  style={{ width: "100%" }}
-                />
-              </Figure>
-            </div>
-          </SidebarItem>
-        </BodyAndSidebar>
-        <Heading>Weaving it all together</Heading>
-        <Body wide>
-          We’ve woven our early sketches and the design themes into a rough
-          story to illustrate <em>one possible manifestation</em> of a playful
-          world of creative math. We hope it will inspire others to create other
-          possibilities for kids in the future!
-        </Body>
-        <StoryboardElement storyboardElementNumber={1}>
-          <Body>
-            We start in a scene that deliberately evokes depth and leaves space
-            for the child’s imagination to participate. What’s hiding among the
-            trees? Does the character live inside a tree?
-          </Body>
-          <Body>
-            A coordinate indicator trails the character. If the child explores
-            walks left from the red-door-tree, they’ll see negative
-            x-coordinates. The computer doesn’t demand answers about Cartesian
-            grid model: instead, with infinite patience, it surfaces that model
-            by reflecting the child’s actions in a property of the environment.
-          </Body>
-        </StoryboardElement>
-
-        <StoryboardElement storyboardElementNumber={2}>
-          <Body>
-            The coordinate system expresses the character's position in a way
-            that children can naturally relate to their own experience of their
-            body in the world (see{" "}
-            <em>
-              <a href="https://mindstorms.media.mit.edu/">Mindstorms</a>,
-            </em>{" "}
-            on “body syntonicity” for more on this).
-          </Body>
-          <Body>
-            New items that spark curiosity appear throughout the journey—like
-            this yellow door just out of reach, partway up a tree. What's behind
-            that door?
-          </Body>
-        </StoryboardElement>
-
-        <StoryboardElement storyboardElementNumber={3}>
-          <Body>
-            If something is out of reach, tapping it reveals its distance from
-            the ground. In this case, the yellow door’s distance is shown as
-            “7”. The concept of distance is introduced because the learner has
-            shown us, through interaction, that they’re curious about it.
-          </Body>
-        </StoryboardElement>
-
-        <StoryboardElement storyboardElementNumber={4}>
-          <Body>
-            The character can’t yet reach the yellow door, so they continue on
-            and befriend a little basket with its own coordinates. The basket
-            will help the character by holding things the character can collect,
-            like “quantity-bricks,” operators, and tools. With those
-            mathematical objects, students can build and mold the world.
-          </Body>
-        </StoryboardElement>
-
-        <StoryboardElement storyboardElementNumber={5}>
-          <Body>
-            Children can “harvest” flowering plants for quantities. For example,
-            as the player taps three flowers on a single stem, they fill and
-            collect a “3” quantity-brick.
-          </Body>
-          <Body>
-            Each flower blooms when tapped. This gentle feedback scaffolds{" "}
-            <a href="https://www.educateiowa.gov/sites/files/ed/documents/8017g%20Elem%20CLP%20with%20descriptors.pdf">
-              one-to-one correspondence counting
-            </a>{" "}
-            and visually tracks what's been counted and what hasn't.
-          </Body>
-        </StoryboardElement>
-
-        <StoryboardElement storyboardElementNumber={6}>
-          <Body>
-            This child discovered that they can build themselves a staircase of
-            quantity-bricks. As they sort the bricks by length, they reinforce
-            their ability to compare number quantities.
-          </Body>
-          <Body>
-            There were many ways the student might have reached the door. What
-            if they had different quantity bricks in their basket? What if the
-            child had no brick with length 5? How might they creatively clear
-            these hurdles? Can you think of other ways to reach the door?
-          </Body>
-          <Body>
-            Now we’ve reached the yellow door. What's inside the tree?
-          </Body>
-        </StoryboardElement>
-
-        <StoryboardElement storyboardElementNumber={7}>
-          <Body>
-            We reward curiosity with more opportunity for exploration! Inside
-            the tree, children can play with the relationship between numbers
-            and sound; pitches correspond to quantities.
-          </Body>
-          <Body>
-            <a href="http://www.papert.org/articles/SomePoeticAndSocialCriteriaForEducationDesign.html">
-              Computer graphics and computer-generated music are outstanding
-              opportunities to experience the link between beauty and math.
-            </a>{" "}
-            That’s because computers are great at translating between numbers
-            and these alternative representations in real time.
-          </Body>
-        </StoryboardElement>
-
-        <StoryboardElement storyboardElementNumber={8}>
-          <Body>
-            We’ve scattered these kinds of creative activities everywhere. For
-            instance, children can alter computationally-generated flowers with
-            quantity-bricks.
-          </Body>
-          <Body>
-            Over time, we reveal more “tools” and{" "}
-            <a href="https://en.wikipedia.org/wiki/Van_Hiele_model">
-              properties of objects in the world
-            </a>. Students eventually gain control over color, size, angle—as
-            well as operators on those numbers.
-          </Body>
-          <Body>
-            At any time, learners can choose to “look behind” an activity to see
-            its underlying mechanics. Like{" "}
-            <a href="https://en.wikipedia.org/wiki/HyperCard">Hypercard</a>,
-            Flash, and other powerful creative tools, we can support kids in
-            digging all the way down to source code!
-          </Body>
-        </StoryboardElement>
-
-        <StoryboardElement storyboardElementNumber={9}>
-          <Body>
-            Operators and tools can be combined in powerful ways with other
-            properties of objects in the world. For example, if the character
-            happens upon a ladder, they can manipulate either its height
-            attribute, or its number of rungs.
-          </Body>
-          <Body>
-            High school courses cover operators and{" "}
-            <a href="https://en.wikipedia.org/wiki/Van_Hiele_model#Van_Hiele_levels">
-              abstract properties
-            </a>, but we can smooth the ramp by allowing kids to experienced
-            them less formally years earlier.
-          </Body>
-        </StoryboardElement>
-
-        <StoryboardElement storyboardElementNumber={10}>
-          <Body>
-            If a child is curious what might exist up far above the trees, they
-            may try to get there by setting the ladder’s height to a huge
-            number. But: they wouldn’t be able to collect a quantity large
-            enough by counting! We support curiosity and the urge to push limits
-            by embracing this kind of intellectual need as it arises. The ladder
-            problem inspires the need for repetition or scaling, which in turn
-            creates space to introduce multiplication and exponentiation.
-          </Body>
-          <Body>
-            In this case, the child has discovered the power of exponential
-            growth—and a whole new world.
-          </Body>
-        </StoryboardElement>
         <BodyAndSidebar>
           <Heading>Onward</Heading>
           <SidebarItem top={20}>
@@ -1267,6 +1072,7 @@ export default class Report extends React.Component {
             "Christopher Walker",
             "Jack Schaedler",
             "Nicky Case",
+            "Sara LaHue",
           ]
             .map(name => name.split(" "))
             .sort(
@@ -1401,6 +1207,7 @@ const styles = StyleSheet.create({
 
   heroContainer: {
     height: 615,
+    marginBottom: 40,
     [mediaQueries.smOrSmaller]: {
       height: 322,
       marginBottom: 8,
