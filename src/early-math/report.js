@@ -472,7 +472,7 @@ export default class Report extends React.Component {
             In education, it's easy to focus on cognition and lose sight of
             students' emotions. But in this world, something as mundane as a
             tool palette becomes a friend. By intentionally creating space for
-            emotional connections (this is just one type) we pave the way for a
+            emotional connections (this is just one type), we pave the way for a
             deep, enduring relationship between a child and learning.
           </Body>
         </StoryboardElement>
@@ -501,7 +501,7 @@ export default class Report extends React.Component {
           </Body>
           <Body>
             There were many ways they might have reached the door. What if they
-            had different quantity bricks in their basket? What if the they had
+            had different quantity bricks in their basket? What if they had
             no brick with length 5? How might they creatively clear these
             hurdles? Can you think of other ways to reach the door?
           </Body>
@@ -552,7 +552,7 @@ export default class Report extends React.Component {
           </Body>
           <Body>
             Learners can choose to “look behind” an activity to see its
-            underlying mechanics. In the tradition of
+            underlying mechanics. In the tradition of{" "}
             <a href="https://en.wikipedia.org/wiki/HyperCard">Hypercard</a> and
             Flash, we can support kids in digging all the way down to source
             code!
@@ -665,13 +665,12 @@ export default class Report extends React.Component {
             manipulating math, they improve at making things in their world.
           </Body>
           <Body>
-            The math isn't bolted onto here: the player's actions and the
+            The math isn't bolted on here: the player's actions and the
             underlying mathematical ideas form a well-connected <em>system</em>,
             which in turn helps students develop well-connected understanding.
             We want students to think of <em>math itself</em> as a
             well-connected system. If we give them math toys which suggest a
-            jumble of dissociated ideas, that may come to be how kids perceive
-            math itself.
+            jumble of dissociated ideas, they may come to perceive math itself that way.
           </Body>
         </PrototypeExample>
 
@@ -744,25 +743,38 @@ export default class Report extends React.Component {
         </PrototypeExample>
 
         <Heading>Taking the medium seriously</Heading>
-        <Body wide>TODO copy introducing this section</Body>
+        <Body wide>
+          People have been exploring how to help kids learn through creative,
+          playful environments since{" "}
+          <a href="https://en.wikipedia.org/wiki/Kindergarten#Spread">
+            the first kindergarten
+          </a>. We launched this design exploration with a suspicion: that the
+          modern dynamic medium can support powerful new kinds of mathematical
+          creativity and play. So many digital math toys feel like direct
+          translations of existing ideas. We kept asking ourselves: what's{" "}
+          <a href="http://klr.tumblr.com/post/153279790133/whats-so-great-about-the-digital-medium-again">
+            <em>only</em> possible in the dynamic medium?
+          </a>{" "}
+          In this section, we'll explore some of what we found through the lens
+          of more prototypes.
+        </Body>
 
         <PrototypeExample
           heading="Singing through touch"
           figure={<AudibleVideoPlayer />}
         >
           <Body>
-            These sketches came from our iterative design explorations. We asked
-            ourselves all kinds of questions, like: What are all the ways a
-            child might <em>input</em> a number? If you ask a kid their age,
-            they often hold up their fingers as an answer. That gesture inspired
-            us to play with ways we might connect fingers on a screen to
-            quantities they might manipulate.
+            What are all the ways a child might <em>input</em> a number? If you
+            ask a kid their age, they often hold up their fingers as an answer.
+            That gesture inspired us to play with ways we might connect fingers
+            on a screen to quantities they might manipulate.
           </Body>
           <Body>
             As we tried out our prototype, we realized we could assign a note to
             each number. With this interaction, a child's natural
             gesture—holding up some fingers to indicate a number—becomes a
-            musical instrument.
+            musical instrument. There's no barrier to entry and no wrong answer:
+            touch anything. The device responds instantly.
           </Body>
         </PrototypeExample>
 
@@ -778,18 +790,15 @@ export default class Report extends React.Component {
           <Body>
             Handwriting is another natural way to express numbers. It's also
             important because it supports students in using the symbolic
-            representation of numbers: digits. Meanwhile, we observed that many
-            kids’ apps don’t give them any real agency. They tell kids what to
-            do.
+            representation of numbers: digits. You can write numbers in the real
+            world, but in the dynamic medium, we can interpret what you've
+            written to <em>morph things in the world.</em>
           </Body>
           <Body>
-            This prototype tried to explore handwriting through the lens of
-            giving kids agency. Instead of asking students to use handwriting to
-            answer a fixed math problem, what if we turn things upside down—give
-            them a scene they can alter with whatever numbers they can write?
-          </Body>
-          <Body>
-            Want to see what thirty-three birds looks like? Handwrite 33!
+            Here, instead of asking students to use handwriting to answer a
+            fixed math problem, we gave kids a scene they can alter with
+            whatever numbers they can write. Want to see what thirty-three birds
+            looks like? Handwrite 33!
           </Body>
         </PrototypeExample>
 
@@ -807,14 +816,23 @@ export default class Report extends React.Component {
           }
         >
           <Body>
-            Playing with sensors is fun! And it’s always fun to connect the
+            Playing with sensors is fun! And it’s always interesting to connect the
             digital back into the physical world. Could we connect movement or
-            sensors to numbers? We also tried enabling kids to measure or count
-            objects in the real world through the camera.
+            sensors to numbers? In this prototype, we imagined that kids could
+            hook a gear, a weight, and some string up to a number to control its
+            value by rotating their device.
+          </Body>
+          <Body>
+            In another related prototype, we tried giving kids a special camera
+            that let them measure or count objects in the real world.
           </Body>
         </PrototypeExample>
 
-        <Body wide>TODO probably some copy setting up the carousel below</Body>
+        <Body wide>
+          We sketched so many ideas about the dynamic medium! If you're
+          still hungry for more, we've selected a few additional favorites you
+          can explore below.
+        </Body>
 
         <div style={{ position: "absolute", left: 0, width: "100%" }}>
           <CarouselPrevArrow onClick={() => this.slider.slickPrev()} />
@@ -860,10 +878,10 @@ export default class Report extends React.Component {
               />
             </Figure>
             <Body>
-              Could children start to learn about ratios using a color mixer
-              that only takes numerical quantities of color as input? What if
-              our machine mixes light instead of paint—how does that affect how
-              colors combine?
+              The dynamic medium can mix colors with zero mess, and with
+              infinite undo. Could children start to learn about ratios using a
+              color mixer that only takes numbers of color as input? What if our
+              machine mixes light instead of paint?
             </Body>
           </div>
 
@@ -878,7 +896,7 @@ export default class Report extends React.Component {
                 playsInline
               />
             </Figure>
-            <Body>TODO</Body>
+            <Body>The dynamic medium can deal with really, really big numbers. Want to get a visceral feel for huge numbers? Just scroll!</Body>
           </div>
 
           <div className={css(styles.carouselItem)}>
@@ -892,7 +910,7 @@ export default class Report extends React.Component {
                 playsInline
               />
             </Figure>
-            <Body>TODO</Body>
+            <Body>Digital ink doesn't have to be used to draw digits. What if you could count anything in your environment by drawing a lasso around it? This interaction might offer interesting support for a child who is still learning to count objects one-to-one.</Body>
           </div>
 
           <div className={css(styles.carouselItem)}>
@@ -906,7 +924,7 @@ export default class Report extends React.Component {
                 playsInline
               />
             </Figure>
-            <Body>TODO</Body>
+            <Body>Wooden polygon blocks can't morph into each other, but digital objects can morph, meld, and split under your finger.</Body>
           </div>
 
           <div className={css(styles.carouselItem)}>
@@ -920,7 +938,7 @@ export default class Report extends React.Component {
                 playsInline
               />
             </Figure>
-            <Body>TODO</Body>
+            <Body>In this prototype, we imagined that you could find a special wedge in the world which gave you the power to slice numbers into parts through direct manipulation. As you bring one slice close to the other, it might suggest they could snap back together.</Body>
           </div>
 
           <div className={css(styles.carouselItem)}>
@@ -937,8 +955,7 @@ export default class Report extends React.Component {
             <Body>
               What if multiplication were a superpower you could find in the
               world—and once found, you could tap on anything to multiply it?
-              Want 6 of everything? Use your multiply-by-6 tool to tap on things
-              and get six of them!
+              Want 6 of everything? Done! The dynamic medium can create something from nothing.
             </Body>
           </div>
         </Slider>
