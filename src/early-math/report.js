@@ -621,7 +621,7 @@ export default class Report extends React.Component {
           </Body>
           <Body>
             This prototype, like the computational flower and music environments
-            above, illustrate our emphasis on creative empowerment. Creative
+            above, illustrates our emphasis on creative empowerment. Creative
             activities are a great way to achieve{" "}
             <a href="https://design.blog/2016/08/25/mitchel-resnick-designing-for-wide-walls/">
               low floors, wide walls, and high ceilings
@@ -729,7 +729,7 @@ export default class Report extends React.Component {
             help them share their inventions and experiences with loved ones.
             Creative mathematical adventures can lead to laughter, oohs and
             ahhs, traded stories, and{" "}
-            <a href="https://ka-hivemind.herokuapp.com/?entry=MPm4fWnuAN3T37NSp">
+            <a href="https://scholar.google.com/scholar?cluster=467044247235872538&hl=en&as_sdt=0,5">
               more learning from great conversation
             </a>.
           </Body>
@@ -1011,7 +1011,7 @@ export default class Report extends React.Component {
           <Body>
             Over two years have passed since we completed this design
             exploration. We've moved onto{" "}
-            <a href="http://khanacademy.org/research">other projects</a>, but
+            <a href="https://www.khanacademy.org/research?t=projects">other projects</a>, but
             we've carried the insights from this work in everything we've
             done since. We're thrilled we can share them with you now. If these ideas sparked something in you, we hope you’ll
             bring them to your own work. Together we can spread mathematical joy
