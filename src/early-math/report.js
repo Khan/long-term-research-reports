@@ -331,7 +331,7 @@ export default class Report extends React.Component {
             </em>{" "}
             We explored designs for a world where everything wears its math on
             its sleeve—where children can create and have adventures by playing
-            with the numbers behind every object. You can't visit that world
+            with the numbers behind every object. You canʼt visit that world
             yet, but we hope our sketches and prototypes will inspire you to see
             a new angle on educational technology.
           </Body>
@@ -347,11 +347,11 @@ export default class Report extends React.Component {
             <Figure
               caption={
                 <span>
-                  This classic photo from Papert's{" "}
+                  This classic photo from Papertʼs{" "}
                   <a href="https://mindstorms.media.mit.edu">
                     <em>Mindstorms</em>
                   </a>{" "}
-                  paints a playful relationship with learning we'd love to see
+                  paints a playful relationship with learning weʼd love to see
                   every child experience.
                 </span>
               }
@@ -364,7 +364,7 @@ export default class Report extends React.Component {
             <div className={css(styles.hideOnMobile)}>
               {/* Note that this paragraph is duplicated below for mobile */}
 
-              <Figure caption="The space alien theme might taste like chocolate at first, but it's covering the same old broccoli!">
+              <Figure caption="The space alien theme might taste like chocolate at first, but itʼs covering the same old broccoli!">
                 <img
                   src="/images/long-term-research/reports/early-math/4-principles/1-broccoli.jpg"
                   style={{ width: "100%" }}
@@ -390,7 +390,7 @@ export default class Report extends React.Component {
           <div className={css(styles.hideUnlessMobile)}>
             {/* Note that this paragraph is duplicated below for mobile */}
 
-            <Figure caption="The space alien theme might taste like chocolate at first, but it's covering the same old broccoli!">
+            <Figure caption="The space alien theme might taste like chocolate at first, but itʼs covering the same old broccoli!">
               <img
                 src="/images/long-term-research/reports/early-math/4-principles/1-broccoli.jpg"
                 style={{ width: "100%" }}
@@ -414,7 +414,7 @@ export default class Report extends React.Component {
 
         <Heading>A day in Mathland</Heading>
         <Body wide>
-          We sketched and prototyped a huge variety of possibilities, but let's
+          We sketched and prototyped a huge variety of possibilities, but letʼs
           begin by walking through a full adventure in one potential
           manifestation.
         </Body>
@@ -441,7 +441,7 @@ export default class Report extends React.Component {
           </Body>
           <Body>
             New items that spark curiosity appear throughout the journey—like
-            this yellow door just out of reach, partway up a tree. What's behind
+            this yellow door just out of reach, partway up a tree. Whatʼs behind
             that door?
           </Body>
         </StoryboardElement>
@@ -469,8 +469,8 @@ export default class Report extends React.Component {
             use these mathematical objects to create in the world.
           </Body>
           <Body>
-            In education, it's easy to focus on cognition and lose sight of
-            students' emotions. But in this world, something as mundane as a
+            In education, itʼs easy to focus on cognition and lose sight of
+            studentsʼ emotions. But in this world, something as mundane as a
             tool palette becomes a friend. By intentionally creating space for
             emotional connections (this is just one type), we pave the way for a
             deep, enduring relationship between a child and learning.
@@ -481,14 +481,14 @@ export default class Report extends React.Component {
           <Body>
             Children can “harvest” flowering plants to make quantities. For
             example, as the player taps three flowers on a single stem, they
-            fill and collect a “3” quantity-brick. For now, if they want a "4"
-            brick, they'll need to find and count 4 of something.
+            fill and collect a “3” quantity-brick. For now, if they want a “4”
+            brick, theyʼll need to find and count 4 of something.
           </Body>
           <Body>
             Each flower blooms when tapped. This gentle feedback scaffolds{" "}
             <a href="https://www.educateiowa.gov/sites/files/ed/documents/8017g%20Elem%20CLP%20with%20descriptors.pdf">
               one-to-one correspondence counting
-            </a>, visually tracking what's been counted and what hasn't.
+            </a>, visually tracking whatʼs been counted and what hasnʼt.
           </Body>
         </StoryboardElement>
 
@@ -506,7 +506,7 @@ export default class Report extends React.Component {
             Can you think of other ways to reach the door?
           </Body>
           <Body>
-            Now we’ve reached the yellow door. What's inside the tree?
+            Now we’ve reached the yellow door. Whatʼs inside the tree?
           </Body>
         </StoryboardElement>
 
@@ -526,9 +526,9 @@ export default class Report extends React.Component {
           </Body>
           <Body>
             Mathematical ideas are deeply empowering! Can we create activities
-            which reflect that power—which we're genuinely excited to share?
-            Let's not make tasks we <em>pretend</em> are interesting so that
-            kids will learn "what's good for them." We believe that genuine
+            which reflect that power—which weʼre genuinely excited to share?
+            Letʼs not make tasks we <em>pretend</em> are interesting so that
+            kids will learn “what's good for them.” We believe that genuine
             interest will follow from empowerment, and successful learning will
             follow from genuine interest.
           </Body>
@@ -565,7 +565,7 @@ export default class Report extends React.Component {
             properties of objects in the world. For example, if the character
             happens upon a ladder, they can manipulate either its height
             attribute, or its number of rungs. To make a ladder both taller and
-            climbable, they'll need to do both!
+            climbable, theyʼll need to do both!
           </Body>
           <Body>
             High school courses cover operators and{" "}
@@ -595,8 +595,8 @@ export default class Report extends React.Component {
         <Heading>Zooming in</Heading>
         <Body wide>
           On the road to creating the story we just told, we prototyped and
-          sketched dozens of ideas. We'd like to show some of them in more
-          detail now; we'll use them to illustrate how we thought about
+          sketched dozens of ideas. Weʼd like to show some of them in more
+          detail now; weʼll use them to illustrate how we thought about
           developing this world.
         </Body>
 
@@ -625,8 +625,8 @@ export default class Report extends React.Component {
             activities are a great way to achieve{" "}
             <a href="https://design.blog/2016/08/25/mitchel-resnick-designing-for-wide-walls/">
               low floors, wide walls, and high ceilings
-            </a>: they're accessible to novices, they're exciting for experts,
-            and they support many pathways to engage each child's individual
+            </a>: theyʼre accessible to novices, theyʼre exciting for experts,
+            and they support many pathways to engage each childʼs individual
             interests. Those properties help make the activity personally
             relevant to the child,{" "}
             <a href="http://life-slc.org/docs/barron-self-sustainedlearning.pdf">
@@ -656,7 +656,7 @@ export default class Report extends React.Component {
           <Body>
             How might you make stairs out of a rectangular chunk of blocks?
             Carve away positive blocks using negative, fixed-quantity “ghost
-            blocks”! Now you can climb down and see what that cat's up to…
+            blocks”! Now you can climb down and see what that catʼs up to…
           </Body>
           <Body>
             We tried to make creative activities where math really does give
@@ -665,7 +665,7 @@ export default class Report extends React.Component {
             manipulating math, they improve at making things in their world.
           </Body>
           <Body>
-            The math isn't bolted on here: the player's actions and the
+            The math isnʼt bolted on here: the playerʼs actions and the
             underlying mathematical ideas form a well-connected <em>system</em>,
             which in turn helps students develop well-connected understanding.
             We want students to think of <em>math itself</em> as a
@@ -719,7 +719,7 @@ export default class Report extends React.Component {
           }
         >
           <Body>
-            Hey: you've made lots of great stuff in this world! Which creations
+            Hey: youʼve made lots of great stuff in this world! Which creations
             do you like best? Why? Let’s put those up on the wall for your
             friends to see.
           </Body>
@@ -729,7 +729,7 @@ export default class Report extends React.Component {
             help them share their inventions and experiences with loved ones.
             Creative mathematical adventures can lead to laughter, oohs and
             ahhs, traded stories, and{" "}
-            <a href="https://scholar.google.com/scholar?cluster=467044247235872538&hl=en&as_sdt=0,5">
+            <a href="https://books.google.com/books?hl=en&lr=&id=0xq7dqtvSysC&oi=fnd&pg=PA171#v=onepage&q&f=false">
               more learning from great conversation
             </a>.
           </Body>
@@ -737,7 +737,7 @@ export default class Report extends React.Component {
             Social interactions offer{" "}
             <a href="https://en.wikipedia.org/wiki/Social_learning_theory">
               all kinds of opportunities to learn
-            </a>: students can compare their work to others', adopt others'
+            </a>: students can compare their work to othersʼ, adopt othersʼ
             strategies, and practice thinking about strategies and norms—not
             just numbers themselves.
           </Body>
@@ -752,11 +752,11 @@ export default class Report extends React.Component {
           </a>. We launched this design exploration with a suspicion: that the
           modern dynamic medium can support powerful new kinds of mathematical
           creativity and play. So many digital math toys feel like direct
-          translations of existing ideas. We kept asking ourselves: what's{" "}
+          translations of existing ideas. We kept asking ourselves: whatʼs{" "}
           <a href="http://klr.tumblr.com/post/153279790133/whats-so-great-about-the-digital-medium-again">
             <em>only</em> possible in the dynamic medium?
           </a>{" "}
-          In this section, we'll explore some of what we found through the lens
+          In this section, weʼll explore some of what we found through the lens
           of more prototypes.
         </Body>
 
@@ -772,9 +772,9 @@ export default class Report extends React.Component {
           </Body>
           <Body>
             As we tried out our prototype, we realized we could assign a note to
-            each number. With this interaction, a child's natural
+            each number. With this interaction, a childʼs natural
             gesture—holding up some fingers to indicate a number—becomes a
-            musical instrument. There's no barrier to entry and no wrong answer:
+            musical instrument. Thereʼs no barrier to entry and no wrong answer:
             touch anything. The device responds instantly.
           </Body>
         </PrototypeExample>
@@ -789,10 +789,10 @@ export default class Report extends React.Component {
           }
         >
           <Body>
-            Handwriting is another natural way to express numbers. It's also
+            Handwriting is another natural way to express numbers. Itʼs also
             important because it supports students in using the symbolic
             representation of numbers: digits. You can write numbers in the real
-            world, but in the dynamic medium, we can interpret what you've
+            world, but in the dynamic medium, we can interpret what youʼve
             written to <em>morph things in the world.</em>
           </Body>
           <Body>
@@ -830,8 +830,8 @@ export default class Report extends React.Component {
         </PrototypeExample>
 
         <Body wide>
-          We sketched so many ideas about the dynamic medium! If you're still
-          hungry for more, we've selected a few additional favorites you can
+          We sketched so many ideas about the dynamic medium! If youʼre still
+          hungry for more, weʼve selected a few additional favorites you can
           explore below.
         </Body>
 
@@ -915,7 +915,7 @@ export default class Report extends React.Component {
               />
             </Figure>
             <Body>
-              Digital ink doesn't have to be used to draw digits. What if you
+              Digital ink doesnʼt have to be used to draw digits. What if you
               could count anything in your environment by drawing a lasso around
               it? This interaction might offer interesting support for a child
               who is still learning to count objects one-to-one.
@@ -934,7 +934,7 @@ export default class Report extends React.Component {
               />
             </Figure>
             <Body>
-              Wooden polygon blocks can't morph into each other, but digital
+              Wooden polygon blocks canʼt morph into each other, but digital
               objects can morph, meld, and split under your finger.
             </Body>
           </div>
@@ -1000,7 +1000,7 @@ export default class Report extends React.Component {
             Curiosity! Wonder! Creative superpowers! Poetry!
           </Body>
           <Body>
-            We've shown prototypes and sketches that might point the way: create
+            Weʼve shown prototypes and sketches that might point the way: create
             a world kids can mold and explore through the mathematical
             properties each object carries. By taking the dynamic medium
             seriously, we have a chance to connect simple mathematical
@@ -1010,10 +1010,10 @@ export default class Report extends React.Component {
         <BodyAndSidebar>
           <Body>
             Over two years have passed since we completed this design
-            exploration. We've moved onto{" "}
+            exploration. Weʼve moved onto{" "}
             <a href="https://www.khanacademy.org/research?t=projects">other projects</a>, but
-            we've carried the insights from this work in everything we've
-            done since. We're thrilled we can share them with you now. If these ideas sparked something in you, we hope you’ll
+            weʼve carried the insights from this work in everything weʼve
+            done since. Weʼre thrilled we can share them with you now. If these ideas sparked something in you, we hope you’ll
             bring them to your own work. Together we can spread mathematical joy
             near and far!
           </Body>
@@ -1030,7 +1030,7 @@ export default class Report extends React.Component {
 
         <Heading>Further reading, listening, playing</Heading>
         <Body wide>
-          If you're interested in reading more about the topics in this report,
+          If youʼre interested in reading more about the topics in this report,
           our top recommendations are:
         </Body>
         <ul className={css(styles.furtherReadingList)}>
@@ -1043,7 +1043,7 @@ export default class Report extends React.Component {
           </FurtherReadingItem>
           <FurtherReadingItem>
             For more on the foundations of constructivism (the idea that
-            knowledge can't be directly transmitted; instead, learners construct
+            knowledge canʼt be directly transmitted; instead, learners construct
             understanding through experience), see{" "}
             <em>
               <a href="https://books.google.com/books?id=JhjPK4FKpCcC">
@@ -1075,7 +1075,7 @@ export default class Report extends React.Component {
                 The Montessori Method
               </a>
             </em>{" "}
-            documents Maria Montessori's foundational work in 1912. Mitchel
+            documents Maria Montessoriʼs foundational work in 1912. Mitchel
             Resnick offers a modern perspective on playful learning with
             technology in{" "}
             <em>
@@ -1086,7 +1086,7 @@ export default class Report extends React.Component {
             (2017).
           </FurtherReadingItem>
           <FurtherReadingItem>
-            We were inspired in art direction and in concept by wonderful children's books like <a href="https://books.google.com/books/about/Harold_and_the_Purple_Crayon.html?id=ZWlK6Y3rhiMC&printsec=frontcover&source=kp_read_button#v=onepage&q&f=false">Harold and the Purple Crayon</a> by Crockett Johnson and <a href="https://books.google.com/books/about/Journey.html?id=BOSgRVqWPCsC&printsec=frontcover&source=kp_read_button#v=onepage&q&f=false">Journey</a> by Aaron Becker.
+            We were inspired in art direction and in concept by wonderful childrenʼs books like <a href="https://books.google.com/books/about/Harold_and_the_Purple_Crayon.html?id=ZWlK6Y3rhiMC&printsec=frontcover&source=kp_read_button#v=onepage&q&f=false">Harold and the Purple Crayon</a> by Crockett Johnson and <a href="https://books.google.com/books/about/Journey.html?id=BOSgRVqWPCsC&printsec=frontcover&source=kp_read_button#v=onepage&q&f=false">Journey</a> by Aaron Becker.
           </FurtherReadingItem>
           <FurtherReadingItem>
             We imagined sound direction along the lines of <a href="https://www.youtube.com/watch?v=3Ei4Dxxhi_s">Lullatone</a> and <a href="https://www.youtube.com/watch?v=NZGznPUC43k">Las Cafeteras</a>.
@@ -1098,7 +1098,7 @@ export default class Report extends React.Component {
 
         <Heading>Acknowledgements</Heading>
         <Body wide>
-          We'd like to thank these people for their valuable thoughts along the
+          Weʼd like to thank these people for their valuable thoughts along the
           way:{" "}
           {[
             "Bret Victor",
