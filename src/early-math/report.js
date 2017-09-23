@@ -501,9 +501,9 @@ export default class Report extends React.Component {
           </Body>
           <Body>
             There were many ways they might have reached the door. What if they
-            had different quantity bricks in their basket? What if they had
-            no brick with length 5? How might they creatively clear these
-            hurdles? Can you think of other ways to reach the door?
+            had different quantity bricks in their basket? What if they had no
+            brick with length 5? How might they creatively clear these hurdles?
+            Can you think of other ways to reach the door?
           </Body>
           <Body>
             Now we’ve reached the yellow door. What's inside the tree?
@@ -670,7 +670,8 @@ export default class Report extends React.Component {
             which in turn helps students develop well-connected understanding.
             We want students to think of <em>math itself</em> as a
             well-connected system. If we give them math toys which suggest a
-            jumble of dissociated ideas, they may come to perceive math itself that way.
+            jumble of dissociated ideas, they may come to perceive math itself
+            that way.
           </Body>
         </PrototypeExample>
 
@@ -816,11 +817,11 @@ export default class Report extends React.Component {
           }
         >
           <Body>
-            Playing with sensors is fun! And it’s always interesting to connect the
-            digital back into the physical world. Could we connect movement or
-            sensors to numbers? In this prototype, we imagined that kids could
-            hook a gear, a weight, and some string up to a number to control its
-            value by rotating their device.
+            Playing with sensors is fun! And it’s always interesting to connect
+            the digital back into the physical world. Could we connect movement
+            or sensors to numbers? In this prototype, we imagined that kids
+            could hook a gear, a weight, and some string up to a number to
+            control its value by rotating their device.
           </Body>
           <Body>
             In another related prototype, we tried giving kids a special camera
@@ -829,9 +830,9 @@ export default class Report extends React.Component {
         </PrototypeExample>
 
         <Body wide>
-          We sketched so many ideas about the dynamic medium! If you're
-          still hungry for more, we've selected a few additional favorites you
-          can explore below.
+          We sketched so many ideas about the dynamic medium! If you're still
+          hungry for more, we've selected a few additional favorites you can
+          explore below.
         </Body>
 
         <div style={{ position: "absolute", left: 0, width: "100%" }}>
@@ -896,7 +897,10 @@ export default class Report extends React.Component {
                 playsInline
               />
             </Figure>
-            <Body>The dynamic medium can deal with really, really big numbers. Want to get a visceral feel for huge numbers? Just scroll!</Body>
+            <Body>
+              The dynamic medium can deal with really, really big numbers. Want
+              to get a visceral feel for huge numbers? Just scroll!
+            </Body>
           </div>
 
           <div className={css(styles.carouselItem)}>
@@ -910,7 +914,12 @@ export default class Report extends React.Component {
                 playsInline
               />
             </Figure>
-            <Body>Digital ink doesn't have to be used to draw digits. What if you could count anything in your environment by drawing a lasso around it? This interaction might offer interesting support for a child who is still learning to count objects one-to-one.</Body>
+            <Body>
+              Digital ink doesn't have to be used to draw digits. What if you
+              could count anything in your environment by drawing a lasso around
+              it? This interaction might offer interesting support for a child
+              who is still learning to count objects one-to-one.
+            </Body>
           </div>
 
           <div className={css(styles.carouselItem)}>
@@ -924,7 +933,10 @@ export default class Report extends React.Component {
                 playsInline
               />
             </Figure>
-            <Body>Wooden polygon blocks can't morph into each other, but digital objects can morph, meld, and split under your finger.</Body>
+            <Body>
+              Wooden polygon blocks can't morph into each other, but digital
+              objects can morph, meld, and split under your finger.
+            </Body>
           </div>
 
           <div className={css(styles.carouselItem)}>
@@ -938,7 +950,12 @@ export default class Report extends React.Component {
                 playsInline
               />
             </Figure>
-            <Body>In this prototype, we imagined that you could find a special wedge in the world which gave you the power to slice numbers into parts through direct manipulation. As you bring one slice close to the other, it might suggest they could snap back together.</Body>
+            <Body>
+              In this prototype, we imagined that you could find a special wedge
+              in the world which gave you the power to slice numbers into parts
+              through direct manipulation. As you bring one slice close to the
+              other, it might suggest they could snap back together.
+            </Body>
           </div>
 
           <div className={css(styles.carouselItem)}>
@@ -955,14 +972,15 @@ export default class Report extends React.Component {
             <Body>
               What if multiplication were a superpower you could find in the
               world—and once found, you could tap on anything to multiply it?
-              Want 6 of everything? Done! The dynamic medium can create something from nothing.
+              Want 6 of everything? Done! The dynamic medium can create
+              something from nothing.
             </Body>
           </div>
         </Slider>
 
         <BodyAndSidebar>
           <Heading>Onward</Heading>
-          <SidebarItem top={20}>
+          <SidebarItem top={30}>
             <Figure noBorder>
               <img
                 src="/images/long-term-research/reports/cantor/chest-of-toys.png"
@@ -978,23 +996,26 @@ export default class Report extends React.Component {
             </p>
           </SidebarItem>
           <Body>
-            Plenty of grown-up artists, scientists, and engineers find math
-            tremendously empowering. We dream of helping every child feel the
-            same way.
+            We dream of helping kids experience what math lovers experience.
+            Curiosity! Wonder! Creative superpowers! Poetry!
           </Body>
           <Body>
-            An open-ended adventure in a playful world of creative math could
-            help kids experience what math lovers experience. Curiosity! Wonder!
-            Creative superpowers! Poetry!
+            We've shown prototypes and sketches that might point the way: create
+            a world kids can mold and explore through the mathematical
+            properties each object carries. By taking the dynamic medium
+            seriously, we have a chance to connect simple mathematical
+            manipulations to exciting consequences.
           </Body>
         </BodyAndSidebar>
         <BodyAndSidebar>
           <Body>
-            Over two years have passed since we had this first little dream.
-            Amongst these sketches and design themes, we feel there are more
-            seedlings waiting to blossom. The ideas still resonate with us; if
-            they sparked something in you, we hope you’ll bring them to your own
-            work. Together we can spread mathematical joy near and far!
+            Over two years have passed since we completed this design
+            exploration. We've moved onto{" "}
+            <a href="http://khanacademy.org/research">other projects</a>, but
+            we've carried the insights from this work in everything we've
+            done since. We're thrilled we can share them with you now. If these ideas sparked something in you, we hope you’ll
+            bring them to your own work. Together we can spread mathematical joy
+            near and far!
           </Body>
           <SidebarItem>
             <p className={css(styles.sidebarBody, styles.hideUnlessMobile)}>
