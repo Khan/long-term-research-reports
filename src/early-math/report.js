@@ -337,13 +337,7 @@ export default class Report extends React.Component {
           </Body>
         </BodyAndSidebar>
         <BodyAndSidebar>
-          <Body>
-            Why a <em>world</em>, anyway? Seymour Papert, one key inspiration,{" "}
-            <a href="https://www.youtube.com/watch?v=_l7TR6r8MK8&feature=youtu.be">
-              said
-            </a>:
-          </Body>
-          <SidebarItem>
+        <SidebarItem>
             <Figure
               caption={
                 <span>
@@ -372,6 +366,12 @@ export default class Report extends React.Component {
               </Figure>
             </div>
           </SidebarItem>
+          <Body>
+            Why a <em>world</em>, anyway? Seymour Papert, one key inspiration,{" "}
+            <a href="https://www.youtube.com/watch?v=_l7TR6r8MK8&feature=youtu.be">
+              said
+            </a>:
+          </Body>
           <p className={css(styles.body, styles.blockQuote)}>
             While it’s true that most people in math class don’t learn much
             math, most kids in French class don’t learn much French. But we
