@@ -610,11 +610,14 @@ export default class Report extends React.Component {
         <PrototypeExample
           heading="Conceptual understanding"
           figure={
-            <img
-              src="/images/long-term-research/reports/early-math/2-early-sketches/2-place-value-cards.png"
-              style={{ width: "100%" }}
-            />
-          }
+            <video
+            src="/videos/long-term-research/reports/early-math/place-value-cards.mp4"
+            style={{ width: "100%" }}
+            loop
+            muted
+            autoPlay
+            playsInline
+          />          }
         >
           <Body>
             Kids can use these “tens-place” and “ones-place” cards individually
@@ -655,11 +658,14 @@ export default class Report extends React.Component {
         <PrototypeExample
           heading="Interpersonal connectedness"
           figure={
-            <img
-              src="/images/long-term-research/reports/early-math/3-carousel/3-gallery-of-numbers.png"
-              style={{ width: "100%" }}
-            />
-          }
+            <video
+            src="/videos/long-term-research/reports/early-math/gallery.mp4"
+            style={{ width: "100%" }}
+            loop
+            muted
+            autoPlay
+            playsInline
+          />          }
         >
           <Body>
             Hey: youʼve made lots of great stuff in this world! Which creations
@@ -725,11 +731,14 @@ export default class Report extends React.Component {
         <PrototypeExample
           heading="Altering the world through handwritten numbers"
           figure={
-            <img
-              src="/images/long-term-research/reports/early-math/2-early-sketches/2-alter-your-world.png"
+            <video
+              src="/videos/long-term-research/reports/early-math/scribblemath.mp4"
               style={{ width: "100%" }}
-            />
-          }
+              loop
+              muted
+              autoPlay
+              playsInline
+            />          }
         >
           <Body>
             Handwriting is another natural way to express numbers. Itʼs also
@@ -814,18 +823,22 @@ export default class Report extends React.Component {
             },
           ]}
         >
-          <div className={css(styles.carouselItem)}>
+        <div className={css(styles.carouselItem)}>
             <Figure>
-              <img
-                src="/images/long-term-research/reports/early-math/3-carousel/3-color-mixer.png"
+              <video
+                src="/videos/long-term-research/reports/early-math/3-multiplier-wand.mp4"
                 style={{ width: "100%" }}
+                loop
+                muted
+                autoPlay
+                playsInline
               />
             </Figure>
             <Body>
-              The dynamic medium can mix colors with zero mess, and with
-              infinite undo. Could children start to learn about ratios using a
-              color mixer that only takes numbers of color as input? What if our
-              machine mixes light instead of paint?
+              What if multiplication were a superpower you could find in the
+              world—and once found, you could tap on anything to multiply it?
+              Want 6 of everything? Done! The dynamic medium can create
+              something from nothing.
             </Body>
           </div>
 
@@ -867,18 +880,16 @@ export default class Report extends React.Component {
 
           <div className={css(styles.carouselItem)}>
             <Figure>
-              <video
-                src="/videos/long-term-research/reports/early-math/add-side-to-polygon.mp4"
+              <img
+                src="/images/long-term-research/reports/early-math/3-carousel/3-color-mixer.png"
                 style={{ width: "100%" }}
-                loop
-                muted
-                autoPlay
-                playsInline
               />
             </Figure>
             <Body>
-              Wooden polygon blocks canʼt morph into each other, but digital
-              objects can morph, meld, and split under your finger.
+              The dynamic medium can mix colors with zero mess, and with
+              infinite undo. Could children start to learn about ratios using a
+              color mixer that only takes numbers of color as input? What if our
+              machine mixes light instead of paint?
             </Body>
           </div>
 
@@ -904,7 +915,7 @@ export default class Report extends React.Component {
           <div className={css(styles.carouselItem)}>
             <Figure>
               <video
-                src="/videos/long-term-research/reports/early-math/3-multiplier-wand.mp4"
+                src="/videos/long-term-research/reports/early-math/add-side-to-polygon.mp4"
                 style={{ width: "100%" }}
                 loop
                 muted
@@ -913,10 +924,8 @@ export default class Report extends React.Component {
               />
             </Figure>
             <Body>
-              What if multiplication were a superpower you could find in the
-              world—and once found, you could tap on anything to multiply it?
-              Want 6 of everything? Done! The dynamic medium can create
-              something from nothing.
+              Wooden polygon blocks canʼt morph into each other, but digital
+              objects can morph, meld, and split under your finger.
             </Body>
           </div>
         </Slider>
