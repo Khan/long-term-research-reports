@@ -118,7 +118,7 @@ const SidebarItem = ({ children, top }) => (
   </div>
 );
 
-class AudibleVideoPlayer extends React.Component {
+class VideoPlayer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -143,32 +143,43 @@ class AudibleVideoPlayer extends React.Component {
   };
 
   render = () => (
-    <VisibilitySensor partialVisibility onChange={this.onVisibilityChange}>
+    <VisibilitySensor
+      partialVisibility
+      onChange={this.onVisibilityChange}
+      delayedCall={false}
+      intervalCheck
+      scrollCheck
+      resizeCheck
+    >
       <div>
         <video
           ref={videoRef => (this.videoRef = videoRef)}
-          src="/videos/long-term-research/reports/early-math/2-sing-through-touch.mp4"
-          muted={this.state.muted}
+          src={this.props.url}
+          muted={this.props.muted || this.state.muted}
           loop
           playsInline
           preload
           style={{ width: "100%" }}
         />
-        <button
-          style={{
-            width: 68,
-            height: 68,
-            position: "absolute",
-            bottom: 10,
-            left: 10,
-            border: "none",
-            backgroundColor: "transparent",
-            padding: 0,
-            backgroundImage: this.state.muted ? "url('/images/long-term-research/reports/early-math/soundOn.png')" : "url('/images/long-term-research/reports/early-math/soundOff.png')",
-            backgroundSize: "100%",
-          }}
-          onClick={this.onToggleAudio}
-        />
+        {this.props.muted ? null : (
+          <button
+            style={{
+              width: 68,
+              height: 68,
+              position: "absolute",
+              bottom: 10,
+              left: 10,
+              border: "none",
+              backgroundColor: "transparent",
+              padding: 0,
+              backgroundImage: this.state.muted
+                ? "url('/images/long-term-research/reports/early-math/soundOn.png')"
+                : "url('/images/long-term-research/reports/early-math/soundOff.png')",
+              backgroundSize: "100%",
+            }}
+            onClick={this.onToggleAudio}
+          />
+        )}
       </div>
     </VisibilitySensor>
   );
@@ -273,7 +284,7 @@ export default class Report extends React.Component {
           </Body>
         </BodyAndSidebar>
         <BodyAndSidebar>
-        <SidebarItem>
+          <SidebarItem>
             <Figure
               caption={
                 <span>
@@ -535,13 +546,9 @@ export default class Report extends React.Component {
         <PrototypeExample
           heading="Creative empowerment"
           figure={
-            <video
-              src="/videos/long-term-research/reports/early-math/pixel-art-ruler.mp4"
-              style={{ width: "100%" }}
-              loop
+            <VideoPlayer
+              url="/videos/long-term-research/reports/early-math/pixel-art-ruler.mp4"
               muted
-              autoPlay
-              playsInline
             />
           }
         >
@@ -575,13 +582,9 @@ export default class Report extends React.Component {
         <PrototypeExample
           heading="Entanglement"
           figure={
-            <video
-              src="/videos/long-term-research/reports/early-math/subtraction-blocks.mp4"
-              style={{ width: "100%" }}
-              loop
+            <VideoPlayer
+              url="/videos/long-term-research/reports/early-math/subtraction-blocks.mp4"
               muted
-              autoPlay
-              playsInline
             />
           }
         >
@@ -610,14 +613,11 @@ export default class Report extends React.Component {
         <PrototypeExample
           heading="Conceptual understanding"
           figure={
-            <video
-            src="/videos/long-term-research/reports/early-math/place-value-cards.mp4"
-            style={{ width: "100%" }}
-            loop
-            muted
-            autoPlay
-            playsInline
-          />          }
+            <VideoPlayer
+              url="/videos/long-term-research/reports/early-math/place-value-cards.mp4"
+              muted
+            />
+          }
         >
           <Body>
             Kids can use these “tens-place” and “ones-place” cards individually
@@ -658,14 +658,11 @@ export default class Report extends React.Component {
         <PrototypeExample
           heading="Interpersonal connectedness"
           figure={
-            <video
-            src="/videos/long-term-research/reports/early-math/gallery.mp4"
-            style={{ width: "100%" }}
-            loop
-            muted
-            autoPlay
-            playsInline
-          />          }
+            <VideoPlayer
+              url="/videos/long-term-research/reports/early-math/gallery.mp4"
+              muted
+            />
+          }
         >
           <Body>
             Hey: youʼve made lots of great stuff in this world! Which creations
@@ -711,7 +708,9 @@ export default class Report extends React.Component {
 
         <PrototypeExample
           heading="Singing through touch"
-          figure={<AudibleVideoPlayer />}
+          figure={
+            <VideoPlayer url="/videos/long-term-research/reports/early-math/2-sing-through-touch.mp4" />
+          }
         >
           <Body>
             What are all the ways a child might <em>input</em> a number? If you
@@ -731,14 +730,11 @@ export default class Report extends React.Component {
         <PrototypeExample
           heading="Altering the world through handwritten numbers"
           figure={
-            <video
-              src="/videos/long-term-research/reports/early-math/scribblemath.mp4"
-              style={{ width: "100%" }}
-              loop
+            <VideoPlayer
+              url="/videos/long-term-research/reports/early-math/scribblemath.mp4"
               muted
-              autoPlay
-              playsInline
-            />          }
+            />
+          }
         >
           <Body>
             Handwriting is another natural way to express numbers. Itʼs also
@@ -758,13 +754,9 @@ export default class Report extends React.Component {
         <PrototypeExample
           heading="Connecting sensors to quantities"
           figure={
-            <video
-              src="/videos/long-term-research/reports/early-math/3-connecting-to-sensors.mp4"
-              style={{ width: "100%" }}
-              loop
+            <VideoPlayer
+              url="/videos/long-term-research/reports/early-math/3-connecting-to-sensors.mp4"
               muted
-              autoPlay
-              playsInline
             />
           }
         >
@@ -823,15 +815,11 @@ export default class Report extends React.Component {
             },
           ]}
         >
-        <div className={css(styles.carouselItem)}>
+          <div className={css(styles.carouselItem)}>
             <Figure>
-              <video
-                src="/videos/long-term-research/reports/early-math/3-multiplier-wand.mp4"
-                style={{ width: "100%" }}
-                loop
+              <VideoPlayer
+                url="/videos/long-term-research/reports/early-math/3-multiplier-wand.mp4"
                 muted
-                autoPlay
-                playsInline
               />
             </Figure>
             <Body>
@@ -844,13 +832,9 @@ export default class Report extends React.Component {
 
           <div className={css(styles.carouselItem)}>
             <Figure>
-              <video
-                src="/videos/long-term-research/reports/early-math/infinite-scrolling.mp4"
-                style={{ width: "100%" }}
-                loop
+              <VideoPlayer
+                url="/videos/long-term-research/reports/early-math/infinite-scrolling.mp4"
                 muted
-                autoPlay
-                playsInline
               />
             </Figure>
             <Body>
@@ -861,13 +845,9 @@ export default class Report extends React.Component {
 
           <div className={css(styles.carouselItem)}>
             <Figure>
-              <video
-                src="/videos/long-term-research/reports/early-math/draw-around-to-count.mp4"
-                style={{ width: "100%" }}
-                loop
+              <VideoPlayer
+                url="/videos/long-term-research/reports/early-math/draw-around-to-count.mp4"
                 muted
-                autoPlay
-                playsInline
               />
             </Figure>
             <Body>
@@ -895,13 +875,9 @@ export default class Report extends React.Component {
 
           <div className={css(styles.carouselItem)}>
             <Figure>
-              <video
-                src="/videos/long-term-research/reports/early-math/split-blocks.mp4"
-                style={{ width: "100%" }}
-                loop
+              <VideoPlayer
+                url="/videos/long-term-research/reports/early-math/split-blocks.mp4"
                 muted
-                autoPlay
-                playsInline
               />
             </Figure>
             <Body>
@@ -914,13 +890,9 @@ export default class Report extends React.Component {
 
           <div className={css(styles.carouselItem)}>
             <Figure>
-              <video
-                src="/videos/long-term-research/reports/early-math/add-side-to-polygon.mp4"
-                style={{ width: "100%" }}
-                loop
+              <VideoPlayer
+                url="/videos/long-term-research/reports/early-math/add-side-to-polygon.mp4"
                 muted
-                autoPlay
-                playsInline
               />
             </Figure>
             <Body>
