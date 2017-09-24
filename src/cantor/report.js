@@ -1002,10 +1002,12 @@ export default class Report extends React.Component {
               </Figure>
             </SidebarItem>
             <Body noBottomMargin>
-              We first investigated digital number manipulatives in the context
-              of an early numeracy environment. In that system, these number
-              blocks could be used to explore, create, and modify the child’s
-              world. Weʼll have a separate report on that work soon.
+              We first investigated digital number manipulatives{" "}
+              <a href="/research/reports/early-math">
+                in the context of an early numeracy environment
+              </a>. In that system, these number blocks could be used to
+              explore, create, and modify the child’s world. Weʼll have a
+              separate report on that work soon.
             </Body>
           </BodyAndSidebar>
         </div>
