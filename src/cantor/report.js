@@ -139,7 +139,6 @@ const HeroHeader = () => (
           isHero
         />
       </div>
-      <div className={css(styles.topBar)} />
       <div className={css(styles.heroTextContainer)}>
         <Breadcrumb color={globalStyles.domainColors("default").domain3} />
         <h1 className={css(styles.title)}>
