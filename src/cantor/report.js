@@ -18,7 +18,7 @@ const Authors = () => (
     <div className={css(styles.authorLine)}>
       Scott Farrar, May-Li Khoe, Andy Matuschak<br />
       <span className={css(styles.authorListingAsterisk)}>
-        (authors listed alphabetically)
+        Authors listed alphabetically. August 31, 2017.
       </span>
     </div>
   </h2>
@@ -1244,7 +1244,7 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    color: globalStyles.domainColors("default").domain3,
+    color: globalStyles.domainColors("default").domain2,
     marginBottom: 20,
     ...globalStyles.typography.subjectHeadingDesktop,
     lineHeight: "50px",

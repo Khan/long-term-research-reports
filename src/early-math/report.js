@@ -36,7 +36,7 @@ const Authors = () => (
       <strong>Illustrations:</strong> Natalie Fitzgerald, May-Li Khoe.{" "}
     </div>
     <div className={css(styles.authorLine, styles.authorListingAsterisk)}>
-      (authors listed alphabetically in sections)
+      Authors listed alphabetically in sections. September 25, 2017.
     </div>
   </h2>
 );
