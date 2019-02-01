@@ -135,7 +135,10 @@ class VideoPlayer extends React.Component {
     if (isVisible !== this.state.isVisible) {
       this.setState({ isVisible });
       if (isVisible) {
-        this.videoRef.play();
+        const playingPromise = this.videoRef.play();
+        playingPromise.catch(() => {
+          this.videoRef.controls = true;
+        })
       } else {
         this.videoRef.pause();
       }
@@ -159,6 +162,7 @@ class VideoPlayer extends React.Component {
           loop
           playsInline
           preload
+          type="video/mp4"
           style={{ width: "100%" }}
         />
         {this.props.muted ? null : (
