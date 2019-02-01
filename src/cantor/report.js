@@ -1166,10 +1166,24 @@ export default class Report extends React.Component {
           endorsing this report.
         </Body>
 
-        <Heading>Contact us</Heading>
+        <Heading>Contact and attribution</Heading>
+        <Body wide>
+          In academic work, please cite this as:
+        </Body>
+        <p
+          className={css(
+            styles.body,
+            styles.wideParagraph,
+            styles.noTopMargin,
+            styles.blockQuote,
+          )}
+        >
+          Scott Farrar, May-Li Khoe, Andy Matuschak. (2017, August 31). <em>Numbers at play: dynamic toys make the invisible visible.</em> https://early.khanacademy.org/cantor.
+        </p>
+        <Body wide>This report is licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</Body>
         <Body wide>
           Have comments or feedback on this report? Please{" "}
-          <a href="mailto:long-term-research-team@khanacademy.org">write us</a>.
+          <a href="mailto:scottfarrar@gmail.com,mayli@alum.mit.edu,andy@andymatuschak.org">write us</a>.
         </Body>
       </div>
     </div>
@@ -1244,7 +1258,7 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    color: globalStyles.domainColors("default").domain2,
+    color: globalStyles.domainColors("default").domain3,
     marginBottom: 20,
     ...globalStyles.typography.subjectHeadingDesktop,
     lineHeight: "50px",
