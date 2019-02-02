@@ -1,0 +1,22 @@
+/* Put your custom CSS here! */
+body {
+    margin: 0;
+    margin-bottom: 3rem;
+}
+
+h1,h2,h3,h4,h5,h6,hgroup,blockquote,
+ul,ol,dd,li,
+p,figure,
+pre,table,fieldset,hr{
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+h1,h2,h3 {
+    margin-top: 1.5em;
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased;
+}
