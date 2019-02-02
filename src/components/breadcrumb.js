@@ -10,7 +10,7 @@ const Breadcrumb = ({ color }) =>
   <a
     className={css(styles.breadcrumb)}
     style={{ color }}
-    href="https://khanacademy.org/research"
+    href="/"
   >
     <span className={css(styles.breadcrumbArrow)}>
       <div
