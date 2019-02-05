@@ -1,6 +1,0 @@
-[submodule "src/cantor/Cantor"]
-	path = src/cantor/Cantor
-	url = git@github.com:Khan/Cantor.git
-[submodule "free-response-report/wonder-blocks"]
-	path = free-response-report/wonder-blocks
-	url = git@github.com:Khan/wonder-blocks.git
