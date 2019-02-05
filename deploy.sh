@@ -31,7 +31,7 @@ cp -R styles/* deploy/styles
 rm -rf /tmp/publish
 git clone --branch gh-pages https://github.com/Khan/long-term-research-reports.git /tmp/publish
 mkdir -p /tmp/publish
-rsync -rv --exclude=.git ./build/ /tmp/publish/open-ended
+rsync -rv --exclude=.git ./deploy/ /tmp/publish
 
 cd /tmp/publish
 
